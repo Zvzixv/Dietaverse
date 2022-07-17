@@ -1,0 +1,11 @@
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Dietaverse.exe.config
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Dietaverse.exe
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Dietaverse.pdb
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.AssemblyReference.cache
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.SuggestedBindingRedirects.cache
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.Properties.Resources.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.GenerateResource.cache
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.CoreCompileInputs.cache
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.exe
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.pdb
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.Form1.resources
