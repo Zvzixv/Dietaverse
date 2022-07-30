@@ -42,6 +42,7 @@ namespace Dietaverse
 
         private void bodyGalleryButton_Click(object sender, EventArgs e)
         {
+            dashboardButton_Leave(sender, e);
             PnlNav.Height = bodyGalleryButton.Height;
             PnlNav.Top = bodyGalleryButton.Top;
             PnlNav.Left = bodyGalleryButton.Left;
@@ -50,6 +51,7 @@ namespace Dietaverse
 
         private void foodGalleryButton_Click(object sender, EventArgs e)
         {
+            dashboardButton_Leave(sender, e);
             PnlNav.Height = foodGalleryButton.Height;
             PnlNav.Top = foodGalleryButton.Top;
             PnlNav.Left = foodGalleryButton.Left;
@@ -58,6 +60,7 @@ namespace Dietaverse
 
         private void smoothiesButton_Click(object sender, EventArgs e)
         {
+            dashboardButton_Leave(sender, e);
             PnlNav.Height = smoothiesButton.Height;
             PnlNav.Top = smoothiesButton.Top;
             PnlNav.Left = smoothiesButton.Left;
@@ -66,6 +69,7 @@ namespace Dietaverse
 
         private void monthButton_Click(object sender, EventArgs e)
         {
+            dashboardButton_Leave(sender, e);
             PnlNav.Height = monthButton.Height;
             PnlNav.Top = monthButton.Top;
             PnlNav.Left = monthButton.Left;
@@ -74,6 +78,7 @@ namespace Dietaverse
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
+            dashboardButton_Leave(sender, e);
             PnlNav.Height = settingsButton.Height;
             PnlNav.Top = settingsButton.Top;
             PnlNav.Left = settingsButton.Left;

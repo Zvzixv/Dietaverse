@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1d2faec7-fc08-418b-b806-968ee967bb3c": {
+      "ProjectGuid": "1d2faec7-fc08-418b-b806-968ee967bb3c",
+      "DisplayName": "Dietaverse",
+      "ColorIndex": 0
+    },
+    "755a4e56-6b22-4b4c-a6d5-05d1575c1d05": {
+      "ProjectGuid": "755a4e56-6b22-4b4c-a6d5-05d1575c1d05",
+      "DisplayName": "Dietaverse",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
