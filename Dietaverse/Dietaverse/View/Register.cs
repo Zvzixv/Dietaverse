@@ -12,18 +12,22 @@ namespace Dietaverse.View
 {
     public partial class Register : Form
     {
-        public Register()
+        mainForm mainform;
+        public Register(mainForm mf)
         {
             InitializeComponent();
+            mainform = mf;
         }
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            Launch launchform = new Launch() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            launchform.FormBorderStyle = FormBorderStyle.None;
-            Controls.Clear();
-            Controls.Add(launchform);
-            launchform.Show();
+            Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            mainform.changeForm(launchform);
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

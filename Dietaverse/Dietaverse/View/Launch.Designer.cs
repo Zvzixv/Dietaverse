@@ -39,7 +39,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(398, 73);
+            this.label1.Location = new System.Drawing.Point(370, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 38);
             this.label1.TabIndex = 0;
@@ -50,7 +50,7 @@
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.Coral;
-            this.loginButton.Location = new System.Drawing.Point(433, 175);
+            this.loginButton.Location = new System.Drawing.Point(405, 259);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(109, 37);
             this.loginButton.TabIndex = 1;
@@ -63,7 +63,7 @@
             this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerButton.ForeColor = System.Drawing.Color.Coral;
-            this.registerButton.Location = new System.Drawing.Point(433, 218);
+            this.registerButton.Location = new System.Drawing.Point(405, 302);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(109, 37);
             this.registerButton.TabIndex = 1;
@@ -89,7 +89,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(935, 538);
+            this.ClientSize = new System.Drawing.Size(951, 577);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.loginButton);

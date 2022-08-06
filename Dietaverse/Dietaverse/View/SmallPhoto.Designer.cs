@@ -48,9 +48,12 @@
             // description
             // 
             this.description.AutoSize = true;
-            this.description.Location = new System.Drawing.Point(61, 93);
+            this.description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.description.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.description.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.description.Location = new System.Drawing.Point(58, 156);
             this.description.Name = "description";
-            this.description.Size = new System.Drawing.Size(35, 13);
+            this.description.Size = new System.Drawing.Size(47, 17);
             this.description.TabIndex = 1;
             this.description.Text = "label1";
             this.description.Click += new System.EventHandler(this.description_Click);
@@ -59,7 +62,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(156, 205);
             this.Controls.Add(this.description);
             this.Controls.Add(this.pictureBox1);

@@ -12,6 +12,7 @@ namespace Dietaverse.View
 {
     public partial class SmallPhoto : Form
     {
+        bool isPhotoClicked = false;
         public SmallPhoto()
         {
             InitializeComponent();
@@ -20,7 +21,16 @@ namespace Dietaverse.View
 
         public void pictureBox1_Click(object sender, EventArgs e)
         {
-            description.Visible = true;
+            if (isPhotoClicked == false)
+            {
+                description.Visible = true;
+                isPhotoClicked = true;
+            }
+            else if(isPhotoClicked == true)
+            {
+                description.Visible=false;
+                isPhotoClicked=false;
+            }
         }
 
         public void description_Click(object sender, EventArgs e)

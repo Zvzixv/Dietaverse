@@ -62,6 +62,8 @@
             this.richTextBox1.Size = new System.Drawing.Size(245, 199);
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.Text = "You can left some notes here...";
+            this.richTextBox1.Enter += new System.EventHandler(this.richTextBox1_Validated);
+            this.richTextBox1.Leave += new System.EventHandler(this.richTextBox1_Leave);
             // 
             // panel5
             // 
@@ -229,7 +231,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.panel5.ResumeLayout(false);

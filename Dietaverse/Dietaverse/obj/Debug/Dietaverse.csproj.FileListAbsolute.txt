@@ -30,3 +30,14 @@ C:\Users\ZPudo\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietavers
 C:\Users\ZPudo\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Launch.resources
 C:\Users\ZPudo\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Login.resources
 C:\Users\ZPudo\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Register.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.BodyGallery.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Dashboard.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.FoodGallery.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Launch.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Login.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.MonthSummary.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Register.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Settings.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.SmallPhoto.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Smoothies.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.mainForm.resources

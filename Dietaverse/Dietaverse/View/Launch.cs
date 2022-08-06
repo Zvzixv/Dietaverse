@@ -13,14 +13,16 @@ namespace Dietaverse.View
 {
     public partial class Launch : Form
     {
+        mainForm mainform;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidrhElipse, int nHeightEllipse);
-        public Launch()
+        public Launch(mainForm mf)
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            mainform = mf;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -30,20 +32,14 @@ namespace Dietaverse.View
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Login loginform = new Login() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            loginform.FormBorderStyle = FormBorderStyle.None;
-            Controls.Clear();
-            Controls.Add(loginform);
-            loginform.Show();
+            Login loginform = new Login(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            mainform.changeForm(loginform);
         }
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-            Register registerform = new Register() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            registerform.FormBorderStyle = FormBorderStyle.None;
-            Controls.Clear();
-            Controls.Add(registerform);
-            registerform.Show();
+            Register registerform = new Register(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            mainform.changeForm(registerform);
         }
     }
 }

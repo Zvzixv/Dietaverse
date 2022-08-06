@@ -17,7 +17,7 @@ namespace Dietaverse
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Launch());
+            Application.Run(new mainForm());
         }
     }
 }

@@ -13,18 +13,27 @@ namespace Dietaverse.View
 {
     public partial class Login : Form
     {
-        public Login()
+        mainForm mainform;
+        public Login(mainForm mf)
         {
             InitializeComponent();
+            mainform = mf;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Form1 startform = new Form1() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            startform.FormBorderStyle = FormBorderStyle.None;
-            Controls.Clear();
-            Controls.Add(startform);
-            startform.Show();
+            Form1 startform = new Form1(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            mainform.changeForm(startform);
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
