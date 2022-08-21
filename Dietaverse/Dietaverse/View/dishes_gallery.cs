@@ -21,8 +21,8 @@ namespace Dietaverse.View
         }
     
         public int Id { get; set; }
-        public string nazwa { get; set; }
-        public string przepis { get; set; }
+        public string name { get; set; }
+        public string recipe { get; set; }
         public int kcal { get; set; }
         public string photo { get; set; }
     
