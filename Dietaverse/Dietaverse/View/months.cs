@@ -12,23 +12,18 @@ namespace Dietaverse.View
     using System;
     using System.Collections.Generic;
     
-    public partial class users
+    public partial class months
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public users()
+        public months()
         {
-            this.dishes_gallery = new HashSet<dishes_gallery>();
-            this.daily_summary = new HashSet<daily_summary>();
+            this.daily_summary1 = new HashSet<daily_summary>();
         }
     
         public int Id { get; set; }
-        public string name { get; set; }
-        public string surname { get; set; }
+        public string daily_summary { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<dishes_gallery> dishes_gallery { get; set; }
-        public virtual body_gallery body_gallery { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<daily_summary> daily_summary { get; set; }
+        public virtual ICollection<daily_summary> daily_summary1 { get; set; }
     }
 }

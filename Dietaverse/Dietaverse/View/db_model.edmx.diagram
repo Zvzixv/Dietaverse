@@ -6,10 +6,17 @@
     <edmx:Diagrams>
       <Diagram DiagramId="cde67b2accc349aa9e35679aa71c3b4d" Name="Diagram1" >
         <EntityTypeShape EntityType="Model1.users" Width="1.5" PointX="3.625" PointY="0.75" />
-        <EntityTypeShape EntityType="Model1.dishes_gallery" Width="1.5" PointX="5.75" PointY="3" />
-        <EntityTypeShape EntityType="Model1.body_gallery" Width="1.5" PointX="2.375" PointY="3.625" />
+        <EntityTypeShape EntityType="Model1.dishes_gallery" Width="1.5" PointX="5.625" PointY="3.75" />
+        <EntityTypeShape EntityType="Model1.body_gallery" Width="1.5" PointX="3.625" PointY="3.75" />
         <AssociationConnector Association="Model1.usersdishes_gallery" />
         <AssociationConnector Association="Model1.usersbody_gallery" />
+        <EntityTypeShape EntityType="Model1.daily_summary" Width="1.5" PointX="1.625" PointY="3.75" />
+        <EntityTypeShape EntityType="Model1.months" Width="1.5" PointX="1.625" PointY="6.5" />
+        <EntityTypeShape EntityType="Model1.smoothies_recipes" Width="1.5" PointX="8.875" PointY="1.625" />
+        <EntityTypeShape EntityType="Model1.smoothies_ingr" Width="1.5" PointX="11.375" PointY="1.625" />
+        <AssociationConnector Association="Model1.daily_summaryusers" />
+        <AssociationConnector Association="Model1.daily_summarymonths" />
+        <AssociationConnector Association="Model1.smoothies_ingrsmoothies_recipes" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

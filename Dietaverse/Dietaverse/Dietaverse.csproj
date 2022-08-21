@@ -65,6 +65,9 @@
     <Compile Include="View\body_gallery.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\daily_summary.cs">
+      <DependentUpon>db_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +116,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="View\months.cs">
+      <DependentUpon>db_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\MonthSummary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     </Compile>
     <Compile Include="View\Smoothies.Designer.cs">
       <DependentUpon>Smoothies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\smoothies_ingr.cs">
+      <DependentUpon>db_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\smoothies_recipes.cs">
+      <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Start.cs">
       <SubType>Form</SubType>
