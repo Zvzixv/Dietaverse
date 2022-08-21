@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="usersSet" EntityType="Model1.Store.usersSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="dishes_gallerySet" EntityType="Model1.Store.dishes_gallerySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="body_gallerySet" EntityType="Model1.Store.body_gallerySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="usersdishes_gallery" EntityType="Model1.Store.usersdishes_gallery" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_usersdishes_gallery_users" Association="Model1.Store.FK_usersdishes_gallery_users">
+      <End Role="users" EntitySet="usersSet" />
+      <End Role="usersdishes_gallery" EntitySet="usersdishes_gallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usersdishes_gallery_dishes_gallery" Association="Model1.Store.FK_usersdishes_gallery_dishes_gallery">
+      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+      <End Role="usersdishes_gallery" EntitySet="usersdishes_gallery" />
+    </AssociationSet>
+    <AssociationSet Name="usersbody_gallery" Association="Model1.Store.usersbody_gallery">
+      <End Role="users" EntitySet="usersSet" />
+      <End Role="body_gallery" EntitySet="body_gallerySet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="usersSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="nazwisko" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="body_gallery_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dishes_gallerySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nazwa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="przepis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kcal" Type="int" Nullable="false" />
+    <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="body_gallerySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="weight" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="date" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usersdishes_gallery">
+    <Key>
+      <PropertyRef Name="users_Id" />
+      <PropertyRef Name="dishes_gallery_Id" />
+    </Key>
+    <Property Name="users_Id" Type="int" Nullable="false" />
+    <Property Name="dishes_gallery_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="usersbody_gallery">
+    <End Role="users" Type="Model1.Store.usersSet" Multiplicity="*" />
+    <End Role="body_gallery" Type="Model1.Store.body_gallerySet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="body_gallery">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="body_gallery_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usersdishes_gallery_users">
+    <End Role="users" Type="Model1.Store.usersSet" Multiplicity="1" />
+    <End Role="usersdishes_gallery" Type="Model1.Store.usersdishes_gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="usersdishes_gallery">
+        <PropertyRef Name="users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usersdishes_gallery_dishes_gallery">
+    <End Role="usersdishes_gallery" Type="Model1.Store.usersdishes_gallery" Multiplicity="*" />
+    <End Role="dishes_gallery" Type="Model1.Store.dishes_gallerySet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="dishes_gallery">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="usersdishes_gallery">
+        <PropertyRef Name="dishes_gallery_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

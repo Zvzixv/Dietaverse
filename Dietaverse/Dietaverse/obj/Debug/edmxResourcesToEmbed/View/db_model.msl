@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="usersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.users)">
+        <MappingFragment StoreEntitySet="usersSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dishes_gallerySet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.dishes_gallery)">
+        <MappingFragment StoreEntitySet="dishes_gallerySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="przepis" ColumnName="przepis" />
+          <ScalarProperty Name="kcal" ColumnName="kcal" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="body_gallerySet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.body_gallery)">
+        <MappingFragment StoreEntitySet="body_gallerySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="usersdishes_gallery" TypeName="Model1.usersdishes_gallery" StoreEntitySet="usersdishes_gallery">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
+      </EndProperty>
+      <EndProperty Name="dishes_gallery">
+        <ScalarProperty Name="Id" ColumnName="dishes_gallery_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usersbody_gallery" TypeName="Model1.usersbody_gallery" StoreEntitySet="usersSet">
+      <EndProperty Name="body_gallery">
+        <ScalarProperty Name="Id" ColumnName="body_gallery_Id" />
+      </EndProperty>
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -41,3 +41,8 @@ C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietavers
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.SmallPhoto.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Smoothies.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.mainForm.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFramework.dll
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFramework.xml
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.CopyComplete

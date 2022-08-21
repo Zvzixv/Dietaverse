@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="usersSet" EntityType="Model1.Store.usersSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="dishes_gallerySet" EntityType="Model1.Store.dishes_gallerySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="body_gallerySet" EntityType="Model1.Store.body_gallerySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="usersdishes_gallery" EntityType="Model1.Store.usersdishes_gallery" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_usersdishes_gallery_users" Association="Model1.Store.FK_usersdishes_gallery_users">
+      <End Role="users" EntitySet="usersSet" />
+      <End Role="usersdishes_gallery" EntitySet="usersdishes_gallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usersdishes_gallery_dishes_gallery" Association="Model1.Store.FK_usersdishes_gallery_dishes_gallery">
+      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+      <End Role="usersdishes_gallery" EntitySet="usersdishes_gallery" />
+    </AssociationSet>
+    <AssociationSet Name="usersbody_gallery" Association="Model1.Store.usersbody_gallery">
+      <End Role="users" EntitySet="usersSet" />
+      <End Role="body_gallery" EntitySet="body_gallerySet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="usersSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imie" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="nazwisko" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="body_gallery_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dishes_gallerySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nazwa" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="przepis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kcal" Type="int" Nullable="false" />
+    <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="body_gallerySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="weight" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="date" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usersdishes_gallery">
+    <Key>
+      <PropertyRef Name="users_Id" />
+      <PropertyRef Name="dishes_gallery_Id" />
+    </Key>
+    <Property Name="users_Id" Type="int" Nullable="false" />
+    <Property Name="dishes_gallery_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="usersbody_gallery">
+    <End Role="users" Type="Model1.Store.usersSet" Multiplicity="*" />
+    <End Role="body_gallery" Type="Model1.Store.body_gallerySet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="body_gallery">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="body_gallery_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usersdishes_gallery_users">
+    <End Role="users" Type="Model1.Store.usersSet" Multiplicity="1" />
+    <End Role="usersdishes_gallery" Type="Model1.Store.usersdishes_gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="usersdishes_gallery">
+        <PropertyRef Name="users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usersdishes_gallery_dishes_gallery">
+    <End Role="usersdishes_gallery" Type="Model1.Store.usersdishes_gallery" Multiplicity="*" />
+    <End Role="dishes_gallery" Type="Model1.Store.dishes_gallerySet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="dishes_gallery">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="usersdishes_gallery">
+        <PropertyRef Name="dishes_gallery_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="usersSet" EntityType="Model1.users" />
+          <EntitySet Name="dishes_gallerySet" EntityType="Model1.dishes_gallery" />
+          <EntitySet Name="body_gallerySet" EntityType="Model1.body_gallery" />
+          <AssociationSet Name="usersdishes_gallery" Association="Model1.usersdishes_gallery">
+            <End Role="users" EntitySet="usersSet" />
+            <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+          </AssociationSet>
+          <AssociationSet Name="usersbody_gallery" Association="Model1.usersbody_gallery">
+            <End Role="users" EntitySet="usersSet" />
+            <End Role="body_gallery" EntitySet="body_gallerySet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imie" Type="String" Nullable="false" />
+          <Property Name="nazwisko" Type="String" Nullable="false" />
+          <NavigationProperty Name="dishes_gallery" Relationship="Model1.usersdishes_gallery" FromRole="users" ToRole="dishes_gallery" />
+          <NavigationProperty Name="body_gallery" Relationship="Model1.usersbody_gallery" FromRole="users" ToRole="body_gallery" />
+        </EntityType>
+        <EntityType Name="dishes_gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazwa" Type="String" Nullable="false" />
+          <Property Name="przepis" Type="String" Nullable="false" />
+          <Property Name="kcal" Type="Int32" Nullable="false" />
+          <Property Name="photo" Type="String" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Model1.usersdishes_gallery" FromRole="dishes_gallery" ToRole="users" />
+        </EntityType>
+        <EntityType Name="body_gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photo" Type="String" Nullable="false" />
+          <Property Name="weight" Type="String" Nullable="false" />
+          <Property Name="date" Type="String" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Model1.usersbody_gallery" FromRole="body_gallery" ToRole="users" />
+        </EntityType>
+        <Association Name="usersdishes_gallery">
+          <End Type="Model1.users" Role="users" Multiplicity="*" />
+          <End Type="Model1.dishes_gallery" Role="dishes_gallery" Multiplicity="*" />
+        </Association>
+        <Association Name="usersbody_gallery">
+          <End Type="Model1.users" Role="users" Multiplicity="*" />
+          <End Type="Model1.body_gallery" Role="body_gallery" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="usersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.users)">
+        <MappingFragment StoreEntitySet="usersSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dishes_gallerySet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.dishes_gallery)">
+        <MappingFragment StoreEntitySet="dishes_gallerySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+          <ScalarProperty Name="przepis" ColumnName="przepis" />
+          <ScalarProperty Name="kcal" ColumnName="kcal" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="body_gallerySet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.body_gallery)">
+        <MappingFragment StoreEntitySet="body_gallerySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="usersdishes_gallery" TypeName="Model1.usersdishes_gallery" StoreEntitySet="usersdishes_gallery">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
+      </EndProperty>
+      <EndProperty Name="dishes_gallery">
+        <ScalarProperty Name="Id" ColumnName="dishes_gallery_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usersbody_gallery" TypeName="Model1.usersbody_gallery" StoreEntitySet="usersSet">
+      <EndProperty Name="body_gallery">
+        <ScalarProperty Name="Id" ColumnName="body_gallery_Id" />
+      </EndProperty>
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

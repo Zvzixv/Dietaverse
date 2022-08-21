@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="usersSet" EntityType="Model1.users" />
+    <EntitySet Name="dishes_gallerySet" EntityType="Model1.dishes_gallery" />
+    <EntitySet Name="body_gallerySet" EntityType="Model1.body_gallery" />
+    <AssociationSet Name="usersdishes_gallery" Association="Model1.usersdishes_gallery">
+      <End Role="users" EntitySet="usersSet" />
+      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+    </AssociationSet>
+    <AssociationSet Name="usersbody_gallery" Association="Model1.usersbody_gallery">
+      <End Role="users" EntitySet="usersSet" />
+      <End Role="body_gallery" EntitySet="body_gallerySet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="imie" Type="String" Nullable="false" />
+    <Property Name="nazwisko" Type="String" Nullable="false" />
+    <NavigationProperty Name="dishes_gallery" Relationship="Model1.usersdishes_gallery" FromRole="users" ToRole="dishes_gallery" />
+    <NavigationProperty Name="body_gallery" Relationship="Model1.usersbody_gallery" FromRole="users" ToRole="body_gallery" />
+  </EntityType>
+  <EntityType Name="dishes_gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nazwa" Type="String" Nullable="false" />
+    <Property Name="przepis" Type="String" Nullable="false" />
+    <Property Name="kcal" Type="Int32" Nullable="false" />
+    <Property Name="photo" Type="String" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="Model1.usersdishes_gallery" FromRole="dishes_gallery" ToRole="users" />
+  </EntityType>
+  <EntityType Name="body_gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="photo" Type="String" Nullable="false" />
+    <Property Name="weight" Type="String" Nullable="false" />
+    <Property Name="date" Type="String" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="Model1.usersbody_gallery" FromRole="body_gallery" ToRole="users" />
+  </EntityType>
+  <Association Name="usersdishes_gallery">
+    <End Type="Model1.users" Role="users" Multiplicity="*" />
+    <End Type="Model1.dishes_gallery" Role="dishes_gallery" Multiplicity="*" />
+  </Association>
+  <Association Name="usersbody_gallery">
+    <End Type="Model1.users" Role="users" Multiplicity="*" />
+    <End Type="Model1.body_gallery" Role="body_gallery" Multiplicity="1" />
+  </Association>
+</Schema>
