@@ -9,7 +9,12 @@
     <EntitySet Name="usersSet" EntityType="Model1.Store.usersSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="dishes_gallerySet" EntityType="Model1.Store.dishes_gallerySet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="body_gallerySet" EntityType="Model1.Store.body_gallerySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="daily_summarySet" EntityType="Model1.Store.daily_summarySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="monthsSet" EntityType="Model1.Store.monthsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="smoothies_recipesSet" EntityType="Model1.Store.smoothies_recipesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="smoothies_ingrSet" EntityType="Model1.Store.smoothies_ingrSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="usersdishes_gallery" EntityType="Model1.Store.usersdishes_gallery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="smoothies_ingrsmoothies_recipes" EntityType="Model1.Store.smoothies_ingrsmoothies_recipes" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_usersdishes_gallery_users" Association="Model1.Store.FK_usersdishes_gallery_users">
       <End Role="users" EntitySet="usersSet" />
       <End Role="usersdishes_gallery" EntitySet="usersdishes_gallery" />
@@ -22,14 +27,30 @@
       <End Role="users" EntitySet="usersSet" />
       <End Role="body_gallery" EntitySet="body_gallerySet" />
     </AssociationSet>
+    <AssociationSet Name="daily_summaryusers" Association="Model1.Store.daily_summaryusers">
+      <End Role="daily_summary" EntitySet="daily_summarySet" />
+      <End Role="users" EntitySet="usersSet" />
+    </AssociationSet>
+    <AssociationSet Name="daily_summarymonths" Association="Model1.Store.daily_summarymonths">
+      <End Role="months" EntitySet="monthsSet" />
+      <End Role="daily_summary" EntitySet="daily_summarySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_smoothies_ingrsmoothies_recipes_smoothies_ingr" Association="Model1.Store.FK_smoothies_ingrsmoothies_recipes_smoothies_ingr">
+      <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
+      <End Role="smoothies_ingrsmoothies_recipes" EntitySet="smoothies_ingrsmoothies_recipes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_smoothies_ingrsmoothies_recipes_smoothies_recipes" Association="Model1.Store.FK_smoothies_ingrsmoothies_recipes_smoothies_recipes">
+      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
+      <End Role="smoothies_ingrsmoothies_recipes" EntitySet="smoothies_ingrsmoothies_recipes" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="usersSet">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="imie" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="nazwisko" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="surname" Type="nvarchar(max)" Nullable="false" />
     <Property Name="body_gallery_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="dishes_gallerySet">
@@ -37,8 +58,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nazwa" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="przepis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="recipe" Type="nvarchar(max)" Nullable="false" />
     <Property Name="kcal" Type="int" Nullable="false" />
     <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
@@ -51,6 +72,42 @@
     <Property Name="weight" Type="nvarchar(max)" Nullable="false" />
     <Property Name="date" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="daily_summarySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kcal_amount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="weight" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="notes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="users_Id" Type="int" Nullable="false" />
+    <Property Name="months_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="monthsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="daily_summary" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="smoothies_recipesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="smoothies_ingr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kcal" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="smoothies_ingrSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kcal" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="usersdishes_gallery">
     <Key>
       <PropertyRef Name="users_Id" />
@@ -58,6 +115,14 @@
     </Key>
     <Property Name="users_Id" Type="int" Nullable="false" />
     <Property Name="dishes_gallery_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="smoothies_ingrsmoothies_recipes">
+    <Key>
+      <PropertyRef Name="smoothies_ingr1_Id" />
+      <PropertyRef Name="smoothies_recipes_Id" />
+    </Key>
+    <Property Name="smoothies_ingr1_Id" Type="int" Nullable="false" />
+    <Property Name="smoothies_recipes_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="usersbody_gallery">
     <End Role="users" Type="Model1.Store.usersSet" Multiplicity="*" />
@@ -68,6 +133,30 @@
       </Principal>
       <Dependent Role="users">
         <PropertyRef Name="body_gallery_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="daily_summaryusers">
+    <End Role="daily_summary" Type="Model1.Store.daily_summarySet" Multiplicity="*" />
+    <End Role="users" Type="Model1.Store.usersSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="daily_summary">
+        <PropertyRef Name="users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="daily_summarymonths">
+    <End Role="months" Type="Model1.Store.monthsSet" Multiplicity="1" />
+    <End Role="daily_summary" Type="Model1.Store.daily_summarySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="months">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="daily_summary">
+        <PropertyRef Name="months_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -92,6 +181,30 @@
       </Principal>
       <Dependent Role="usersdishes_gallery">
         <PropertyRef Name="dishes_gallery_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_smoothies_ingrsmoothies_recipes_smoothies_ingr">
+    <End Role="smoothies_ingr" Type="Model1.Store.smoothies_ingrSet" Multiplicity="1" />
+    <End Role="smoothies_ingrsmoothies_recipes" Type="Model1.Store.smoothies_ingrsmoothies_recipes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smoothies_ingr">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="smoothies_ingrsmoothies_recipes">
+        <PropertyRef Name="smoothies_ingr1_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_smoothies_ingrsmoothies_recipes_smoothies_recipes">
+    <End Role="smoothies_ingrsmoothies_recipes" Type="Model1.Store.smoothies_ingrsmoothies_recipes" Multiplicity="*" />
+    <End Role="smoothies_recipes" Type="Model1.Store.smoothies_recipesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="smoothies_recipes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="smoothies_ingrsmoothies_recipes">
+        <PropertyRef Name="smoothies_recipes_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -229,8 +342,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model1.users)">
         <MappingFragment StoreEntitySet="usersSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="name" ColumnName="imie" />
-          <ScalarProperty Name="surname" ColumnName="nazwisko" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -238,8 +351,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model1.dishes_gallery)">
         <MappingFragment StoreEntitySet="dishes_gallerySet">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="name" ColumnName="nazwa" />
-          <ScalarProperty Name="recipe" ColumnName="przepis" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="recipe" ColumnName="recipe" />
           <ScalarProperty Name="kcal" ColumnName="kcal" />
           <ScalarProperty Name="photo" ColumnName="photo" />
         </MappingFragment>
@@ -252,6 +365,44 @@
           <ScalarProperty Name="photo" ColumnName="photo" />
           <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="daily_summarySet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.daily_summary)">
+        <MappingFragment StoreEntitySet="daily_summarySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="kcal_amount" ColumnName="kcal_amount" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monthsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.months)">
+        <MappingFragment StoreEntitySet="monthsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="daily_summary" ColumnName="daily_summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="smoothies_recipesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.smoothies_recipes)">
+        <MappingFragment StoreEntitySet="smoothies_recipesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="smoothies_ingr" ColumnName="smoothies_ingr" />
+          <ScalarProperty Name="kcal" ColumnName="kcal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="smoothies_ingrSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.smoothies_ingr)">
+        <MappingFragment StoreEntitySet="smoothies_ingrSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="kcal" ColumnName="kcal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -269,6 +420,30 @@
       </EndProperty>
       <EndProperty Name="users">
         <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="daily_summaryusers" TypeName="Model1.daily_summaryusers" StoreEntitySet="daily_summarySet">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
+      </EndProperty>
+      <EndProperty Name="daily_summary">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="daily_summarymonths" TypeName="Model1.daily_summarymonths" StoreEntitySet="daily_summarySet">
+      <EndProperty Name="months">
+        <ScalarProperty Name="Id" ColumnName="months_Id" />
+      </EndProperty>
+      <EndProperty Name="daily_summary">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="smoothies_ingrsmoothies_recipes" TypeName="Model1.smoothies_ingrsmoothies_recipes" StoreEntitySet="smoothies_ingrsmoothies_recipes">
+      <EndProperty Name="smoothies_ingr">
+        <ScalarProperty Name="Id" ColumnName="smoothies_ingr1_Id" />
+      </EndProperty>
+      <EndProperty Name="smoothies_recipes">
+        <ScalarProperty Name="Id" ColumnName="smoothies_recipes_Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

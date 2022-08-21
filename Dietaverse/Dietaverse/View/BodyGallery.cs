@@ -24,5 +24,13 @@ namespace Dietaverse.View
             gallery[0].Show();
             //gallery[0].pictureBox1.Click += new EventHandler((s, ee) => pictureBox1.Click(s, ee, i));
         }
+
+        private void adNewPhotoButton_Click(object sender, EventArgs e)
+        {
+            gallery.Add(new SmallPhoto() { TopLevel = false, TopMost = true });
+
+            galleryPanel.Controls.Add(gallery[gallery.Count]);
+            gallery[gallery.Count].Show();
+        }
     }
 }

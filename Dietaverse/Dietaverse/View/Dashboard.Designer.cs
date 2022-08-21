@@ -33,17 +33,19 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.changeweightButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.weightLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.addcalButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.kcalLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.caloriesTB = new System.Windows.Forms.RichTextBox();
+            this.weightTB = new System.Windows.Forms.RichTextBox();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -88,9 +90,10 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.weightTB);
+            this.panel4.Controls.Add(this.changeweightButton);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.weightLabel);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Location = new System.Drawing.Point(413, 40);
@@ -98,17 +101,18 @@
             this.panel4.Size = new System.Drawing.Size(287, 170);
             this.panel4.TabIndex = 7;
             // 
-            // button2
+            // changeweightButton
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.ForeColor = System.Drawing.Color.Coral;
-            this.button2.Location = new System.Drawing.Point(88, 117);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Change";
-            this.button2.UseVisualStyleBackColor = true;
+            this.changeweightButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changeweightButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.changeweightButton.ForeColor = System.Drawing.Color.Coral;
+            this.changeweightButton.Location = new System.Drawing.Point(146, 117);
+            this.changeweightButton.Name = "changeweightButton";
+            this.changeweightButton.Size = new System.Drawing.Size(75, 35);
+            this.changeweightButton.TabIndex = 3;
+            this.changeweightButton.Text = "Change";
+            this.changeweightButton.UseVisualStyleBackColor = true;
+            this.changeweightButton.Click += new System.EventHandler(this.changeweightButton_Click);
             // 
             // pictureBox3
             // 
@@ -120,16 +124,16 @@
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
-            // label6
+            // weightLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.Color.Coral;
-            this.label6.Location = new System.Drawing.Point(3, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 31);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "0 kg";
+            this.weightLabel.AutoSize = true;
+            this.weightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.weightLabel.ForeColor = System.Drawing.Color.Coral;
+            this.weightLabel.Location = new System.Drawing.Point(3, 43);
+            this.weightLabel.Name = "weightLabel";
+            this.weightLabel.Size = new System.Drawing.Size(69, 31);
+            this.weightLabel.TabIndex = 1;
+            this.weightLabel.Text = "0 kg";
             // 
             // label7
             // 
@@ -156,9 +160,10 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.caloriesTB);
+            this.panel3.Controls.Add(this.addcalButton);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.kcalLabel);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(33, 40);
@@ -166,17 +171,18 @@
             this.panel3.Size = new System.Drawing.Size(279, 170);
             this.panel3.TabIndex = 8;
             // 
-            // button1
+            // addcalButton
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.Coral;
-            this.button1.Location = new System.Drawing.Point(88, 117);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 35);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addcalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addcalButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addcalButton.ForeColor = System.Drawing.Color.Coral;
+            this.addcalButton.Location = new System.Drawing.Point(146, 117);
+            this.addcalButton.Name = "addcalButton";
+            this.addcalButton.Size = new System.Drawing.Size(75, 35);
+            this.addcalButton.TabIndex = 3;
+            this.addcalButton.Text = "Add";
+            this.addcalButton.UseVisualStyleBackColor = true;
+            this.addcalButton.Click += new System.EventHandler(this.addcalButton_Click);
             // 
             // pictureBox2
             // 
@@ -187,16 +193,16 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // label4
+            // kcalLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.Coral;
-            this.label4.Location = new System.Drawing.Point(3, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 31);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "0 kcal";
+            this.kcalLabel.AutoSize = true;
+            this.kcalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kcalLabel.ForeColor = System.Drawing.Color.Coral;
+            this.kcalLabel.Location = new System.Drawing.Point(3, 43);
+            this.kcalLabel.Name = "kcalLabel";
+            this.kcalLabel.Size = new System.Drawing.Size(91, 31);
+            this.kcalLabel.TabIndex = 1;
+            this.kcalLabel.Text = "0 kcal";
             // 
             // label5
             // 
@@ -219,6 +225,28 @@
             this.label3.Size = new System.Drawing.Size(41, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "today";
+            // 
+            // caloriesTB
+            // 
+            this.caloriesTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.caloriesTB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.caloriesTB.ForeColor = System.Drawing.Color.Coral;
+            this.caloriesTB.Location = new System.Drawing.Point(52, 117);
+            this.caloriesTB.Name = "caloriesTB";
+            this.caloriesTB.Size = new System.Drawing.Size(73, 35);
+            this.caloriesTB.TabIndex = 4;
+            this.caloriesTB.Text = "";
+            // 
+            // weightTB
+            // 
+            this.weightTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.weightTB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.weightTB.ForeColor = System.Drawing.Color.Coral;
+            this.weightTB.Location = new System.Drawing.Point(56, 117);
+            this.weightTB.Name = "weightTB";
+            this.weightTB.Size = new System.Drawing.Size(73, 35);
+            this.weightTB.TabIndex = 4;
+            this.weightTB.Text = "";
             // 
             // Dashboard
             // 
@@ -252,16 +280,18 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button changeweightButton;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label weightLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button addcalButton;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label kcalLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox caloriesTB;
+        private System.Windows.Forms.RichTextBox weightTB;
     }
 }

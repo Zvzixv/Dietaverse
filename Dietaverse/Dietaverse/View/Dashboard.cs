@@ -13,9 +13,13 @@ namespace Dietaverse.View
     public partial class Dashboard : Form
     {
         bool hasBeenClicked = false;
+        int calories = 10;
+        int weight = 0;
         public Dashboard()
         {
             InitializeComponent();
+            kcalLabel.Text =calories.ToString()+" kcal";
+            weightLabel.Text =weight.ToString()+" kg";
         }
 
         private void richTextBox1_Validated(object sender, EventArgs e)
@@ -36,6 +40,39 @@ namespace Dietaverse.View
                 hasBeenClicked=false;
                 richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
             }
+        }
+
+        private void addcalButton_Click(object sender, EventArgs e)
+        {
+            int tempcal = 0;
+            if (Int32.TryParse(caloriesTB.Text, out tempcal))
+            {
+                calories += tempcal;
+                kcalLabel.Text = calories.ToString()+" kcal";
+            }
+            else
+            {
+                string message = "It is not a proper amount of calories.";
+                MessageBox.Show(this, message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            if(calories > 4000)
+            {
+                //zmienic kolor na czerwony
+            }
+
+            caloriesTB.Text = "";
+           
+        }
+
+        private void changeweightButton_Click(object sender, EventArgs e)
+        {
+            if(Int32.TryParse(weightTB.Text, out weight))
+            {
+                weightLabel.Text = weight.ToString()+" kg";
+            }
+
+            weightTB.Text = "";
         }
     }
 }

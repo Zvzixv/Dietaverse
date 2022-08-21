@@ -12,24 +12,41 @@
       <End Role="users" EntitySet="usersSet" />
       <End Role="body_gallery" EntitySet="body_gallerySet" />
     </AssociationSet>
+    <EntitySet Name="daily_summarySet" EntityType="Model1.daily_summary" />
+    <EntitySet Name="monthsSet" EntityType="Model1.months" />
+    <EntitySet Name="smoothies_recipesSet" EntityType="Model1.smoothies_recipes" />
+    <EntitySet Name="smoothies_ingrSet" EntityType="Model1.smoothies_ingr" />
+    <AssociationSet Name="daily_summaryusers" Association="Model1.daily_summaryusers">
+      <End Role="daily_summary" EntitySet="daily_summarySet" />
+      <End Role="users" EntitySet="usersSet" />
+    </AssociationSet>
+    <AssociationSet Name="daily_summarymonths" Association="Model1.daily_summarymonths">
+      <End Role="months" EntitySet="monthsSet" />
+      <End Role="daily_summary" EntitySet="daily_summarySet" />
+    </AssociationSet>
+    <AssociationSet Name="smoothies_ingrsmoothies_recipes" Association="Model1.smoothies_ingrsmoothies_recipes">
+      <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
+      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="users">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="imie" Type="String" Nullable="false" />
-    <Property Name="nazwisko" Type="String" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" />
+    <Property Name="surname" Type="String" Nullable="false" />
     <NavigationProperty Name="dishes_gallery" Relationship="Model1.usersdishes_gallery" FromRole="users" ToRole="dishes_gallery" />
     <NavigationProperty Name="body_gallery" Relationship="Model1.usersbody_gallery" FromRole="users" ToRole="body_gallery" />
+    <NavigationProperty Name="daily_summary" Relationship="Model1.daily_summaryusers" FromRole="users" ToRole="daily_summary" />
   </EntityType>
   <EntityType Name="dishes_gallery">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nazwa" Type="String" Nullable="false" />
-    <Property Name="przepis" Type="String" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" />
+    <Property Name="recipe" Type="String" Nullable="false" />
     <Property Name="kcal" Type="Int32" Nullable="false" />
     <Property Name="photo" Type="String" Nullable="false" />
     <NavigationProperty Name="users" Relationship="Model1.usersdishes_gallery" FromRole="dishes_gallery" ToRole="users" />
@@ -51,5 +68,56 @@
   <Association Name="usersbody_gallery">
     <End Type="Model1.users" Role="users" Multiplicity="*" />
     <End Type="Model1.body_gallery" Role="body_gallery" Multiplicity="1" />
+  </Association>
+  <EntityType Name="daily_summary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kcal_amount" Type="String" Nullable="false" />
+    <Property Name="weight" Type="String" Nullable="false" />
+    <Property Name="notes" Type="String" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="Model1.daily_summaryusers" FromRole="daily_summary" ToRole="users" />
+    <NavigationProperty Name="months" Relationship="Model1.daily_summarymonths" FromRole="daily_summary" ToRole="months" />
+  </EntityType>
+  <EntityType Name="months">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="daily_summary" Type="String" Nullable="false" />
+    <NavigationProperty Name="daily_summary1" Relationship="Model1.daily_summarymonths" FromRole="months" ToRole="daily_summary" />
+  </EntityType>
+  <EntityType Name="smoothies_recipes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" />
+    <Property Name="photo" Type="String" Nullable="false" />
+    <Property Name="smoothies_ingr" Type="String" Nullable="false" />
+    <Property Name="kcal" Type="String" Nullable="false" />
+    <NavigationProperty Name="smoothies_ingr1" Relationship="Model1.smoothies_ingrsmoothies_recipes" FromRole="smoothies_recipes" ToRole="smoothies_ingr" />
+  </EntityType>
+  <EntityType Name="smoothies_ingr">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" />
+    <Property Name="kcal" Type="String" Nullable="false" />
+    <NavigationProperty Name="smoothies_recipes" Relationship="Model1.smoothies_ingrsmoothies_recipes" FromRole="smoothies_ingr" ToRole="smoothies_recipes" />
+  </EntityType>
+  <Association Name="daily_summaryusers">
+    <End Type="Model1.daily_summary" Role="daily_summary" Multiplicity="*" />
+    <End Type="Model1.users" Role="users" Multiplicity="1" />
+  </Association>
+  <Association Name="daily_summarymonths">
+    <End Type="Model1.months" Role="months" Multiplicity="1" />
+    <End Type="Model1.daily_summary" Role="daily_summary" Multiplicity="*" />
+  </Association>
+  <Association Name="smoothies_ingrsmoothies_recipes">
+    <End Type="Model1.smoothies_ingr" Role="smoothies_ingr" Multiplicity="*" />
+    <End Type="Model1.smoothies_recipes" Role="smoothies_recipes" Multiplicity="*" />
   </Association>
 </Schema>

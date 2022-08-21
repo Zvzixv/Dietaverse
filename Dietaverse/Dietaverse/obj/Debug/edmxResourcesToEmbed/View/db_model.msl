@@ -5,8 +5,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model1.users)">
         <MappingFragment StoreEntitySet="usersSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="imie" ColumnName="imie" />
-          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -14,8 +14,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model1.dishes_gallery)">
         <MappingFragment StoreEntitySet="dishes_gallerySet">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
-          <ScalarProperty Name="przepis" ColumnName="przepis" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="recipe" ColumnName="recipe" />
           <ScalarProperty Name="kcal" ColumnName="kcal" />
           <ScalarProperty Name="photo" ColumnName="photo" />
         </MappingFragment>
@@ -28,6 +28,44 @@
           <ScalarProperty Name="photo" ColumnName="photo" />
           <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="daily_summarySet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.daily_summary)">
+        <MappingFragment StoreEntitySet="daily_summarySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="kcal_amount" ColumnName="kcal_amount" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monthsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.months)">
+        <MappingFragment StoreEntitySet="monthsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="daily_summary" ColumnName="daily_summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="smoothies_recipesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.smoothies_recipes)">
+        <MappingFragment StoreEntitySet="smoothies_recipesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="smoothies_ingr" ColumnName="smoothies_ingr" />
+          <ScalarProperty Name="kcal" ColumnName="kcal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="smoothies_ingrSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.smoothies_ingr)">
+        <MappingFragment StoreEntitySet="smoothies_ingrSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="kcal" ColumnName="kcal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -45,6 +83,30 @@
       </EndProperty>
       <EndProperty Name="users">
         <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="daily_summaryusers" TypeName="Model1.daily_summaryusers" StoreEntitySet="daily_summarySet">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
+      </EndProperty>
+      <EndProperty Name="daily_summary">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="daily_summarymonths" TypeName="Model1.daily_summarymonths" StoreEntitySet="daily_summarySet">
+      <EndProperty Name="months">
+        <ScalarProperty Name="Id" ColumnName="months_Id" />
+      </EndProperty>
+      <EndProperty Name="daily_summary">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="smoothies_ingrsmoothies_recipes" TypeName="Model1.smoothies_ingrsmoothies_recipes" StoreEntitySet="smoothies_ingrsmoothies_recipes">
+      <EndProperty Name="smoothies_ingr">
+        <ScalarProperty Name="Id" ColumnName="smoothies_ingr1_Id" />
+      </EndProperty>
+      <EndProperty Name="smoothies_recipes">
+        <ScalarProperty Name="Id" ColumnName="smoothies_recipes_Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

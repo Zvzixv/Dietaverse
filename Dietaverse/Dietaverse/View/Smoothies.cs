@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dietaverse.View;
 
 namespace Dietaverse.View
 {
@@ -15,6 +16,15 @@ namespace Dietaverse.View
         public Smoothies()
         {
             InitializeComponent();
+        }
+
+        private smoothies_recipes algorithm()
+        {
+            smoothies_recipes result = new smoothies_recipes();
+            int confidence = 0;
+
+
+            return result;
         }
     }
 }
