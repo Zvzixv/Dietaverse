@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.passtextBox = new System.Windows.Forms.TextBox();
+            this.logintextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
@@ -48,20 +48,20 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Login yourself";
             // 
-            // textBox4
+            // passtextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(471, 283);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.passtextBox.Location = new System.Drawing.Point(471, 283);
+            this.passtextBox.Name = "passtextBox";
+            this.passtextBox.Size = new System.Drawing.Size(100, 20);
+            this.passtextBox.TabIndex = 6;
+            this.passtextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox3
+            // logintextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(471, 253);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.logintextBox.Location = new System.Drawing.Point(471, 253);
+            this.logintextBox.Name = "logintextBox";
+            this.logintextBox.Size = new System.Drawing.Size(100, 20);
+            this.logintextBox.TabIndex = 7;
             // 
             // label5
             // 
@@ -119,8 +119,8 @@
             this.ClientSize = new System.Drawing.Size(935, 538);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.passtextBox);
+            this.Controls.Add(this.logintextBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -136,8 +136,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox passtextBox;
+        private System.Windows.Forms.TextBox logintextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button loginButton;

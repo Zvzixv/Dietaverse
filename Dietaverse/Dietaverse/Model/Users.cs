@@ -19,6 +19,16 @@ namespace Dietaverse.Model
         public string password { get; set; }
         public double weight { get; set; }
 
+        public Users()
+        {
+        }
+
+        public Users(string n, string p, double w)
+        {
+            name = n;
+            password = p;
+            weight = w;
+        }
 
         public void CreateAccount(string _username, double _weight, string _password, string _kcal_amount, string _notes)
         {
@@ -39,6 +49,34 @@ namespace Dietaverse.Model
                 
                 db.usersSet.Add(newuser);
                 db.SaveChanges();
+            }
+        }
+
+        public Users Login(string _name, string _password)
+        {
+            using (var db = new db_modelContainer())
+            {
+                var x = db.usersSet;
+                foreach (var s in x)
+                {
+                    if (s.name == _name && s.password == _password)
+                    {
+                        Users user = new Users(s.name, s.password, s.weight);
+                        return user;
+                    }
+                }
+                return null;
+            }
+        }
+
+        public bool ChangePassword(string login, string newpassword)
+        {
+            using (var db = new db_modelContainer())
+            {
+                users u = db.usersSet.Single(a => a.name == login);
+                u.password = newpassword;
+                db.SaveChanges();
+                return true;
             }
         }
 
