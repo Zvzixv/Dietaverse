@@ -9,7 +9,7 @@
     <EntitySet Name="smoothies_ingrSet" EntityType="db_model.Store.smoothies_ingrSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="users_dishes_gallerySet" EntityType="db_model.Store.users_dishes_gallerySet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="body_gallerySet" EntityType="db_model.Store.body_gallerySet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="smoothies_ingrsmoothies_recipes" EntityType="db_model.Store.smoothies_ingrsmoothies_recipes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="recipes_ingredientSet" EntityType="db_model.Store.recipes_ingredientSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="daily_summaryusers" Association="db_model.Store.daily_summaryusers">
       <End Role="daily_summary" EntitySet="daily_summarySet" />
       <End Role="users" EntitySet="usersSet" />
@@ -17,14 +17,6 @@
     <AssociationSet Name="daily_summarymonths" Association="db_model.Store.daily_summarymonths">
       <End Role="months" EntitySet="monthsSet" />
       <End Role="daily_summary" EntitySet="daily_summarySet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_smoothies_ingrsmoothies_recipes_smoothies_ingr" Association="db_model.Store.FK_smoothies_ingrsmoothies_recipes_smoothies_ingr">
-      <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
-      <End Role="smoothies_ingrsmoothies_recipes" EntitySet="smoothies_ingrsmoothies_recipes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_smoothies_ingrsmoothies_recipes_smoothies_recipes" Association="db_model.Store.FK_smoothies_ingrsmoothies_recipes_smoothies_recipes">
-      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
-      <End Role="smoothies_ingrsmoothies_recipes" EntitySet="smoothies_ingrsmoothies_recipes" />
     </AssociationSet>
     <AssociationSet Name="usersusers_dishes_gallery" Association="db_model.Store.usersusers_dishes_gallery">
       <End Role="users" EntitySet="usersSet" />
@@ -37,6 +29,14 @@
     <AssociationSet Name="usersbody_gallery" Association="db_model.Store.usersbody_gallery">
       <End Role="users" EntitySet="usersSet" />
       <End Role="body_gallery" EntitySet="body_gallerySet" />
+    </AssociationSet>
+    <AssociationSet Name="smoothies_recipesrecipes_ingredient" Association="db_model.Store.smoothies_recipesrecipes_ingredient">
+      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
+      <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
+    </AssociationSet>
+    <AssociationSet Name="smoothies_ingrrecipes_ingredient" Association="db_model.Store.smoothies_ingrrecipes_ingredient">
+      <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
+      <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="usersSet">
@@ -112,13 +112,13 @@
     <Property Name="date" Type="datetime" Nullable="false" />
     <Property Name="users_Id" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="smoothies_ingrsmoothies_recipes">
+  <EntityType Name="recipes_ingredientSet">
     <Key>
-      <PropertyRef Name="smoothies_ingr1_Id" />
-      <PropertyRef Name="smoothies_recipes_Id" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="smoothies_ingr1_Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="smoothies_recipes_Id" Type="int" Nullable="false" />
+    <Property Name="smoothies_ingr_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="daily_summaryusers">
     <End Role="daily_summary" Type="db_model.Store.daily_summarySet" Multiplicity="*" />
@@ -180,27 +180,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_smoothies_ingrsmoothies_recipes_smoothies_ingr">
-    <End Role="smoothies_ingr" Type="db_model.Store.smoothies_ingrSet" Multiplicity="1" />
-    <End Role="smoothies_ingrsmoothies_recipes" Type="db_model.Store.smoothies_ingrsmoothies_recipes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="smoothies_ingr">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="smoothies_ingrsmoothies_recipes">
-        <PropertyRef Name="smoothies_ingr1_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_smoothies_ingrsmoothies_recipes_smoothies_recipes">
-    <End Role="smoothies_ingrsmoothies_recipes" Type="db_model.Store.smoothies_ingrsmoothies_recipes" Multiplicity="*" />
+  <Association Name="smoothies_recipesrecipes_ingredient">
     <End Role="smoothies_recipes" Type="db_model.Store.smoothies_recipesSet" Multiplicity="1" />
+    <End Role="recipes_ingredient" Type="db_model.Store.recipes_ingredientSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="smoothies_recipes">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="smoothies_ingrsmoothies_recipes">
+      <Dependent Role="recipes_ingredient">
         <PropertyRef Name="smoothies_recipes_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="smoothies_ingrrecipes_ingredient">
+    <End Role="smoothies_ingr" Type="db_model.Store.smoothies_ingrSet" Multiplicity="1" />
+    <End Role="recipes_ingredient" Type="db_model.Store.recipes_ingredientSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smoothies_ingr">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="recipes_ingredient">
+        <PropertyRef Name="smoothies_ingr_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

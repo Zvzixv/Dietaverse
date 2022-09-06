@@ -17,7 +17,7 @@ namespace Dietaverse.View
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public smoothies_ingr()
         {
-            this.smoothies_recipes = new HashSet<smoothies_recipes>();
+            this.recipes_ingredient = new HashSet<recipes_ingredient>();
         }
     
         public int Id { get; set; }
@@ -25,6 +25,6 @@ namespace Dietaverse.View
         public string kcal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<smoothies_recipes> smoothies_recipes { get; set; }
+        public virtual ICollection<recipes_ingredient> recipes_ingredient { get; set; }
     }
 }

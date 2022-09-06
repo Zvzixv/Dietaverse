@@ -129,6 +129,9 @@
     <Compile Include="View\MonthSummary.Designer.cs">
       <DependentUpon>MonthSummary.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\recipes_ingredient.cs">
+      <DependentUpon>db_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Register.cs">
       <SubType>Form</SubType>
     </Compile>
