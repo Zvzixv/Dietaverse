@@ -12,13 +12,11 @@ namespace Dietaverse.View
     using System;
     using System.Collections.Generic;
     
-    public partial class body_gallery
+    public partial class users_dishes_gallery
     {
         public int Id { get; set; }
-        public string photo { get; set; }
-        public double weight { get; set; }
-        public System.DateTime date { get; set; }
     
         public virtual users users { get; set; }
+        public virtual dishes_gallery dishes_gallery { get; set; }
     }
 }

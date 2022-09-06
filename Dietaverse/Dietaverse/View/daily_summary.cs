@@ -16,7 +16,7 @@ namespace Dietaverse.View
     {
         public int Id { get; set; }
         public string kcal_amount { get; set; }
-        public string weight { get; set; }
+        public Nullable<double> weight { get; set; }
         public string notes { get; set; }
     
         public virtual users users { get; set; }

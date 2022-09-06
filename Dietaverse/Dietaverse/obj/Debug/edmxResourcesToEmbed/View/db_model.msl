@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+  <EntityContainerMapping StorageEntityContainer="db_modelStoreContainer" CdmEntityContainer="db_modelContainer">
     <EntitySetMapping Name="usersSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.users)">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.users)">
         <MappingFragment StoreEntitySet="usersSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="dishes_gallerySet">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.dishes_gallery)">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.dishes_gallery)">
         <MappingFragment StoreEntitySet="dishes_gallerySet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -21,18 +22,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="body_gallerySet">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.body_gallery)">
-        <MappingFragment StoreEntitySet="body_gallerySet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="photo" ColumnName="photo" />
-          <ScalarProperty Name="weight" ColumnName="weight" />
-          <ScalarProperty Name="date" ColumnName="date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="daily_summarySet">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.daily_summary)">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.daily_summary)">
         <MappingFragment StoreEntitySet="daily_summarySet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="kcal_amount" ColumnName="kcal_amount" />
@@ -42,7 +33,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="monthsSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.months)">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.months)">
         <MappingFragment StoreEntitySet="monthsSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="daily_summary" ColumnName="daily_summary" />
@@ -50,7 +41,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="smoothies_recipesSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.smoothies_recipes)">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.smoothies_recipes)">
         <MappingFragment StoreEntitySet="smoothies_recipesSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -61,7 +52,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="smoothies_ingrSet">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.smoothies_ingr)">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.smoothies_ingr)">
         <MappingFragment StoreEntitySet="smoothies_ingrSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -69,23 +60,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="usersdishes_gallery" TypeName="Model1.usersdishes_gallery" StoreEntitySet="usersdishes_gallery">
-      <EndProperty Name="users">
-        <ScalarProperty Name="Id" ColumnName="users_Id" />
-      </EndProperty>
-      <EndProperty Name="dishes_gallery">
-        <ScalarProperty Name="Id" ColumnName="dishes_gallery_Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="usersbody_gallery" TypeName="Model1.usersbody_gallery" StoreEntitySet="usersSet">
-      <EndProperty Name="body_gallery">
-        <ScalarProperty Name="Id" ColumnName="body_gallery_Id" />
-      </EndProperty>
-      <EndProperty Name="users">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="daily_summaryusers" TypeName="Model1.daily_summaryusers" StoreEntitySet="daily_summarySet">
+    <EntitySetMapping Name="users_dishes_gallerySet">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.users_dishes_gallery)">
+        <MappingFragment StoreEntitySet="users_dishes_gallerySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="body_gallerySet">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.body_gallery)">
+        <MappingFragment StoreEntitySet="body_gallerySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="daily_summaryusers" TypeName="db_model.daily_summaryusers" StoreEntitySet="daily_summarySet">
       <EndProperty Name="users">
         <ScalarProperty Name="Id" ColumnName="users_Id" />
       </EndProperty>
@@ -93,7 +85,7 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="daily_summarymonths" TypeName="Model1.daily_summarymonths" StoreEntitySet="daily_summarySet">
+    <AssociationSetMapping Name="daily_summarymonths" TypeName="db_model.daily_summarymonths" StoreEntitySet="daily_summarySet">
       <EndProperty Name="months">
         <ScalarProperty Name="Id" ColumnName="months_Id" />
       </EndProperty>
@@ -101,12 +93,36 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="smoothies_ingrsmoothies_recipes" TypeName="Model1.smoothies_ingrsmoothies_recipes" StoreEntitySet="smoothies_ingrsmoothies_recipes">
+    <AssociationSetMapping Name="smoothies_ingrsmoothies_recipes" TypeName="db_model.smoothies_ingrsmoothies_recipes" StoreEntitySet="smoothies_ingrsmoothies_recipes">
       <EndProperty Name="smoothies_ingr">
         <ScalarProperty Name="Id" ColumnName="smoothies_ingr1_Id" />
       </EndProperty>
       <EndProperty Name="smoothies_recipes">
         <ScalarProperty Name="Id" ColumnName="smoothies_recipes_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usersusers_dishes_gallery" TypeName="db_model.usersusers_dishes_gallery" StoreEntitySet="users_dishes_gallerySet">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
+      </EndProperty>
+      <EndProperty Name="users_dishes_gallery">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="dishes_galleryusers_dishes_gallery" TypeName="db_model.dishes_galleryusers_dishes_gallery" StoreEntitySet="users_dishes_gallerySet">
+      <EndProperty Name="dishes_gallery">
+        <ScalarProperty Name="Id" ColumnName="dishes_gallery_Id" />
+      </EndProperty>
+      <EndProperty Name="users_dishes_gallery">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usersbody_gallery" TypeName="db_model.usersbody_gallery" StoreEntitySet="body_gallerySet">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
+      </EndProperty>
+      <EndProperty Name="body_gallery">
+        <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

@@ -17,7 +17,7 @@ namespace Dietaverse.View
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public dishes_gallery()
         {
-            this.users = new HashSet<users>();
+            this.users_dishes_gallery = new HashSet<users_dishes_gallery>();
         }
     
         public int Id { get; set; }
@@ -27,6 +27,6 @@ namespace Dietaverse.View
         public string photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<users> users { get; set; }
+        public virtual ICollection<users_dishes_gallery> users_dishes_gallery { get; set; }
     }
 }
