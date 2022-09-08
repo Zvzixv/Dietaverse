@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/06/2022 18:33:45
+-- Date Created: 09/08/2022 13:19:22
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\View\db_model.edmx
 -- --------------------------------------------------
 
@@ -32,6 +32,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_usersbody_gallery]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_usersbody_gallery];
 GO
+IF OBJECT_ID(N'[dbo].[FK_smoothies_recipesrecipes_ingredient]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[recipes_ingredientSet] DROP CONSTRAINT [FK_smoothies_recipesrecipes_ingredient];
+GO
+IF OBJECT_ID(N'[dbo].[FK_smoothies_ingrrecipes_ingredient]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[recipes_ingredientSet] DROP CONSTRAINT [FK_smoothies_ingrrecipes_ingredient];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -60,6 +66,9 @@ IF OBJECT_ID(N'[dbo].[users_dishes_gallerySet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[body_gallerySet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[body_gallerySet];
+GO
+IF OBJECT_ID(N'[dbo].[recipes_ingredientSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[recipes_ingredientSet];
 GO
 
 -- --------------------------------------------------
@@ -135,6 +144,7 @@ CREATE TABLE [dbo].[body_gallerySet] (
     [photo] nvarchar(max)  NOT NULL,
     [weight] float  NOT NULL,
     [date] datetime  NOT NULL,
+    [note] nvarchar(max)  NULL,
     [users_Id] int  NOT NULL
 );
 GO

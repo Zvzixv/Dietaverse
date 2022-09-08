@@ -18,6 +18,7 @@ namespace Dietaverse.View
         public string photo { get; set; }
         public double weight { get; set; }
         public System.DateTime date { get; set; }
+        public string note { get; set; }
     
         public virtual users users { get; set; }
     }

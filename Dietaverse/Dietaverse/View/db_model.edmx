@@ -115,6 +115,7 @@
     <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="weight" Type="float" Nullable="false" />
     <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="note" Type="nvarchar(max)" Nullable="true" />
     <Property Name="users_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="recipes_ingredientSet">
@@ -347,6 +348,7 @@
           <Property Name="weight" Type="Double" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="users" Relationship="db_model.usersbody_gallery" FromRole="body_gallery" ToRole="users" />
+          <Property Name="note" Type="String" Nullable="true" />
         </EntityType>
         <Association Name="usersbody_gallery">
           <End Type="db_model.users" Role="users" Multiplicity="1" />
@@ -447,6 +449,7 @@
           <ScalarProperty Name="photo" ColumnName="photo" />
           <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="note" ColumnName="note" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

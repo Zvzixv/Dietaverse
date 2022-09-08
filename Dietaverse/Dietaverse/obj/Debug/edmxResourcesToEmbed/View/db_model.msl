@@ -74,6 +74,7 @@
           <ScalarProperty Name="photo" ColumnName="photo" />
           <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="note" ColumnName="note" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

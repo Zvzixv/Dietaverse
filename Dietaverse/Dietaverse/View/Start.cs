@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Dietaverse.View;
+using Dietaverse.Model;
 
 namespace Dietaverse
 {
@@ -16,13 +17,14 @@ namespace Dietaverse
     {
         mainForm mainform;
         Form af;
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        users user;
 
-        
-       
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidrhElipse, int nHeightEllipse);
-        public Form1(mainForm mf)
+        public Form1(mainForm mf, users _user)
         {
+            user = _user;
             InitializeComponent();
             mainform = mf;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
@@ -66,7 +68,7 @@ namespace Dietaverse
 
             lblTitle.Text = "Body gallery";
             this.PnlFormLoader.Controls.Clear();
-            BodyGallery bodygalleryform = new BodyGallery() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            BodyGallery bodygalleryform = new BodyGallery(this, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.changeForm(bodygalleryform);
         }
 

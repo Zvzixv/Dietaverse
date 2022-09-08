@@ -283,7 +283,7 @@
         private System.Windows.Forms.Panel PnlNav;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Panel PnlFormLoader;
+        public System.Windows.Forms.Panel PnlFormLoader;
     }
 }
 

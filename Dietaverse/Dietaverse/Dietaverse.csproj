@@ -56,10 +56,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Model\Body_gallery.cs" />
     <Compile Include="Model\Daily_summary.cs" />
     <Compile Include="Model\Dishes_gallery.cs" />
+    <Compile Include="Model\GUI.cs" />
     <Compile Include="Model\Users.cs" />
     <Compile Include="Model\Users_dishes_gallery.cs" />
+    <Compile Include="View\AddNewBodyPhoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddNewBodyPhoto.Designer.cs">
+      <DependentUpon>AddNewBodyPhoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\BodyGallery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +193,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AddNewBodyPhoto.resx">
+      <DependentUpon>AddNewBodyPhoto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\BodyGallery.resx">
       <DependentUpon>BodyGallery.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +254,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\przeksztalcenia.png" />
     <Content Include="View\db_model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>db_model.Context.cs</LastGenOutput>

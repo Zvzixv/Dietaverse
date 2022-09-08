@@ -110,6 +110,7 @@
     <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="weight" Type="float" Nullable="false" />
     <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="note" Type="nvarchar(max)" Nullable="true" />
     <Property Name="users_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="recipes_ingredientSet">

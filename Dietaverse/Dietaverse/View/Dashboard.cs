@@ -13,8 +13,8 @@ namespace Dietaverse.View
     public partial class Dashboard : Form
     {
         bool hasBeenClicked = false;
-        int calories = 10;
-        int weight = 0;
+        public static int calories = 10;
+        public static int weight = 0;
         public Dashboard()
         {
             InitializeComponent();

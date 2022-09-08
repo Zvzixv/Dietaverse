@@ -15,6 +15,7 @@ namespace Dietaverse.View
     public partial class Login : Form
     {
         mainForm mainform;
+        users ub = new users();
         Users u = new Users();
         public Login(mainForm mf)
         {
@@ -24,10 +25,10 @@ namespace Dietaverse.View
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Users user = u.Login(logintextBox.Text, passtextBox.Text);
+            users user = u.Login(logintextBox.Text, passtextBox.Text);
             if (user!=null )
             {
-                Form1 startform = new Form1(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+                Form1 startform = new Form1(mainform, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
                 mainform.changeForm(startform);
             }
         }

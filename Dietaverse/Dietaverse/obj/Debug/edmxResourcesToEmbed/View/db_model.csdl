@@ -134,6 +134,7 @@
     <Property Name="weight" Type="Double" Nullable="false" />
     <Property Name="date" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="users" Relationship="db_model.usersbody_gallery" FromRole="body_gallery" ToRole="users" />
+    <Property Name="note" Type="String" Nullable="true" />
   </EntityType>
   <Association Name="usersbody_gallery">
     <End Type="db_model.users" Role="users" Multiplicity="1" />

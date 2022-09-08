@@ -52,7 +52,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public Users Login(string _name, string _password)
+        public users Login(string _name, string _password)
         {
             using (var db = new db_modelContainer())
             {
@@ -62,7 +62,7 @@ namespace Dietaverse.Model
                     if (s.name == _name && s.password == _password)
                     {
                         Users user = new Users(s.name, s.password, s.weight);
-                        return user;
+                        return s;
                     }
                 }
                 return null;
