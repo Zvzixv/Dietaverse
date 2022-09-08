@@ -175,7 +175,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="usersbody_gallery">
-    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1" />
+    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="body_gallery" Type="db_model.Store.body_gallerySet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
@@ -351,7 +353,9 @@
           <Property Name="note" Type="String" Nullable="true" />
         </EntityType>
         <Association Name="usersbody_gallery">
-          <End Type="db_model.users" Role="users" Multiplicity="1" />
+          <End Type="db_model.users" Role="users" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="db_model.body_gallery" Role="body_gallery" Multiplicity="*" />
         </Association>
         <EntityType Name="recipes_ingredient">

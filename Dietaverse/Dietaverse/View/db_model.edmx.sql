@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/08/2022 13:19:22
+-- Date Created: 09/08/2022 18:26:55
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\View\db_model.edmx
 -- --------------------------------------------------
 
@@ -285,7 +285,7 @@ ADD CONSTRAINT [FK_usersbody_gallery]
     FOREIGN KEY ([users_Id])
     REFERENCES [dbo].[usersSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_usersbody_gallery'
