@@ -31,7 +31,6 @@ namespace Dietaverse.View
             string filepath = filepathtemp.ToString() + @"\Resources\";
             Image photoImage = Image.FromFile(filepath + bg.photo);
 
-            pictureBox1 = new PictureBox();
             pictureBox1.Image = g.ResizeImage(photoImage, pictureBox1.Width, pictureBox1.Height);
             description.Text =  bg.date.ToString();
             note = bg.note;

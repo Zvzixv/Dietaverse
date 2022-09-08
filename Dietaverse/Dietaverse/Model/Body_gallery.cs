@@ -16,7 +16,7 @@ namespace Dietaverse.Model
 
         public virtual users users { get; set; }
 
-        public List<body_gallery> listOfPhotos()
+        public List<body_gallery> listOfPhotos(users presentuser)
         {
             using (var db = new db_modelContainer())
             {
@@ -24,7 +24,8 @@ namespace Dietaverse.Model
                 var list = new List<body_gallery>();
                 foreach(var i in photos)
                 {
-                    list.Add(i);
+                    if(i.users.Id==presentuser.Id)
+                        list.Add(i);
                 }
                 return list;
             }

@@ -24,40 +24,20 @@ namespace Dietaverse.View
             InitializeComponent();
             start = upper;
             user = _user;
-            //List<body_gallery> bgs = bg.listOfPhotos();
-
-            //foreach (body_gallery p in bgs)
-            //{
-            //    SmallPhoto part = new SmallPhoto(p);
-            //    gallery.Add(part);
-            //}
-
-            //foreach (var i in gallery)
-            //{
-            //    gallery.Add(new SmallPhoto() { TopLevel = false, TopMost = true });
-            //    galleryPanel.Controls.Add(i);
-            //    i.Show();
-            //}
-            refresh();
-        }
-
-        private void refresh ()
-        {
-            List<body_gallery> bgs = bg.listOfPhotos();
+            List<body_gallery> bgs = bg.listOfPhotos(user);
 
             foreach (body_gallery p in bgs)
             {
-                //SmallPhoto part = new SmallPhoto(p);
                 gallery.Add(new SmallPhoto(p) { TopLevel = false, TopMost = true });
             }
 
             foreach (var i in gallery)
             {
-                //gallery.Add(new SmallPhoto() { TopLevel = false, TopMost = true });
                 galleryPanel.Controls.Add(i);
                 i.Show();
             }
         }
+
 
         private void adNewPhotoButton_Click(object sender, EventArgs e)
         {
