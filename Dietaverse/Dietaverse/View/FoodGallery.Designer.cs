@@ -56,6 +56,7 @@
             this.adNewPhotoButton.TabIndex = 12;
             this.adNewPhotoButton.Text = "Add new";
             this.adNewPhotoButton.UseVisualStyleBackColor = true;
+            this.adNewPhotoButton.Click += new System.EventHandler(this.adNewPhotoButton_Click);
             // 
             // galleryPanel
             // 

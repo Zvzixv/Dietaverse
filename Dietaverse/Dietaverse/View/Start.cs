@@ -82,7 +82,7 @@ namespace Dietaverse
 
             lblTitle.Text = "Food gallery";
             this.PnlFormLoader.Controls.Clear();
-            FoodGallery foodgalleryform = new FoodGallery() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            FoodGallery foodgalleryform = new FoodGallery(this, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.changeForm(foodgalleryform);
         }
 

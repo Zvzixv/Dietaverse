@@ -23,7 +23,7 @@ namespace Dietaverse.View
         public int Id { get; set; }
         public string name { get; set; }
         public string recipe { get; set; }
-        public int kcal { get; set; }
+        public Nullable<double> kcal { get; set; }
         public string photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

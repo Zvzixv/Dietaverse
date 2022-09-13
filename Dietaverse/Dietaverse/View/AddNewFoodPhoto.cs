@@ -1,0 +1,64 @@
+﻿using Dietaverse.Model;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Dietaverse.View
+{
+    public partial class AddNewFoodPhoto : Form
+    {
+        Form1 start;
+        users user;
+        string path;
+        string recipe;
+        string name;
+        double kcal;
+
+        Image i;
+        GUI g = new GUI();
+        Dishes_gallery dg;
+        public AddNewFoodPhoto(Form1 _start, users _u)
+        {
+            InitializeComponent();
+            user = _u;
+            start = _start;
+        }
+
+        private void choosephotobutton_Click_1(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                path = openFileDialog1.FileName;
+                i = Image.FromFile(path);
+                label7.Visible = false;
+                pictureBox.Image = g.ResizeImage(i, pictureBox.Width, pictureBox.Height);
+            }
+        }
+
+        private void adNewPhotoButton_Click_1(object sender, EventArgs e)
+        {
+            DirectoryInfo filepathtemp = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
+            string savepath = filepathtemp.ToString() + @"\Resources\";
+            try
+            {
+                i.Save(savepath + Path.GetFileName(path));
+            }
+            catch (System.Runtime.InteropServices.ExternalException err)
+            {
+
+            }
+            dg = new Dishes_gallery();
+            dg.addPhoto(Path.GetFileName(path), name, recipe, kcal, user);
+            MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
+            FoodGallery foodgalleryform = new FoodGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            start.changeForm(foodgalleryform);
+        }
+    }
+}

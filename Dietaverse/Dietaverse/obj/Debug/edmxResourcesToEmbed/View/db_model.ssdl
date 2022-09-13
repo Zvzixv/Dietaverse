@@ -22,10 +22,6 @@
       <End Role="users" EntitySet="usersSet" />
       <End Role="users_dishes_gallery" EntitySet="users_dishes_gallerySet" />
     </AssociationSet>
-    <AssociationSet Name="dishes_galleryusers_dishes_gallery" Association="db_model.Store.dishes_galleryusers_dishes_gallery">
-      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
-      <End Role="users_dishes_gallery" EntitySet="users_dishes_gallerySet" />
-    </AssociationSet>
     <AssociationSet Name="usersbody_gallery" Association="db_model.Store.usersbody_gallery">
       <End Role="users" EntitySet="usersSet" />
       <End Role="body_gallery" EntitySet="body_gallerySet" />
@@ -37,6 +33,10 @@
     <AssociationSet Name="smoothies_ingrrecipes_ingredient" Association="db_model.Store.smoothies_ingrrecipes_ingredient">
       <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
       <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
+    </AssociationSet>
+    <AssociationSet Name="users_dishes_gallerydishes_gallery" Association="db_model.Store.users_dishes_gallerydishes_gallery">
+      <End Role="users_dishes_gallery" EntitySet="users_dishes_gallerySet" />
+      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="usersSet">
@@ -53,9 +53,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="recipe" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="kcal" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="recipe" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="kcal" Type="float" Nullable="true" />
     <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="daily_summarySet">
@@ -123,7 +123,9 @@
   </EntityType>
   <Association Name="daily_summaryusers">
     <End Role="daily_summary" Type="db_model.Store.daily_summarySet" Multiplicity="*" />
-    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1" />
+    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <ReferentialConstraint>
       <Principal Role="users">
         <PropertyRef Name="Id" />
@@ -134,7 +136,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="daily_summarymonths">
-    <End Role="months" Type="db_model.Store.monthsSet" Multiplicity="1" />
+    <End Role="months" Type="db_model.Store.monthsSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="daily_summary" Type="db_model.Store.daily_summarySet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="months">
@@ -146,7 +150,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="usersusers_dishes_gallery">
-    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1" />
+    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="users_dishes_gallery" Type="db_model.Store.users_dishes_gallerySet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
@@ -157,20 +163,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="dishes_galleryusers_dishes_gallery">
-    <End Role="dishes_gallery" Type="db_model.Store.dishes_gallerySet" Multiplicity="1" />
-    <End Role="users_dishes_gallery" Type="db_model.Store.users_dishes_gallerySet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="dishes_gallery">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="users_dishes_gallery">
-        <PropertyRef Name="dishes_gallery_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="usersbody_gallery">
-    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1" />
+    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="body_gallery" Type="db_model.Store.body_gallerySet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="users">
@@ -202,6 +198,18 @@
       </Principal>
       <Dependent Role="recipes_ingredient">
         <PropertyRef Name="smoothies_ingr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="users_dishes_gallerydishes_gallery">
+    <End Role="users_dishes_gallery" Type="db_model.Store.users_dishes_gallerySet" Multiplicity="*" />
+    <End Role="dishes_gallery" Type="db_model.Store.dishes_gallerySet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="dishes_gallery">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="users_dishes_gallery">
+        <PropertyRef Name="dishes_gallery_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

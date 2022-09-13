@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/08/2022 18:26:55
+-- Date Created: 09/13/2022 12:41:57
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\View\db_model.edmx
 -- --------------------------------------------------
 
@@ -25,9 +25,6 @@ IF OBJECT_ID(N'[dbo].[FK_daily_summarymonths]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_usersusers_dishes_gallery]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[users_dishes_gallerySet] DROP CONSTRAINT [FK_usersusers_dishes_gallery];
-GO
-IF OBJECT_ID(N'[dbo].[FK_dishes_galleryusers_dishes_gallery]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[users_dishes_gallerySet] DROP CONSTRAINT [FK_dishes_galleryusers_dishes_gallery];
 GO
 IF OBJECT_ID(N'[dbo].[FK_usersbody_gallery]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_usersbody_gallery];
@@ -87,9 +84,9 @@ GO
 -- Creating table 'dishes_gallerySet'
 CREATE TABLE [dbo].[dishes_gallerySet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [name] nvarchar(max)  NOT NULL,
-    [recipe] nvarchar(max)  NOT NULL,
-    [kcal] int  NOT NULL,
+    [name] nvarchar(max)  NULL,
+    [recipe] nvarchar(max)  NULL,
+    [kcal] float  NULL,
     [photo] nvarchar(max)  NOT NULL
 );
 GO
@@ -225,7 +222,7 @@ ADD CONSTRAINT [FK_daily_summaryusers]
     FOREIGN KEY ([users_Id])
     REFERENCES [dbo].[usersSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_daily_summaryusers'
@@ -240,7 +237,7 @@ ADD CONSTRAINT [FK_daily_summarymonths]
     FOREIGN KEY ([months_Id])
     REFERENCES [dbo].[monthsSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_daily_summarymonths'
@@ -255,28 +252,13 @@ ADD CONSTRAINT [FK_usersusers_dishes_gallery]
     FOREIGN KEY ([users_Id])
     REFERENCES [dbo].[usersSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_usersusers_dishes_gallery'
 CREATE INDEX [IX_FK_usersusers_dishes_gallery]
 ON [dbo].[users_dishes_gallerySet]
     ([users_Id]);
-GO
-
--- Creating foreign key on [dishes_gallery_Id] in table 'users_dishes_gallerySet'
-ALTER TABLE [dbo].[users_dishes_gallerySet]
-ADD CONSTRAINT [FK_dishes_galleryusers_dishes_gallery]
-    FOREIGN KEY ([dishes_gallery_Id])
-    REFERENCES [dbo].[dishes_gallerySet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_dishes_galleryusers_dishes_gallery'
-CREATE INDEX [IX_FK_dishes_galleryusers_dishes_gallery]
-ON [dbo].[users_dishes_gallerySet]
-    ([dishes_gallery_Id]);
 GO
 
 -- Creating foreign key on [users_Id] in table 'body_gallerySet'
@@ -322,6 +304,21 @@ GO
 CREATE INDEX [IX_FK_smoothies_ingrrecipes_ingredient]
 ON [dbo].[recipes_ingredientSet]
     ([smoothies_ingr_Id]);
+GO
+
+-- Creating foreign key on [dishes_gallery_Id] in table 'users_dishes_gallerySet'
+ALTER TABLE [dbo].[users_dishes_gallerySet]
+ADD CONSTRAINT [FK_users_dishes_gallerydishes_gallery]
+    FOREIGN KEY ([dishes_gallery_Id])
+    REFERENCES [dbo].[dishes_gallerySet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_users_dishes_gallerydishes_gallery'
+CREATE INDEX [IX_FK_users_dishes_gallerydishes_gallery]
+ON [dbo].[users_dishes_gallerySet]
+    ([dishes_gallery_Id]);
 GO
 
 -- --------------------------------------------------

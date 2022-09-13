@@ -47,3 +47,4 @@ C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFra
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.CopyComplete
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.AddNewBodyPhoto.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.AddNewFoodPhoto.resources

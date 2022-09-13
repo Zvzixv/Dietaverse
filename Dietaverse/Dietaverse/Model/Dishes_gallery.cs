@@ -21,5 +21,39 @@ namespace Dietaverse.Model
         public string photo { get; set; }
 
         public virtual ICollection<users> users { get; set; }
+
+        public List<dishes_gallery> listOfPhotos(users presentuser)
+        {
+            using (var db = new db_modelContainer())
+            {
+                var photos = db.dishes_gallerySet;
+                var list = new List<dishes_gallery>();
+                foreach (var i in photos)
+                {
+                    list.Add(i);
+                }
+                return list;
+            }
+        }
+
+        public void addPhoto(string _path, string _name,string _recipe, double _kcal_amount, users _u)
+        {
+            using (var db = new db_modelContainer())
+            {
+   
+                dishes_gallery newphoto = new dishes_gallery();
+                
+                newphoto.photo = _path;
+                newphoto.name = _name;
+                newphoto.recipe = _recipe;
+                newphoto.kcal = _kcal_amount;
+                //newphoto.users_dishes_gallery = udg.Single(a => a.users.name == _u.name);
+
+                db.dishes_gallerySet.Add(newphoto);
+                users_dishes_gallery udg = new users_dishes_gallery() { users = _u, dishes_gallery = newphoto};
+                db.users_dishes_gallerySet.Add(udg);
+                db.SaveChanges();
+            }
+        }
     }
 }
