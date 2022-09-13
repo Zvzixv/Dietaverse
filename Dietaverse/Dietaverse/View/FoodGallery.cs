@@ -22,6 +22,19 @@ namespace Dietaverse.View
             InitializeComponent();
             start = _start;
             user = _u;
+
+            List<dishes_gallery> dgs = fg.listOfPhotos(user);
+
+            foreach (dishes_gallery p in dgs)
+            {
+                gallery.Add(new SmallPhoto(p) { TopLevel = false, TopMost = true });
+            }
+
+            foreach (var i in gallery)
+            {
+                galleryPanel.Controls.Add(i);
+                i.Show();
+            }
         }
 
         private void adNewPhotoButton_Click(object sender, EventArgs e)

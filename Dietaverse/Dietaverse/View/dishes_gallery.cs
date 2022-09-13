@@ -14,19 +14,12 @@ namespace Dietaverse.View
     
     public partial class dishes_gallery
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public dishes_gallery()
-        {
-            this.users_dishes_gallery = new HashSet<users_dishes_gallery>();
-        }
-    
         public int Id { get; set; }
         public string name { get; set; }
         public string recipe { get; set; }
         public Nullable<double> kcal { get; set; }
         public string photo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<users_dishes_gallery> users_dishes_gallery { get; set; }
+        public virtual users users { get; set; }
     }
 }

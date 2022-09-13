@@ -36,6 +36,20 @@ namespace Dietaverse.View
             note = bg.note;
         }
 
+        public SmallPhoto(dishes_gallery dg)
+        {
+            InitializeComponent();
+            description.Visible = false;
+
+            System.IO.DirectoryInfo filepathtemp = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
+            string filepath = filepathtemp.ToString() + @"\Resources\";
+            Image photoImage = Image.FromFile(filepath + dg.photo);
+
+            pictureBox1.Image = g.ResizeImage(photoImage, pictureBox1.Width, pictureBox1.Height);
+            //description.Text = dg.date.ToString();
+            //note = dg.note;
+        }
+
         public void pictureBox1_Click(object sender, EventArgs e)
         {
             if (isPhotoClicked == false)

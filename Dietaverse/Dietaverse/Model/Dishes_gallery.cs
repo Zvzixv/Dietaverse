@@ -42,16 +42,16 @@ namespace Dietaverse.Model
             {
    
                 dishes_gallery newphoto = new dishes_gallery();
-                
+                var u = db.usersSet;
+                //users udg = new users_dishes_gallery() { users = _u, dishes_gallery = newphoto };
                 newphoto.photo = _path;
                 newphoto.name = _name;
                 newphoto.recipe = _recipe;
                 newphoto.kcal = _kcal_amount;
-                //newphoto.users_dishes_gallery = udg.Single(a => a.users.name == _u.name);
+                newphoto.users = u.Single(a => a.name == _u.name);
 
+                //db.users_dishes_gallerySet.Add(udg);
                 db.dishes_gallerySet.Add(newphoto);
-                users_dishes_gallery udg = new users_dishes_gallery() { users = _u, dishes_gallery = newphoto};
-                db.users_dishes_gallerySet.Add(udg);
                 db.SaveChanges();
             }
         }

@@ -45,9 +45,11 @@ namespace Dietaverse.Model
                 }
 
                 users newuser = new users { name = _username, weight = _weight, password = _password};
+                //users_dishes_gallery usg = new users_dishes_gallery() {users = newuser };
 
                 
                 db.usersSet.Add(newuser);
+                //db.users_dishes_gallerySet.Add(usg);
                 db.SaveChanges();
             }
         }

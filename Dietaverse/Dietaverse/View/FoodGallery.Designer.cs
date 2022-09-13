@@ -30,7 +30,7 @@
         {
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.adNewPhotoButton = new System.Windows.Forms.Button();
-            this.galleryPanel = new System.Windows.Forms.Panel();
+            this.galleryPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -60,12 +60,11 @@
             // 
             // galleryPanel
             // 
-            this.galleryPanel.AutoScroll = true;
             this.galleryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.galleryPanel.Location = new System.Drawing.Point(12, 69);
+            this.galleryPanel.Location = new System.Drawing.Point(29, 69);
             this.galleryPanel.Name = "galleryPanel";
-            this.galleryPanel.Size = new System.Drawing.Size(537, 396);
-            this.galleryPanel.TabIndex = 11;
+            this.galleryPanel.Size = new System.Drawing.Size(517, 396);
+            this.galleryPanel.TabIndex = 14;
             // 
             // FoodGallery
             // 
@@ -73,9 +72,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(733, 477);
+            this.Controls.Add(this.galleryPanel);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.adNewPhotoButton);
-            this.Controls.Add(this.galleryPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FoodGallery";
             this.Text = "FoodGallery";
@@ -87,6 +86,6 @@
 
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button adNewPhotoButton;
-        private System.Windows.Forms.Panel galleryPanel;
+        private System.Windows.Forms.FlowLayoutPanel galleryPanel;
     }
 }

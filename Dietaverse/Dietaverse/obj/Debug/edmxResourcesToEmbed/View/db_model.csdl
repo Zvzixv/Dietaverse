@@ -15,11 +15,6 @@
       <End Role="months" EntitySet="monthsSet" />
       <End Role="daily_summary" EntitySet="daily_summarySet" />
     </AssociationSet>
-    <EntitySet Name="users_dishes_gallerySet" EntityType="db_model.users_dishes_gallery" />
-    <AssociationSet Name="usersusers_dishes_gallery" Association="db_model.usersusers_dishes_gallery">
-      <End Role="users" EntitySet="usersSet" />
-      <End Role="users_dishes_gallery" EntitySet="users_dishes_gallerySet" />
-    </AssociationSet>
     <EntitySet Name="body_gallerySet" EntityType="db_model.body_gallery" />
     <AssociationSet Name="usersbody_gallery" Association="db_model.usersbody_gallery">
       <End Role="users" EntitySet="usersSet" />
@@ -34,9 +29,9 @@
       <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
       <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
     </AssociationSet>
-    <AssociationSet Name="users_dishes_gallerydishes_gallery" Association="db_model.users_dishes_gallerydishes_gallery">
-      <End Role="users_dishes_gallery" EntitySet="users_dishes_gallerySet" />
+    <AssociationSet Name="dishes_galleryusers" Association="db_model.dishes_galleryusers">
       <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+      <End Role="users" EntitySet="usersSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="users">
@@ -48,8 +43,8 @@
     <NavigationProperty Name="daily_summary" Relationship="db_model.daily_summaryusers" FromRole="users" ToRole="daily_summary" />
     <Property Name="password" Type="String" Nullable="false" />
     <Property Name="weight" Type="Double" Nullable="false" />
-    <NavigationProperty Name="users_dishes_gallery" Relationship="db_model.usersusers_dishes_gallery" FromRole="users" ToRole="users_dishes_gallery" />
     <NavigationProperty Name="body_gallery" Relationship="db_model.usersbody_gallery" FromRole="users" ToRole="body_gallery" />
+    <NavigationProperty Name="dishes_gallery" Relationship="db_model.dishes_galleryusers" FromRole="users" ToRole="dishes_gallery" />
   </EntityType>
   <EntityType Name="dishes_gallery">
     <Key>
@@ -60,7 +55,7 @@
     <Property Name="recipe" Nullable="true" Type="String" />
     <Property Name="kcal" Nullable="true" Type="Double" />
     <Property Name="photo" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
-    <NavigationProperty Name="users_dishes_gallery" Relationship="db_model.users_dishes_gallerydishes_gallery" FromRole="dishes_gallery" ToRole="users_dishes_gallery" />
+    <NavigationProperty Name="users" Relationship="db_model.dishes_galleryusers" FromRole="dishes_gallery" ToRole="users" />
   </EntityType>
   <EntityType Name="daily_summary">
     <Key>
@@ -113,20 +108,6 @@
     </End>
     <End Type="db_model.daily_summary" Role="daily_summary" Multiplicity="*" />
   </Association>
-  <EntityType Name="users_dishes_gallery">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="users" Relationship="db_model.usersusers_dishes_gallery" FromRole="users_dishes_gallery" ToRole="users" />
-    <NavigationProperty Name="dishes_gallery" Relationship="db_model.users_dishes_gallerydishes_gallery" FromRole="users_dishes_gallery" ToRole="dishes_gallery" />
-  </EntityType>
-  <Association Name="usersusers_dishes_gallery">
-    <End Type="db_model.users" Role="users" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="db_model.users_dishes_gallery" Role="users_dishes_gallery" Multiplicity="*" />
-  </Association>
   <EntityType Name="body_gallery">
     <Key>
       <PropertyRef Name="Id" />
@@ -160,8 +141,8 @@
     <End Type="db_model.smoothies_ingr" Role="smoothies_ingr" Multiplicity="1" />
     <End Type="db_model.recipes_ingredient" Role="recipes_ingredient" Multiplicity="*" />
   </Association>
-  <Association Name="users_dishes_gallerydishes_gallery">
-    <End Type="db_model.users_dishes_gallery" Role="users_dishes_gallery" Multiplicity="*" />
-    <End Type="db_model.dishes_gallery" Role="dishes_gallery" Multiplicity="1" />
+  <Association Name="dishes_galleryusers">
+    <End Type="db_model.dishes_gallery" Role="dishes_gallery" Multiplicity="*" />
+    <End Type="db_model.users" Role="users" Multiplicity="1" />
   </Association>
 </Schema>

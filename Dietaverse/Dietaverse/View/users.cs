@@ -18,8 +18,8 @@ namespace Dietaverse.View
         public users()
         {
             this.daily_summary = new HashSet<daily_summary>();
-            this.users_dishes_gallery = new HashSet<users_dishes_gallery>();
             this.body_gallery = new HashSet<body_gallery>();
+            this.dishes_gallery = new HashSet<dishes_gallery>();
         }
     
         public int Id { get; set; }
@@ -30,8 +30,8 @@ namespace Dietaverse.View
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<daily_summary> daily_summary { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<users_dishes_gallery> users_dishes_gallery { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<body_gallery> body_gallery { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<dishes_gallery> dishes_gallery { get; set; }
     }
 }

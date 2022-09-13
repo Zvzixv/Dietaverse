@@ -60,13 +60,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="users_dishes_gallerySet">
-      <EntityTypeMapping TypeName="IsTypeOf(db_model.users_dishes_gallery)">
-        <MappingFragment StoreEntitySet="users_dishes_gallerySet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="body_gallerySet">
       <EntityTypeMapping TypeName="IsTypeOf(db_model.body_gallery)">
         <MappingFragment StoreEntitySet="body_gallerySet">
@@ -101,14 +94,6 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="usersusers_dishes_gallery" TypeName="db_model.usersusers_dishes_gallery" StoreEntitySet="users_dishes_gallerySet">
-      <EndProperty Name="users">
-        <ScalarProperty Name="Id" ColumnName="users_Id" />
-      </EndProperty>
-      <EndProperty Name="users_dishes_gallery">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="usersbody_gallery" TypeName="db_model.usersbody_gallery" StoreEntitySet="body_gallerySet">
       <EndProperty Name="users">
         <ScalarProperty Name="Id" ColumnName="users_Id" />
@@ -133,11 +118,11 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="users_dishes_gallerydishes_gallery" TypeName="db_model.users_dishes_gallerydishes_gallery" StoreEntitySet="users_dishes_gallerySet">
-      <EndProperty Name="dishes_gallery">
-        <ScalarProperty Name="Id" ColumnName="dishes_gallery_Id" />
+    <AssociationSetMapping Name="dishes_galleryusers" TypeName="db_model.dishes_galleryusers" StoreEntitySet="dishes_gallerySet">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
       </EndProperty>
-      <EndProperty Name="users_dishes_gallery">
+      <EndProperty Name="dishes_gallery">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
