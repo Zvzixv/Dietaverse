@@ -12,12 +12,12 @@ namespace Dietaverse.Model
         public int Id { get; set; }
         public string name { get; set; }
         public string photo { get; set; }
-        public string smoothies_ingr { get; set; }
-        public string kcal { get; set; }
         public bool fruity { get; set; }
         public bool vegetable { get; set; }
         public bool sweet { get; set; }
         public bool sour { get; set; }
+
+        public List<smoothies_ingr> ingredients = new List<smoothies_ingr>();
 
 
         public void addNewSmoothie(string name, string photo, List<Smoothies_ingr> smoothies_ingr, string kcal, bool fruity, bool vegtable, bool sweet, bool sour)
@@ -44,6 +44,40 @@ namespace Dietaverse.Model
                 db.smoothies_recipesSet.Add(sr);
                 db.SaveChanges();
 
+            }
+        }
+
+        public List<Smoothies_recipes> makeAList ()
+        {
+            using (var db = new db_modelContainer())
+            {
+                List<Smoothies_recipes> smoothies_Recipes = new List<Smoothies_recipes>();
+                var rec = db.smoothies_recipesSet;
+
+                if (rec != null)
+                {
+
+                    foreach (var i in rec)
+                    {
+                        Smoothies_recipes smoothie = new Smoothies_recipes();
+                        smoothie.name = i.name;
+                        smoothie.photo = i.photo;
+                        smoothie.sour = i.sour;
+                        smoothie.fruity = i.fruity;
+                        smoothie.vegetable = i.vegetable;
+                        smoothie.sweet = i.sweet;
+
+                        foreach (var x in i.recipes_ingredient)
+                        {
+                            smoothie.ingredients.Add(x.smoothies_ingr);
+                        }
+
+                        smoothies_Recipes.Add(smoothie);
+
+                    }
+                }
+
+                return smoothies_Recipes;
             }
         }
     }

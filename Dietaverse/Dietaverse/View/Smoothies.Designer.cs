@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.addNewbutton1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Smoothiebutton1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkBox9
@@ -151,12 +153,31 @@
             this.addNewbutton1.UseVisualStyleBackColor = false;
             this.addNewbutton1.Click += new System.EventHandler(this.addNewbutton1_Click);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(257, 115);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(163, 232);
+            this.flowLayoutPanel1.TabIndex = 17;
+            // 
+            // Smoothiebutton1
+            // 
+            this.Smoothiebutton1.Location = new System.Drawing.Point(307, 389);
+            this.Smoothiebutton1.Name = "Smoothiebutton1";
+            this.Smoothiebutton1.Size = new System.Drawing.Size(75, 23);
+            this.Smoothiebutton1.TabIndex = 18;
+            this.Smoothiebutton1.Text = "Tell me ";
+            this.Smoothiebutton1.UseVisualStyleBackColor = true;
+            this.Smoothiebutton1.Click += new System.EventHandler(this.Smoothiebutton1_Click);
+            // 
             // Smoothies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(733, 477);
+            this.Controls.Add(this.Smoothiebutton1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.addNewbutton1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -186,5 +207,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button addNewbutton1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button Smoothiebutton1;
     }
 }
