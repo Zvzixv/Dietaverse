@@ -96,7 +96,7 @@ namespace Dietaverse
 
             lblTitle.Text = "Smoothies";
             this.PnlFormLoader.Controls.Clear();
-            Smoothies smoothiesform = new Smoothies() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            Smoothies smoothiesform = new Smoothies(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.changeForm(smoothiesform);
         }
 

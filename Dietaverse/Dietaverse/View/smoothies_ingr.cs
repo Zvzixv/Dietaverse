@@ -22,7 +22,7 @@ namespace Dietaverse.View
     
         public int Id { get; set; }
         public string name { get; set; }
-        public string kcal { get; set; }
+        public double kcal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<recipes_ingredient> recipes_ingredient { get; set; }

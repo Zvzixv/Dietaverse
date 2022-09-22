@@ -46,8 +46,10 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="photo" ColumnName="photo" />
-          <ScalarProperty Name="smoothies_ingr" ColumnName="smoothies_ingr" />
-          <ScalarProperty Name="kcal" ColumnName="kcal" />
+          <ScalarProperty Name="fruity" ColumnName="fruity" />
+          <ScalarProperty Name="vegetable" ColumnName="vegetable" />
+          <ScalarProperty Name="sweet" ColumnName="sweet" />
+          <ScalarProperty Name="sour" ColumnName="sour" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -102,11 +104,11 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="smoothies_recipesrecipes_ingredient" TypeName="db_model.smoothies_recipesrecipes_ingredient" StoreEntitySet="recipes_ingredientSet">
-      <EndProperty Name="smoothies_recipes">
-        <ScalarProperty Name="Id" ColumnName="smoothies_recipes_Id" />
+    <AssociationSetMapping Name="dishes_galleryusers" TypeName="db_model.dishes_galleryusers" StoreEntitySet="dishes_gallerySet">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
       </EndProperty>
-      <EndProperty Name="recipes_ingredient">
+      <EndProperty Name="dishes_gallery">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
@@ -118,11 +120,11 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="dishes_galleryusers" TypeName="db_model.dishes_galleryusers" StoreEntitySet="dishes_gallerySet">
-      <EndProperty Name="users">
-        <ScalarProperty Name="Id" ColumnName="users_Id" />
+    <AssociationSetMapping Name="smoothies_recipesrecipes_ingredient" TypeName="db_model.smoothies_recipesrecipes_ingredient" StoreEntitySet="recipes_ingredientSet">
+      <EndProperty Name="smoothies_recipes">
+        <ScalarProperty Name="Id" ColumnName="smoothies_recipes_Id" />
       </EndProperty>
-      <EndProperty Name="dishes_gallery">
+      <EndProperty Name="recipes_ingredient">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

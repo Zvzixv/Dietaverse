@@ -13,8 +13,10 @@ namespace Dietaverse.View
 {
     public partial class Smoothies : Form
     {
-        public Smoothies()
+        Form1 start;
+        public Smoothies(Form1 _start)
         {
+            start = _start;
             InitializeComponent();
         }
 
@@ -25,6 +27,13 @@ namespace Dietaverse.View
 
 
             return result;
+        }
+
+        private void addNewbutton1_Click(object sender, EventArgs e)
+        {
+            start.PnlFormLoader.Controls.Clear();
+            AddNewSmoothie addnewsmoothieform = new AddNewSmoothie(start) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            start.changeForm(addnewsmoothieform);
         }
     }
 }

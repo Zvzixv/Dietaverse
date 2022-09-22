@@ -23,8 +23,10 @@ namespace Dietaverse.View
         public int Id { get; set; }
         public string name { get; set; }
         public string photo { get; set; }
-        public string smoothies_ingr { get; set; }
-        public string kcal { get; set; }
+        public bool fruity { get; set; }
+        public bool vegetable { get; set; }
+        public bool sweet { get; set; }
+        public bool sour { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<recipes_ingredient> recipes_ingredient { get; set; }

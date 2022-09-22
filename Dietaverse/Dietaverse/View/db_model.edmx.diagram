@@ -16,9 +16,9 @@
         <EntityTypeShape EntityType="db_model.body_gallery" Width="1.5" PointX="4" PointY="4.25" />
         <AssociationConnector Association="db_model.usersbody_gallery" />
         <EntityTypeShape EntityType="db_model.recipes_ingredient" Width="1.5" PointX="11" PointY="2" />
-        <AssociationConnector Association="db_model.smoothies_recipesrecipes_ingredient" />
-        <AssociationConnector Association="db_model.smoothies_ingrrecipes_ingredient" />
         <AssociationConnector Association="db_model.dishes_galleryusers" />
+        <AssociationConnector Association="db_model.smoothies_ingrrecipes_ingredient" />
+        <AssociationConnector Association="db_model.smoothies_recipesrecipes_ingredient" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

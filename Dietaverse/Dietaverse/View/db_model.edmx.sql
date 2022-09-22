@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/13/2022 13:36:34
+-- Date Created: 09/22/2022 19:59:51
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\View\db_model.edmx
 -- --------------------------------------------------
 
@@ -26,14 +26,14 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_usersbody_gallery]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_usersbody_gallery];
 GO
-IF OBJECT_ID(N'[dbo].[FK_smoothies_recipesrecipes_ingredient]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[recipes_ingredientSet] DROP CONSTRAINT [FK_smoothies_recipesrecipes_ingredient];
+IF OBJECT_ID(N'[dbo].[FK_dishes_galleryusers]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[dishes_gallerySet] DROP CONSTRAINT [FK_dishes_galleryusers];
 GO
 IF OBJECT_ID(N'[dbo].[FK_smoothies_ingrrecipes_ingredient]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[recipes_ingredientSet] DROP CONSTRAINT [FK_smoothies_ingrrecipes_ingredient];
 GO
-IF OBJECT_ID(N'[dbo].[FK_dishes_galleryusers]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[dishes_gallerySet] DROP CONSTRAINT [FK_dishes_galleryusers];
+IF OBJECT_ID(N'[dbo].[FK_smoothies_recipesrecipes_ingredient]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[recipes_ingredientSet] DROP CONSTRAINT [FK_smoothies_recipesrecipes_ingredient];
 GO
 
 -- --------------------------------------------------
@@ -110,10 +110,12 @@ GO
 -- Creating table 'smoothies_recipesSet'
 CREATE TABLE [dbo].[smoothies_recipesSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [name] nvarchar(max)  NOT NULL,
+    [name] nvarchar(max)  NULL,
     [photo] nvarchar(max)  NOT NULL,
-    [smoothies_ingr] nvarchar(max)  NOT NULL,
-    [kcal] nvarchar(max)  NOT NULL
+    [fruity] bit  NOT NULL,
+    [vegetable] bit  NOT NULL,
+    [sweet] bit  NOT NULL,
+    [sour] bit  NOT NULL
 );
 GO
 
@@ -121,7 +123,7 @@ GO
 CREATE TABLE [dbo].[smoothies_ingrSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [name] nvarchar(max)  NOT NULL,
-    [kcal] nvarchar(max)  NOT NULL
+    [kcal] float  NOT NULL
 );
 GO
 
@@ -139,8 +141,8 @@ GO
 -- Creating table 'recipes_ingredientSet'
 CREATE TABLE [dbo].[recipes_ingredientSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [smoothies_recipes_Id] int  NOT NULL,
-    [smoothies_ingr_Id] int  NOT NULL
+    [smoothies_ingr_Id] int  NOT NULL,
+    [smoothies_recipes_Id] int  NOT NULL
 );
 GO
 
@@ -245,19 +247,19 @@ ON [dbo].[body_gallerySet]
     ([users_Id]);
 GO
 
--- Creating foreign key on [smoothies_recipes_Id] in table 'recipes_ingredientSet'
-ALTER TABLE [dbo].[recipes_ingredientSet]
-ADD CONSTRAINT [FK_smoothies_recipesrecipes_ingredient]
-    FOREIGN KEY ([smoothies_recipes_Id])
-    REFERENCES [dbo].[smoothies_recipesSet]
+-- Creating foreign key on [users_Id] in table 'dishes_gallerySet'
+ALTER TABLE [dbo].[dishes_gallerySet]
+ADD CONSTRAINT [FK_dishes_galleryusers]
+    FOREIGN KEY ([users_Id])
+    REFERENCES [dbo].[usersSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_smoothies_recipesrecipes_ingredient'
-CREATE INDEX [IX_FK_smoothies_recipesrecipes_ingredient]
-ON [dbo].[recipes_ingredientSet]
-    ([smoothies_recipes_Id]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_dishes_galleryusers'
+CREATE INDEX [IX_FK_dishes_galleryusers]
+ON [dbo].[dishes_gallerySet]
+    ([users_Id]);
 GO
 
 -- Creating foreign key on [smoothies_ingr_Id] in table 'recipes_ingredientSet'
@@ -275,19 +277,19 @@ ON [dbo].[recipes_ingredientSet]
     ([smoothies_ingr_Id]);
 GO
 
--- Creating foreign key on [users_Id] in table 'dishes_gallerySet'
-ALTER TABLE [dbo].[dishes_gallerySet]
-ADD CONSTRAINT [FK_dishes_galleryusers]
-    FOREIGN KEY ([users_Id])
-    REFERENCES [dbo].[usersSet]
+-- Creating foreign key on [smoothies_recipes_Id] in table 'recipes_ingredientSet'
+ALTER TABLE [dbo].[recipes_ingredientSet]
+ADD CONSTRAINT [FK_smoothies_recipesrecipes_ingredient]
+    FOREIGN KEY ([smoothies_recipes_Id])
+    REFERENCES [dbo].[smoothies_recipesSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_dishes_galleryusers'
-CREATE INDEX [IX_FK_dishes_galleryusers]
-ON [dbo].[dishes_gallerySet]
-    ([users_Id]);
+-- Creating non-clustered index for FOREIGN KEY 'FK_smoothies_recipesrecipes_ingredient'
+CREATE INDEX [IX_FK_smoothies_recipesrecipes_ingredient]
+ON [dbo].[recipes_ingredientSet]
+    ([smoothies_recipes_Id]);
 GO
 
 -- --------------------------------------------------

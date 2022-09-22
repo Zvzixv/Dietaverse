@@ -16,7 +16,7 @@ namespace Dietaverse.View
     {
         public int Id { get; set; }
     
-        public virtual smoothies_recipes smoothies_recipes { get; set; }
         public virtual smoothies_ingr smoothies_ingr { get; set; }
+        public virtual smoothies_recipes smoothies_recipes { get; set; }
     }
 }

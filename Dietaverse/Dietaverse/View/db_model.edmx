@@ -26,17 +26,17 @@
       <End Role="users" EntitySet="usersSet" />
       <End Role="body_gallery" EntitySet="body_gallerySet" />
     </AssociationSet>
-    <AssociationSet Name="smoothies_recipesrecipes_ingredient" Association="db_model.Store.smoothies_recipesrecipes_ingredient">
-      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
-      <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
+    <AssociationSet Name="dishes_galleryusers" Association="db_model.Store.dishes_galleryusers">
+      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+      <End Role="users" EntitySet="usersSet" />
     </AssociationSet>
     <AssociationSet Name="smoothies_ingrrecipes_ingredient" Association="db_model.Store.smoothies_ingrrecipes_ingredient">
       <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
       <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
     </AssociationSet>
-    <AssociationSet Name="dishes_galleryusers" Association="db_model.Store.dishes_galleryusers">
-      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
-      <End Role="users" EntitySet="usersSet" />
+    <AssociationSet Name="smoothies_recipesrecipes_ingredient" Association="db_model.Store.smoothies_recipesrecipes_ingredient">
+      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
+      <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="usersSet">
@@ -82,10 +82,12 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="true" />
     <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="smoothies_ingr" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="kcal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fruity" Type="bit" Nullable="false" />
+    <Property Name="vegetable" Type="bit" Nullable="false" />
+    <Property Name="sweet" Type="bit" Nullable="false" />
+    <Property Name="sour" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="smoothies_ingrSet">
     <Key>
@@ -93,7 +95,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="kcal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kcal" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="body_gallerySet">
     <Key>
@@ -111,8 +113,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="smoothies_recipes_Id" Type="int" Nullable="false" />
     <Property Name="smoothies_ingr_Id" Type="int" Nullable="false" />
+    <Property Name="smoothies_recipes_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="daily_summaryusers">
     <End Role="daily_summary" Type="db_model.Store.daily_summarySet" Multiplicity="*" />
@@ -156,15 +158,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="smoothies_recipesrecipes_ingredient">
-    <End Role="smoothies_recipes" Type="db_model.Store.smoothies_recipesSet" Multiplicity="1" />
-    <End Role="recipes_ingredient" Type="db_model.Store.recipes_ingredientSet" Multiplicity="*" />
+  <Association Name="dishes_galleryusers">
+    <End Role="dishes_gallery" Type="db_model.Store.dishes_gallerySet" Multiplicity="*" />
+    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1" />
     <ReferentialConstraint>
-      <Principal Role="smoothies_recipes">
+      <Principal Role="users">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="recipes_ingredient">
-        <PropertyRef Name="smoothies_recipes_Id" />
+      <Dependent Role="dishes_gallery">
+        <PropertyRef Name="users_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -180,15 +182,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="dishes_galleryusers">
-    <End Role="dishes_gallery" Type="db_model.Store.dishes_gallerySet" Multiplicity="*" />
-    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1" />
+  <Association Name="smoothies_recipesrecipes_ingredient">
+    <End Role="smoothies_recipes" Type="db_model.Store.smoothies_recipesSet" Multiplicity="1" />
+    <End Role="recipes_ingredient" Type="db_model.Store.recipes_ingredientSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="users">
+      <Principal Role="smoothies_recipes">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="dishes_gallery">
-        <PropertyRef Name="users_Id" />
+      <Dependent Role="recipes_ingredient">
+        <PropertyRef Name="smoothies_recipes_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -217,17 +219,17 @@
             <End Role="body_gallery" EntitySet="body_gallerySet" />
           </AssociationSet>
           <EntitySet Name="recipes_ingredientSet" EntityType="db_model.recipes_ingredient" />
-          <AssociationSet Name="smoothies_recipesrecipes_ingredient" Association="db_model.smoothies_recipesrecipes_ingredient">
-            <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
-            <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
+          <AssociationSet Name="dishes_galleryusers" Association="db_model.dishes_galleryusers">
+            <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+            <End Role="users" EntitySet="usersSet" />
           </AssociationSet>
           <AssociationSet Name="smoothies_ingrrecipes_ingredient" Association="db_model.smoothies_ingrrecipes_ingredient">
             <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
             <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
           </AssociationSet>
-          <AssociationSet Name="dishes_galleryusers" Association="db_model.dishes_galleryusers">
-            <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
-            <End Role="users" EntitySet="usersSet" />
+          <AssociationSet Name="smoothies_recipesrecipes_ingredient" Association="db_model.smoothies_recipesrecipes_ingredient">
+            <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
+            <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="users">
@@ -277,10 +279,12 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="true" />
           <Property Name="photo" Type="String" Nullable="false" />
-          <Property Name="smoothies_ingr" Type="String" Nullable="false" />
-          <Property Name="kcal" Type="String" Nullable="false" />
+          <Property Name="fruity" Type="Boolean" Nullable="false" />
+          <Property Name="vegetable" Type="Boolean" Nullable="false" />
+          <Property Name="sweet" Type="Boolean" Nullable="false" />
+          <Property Name="sour" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="recipes_ingredient" Relationship="db_model.smoothies_recipesrecipes_ingredient" FromRole="smoothies_recipes" ToRole="recipes_ingredient" />
         </EntityType>
         <EntityType Name="smoothies_ingr">
@@ -289,7 +293,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" Nullable="false" />
-          <Property Name="kcal" Type="String" Nullable="false" />
+          <Property Name="kcal" Type="Double" Nullable="false" />
           <NavigationProperty Name="recipes_ingredient" Relationship="db_model.smoothies_ingrrecipes_ingredient" FromRole="smoothies_ingr" ToRole="recipes_ingredient" />
         </EntityType>
         <Association Name="daily_summaryusers">
@@ -328,20 +332,20 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="smoothies_recipes" Relationship="db_model.smoothies_recipesrecipes_ingredient" FromRole="recipes_ingredient" ToRole="smoothies_recipes" />
           <NavigationProperty Name="smoothies_ingr" Relationship="db_model.smoothies_ingrrecipes_ingredient" FromRole="recipes_ingredient" ToRole="smoothies_ingr" />
+          <NavigationProperty Name="smoothies_recipes" Relationship="db_model.smoothies_recipesrecipes_ingredient" FromRole="recipes_ingredient" ToRole="smoothies_recipes" />
         </EntityType>
-        <Association Name="smoothies_recipesrecipes_ingredient">
-          <End Type="db_model.smoothies_recipes" Role="smoothies_recipes" Multiplicity="1" />
-          <End Type="db_model.recipes_ingredient" Role="recipes_ingredient" Multiplicity="*" />
+        <Association Name="dishes_galleryusers">
+          <End Type="db_model.dishes_gallery" Role="dishes_gallery" Multiplicity="*" />
+          <End Type="db_model.users" Role="users" Multiplicity="1" />
         </Association>
         <Association Name="smoothies_ingrrecipes_ingredient">
           <End Type="db_model.smoothies_ingr" Role="smoothies_ingr" Multiplicity="1" />
           <End Type="db_model.recipes_ingredient" Role="recipes_ingredient" Multiplicity="*" />
         </Association>
-        <Association Name="dishes_galleryusers">
-          <End Type="db_model.dishes_gallery" Role="dishes_gallery" Multiplicity="*" />
-          <End Type="db_model.users" Role="users" Multiplicity="1" />
+        <Association Name="smoothies_recipesrecipes_ingredient">
+          <End Type="db_model.smoothies_recipes" Role="smoothies_recipes" Multiplicity="1" />
+          <End Type="db_model.recipes_ingredient" Role="recipes_ingredient" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -394,8 +398,10 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="photo" ColumnName="photo" />
-          <ScalarProperty Name="smoothies_ingr" ColumnName="smoothies_ingr" />
-          <ScalarProperty Name="kcal" ColumnName="kcal" />
+          <ScalarProperty Name="fruity" ColumnName="fruity" />
+          <ScalarProperty Name="vegetable" ColumnName="vegetable" />
+          <ScalarProperty Name="sweet" ColumnName="sweet" />
+          <ScalarProperty Name="sour" ColumnName="sour" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -450,11 +456,11 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="smoothies_recipesrecipes_ingredient" TypeName="db_model.smoothies_recipesrecipes_ingredient" StoreEntitySet="recipes_ingredientSet">
-      <EndProperty Name="smoothies_recipes">
-        <ScalarProperty Name="Id" ColumnName="smoothies_recipes_Id" />
+    <AssociationSetMapping Name="dishes_galleryusers" TypeName="db_model.dishes_galleryusers" StoreEntitySet="dishes_gallerySet">
+      <EndProperty Name="users">
+        <ScalarProperty Name="Id" ColumnName="users_Id" />
       </EndProperty>
-      <EndProperty Name="recipes_ingredient">
+      <EndProperty Name="dishes_gallery">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
@@ -466,11 +472,11 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="dishes_galleryusers" TypeName="db_model.dishes_galleryusers" StoreEntitySet="dishes_gallerySet">
-      <EndProperty Name="users">
-        <ScalarProperty Name="Id" ColumnName="users_Id" />
+    <AssociationSetMapping Name="smoothies_recipesrecipes_ingredient" TypeName="db_model.smoothies_recipesrecipes_ingredient" StoreEntitySet="recipes_ingredientSet">
+      <EndProperty Name="smoothies_recipes">
+        <ScalarProperty Name="Id" ColumnName="smoothies_recipes_Id" />
       </EndProperty>
-      <EndProperty Name="dishes_gallery">
+      <EndProperty Name="recipes_ingredient">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
