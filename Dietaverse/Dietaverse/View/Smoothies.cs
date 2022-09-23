@@ -15,6 +15,7 @@ namespace Dietaverse.View
     public partial class Smoothies : Form
     {
         Form1 start;
+        private GUI g = new GUI();
 
         List<Smoothies_ingr> smIngredients = new List<Smoothies_ingr>();
         List<Smoothies_ingr> smIngrChecked = new List<Smoothies_ingr>();
@@ -28,6 +29,9 @@ namespace Dietaverse.View
             start = _start;
             InitializeComponent();
             dynamiccheck();
+            namelabel.Visible = false;
+            cannotchooselabel.Text = "It was too hard choice";
+            cannotchooselabel.Visible = false;
         }
 
         private void dynamiccheck()
@@ -38,6 +42,7 @@ namespace Dietaverse.View
             foreach (var item in smIngredients)
             {
                 CheckBox chk = new CheckBox();
+                chk.ForeColor = Color.Coral;
                 chk.Width = 80;
                 chk.Text = item.name.ToString();
                 chk.CheckedChanged += new EventHandler(changecheck);
@@ -56,6 +61,17 @@ namespace Dietaverse.View
                     if (chk.Text == i.name)
                     {
                         smIngrChecked.Add(i);
+                    }
+                }
+            }
+            else if(!chk.Checked)
+            {
+                foreach (var i in smIngrChecked)
+                {
+                    if (chk.Text == i.name)
+                    {
+                        smIngrChecked.Remove(i);
+                        return;
                     }
                 }
             }
@@ -82,6 +98,28 @@ namespace Dietaverse.View
                             confidence++;
                     }
                 }
+
+                if (smoothie.sour == sourcheckBox.Checked)
+                    confidence++;
+                else
+                    confidence = 0;
+
+                if (smoothie.fruity == fruitycheckBox.Checked)
+                    confidence++;
+                else
+                    confidence = 0;
+
+                if (smoothie.vegetable == vegetablecheckBox.Checked)
+                    confidence++;
+                else
+                    confidence = 0;
+
+                if (smoothie.sweet == sweetcheckBox.Checked)
+                    confidence++;
+                else
+                    confidence = 0;
+
+
                 if (confidence > maxconfidence)
                 {
                     result = smoothie;
@@ -110,7 +148,34 @@ namespace Dietaverse.View
 
         private void Smoothiebutton1_Click(object sender, EventArgs e)
         {
-            algorithm();
+            Smoothies_recipes result = algorithm();
+            namelabel.Visible = true;
+            if (result == null)
+            {
+                smoothiepictureBox.Visible = false;
+                namelabel.Visible = false;
+                cannotchooselabel.Visible = true;
+                
+            }
+            else
+            {
+                namelabel.Visible = true;
+                cannotchooselabel.Visible = false;
+                smoothiepictureBox.VIsible = true;
+                namelabel.Text = result.name;
+
+                System.IO.DirectoryInfo filepathtemp = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
+                string filepath = filepathtemp.ToString() + @"\Resources\";
+                Image photoImage = Image.FromFile(filepath + result.photo);
+
+                smoothiepictureBox.Image = g.ResizeImage(photoImage, smoothiepictureBox.Width, smoothiepictureBox.Height);
+            }
+
+        }
+
+        private void Smoothies_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

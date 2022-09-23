@@ -49,6 +49,7 @@ namespace Dietaverse.View
             foreach (var item in smIngredients)
             {
                 CheckBox chk = new CheckBox();
+                chk.ForeColor = Color.Coral;
                 chk.Width = 80;
                 chk.Text = item.name.ToString();
                 chk.CheckedChanged += new EventHandler(changecheck);
@@ -116,9 +117,16 @@ namespace Dietaverse.View
             {
                 path = openFileDialog1.FileName;
                 i = Image.FromFile(path);
-                //label7.Visible = false;
+                photolabel.Visible = false;
                 pictureBox1.Image = g.ResizeImage(i, pictureBox1.Width, pictureBox1.Height);
             }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            start.PnlFormLoader.Controls.Clear();
+            Smoothies smoothiesform = new Smoothies(start) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            start.changeForm(smoothiesform);
         }
     }
 }
