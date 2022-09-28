@@ -192,14 +192,15 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(45, 86);
+            this.label1.Location = new System.Drawing.Point(3, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 19);
+            this.label1.Size = new System.Drawing.Size(183, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Name";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -237,7 +238,6 @@
             // 
             // PnlFormLoader
             // 
-            this.PnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PnlFormLoader.Location = new System.Drawing.Point(186, 100);
             this.PnlFormLoader.Name = "PnlFormLoader";
             this.PnlFormLoader.Size = new System.Drawing.Size(765, 477);
@@ -261,7 +261,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

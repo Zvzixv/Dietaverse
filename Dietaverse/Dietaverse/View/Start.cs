@@ -38,6 +38,8 @@ namespace Dietaverse
             Dashboard dashboardform = new Dashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             this.changeForm(dashboardform);
 
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Text = user.name;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -124,7 +126,7 @@ namespace Dietaverse
 
             lblTitle.Text = "Settings";
             this.PnlFormLoader.Controls.Clear();
-            Settings settingsform = new Settings() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            Settings settingsform = new Settings(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.changeForm(settingsform);
         }
 

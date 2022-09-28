@@ -39,6 +39,7 @@
             this.password2textBox = new System.Windows.Forms.TextBox();
             this.registerButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.backbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -150,12 +151,26 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // backbutton
+            // 
+            this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.backbutton.ForeColor = System.Drawing.Color.Coral;
+            this.backbutton.Location = new System.Drawing.Point(410, 361);
+            this.backbutton.Name = "backbutton";
+            this.backbutton.Size = new System.Drawing.Size(109, 38);
+            this.backbutton.TabIndex = 11;
+            this.backbutton.Text = "Back";
+            this.backbutton.UseVisualStyleBackColor = true;
+            this.backbutton.Click += new System.EventHandler(this.backbutton_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(935, 538);
+            this.Controls.Add(this.backbutton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.password2textBox);
@@ -189,5 +204,6 @@
         private System.Windows.Forms.TextBox password2textBox;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button backbutton;
     }
 }

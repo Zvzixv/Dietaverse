@@ -101,23 +101,35 @@ namespace Dietaverse.View
 
                 if (smoothie.sour == sourcheckBox.Checked)
                     confidence++;
-                else
-                    confidence = 0;
-
-                if (smoothie.fruity == fruitycheckBox.Checked)
-                    confidence++;
-                else
-                    confidence = 0;
-
-                if (smoothie.vegetable == vegetablecheckBox.Checked)
-                    confidence++;
-                else
-                    confidence = 0;
+                //else
+                //    confidence = 0;           //jeżeli ktos ma ochotę na to i na to to niech się nie zeruje
 
                 if (smoothie.sweet == sweetcheckBox.Checked)
                     confidence++;
-                else
-                    confidence = 0;
+                //else
+                //    confidence = 0;
+
+                if (smoothie.fruity == fruitycheckBox.Checked)
+                    confidence++;
+                //else
+                //    confidence = 0;
+
+                if (smoothie.vegetable == vegetablecheckBox.Checked)
+                    confidence++;
+                //else
+                //    confidence = 0;
+
+                //chyba, ze ktos nie ma ochoty, to niech się zeruje
+                //nie działa, bo jak ktos chce albo słodki albo kwaśny a smoothie jest tylko kwaśne to się zeruje
+                //if (smoothie.sour != sourcheckBox.Checked)
+                //    confidence = 0;
+                //if (smoothie.sweet != sweetcheckBox.Checked)
+                //    confidence = 0;
+                //if (smoothie.fruity != fruitycheckBox.Checked)
+                //    confidence=0;
+                //if (smoothie.vegetable != vegetablecheckBox.Checked)
+                //    confidence=0;
+
 
 
                 if (confidence > maxconfidence)
@@ -161,7 +173,7 @@ namespace Dietaverse.View
             {
                 namelabel.Visible = true;
                 cannotchooselabel.Visible = false;
-                smoothiepictureBox.VIsible = true;
+                smoothiepictureBox.Visible = true;
                 namelabel.Text = result.name;
 
                 System.IO.DirectoryInfo filepathtemp = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());

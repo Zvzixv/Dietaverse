@@ -56,7 +56,7 @@ namespace Dietaverse.View
                     MessageBox.Show(ex.Message);
                 }
 
-                MessageBox.Show(this, "Registered successfully", "Finish", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this, "Registered successfully", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
                 newuser.test();
 
                 Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
@@ -74,6 +74,12 @@ namespace Dietaverse.View
         private void closeButton_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void backbutton_Click(object sender, EventArgs e)
+        {
+            Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            mainform.changeForm(launchform);
         }
     }
 }

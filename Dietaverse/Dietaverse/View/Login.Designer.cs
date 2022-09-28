@@ -35,6 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.loginButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.backbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,12 +112,26 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // backbutton
+            // 
+            this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.backbutton.ForeColor = System.Drawing.Color.Coral;
+            this.backbutton.Location = new System.Drawing.Point(404, 372);
+            this.backbutton.Name = "backbutton";
+            this.backbutton.Size = new System.Drawing.Size(109, 38);
+            this.backbutton.TabIndex = 10;
+            this.backbutton.Text = "Back";
+            this.backbutton.UseVisualStyleBackColor = true;
+            this.backbutton.Click += new System.EventHandler(this.backbutton_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(935, 538);
+            this.Controls.Add(this.backbutton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passtextBox);
@@ -142,5 +157,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button backbutton;
     }
 }
