@@ -33,19 +33,19 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.weightTB = new System.Windows.Forms.RichTextBox();
             this.changeweightButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.weightLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.caloriesTB = new System.Windows.Forms.RichTextBox();
             this.addcalButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.kcalLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.caloriesTB = new System.Windows.Forms.RichTextBox();
-            this.weightTB = new System.Windows.Forms.RichTextBox();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -64,6 +64,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(245, 199);
             this.richTextBox1.TabIndex = 9;
             this.richTextBox1.Text = "You can left some notes here...";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             this.richTextBox1.Enter += new System.EventHandler(this.richTextBox1_Validated);
             this.richTextBox1.Leave += new System.EventHandler(this.richTextBox1_Leave);
             // 
@@ -100,6 +101,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(287, 170);
             this.panel4.TabIndex = 7;
+            // 
+            // weightTB
+            // 
+            this.weightTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.weightTB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.weightTB.ForeColor = System.Drawing.Color.Coral;
+            this.weightTB.Location = new System.Drawing.Point(56, 117);
+            this.weightTB.Name = "weightTB";
+            this.weightTB.Size = new System.Drawing.Size(73, 35);
+            this.weightTB.TabIndex = 4;
+            this.weightTB.Text = "";
             // 
             // changeweightButton
             // 
@@ -171,6 +183,17 @@
             this.panel3.Size = new System.Drawing.Size(279, 170);
             this.panel3.TabIndex = 8;
             // 
+            // caloriesTB
+            // 
+            this.caloriesTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.caloriesTB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.caloriesTB.ForeColor = System.Drawing.Color.Coral;
+            this.caloriesTB.Location = new System.Drawing.Point(52, 117);
+            this.caloriesTB.Name = "caloriesTB";
+            this.caloriesTB.Size = new System.Drawing.Size(73, 35);
+            this.caloriesTB.TabIndex = 4;
+            this.caloriesTB.Text = "";
+            // 
             // addcalButton
             // 
             this.addcalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -225,28 +248,6 @@
             this.label3.Size = new System.Drawing.Size(41, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "today";
-            // 
-            // caloriesTB
-            // 
-            this.caloriesTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.caloriesTB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.caloriesTB.ForeColor = System.Drawing.Color.Coral;
-            this.caloriesTB.Location = new System.Drawing.Point(52, 117);
-            this.caloriesTB.Name = "caloriesTB";
-            this.caloriesTB.Size = new System.Drawing.Size(73, 35);
-            this.caloriesTB.TabIndex = 4;
-            this.caloriesTB.Text = "";
-            // 
-            // weightTB
-            // 
-            this.weightTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.weightTB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.weightTB.ForeColor = System.Drawing.Color.Coral;
-            this.weightTB.Location = new System.Drawing.Point(56, 117);
-            this.weightTB.Name = "weightTB";
-            this.weightTB.Size = new System.Drawing.Size(73, 35);
-            this.weightTB.TabIndex = 4;
-            this.weightTB.Text = "";
             // 
             // Dashboard
             // 

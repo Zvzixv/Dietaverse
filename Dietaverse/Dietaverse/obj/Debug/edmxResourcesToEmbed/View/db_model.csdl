@@ -62,11 +62,12 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="kcal_amount" Type="String" Nullable="true" />
+    <Property Name="kcal_amount" Type="Int32" Nullable="true" />
     <Property Name="weight" Type="Double" Nullable="true" />
     <Property Name="notes" Type="String" Nullable="true" />
     <NavigationProperty Name="users" Relationship="db_model.daily_summaryusers" FromRole="daily_summary" ToRole="users" />
     <NavigationProperty Name="months" Relationship="db_model.daily_summarymonths" FromRole="daily_summary" ToRole="months" />
+    <Property Name="date" Type="DateTime" Nullable="false" />
   </EntityType>
   <EntityType Name="months">
     <Key>

@@ -35,7 +35,7 @@ namespace Dietaverse
 
             lblTitle.Text = "Dashboard";
             this.PnlFormLoader.Controls.Clear();
-            Dashboard dashboardform = new Dashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            Dashboard dashboardform = new Dashboard(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             this.changeForm(dashboardform);
 
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -56,7 +56,7 @@ namespace Dietaverse
 
             lblTitle.Text = "Dashboard";
             this.PnlFormLoader.Controls.Clear();
-            Dashboard dashboardform = new Dashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            Dashboard dashboardform = new Dashboard(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             this.changeForm(dashboardform);
         }
 

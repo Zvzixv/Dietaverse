@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dietaverse.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,15 @@ namespace Dietaverse.View
     public partial class Dashboard : Form
     {
         bool hasBeenClicked = false;
-        public static int calories = 10;
-        public static int weight = 0;
-        public Dashboard()
+        public static int calories = 0;
+        public static double weight = 0;
+        users user;
+        string notes;
+        Daily_summary summary = new Daily_summary();
+        public Dashboard(users _user)
         {
+            user = _user;
+            weight = user.weight;
             InitializeComponent();
             kcalLabel.Text =calories.ToString()+" kcal";
             weightLabel.Text =weight.ToString()+" kg";
@@ -62,17 +68,24 @@ namespace Dietaverse.View
             }
 
             caloriesTB.Text = "";
+            summary.update(weight, calories, user, notes);
            
         }
 
         private void changeweightButton_Click(object sender, EventArgs e)
         {
-            if(Int32.TryParse(weightTB.Text, out weight))
+            if(Double.TryParse(weightTB.Text, out weight))
             {
                 weightLabel.Text = weight.ToString()+" kg";
             }
 
             weightTB.Text = "";
+            summary.update(weight, calories, user, notes);
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            notes = richTextBox1.Text;
         }
     }
 }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/22/2022 19:59:51
+-- Date Created: 09/28/2022 23:53:01
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\View\db_model.edmx
 -- --------------------------------------------------
 
@@ -92,9 +92,10 @@ GO
 -- Creating table 'daily_summarySet'
 CREATE TABLE [dbo].[daily_summarySet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [kcal_amount] nvarchar(max)  NULL,
+    [kcal_amount] int  NULL,
     [weight] float  NULL,
     [notes] nvarchar(max)  NULL,
+    [date] datetime  NOT NULL,
     [users_Id] int  NOT NULL,
     [months_Id] int  NOT NULL
 );

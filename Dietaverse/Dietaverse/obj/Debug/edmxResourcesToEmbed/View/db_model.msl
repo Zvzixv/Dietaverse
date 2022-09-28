@@ -29,6 +29,7 @@
           <ScalarProperty Name="kcal_amount" ColumnName="kcal_amount" />
           <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="date" ColumnName="date" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

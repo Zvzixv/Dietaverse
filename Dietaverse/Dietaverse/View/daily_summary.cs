@@ -15,9 +15,10 @@ namespace Dietaverse.View
     public partial class daily_summary
     {
         public int Id { get; set; }
-        public string kcal_amount { get; set; }
+        public Nullable<int> kcal_amount { get; set; }
         public Nullable<double> weight { get; set; }
         public string notes { get; set; }
+        public System.DateTime date { get; set; }
     
         public virtual users users { get; set; }
         public virtual months months { get; set; }

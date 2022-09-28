@@ -59,9 +59,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="kcal_amount" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="kcal_amount" Type="int" Nullable="true" />
     <Property Name="weight" Type="float" Nullable="true" />
     <Property Name="notes" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="date" Type="datetime" Nullable="false" />
     <Property Name="users_Id" Type="int" Nullable="false" />
     <Property Name="months_Id" Type="int" Nullable="false" />
   </EntityType>
