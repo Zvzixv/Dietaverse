@@ -9,7 +9,6 @@
     <EntitySet Name="usersSet" EntityType="db_model.Store.usersSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="dishes_gallerySet" EntityType="db_model.Store.dishes_gallerySet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="daily_summarySet" EntityType="db_model.Store.daily_summarySet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="monthsSet" EntityType="db_model.Store.monthsSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="smoothies_recipesSet" EntityType="db_model.Store.smoothies_recipesSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="smoothies_ingrSet" EntityType="db_model.Store.smoothies_ingrSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="body_gallerySet" EntityType="db_model.Store.body_gallerySet" store:Type="Tables" Schema="dbo" />
@@ -17,10 +16,6 @@
     <AssociationSet Name="daily_summaryusers" Association="db_model.Store.daily_summaryusers">
       <End Role="daily_summary" EntitySet="daily_summarySet" />
       <End Role="users" EntitySet="usersSet" />
-    </AssociationSet>
-    <AssociationSet Name="daily_summarymonths" Association="db_model.Store.daily_summarymonths">
-      <End Role="months" EntitySet="monthsSet" />
-      <End Role="daily_summary" EntitySet="daily_summarySet" />
     </AssociationSet>
     <AssociationSet Name="usersbody_gallery" Association="db_model.Store.usersbody_gallery">
       <End Role="users" EntitySet="usersSet" />
@@ -69,14 +64,6 @@
     <Property Name="notes" Type="nvarchar(max)" Nullable="true" />
     <Property Name="date" Type="datetime" Nullable="false" />
     <Property Name="users_Id" Type="int" Nullable="false" />
-    <Property Name="months_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="monthsSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="daily_summary" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="smoothies_recipesSet">
     <Key>
@@ -128,20 +115,6 @@
       </Principal>
       <Dependent Role="daily_summary">
         <PropertyRef Name="users_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="daily_summarymonths">
-    <End Role="months" Type="db_model.Store.monthsSet" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="daily_summary" Type="db_model.Store.daily_summarySet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="months">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="daily_summary">
-        <PropertyRef Name="months_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -203,16 +176,11 @@
           <EntitySet Name="usersSet" EntityType="db_model.users" />
           <EntitySet Name="dishes_gallerySet" EntityType="db_model.dishes_gallery" />
           <EntitySet Name="daily_summarySet" EntityType="db_model.daily_summary" />
-          <EntitySet Name="monthsSet" EntityType="db_model.months" />
           <EntitySet Name="smoothies_recipesSet" EntityType="db_model.smoothies_recipes" />
           <EntitySet Name="smoothies_ingrSet" EntityType="db_model.smoothies_ingr" />
           <AssociationSet Name="daily_summaryusers" Association="db_model.daily_summaryusers">
             <End Role="daily_summary" EntitySet="daily_summarySet" />
             <End Role="users" EntitySet="usersSet" />
-          </AssociationSet>
-          <AssociationSet Name="daily_summarymonths" Association="db_model.daily_summarymonths">
-            <End Role="months" EntitySet="monthsSet" />
-            <End Role="daily_summary" EntitySet="daily_summarySet" />
           </AssociationSet>
           <EntitySet Name="body_gallerySet" EntityType="db_model.body_gallery" />
           <AssociationSet Name="usersbody_gallery" Association="db_model.usersbody_gallery">
@@ -265,16 +233,7 @@
           <Property Name="weight" Type="Double" Nullable="true" />
           <Property Name="notes" Type="String" Nullable="true" />
           <NavigationProperty Name="users" Relationship="db_model.daily_summaryusers" FromRole="daily_summary" ToRole="users" />
-          <NavigationProperty Name="months" Relationship="db_model.daily_summarymonths" FromRole="daily_summary" ToRole="months" />
           <Property Name="date" Type="DateTime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="months">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="daily_summary" Type="String" Nullable="false" />
-          <NavigationProperty Name="daily_summary1" Relationship="db_model.daily_summarymonths" FromRole="months" ToRole="daily_summary" />
         </EntityType>
         <EntityType Name="smoothies_recipes">
           <Key>
@@ -303,13 +262,6 @@
           </End>
           <End Type="db_model.users" Role="users" Multiplicity="1" >
             <OnDelete Action="Cascade" />
-          </End>
-        </Association>
-        <Association Name="daily_summarymonths">
-          <End Type="db_model.months" Role="months" Multiplicity="1" >
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Type="db_model.daily_summary" Role="daily_summary" Multiplicity="*" >
           </End>
         </Association>
         <EntityType Name="body_gallery">
@@ -387,14 +339,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="monthsSet">
-      <EntityTypeMapping TypeName="IsTypeOf(db_model.months)">
-        <MappingFragment StoreEntitySet="monthsSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="daily_summary" ColumnName="daily_summary" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="smoothies_recipesSet">
       <EntityTypeMapping TypeName="IsTypeOf(db_model.smoothies_recipes)">
         <MappingFragment StoreEntitySet="smoothies_recipesSet">
@@ -438,14 +382,6 @@
     <AssociationSetMapping Name="daily_summaryusers" TypeName="db_model.daily_summaryusers" StoreEntitySet="daily_summarySet">
       <EndProperty Name="users">
         <ScalarProperty Name="Id" ColumnName="users_Id" />
-      </EndProperty>
-      <EndProperty Name="daily_summary">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="daily_summarymonths" TypeName="db_model.daily_summarymonths" StoreEntitySet="daily_summarySet">
-      <EndProperty Name="months">
-        <ScalarProperty Name="Id" ColumnName="months_Id" />
       </EndProperty>
       <EndProperty Name="daily_summary">
         <ScalarProperty Name="Id" ColumnName="Id" />

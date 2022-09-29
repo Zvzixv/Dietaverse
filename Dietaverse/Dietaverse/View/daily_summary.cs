@@ -21,6 +21,5 @@ namespace Dietaverse.View
         public System.DateTime date { get; set; }
     
         public virtual users users { get; set; }
-        public virtual months months { get; set; }
     }
 }

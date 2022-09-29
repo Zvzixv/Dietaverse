@@ -28,7 +28,6 @@ namespace Dietaverse.View
         public virtual DbSet<users> usersSet { get; set; }
         public virtual DbSet<dishes_gallery> dishes_gallerySet { get; set; }
         public virtual DbSet<daily_summary> daily_summarySet { get; set; }
-        public virtual DbSet<months> monthsSet { get; set; }
         public virtual DbSet<smoothies_recipes> smoothies_recipesSet { get; set; }
         public virtual DbSet<smoothies_ingr> smoothies_ingrSet { get; set; }
         public virtual DbSet<body_gallery> body_gallerySet { get; set; }

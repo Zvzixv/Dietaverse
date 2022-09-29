@@ -33,14 +33,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="monthsSet">
-      <EntityTypeMapping TypeName="IsTypeOf(db_model.months)">
-        <MappingFragment StoreEntitySet="monthsSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="daily_summary" ColumnName="daily_summary" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="smoothies_recipesSet">
       <EntityTypeMapping TypeName="IsTypeOf(db_model.smoothies_recipes)">
         <MappingFragment StoreEntitySet="smoothies_recipesSet">
@@ -84,14 +76,6 @@
     <AssociationSetMapping Name="daily_summaryusers" TypeName="db_model.daily_summaryusers" StoreEntitySet="daily_summarySet">
       <EndProperty Name="users">
         <ScalarProperty Name="Id" ColumnName="users_Id" />
-      </EndProperty>
-      <EndProperty Name="daily_summary">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="daily_summarymonths" TypeName="db_model.daily_summarymonths" StoreEntitySet="daily_summarySet">
-      <EndProperty Name="months">
-        <ScalarProperty Name="Id" ColumnName="months_Id" />
       </EndProperty>
       <EndProperty Name="daily_summary">
         <ScalarProperty Name="Id" ColumnName="Id" />

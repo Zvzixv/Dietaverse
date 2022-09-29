@@ -143,9 +143,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="View\months.cs">
-      <DependentUpon>db_model.tt</DependentUpon>
-    </Compile>
     <Compile Include="View\MonthSummary.cs">
       <SubType>Form</SubType>
     </Compile>

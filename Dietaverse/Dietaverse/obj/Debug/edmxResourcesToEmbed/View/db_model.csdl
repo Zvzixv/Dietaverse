@@ -4,16 +4,11 @@
     <EntitySet Name="usersSet" EntityType="db_model.users" />
     <EntitySet Name="dishes_gallerySet" EntityType="db_model.dishes_gallery" />
     <EntitySet Name="daily_summarySet" EntityType="db_model.daily_summary" />
-    <EntitySet Name="monthsSet" EntityType="db_model.months" />
     <EntitySet Name="smoothies_recipesSet" EntityType="db_model.smoothies_recipes" />
     <EntitySet Name="smoothies_ingrSet" EntityType="db_model.smoothies_ingr" />
     <AssociationSet Name="daily_summaryusers" Association="db_model.daily_summaryusers">
       <End Role="daily_summary" EntitySet="daily_summarySet" />
       <End Role="users" EntitySet="usersSet" />
-    </AssociationSet>
-    <AssociationSet Name="daily_summarymonths" Association="db_model.daily_summarymonths">
-      <End Role="months" EntitySet="monthsSet" />
-      <End Role="daily_summary" EntitySet="daily_summarySet" />
     </AssociationSet>
     <EntitySet Name="body_gallerySet" EntityType="db_model.body_gallery" />
     <AssociationSet Name="usersbody_gallery" Association="db_model.usersbody_gallery">
@@ -66,16 +61,7 @@
     <Property Name="weight" Type="Double" Nullable="true" />
     <Property Name="notes" Type="String" Nullable="true" />
     <NavigationProperty Name="users" Relationship="db_model.daily_summaryusers" FromRole="daily_summary" ToRole="users" />
-    <NavigationProperty Name="months" Relationship="db_model.daily_summarymonths" FromRole="daily_summary" ToRole="months" />
     <Property Name="date" Type="DateTime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="months">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="daily_summary" Type="String" Nullable="false" />
-    <NavigationProperty Name="daily_summary1" Relationship="db_model.daily_summarymonths" FromRole="months" ToRole="daily_summary" />
   </EntityType>
   <EntityType Name="smoothies_recipes">
     <Key>
@@ -104,12 +90,6 @@
     <End Type="db_model.users" Role="users" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-  </Association>
-  <Association Name="daily_summarymonths">
-    <End Type="db_model.months" Role="months" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="db_model.daily_summary" Role="daily_summary" Multiplicity="*" />
   </Association>
   <EntityType Name="body_gallery">
     <Key>

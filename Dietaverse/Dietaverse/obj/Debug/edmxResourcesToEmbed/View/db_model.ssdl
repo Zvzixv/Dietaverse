@@ -4,7 +4,6 @@
     <EntitySet Name="usersSet" EntityType="db_model.Store.usersSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="dishes_gallerySet" EntityType="db_model.Store.dishes_gallerySet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="daily_summarySet" EntityType="db_model.Store.daily_summarySet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="monthsSet" EntityType="db_model.Store.monthsSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="smoothies_recipesSet" EntityType="db_model.Store.smoothies_recipesSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="smoothies_ingrSet" EntityType="db_model.Store.smoothies_ingrSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="body_gallerySet" EntityType="db_model.Store.body_gallerySet" store:Type="Tables" Schema="dbo" />
@@ -12,10 +11,6 @@
     <AssociationSet Name="daily_summaryusers" Association="db_model.Store.daily_summaryusers">
       <End Role="daily_summary" EntitySet="daily_summarySet" />
       <End Role="users" EntitySet="usersSet" />
-    </AssociationSet>
-    <AssociationSet Name="daily_summarymonths" Association="db_model.Store.daily_summarymonths">
-      <End Role="months" EntitySet="monthsSet" />
-      <End Role="daily_summary" EntitySet="daily_summarySet" />
     </AssociationSet>
     <AssociationSet Name="usersbody_gallery" Association="db_model.Store.usersbody_gallery">
       <End Role="users" EntitySet="usersSet" />
@@ -64,14 +59,6 @@
     <Property Name="notes" Type="nvarchar(max)" Nullable="true" />
     <Property Name="date" Type="datetime" Nullable="false" />
     <Property Name="users_Id" Type="int" Nullable="false" />
-    <Property Name="months_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="monthsSet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="daily_summary" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="smoothies_recipesSet">
     <Key>
@@ -123,20 +110,6 @@
       </Principal>
       <Dependent Role="daily_summary">
         <PropertyRef Name="users_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="daily_summarymonths">
-    <End Role="months" Type="db_model.Store.monthsSet" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="daily_summary" Type="db_model.Store.daily_summarySet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="months">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="daily_summary">
-        <PropertyRef Name="months_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

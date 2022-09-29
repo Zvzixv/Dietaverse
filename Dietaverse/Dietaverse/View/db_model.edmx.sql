@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/28/2022 23:53:01
+-- Date Created: 09/29/2022 22:31:10
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\View\db_model.edmx
 -- --------------------------------------------------
 
@@ -19,9 +19,6 @@ GO
 
 IF OBJECT_ID(N'[dbo].[FK_daily_summaryusers]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[daily_summarySet] DROP CONSTRAINT [FK_daily_summaryusers];
-GO
-IF OBJECT_ID(N'[dbo].[FK_daily_summarymonths]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[daily_summarySet] DROP CONSTRAINT [FK_daily_summarymonths];
 GO
 IF OBJECT_ID(N'[dbo].[FK_usersbody_gallery]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_usersbody_gallery];
@@ -48,9 +45,6 @@ IF OBJECT_ID(N'[dbo].[dishes_gallerySet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[daily_summarySet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[daily_summarySet];
-GO
-IF OBJECT_ID(N'[dbo].[monthsSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[monthsSet];
 GO
 IF OBJECT_ID(N'[dbo].[smoothies_recipesSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[smoothies_recipesSet];
@@ -96,15 +90,7 @@ CREATE TABLE [dbo].[daily_summarySet] (
     [weight] float  NULL,
     [notes] nvarchar(max)  NULL,
     [date] datetime  NOT NULL,
-    [users_Id] int  NOT NULL,
-    [months_Id] int  NOT NULL
-);
-GO
-
--- Creating table 'monthsSet'
-CREATE TABLE [dbo].[monthsSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [daily_summary] nvarchar(max)  NOT NULL
+    [users_Id] int  NOT NULL
 );
 GO
 
@@ -169,12 +155,6 @@ ADD CONSTRAINT [PK_daily_summarySet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'monthsSet'
-ALTER TABLE [dbo].[monthsSet]
-ADD CONSTRAINT [PK_monthsSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
 -- Creating primary key on [Id] in table 'smoothies_recipesSet'
 ALTER TABLE [dbo].[smoothies_recipesSet]
 ADD CONSTRAINT [PK_smoothies_recipesSet]
@@ -216,21 +196,6 @@ GO
 CREATE INDEX [IX_FK_daily_summaryusers]
 ON [dbo].[daily_summarySet]
     ([users_Id]);
-GO
-
--- Creating foreign key on [months_Id] in table 'daily_summarySet'
-ALTER TABLE [dbo].[daily_summarySet]
-ADD CONSTRAINT [FK_daily_summarymonths]
-    FOREIGN KEY ([months_Id])
-    REFERENCES [dbo].[monthsSet]
-        ([Id])
-    ON DELETE CASCADE ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_daily_summarymonths'
-CREATE INDEX [IX_FK_daily_summarymonths]
-ON [dbo].[daily_summarySet]
-    ([months_Id]);
 GO
 
 -- Creating foreign key on [users_Id] in table 'body_gallerySet'
