@@ -77,5 +77,67 @@ namespace Dietaverse.Model
                 db.SaveChanges();
             }
         }
+         public int downloadKcalFromDatabase(users us, DateTime day)
+         {
+
+            using (var db = new db_modelContainer())
+            {
+                var users = db.usersSet;
+                var summaries = db.daily_summarySet;
+
+                daily_summary searchedsummary;
+
+                //users user = users.Single(a=>a.name == us.name);
+                try
+                {
+                    searchedsummary = summaries.Single(a => a.users.name == us.name && a.date.Day == day.Day && a.date.Month == day.Month && a.date.Year == day.Year);
+                }
+                catch (Exception ex)
+                {
+                    return 0;
+                }
+
+                return (int)searchedsummary.kcal_amount;
+            }
+        }
+
+        public double downloadWeightFromDatabase(users us, DateTime day)
+        {
+
+            using (var db = new db_modelContainer())
+            {
+                var users = db.usersSet;
+                var summaries = db.daily_summarySet;
+
+                //users user = users.Single(a=>a.name == us.name);
+                daily_summary searchedsummary = summaries.Single(a => a.users.name == us.name && a.date.Day == day.Day && a.date.Month == day.Month && a.date.Year == day.Year);
+
+
+                return (double)searchedsummary.weight;
+            }
+        }
+
+        public string downloadNoteFromDatabase(users us, DateTime day)
+        {
+
+            using (var db = new db_modelContainer())
+            {
+                var users = db.usersSet;
+                var summaries = db.daily_summarySet;
+
+                daily_summary searchedsummary;
+                //users user = users.Single(a=>a.name == us.name);
+                try
+                {
+                    searchedsummary = summaries.Single(a => a.users.name == us.name && a.date.Day == day.Day && a.date.Month == day.Month && a.date.Year == day.Year);
+                }
+                catch (Exception ex)
+                {
+                    return "";
+                }
+
+                return (string)searchedsummary.notes;
+            }
+        }
     }
 }

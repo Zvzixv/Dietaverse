@@ -54,10 +54,11 @@ namespace Dietaverse.View
                 catch (CreateAccountFailException ex)
                 {
                     MessageBox.Show(ex.Message);
+                    return;
                 }
 
                 MessageBox.Show(this, "Registered successfully", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
-                newuser.test();
+
 
                 Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
                 mainform.changeForm(launchform);

@@ -17,12 +17,18 @@ namespace Dietaverse.View
         public static int calories = 0;
         public static double weight = 0;
         users user;
+        Users User = new Users();
         string notes;
         Daily_summary summary = new Daily_summary();
         public Dashboard(users _user)
         {
             user = _user;
             weight = user.weight;
+            calories = summary.downloadKcalFromDatabase(user, DateTime.Now);
+            if(summary.downloadNoteFromDatabase(user, DateTime.Now)!="")
+            {
+                notes = summary.downloadNoteFromDatabase(user,DateTime.Now);
+            }
             InitializeComponent();
             kcalLabel.Text =calories.ToString()+" kcal";
             weightLabel.Text =weight.ToString()+" kg";
@@ -81,6 +87,7 @@ namespace Dietaverse.View
 
             weightTB.Text = "";
             summary.update(weight, calories, user, notes);
+            User.ChangeWeight(user, weight);
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)

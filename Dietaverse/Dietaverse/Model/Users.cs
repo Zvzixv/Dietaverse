@@ -42,14 +42,13 @@ namespace Dietaverse.Model
                 {
                     if (_username == i.name)
                         throw new CreateAccountFailException("Username is already occupied!");
+                    return;
                 }
 
                 users newuser = new users { name = _username, weight = _weight, password = _password};
-                //users_dishes_gallery usg = new users_dishes_gallery() {users = newuser };
 
                 
                 db.usersSet.Add(newuser);
-                //db.users_dishes_gallerySet.Add(usg);
                 db.SaveChanges();
             }
         }
@@ -82,19 +81,16 @@ namespace Dietaverse.Model
             }
         }
 
-        public void test()
+        public bool ChangeWeight(users user, double weight)
         {
-            using (var context = new db_modelContainer())
+            using (var db = new db_modelContainer())
             {
-                var studentAndCourseList = context.usersSet;
-
-                foreach (var item in studentAndCourseList)
-                {
-                    Console.WriteLine($"Student: {item.name} Course: {item.weight}");
-                }
+                users u = db.usersSet.Single(a => a.name == user.name);
+                u.weight = weight;
+                db.SaveChanges();
+                return true;
             }
         }
-
 
     }
 }
