@@ -41,8 +41,10 @@ namespace Dietaverse.Model
                 foreach (var i in x)
                 {
                     if (_username == i.name)
+                    {
                         throw new CreateAccountFailException("Username is already occupied!");
-                    return;
+                        //return;
+                    }
                 }
 
                 users newuser = new users { name = _username, weight = _weight, password = _password};
