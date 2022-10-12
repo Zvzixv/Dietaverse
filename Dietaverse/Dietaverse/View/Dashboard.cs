@@ -33,8 +33,6 @@ namespace Dietaverse.View
             kcalLabel.Text =calories.ToString()+" kcal";
             weightLabel.Text =weight.ToString()+" kg";
 
-
-            summary.fillOtherDays(user);
         }
 
         private void richTextBox1_Validated(object sender, EventArgs e)
