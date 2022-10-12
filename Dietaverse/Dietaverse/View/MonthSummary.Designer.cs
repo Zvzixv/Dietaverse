@@ -32,6 +32,9 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.weightLabel = new System.Windows.Forms.Label();
             this.kcalLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -74,6 +77,39 @@
             this.kcalLabel.TabIndex = 6;
             this.kcalLabel.Text = "Calories:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Coral;
+            this.label1.Location = new System.Drawing.Point(254, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 30);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Coral;
+            this.label2.Location = new System.Drawing.Point(280, 317);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 30);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Coral;
+            this.label3.Location = new System.Drawing.Point(293, 347);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 30);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "0";
+            // 
             // MonthSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,6 +118,9 @@
             this.ClientSize = new System.Drawing.Size(733, 477);
             this.Controls.Add(this.kcalLabel);
             this.Controls.Add(this.weightLabel);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.monthCalendar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -98,5 +137,8 @@
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label weightLabel;
         private System.Windows.Forms.Label kcalLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

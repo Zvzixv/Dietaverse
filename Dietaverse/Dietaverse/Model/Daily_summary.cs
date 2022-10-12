@@ -35,6 +35,22 @@ namespace Dietaverse.Model
             }
         }
 
+        public void create(double _weight, int _kcal, users _u, string _note, DateTime date)
+        {
+            using (var db = new db_modelContainer())
+            {
+                var u = db.usersSet;
+                daily_summary daily_Summary = new daily_summary();
+                daily_Summary.kcal_amount = _kcal;
+                daily_Summary.weight = _weight;
+                daily_Summary.notes = _note;
+                daily_Summary.date = date;
+                daily_Summary.users = u.Single(a => a.name == _u.name);
+                db.daily_summarySet.Add(daily_Summary);
+                db.SaveChanges();
+            }
+        }
+
         public void update(double _weight, int _kcal, users _u, string _note)
         {
             using (var db = new db_modelContainer())
@@ -46,13 +62,14 @@ namespace Dietaverse.Model
 
                 foreach(var x in summaries)
                 {
-                    if (DateTime.Now.Day == x.date.Day && DateTime.Now.Month == x.date.Month && DateTime.Now.Year == x.date.Year)
+                    if (DateTime.Now.Day == x.date.Day && DateTime.Now.Month == x.date.Month && DateTime.Now.Year == x.date.Year&&x.users.Id==_u.Id)
                         summary = x;
                 }
 
                 if(summary == null)
                 {
                     create(_weight, _kcal, _u, _note);
+                    return;
                 }
 
                 else
@@ -63,16 +80,16 @@ namespace Dietaverse.Model
                 }
 
 
-                foreach (var x in summaries)
-                {
-                    if (DateTime.Now.Day == x.date.Day && DateTime.Now.Month == x.date.Month && DateTime.Now.Year == x.date.Year)
-                    {
-                        daily_summary ds = db.daily_summarySet.Single(a=>a.date.Day == x.date.Day && a.date.Month == x.date.Month && a.date.Year == x.date.Year);
-                        ds.weight = summary.weight;
-                        ds.kcal_amount = summary.kcal_amount;
-                        ds.notes = summary.notes;
-                    }
-                }
+                //foreach (var x in summaries)
+                //{
+                //    if (DateTime.Now.Day == x.date.Day && DateTime.Now.Month == x.date.Month && DateTime.Now.Year == x.date.Year)
+                //    {
+                //        daily_summary ds = db.daily_summarySet.Single(a=>a.date.Day == x.date.Day && a.date.Month == x.date.Month && a.date.Year == x.date.Year&&a.users.Id==x.users.Id);
+                //        ds.weight = summary.weight;
+                //        ds.kcal_amount = summary.kcal_amount;
+                //        ds.notes = summary.notes;
+                //    }
+                //}
 
                 db.SaveChanges();
             }
@@ -137,6 +154,69 @@ namespace Dietaverse.Model
                 }
 
                 return (string)searchedsummary.notes;
+            }
+        }
+
+        //kazdy dzien ktory nie jest zapisany ma miec dane z ostatniego zapisanego dnia (kilogramy) i zero kalorii 
+
+        //mozliwe, ze zbedne
+        public void fillOtherDays(users us)
+        {
+            using (var db = new db_modelContainer())
+            {
+                var users = db.usersSet;
+                var summaries = db.daily_summarySet;
+
+                DateTime start = new DateTime(2022, 9, 1, 0, 0, 0);
+                DateTime today = DateTime.Now;
+                daily_summary lastSaved = null;
+
+                TimeSpan difference = today - start;
+                int differenceInDays = (int)difference.TotalDays;
+
+                daily_summary searchedsummary = null;
+
+
+                //cos jest nie tak z petla. Tworzy sie dzien ale tylko jeden meh 
+
+                //        for (int i = 0; i < differenceInDays; i++)
+                //        {
+                //            try
+                //            {
+                //                //jest ten dzien?
+                //                searchedsummary = summaries.Single(a => a.users.name == us.name && a.date.Day == start.Day && a.date.Month == start.Month && a.date.Year == start.Year);
+                //            }
+
+                //            catch (Exception ex)
+                //            {
+                //                //nie ma tego dnia
+                //                daily_summary newday = new daily_summary();
+                //                newday.users = us;
+                //                newday.date = start;
+                //                if (lastSaved != null)
+                //                {
+                //                    newday.kcal_amount = lastSaved.kcal_amount;
+                //                    newday.weight = lastSaved.weight;
+                //                }
+                //                else
+                //                {
+                //                    newday.kcal_amount = 0;
+                //                    newday.weight = 0;
+                //                }
+
+                //                create((int)newday.weight, (int)newday.kcal_amount, us, null, newday.date);
+
+                //                start.AddDays(1);
+                //                break;
+
+                //            }
+
+                //            //jeeest
+                //            lastSaved = searchedsummary;
+
+                //            start.AddDays(1);
+
+                //        }
             }
         }
     }
