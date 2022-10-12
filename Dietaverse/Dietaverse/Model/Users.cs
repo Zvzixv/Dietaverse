@@ -1,4 +1,5 @@
-﻿using Dietaverse.View;
+﻿using Dietaverse.Database;
+using Dietaverse.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,12 @@ namespace Dietaverse.Model
     {
         public CreateAccountFailException() { }
         public CreateAccountFailException(string message) : base(message) { }
+    }
+
+    public class LoginFailException : Exception
+    {
+        public LoginFailException() { }
+        public LoginFailException(string message) : base(message) { }
     }
     public class Users
     {
@@ -43,7 +50,6 @@ namespace Dietaverse.Model
                     if (_username == i.name)
                     {
                         throw new CreateAccountFailException("Username is already occupied!");
-                        //return;
                     }
                 }
 
@@ -68,7 +74,7 @@ namespace Dietaverse.Model
                         return s;
                     }
                 }
-                return null;
+                throw new LoginFailException("Inserted records are wrong!");
             }
         }
 

@@ -15,7 +15,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Różne pliki",
       "ColorIndex": -1
+    },
+    "858bd838-d731-47e0-981f-9234ac17749f": {
+      "ProjectGuid": "858bd838-d731-47e0-981f-9234ac17749f",
+      "DisplayName": "DietaverseTest",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

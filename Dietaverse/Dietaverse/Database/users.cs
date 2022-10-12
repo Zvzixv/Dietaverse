@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dietaverse.View
+namespace Dietaverse.Database
 {
     using System;
     using System.Collections.Generic;

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dietaverse", "Dietaverse\Dietaverse.csproj", "{755A4E56-6B22-4B4C-A6D5-05D1575C1D05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietaverseTest", "DietaverseTest\DietaverseTest.csproj", "{858BD838-D731-47E0-981F-9234AC17749F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{755A4E56-6B22-4B4C-A6D5-05D1575C1D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{755A4E56-6B22-4B4C-A6D5-05D1575C1D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{755A4E56-6B22-4B4C-A6D5-05D1575C1D05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858BD838-D731-47E0-981F-9234AC17749F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858BD838-D731-47E0-981F-9234AC17749F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858BD838-D731-47E0-981F-9234AC17749F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858BD838-D731-47E0-981F-9234AC17749F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

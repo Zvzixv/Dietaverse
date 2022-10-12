@@ -32,17 +32,20 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.weightLabel = new System.Windows.Forms.Label();
             this.kcalLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.datelabelOut = new System.Windows.Forms.Label();
+            this.weightlabelOut = new System.Windows.Forms.Label();
+            this.callabelOut = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // monthCalendar1
             // 
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
             this.monthCalendar1.Location = new System.Drawing.Point(96, 82);
+            this.monthCalendar1.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);
+            this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // dateLabel
             // 
@@ -77,38 +80,38 @@
             this.kcalLabel.TabIndex = 6;
             this.kcalLabel.Text = "Calories:";
             // 
-            // label1
+            // datelabelOut
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(254, 287);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 30);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "0";
+            this.datelabelOut.AutoSize = true;
+            this.datelabelOut.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datelabelOut.ForeColor = System.Drawing.Color.Coral;
+            this.datelabelOut.Location = new System.Drawing.Point(254, 287);
+            this.datelabelOut.Name = "datelabelOut";
+            this.datelabelOut.Size = new System.Drawing.Size(26, 30);
+            this.datelabelOut.TabIndex = 6;
+            this.datelabelOut.Text = "0";
             // 
-            // label2
+            // weightlabelOut
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(280, 317);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 30);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "0";
+            this.weightlabelOut.AutoSize = true;
+            this.weightlabelOut.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weightlabelOut.ForeColor = System.Drawing.Color.Coral;
+            this.weightlabelOut.Location = new System.Drawing.Point(280, 317);
+            this.weightlabelOut.Name = "weightlabelOut";
+            this.weightlabelOut.Size = new System.Drawing.Size(26, 30);
+            this.weightlabelOut.TabIndex = 6;
+            this.weightlabelOut.Text = "0";
             // 
-            // label3
+            // callabelOut
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Coral;
-            this.label3.Location = new System.Drawing.Point(293, 347);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 30);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "0";
+            this.callabelOut.AutoSize = true;
+            this.callabelOut.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.callabelOut.ForeColor = System.Drawing.Color.Coral;
+            this.callabelOut.Location = new System.Drawing.Point(293, 347);
+            this.callabelOut.Name = "callabelOut";
+            this.callabelOut.Size = new System.Drawing.Size(26, 30);
+            this.callabelOut.TabIndex = 6;
+            this.callabelOut.Text = "0";
             // 
             // MonthSummary
             // 
@@ -118,9 +121,9 @@
             this.ClientSize = new System.Drawing.Size(733, 477);
             this.Controls.Add(this.kcalLabel);
             this.Controls.Add(this.weightLabel);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.callabelOut);
+            this.Controls.Add(this.weightlabelOut);
+            this.Controls.Add(this.datelabelOut);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.monthCalendar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -137,8 +140,8 @@
         private System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.Label weightLabel;
         private System.Windows.Forms.Label kcalLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label datelabelOut;
+        private System.Windows.Forms.Label weightlabelOut;
+        private System.Windows.Forms.Label callabelOut;
     }
 }

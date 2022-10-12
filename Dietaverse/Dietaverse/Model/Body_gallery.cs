@@ -1,4 +1,5 @@
-﻿using Dietaverse.View;
+﻿using Dietaverse.Database;
+using Dietaverse.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,16 +61,5 @@ namespace Dietaverse.Model
             }
         }
 
-        //public void test_deleteall()
-        //{
-        //    using(var db = new db_modelContainer())
-        //    {
-        //        foreach(var i in db.usersSet)
-        //        {
-        //            db.usersSet.Remove(i);
-        //        }
-        //        db.SaveChanges();
-        //    }
-        //}
     }
 }

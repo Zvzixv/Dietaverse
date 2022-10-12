@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dietaverse.View
+namespace Dietaverse.Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class daily_summary
+    public partial class body_gallery
     {
         public int Id { get; set; }
-        public Nullable<int> kcal_amount { get; set; }
-        public Nullable<double> weight { get; set; }
-        public string notes { get; set; }
+        public string photo { get; set; }
+        public double weight { get; set; }
         public System.DateTime date { get; set; }
+        public string note { get; set; }
     
         public virtual users users { get; set; }
     }

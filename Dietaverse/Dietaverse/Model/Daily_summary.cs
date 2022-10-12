@@ -1,4 +1,5 @@
-﻿using Dietaverse.View;
+﻿using Dietaverse.Database;
+using Dietaverse.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -112,10 +113,16 @@ namespace Dietaverse.Model
             {
                 var users = db.usersSet;
                 var summaries = db.daily_summarySet;
+                daily_summary searchedsummary;
 
-                //users user = users.Single(a=>a.name == us.name);
-                daily_summary searchedsummary = summaries.Single(a => a.users.name == us.name && a.date.Day == day.Day && a.date.Month == day.Month && a.date.Year == day.Year);
-
+                try
+                {
+                    searchedsummary = summaries.Single(a => a.users.name == us.name && a.date.Day == day.Day && a.date.Month == day.Month && a.date.Year == day.Year);
+                }
+                catch (Exception ex)
+                {
+                    return -1;
+                }
 
                 return (double)searchedsummary.weight;
             }

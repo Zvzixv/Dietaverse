@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Dietaverse.View;
 using Dietaverse.Model;
+using Dietaverse.Database;
 
 namespace Dietaverse
 {
@@ -112,7 +113,7 @@ namespace Dietaverse
 
             lblTitle.Text = "Month summary";
             this.PnlFormLoader.Controls.Clear();
-            MonthSummary monthsummaryform = new MonthSummary() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            MonthSummary monthsummaryform = new MonthSummary(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.changeForm(monthsummaryform);
         }
 

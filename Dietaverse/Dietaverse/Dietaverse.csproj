@@ -89,10 +89,10 @@
     <Compile Include="View\BodyGallery.Designer.cs">
       <DependentUpon>BodyGallery.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\body_gallery.cs">
+    <Compile Include="Database\body_gallery.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\daily_summary.cs">
+    <Compile Include="Database\daily_summary.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Dashboard.cs">
@@ -101,17 +101,17 @@
     <Compile Include="View\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\db_model.Context.cs">
+    <Compile Include="Database\db_model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\db_model.cs">
+    <Compile Include="Database\db_model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\dishes_gallery.cs">
+    <Compile Include="Database\dishes_gallery.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
     <Compile Include="View\FoodGallery.cs">
@@ -138,7 +138,7 @@
     <Compile Include="View\mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\db_model.Designer.cs">
+    <Compile Include="Database\db_model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_model.edmx</DependentUpon>
@@ -149,7 +149,7 @@
     <Compile Include="View\MonthSummary.Designer.cs">
       <DependentUpon>MonthSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\recipes_ingredient.cs">
+    <Compile Include="Database\recipes_ingredient.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Register.cs">
@@ -176,10 +176,10 @@
     <Compile Include="View\Smoothies.Designer.cs">
       <DependentUpon>Smoothies.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\smoothies_ingr.cs">
+    <Compile Include="Database\smoothies_ingr.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\smoothies_recipes.cs">
+    <Compile Include="Database\smoothies_recipes.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Start.cs">
@@ -190,7 +190,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\users.cs">
+    <Compile Include="Database\users.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -257,11 +257,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="View\db_model.edmx">
+    <EntityDeploy Include="Database\db_model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>db_model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="View\db_model.edmx.diagram">
+    <None Include="Database\db_model.edmx.diagram">
       <DependentUpon>db_model.edmx</DependentUpon>
     </None>
   </ItemGroup>
@@ -270,13 +270,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\przeksztalcenia.png" />
-    <Content Include="View\db_model.Context.tt">
+    <Content Include="Database\db_model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>db_model.Context.cs</LastGenOutput>
       <DependentUpon>db_model.edmx</DependentUpon>
     </Content>
-    <Content Include="View\db_model.edmx.sql" />
-    <Content Include="View\db_model.tt">
+    <Content Include="Database\db_model.edmx.sql" />
+    <Content Include="Database\db_model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>db_model.cs</LastGenOutput>
       <DependentUpon>db_model.edmx</DependentUpon>

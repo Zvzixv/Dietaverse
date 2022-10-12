@@ -7,22 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Dietaverse.View
+namespace Dietaverse.Database
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class smoothies_ingr
+    public partial class smoothies_recipes
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public smoothies_ingr()
+        public smoothies_recipes()
         {
             this.recipes_ingredient = new HashSet<recipes_ingredient>();
         }
     
         public int Id { get; set; }
         public string name { get; set; }
-        public double kcal { get; set; }
+        public string photo { get; set; }
+        public bool fruity { get; set; }
+        public bool vegetable { get; set; }
+        public bool sweet { get; set; }
+        public bool sour { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<recipes_ingredient> recipes_ingredient { get; set; }
