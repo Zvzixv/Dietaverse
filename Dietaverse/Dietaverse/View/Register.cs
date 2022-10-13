@@ -49,7 +49,7 @@ namespace Dietaverse.View
 
                 try
                 {
-                    newuser.CreateAccount(un, weight, pass1, null,null);
+                    newuser.CreateAccount(un, weight, pass1);
                 }
                 catch (CreateAccountFailException ex)
                 {
