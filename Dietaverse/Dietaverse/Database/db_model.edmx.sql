@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/29/2022 22:31:10
--- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\View\db_model.edmx
+-- Date Created: 10/15/2022 15:23:32
+-- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\Database\db_model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -119,7 +119,7 @@ CREATE TABLE [dbo].[body_gallerySet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [photo] nvarchar(max)  NOT NULL,
     [weight] float  NOT NULL,
-    [date] datetime  NOT NULL,
+    [date] nvarchar(max)  NOT NULL,
     [note] nvarchar(max)  NULL,
     [users_Id] int  NOT NULL
 );

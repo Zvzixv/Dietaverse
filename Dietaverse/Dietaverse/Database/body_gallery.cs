@@ -17,7 +17,7 @@ namespace Dietaverse.Database
         public int Id { get; set; }
         public string photo { get; set; }
         public double weight { get; set; }
-        public System.DateTime date { get; set; }
+        public string date { get; set; }
         public string note { get; set; }
     
         public virtual users users { get; set; }

@@ -47,15 +47,17 @@
             // 
             // description
             // 
+            this.description.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.description.AutoSize = true;
             this.description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.description.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.description.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.description.Location = new System.Drawing.Point(58, 156);
+            this.description.ForeColor = System.Drawing.Color.Coral;
+            this.description.Location = new System.Drawing.Point(45, 153);
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(47, 17);
             this.description.TabIndex = 1;
             this.description.Text = "label1";
+            this.description.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.description.Click += new System.EventHandler(this.description_Click);
             // 
             // SmallPhoto

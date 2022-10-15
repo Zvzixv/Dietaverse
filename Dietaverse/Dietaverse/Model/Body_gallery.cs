@@ -40,7 +40,7 @@ namespace Dietaverse.Model
 
                 body_gallery newphoto = new body_gallery();
                 newphoto.photo = path;
-                newphoto.date = DateTime.Today;
+                newphoto.date = date;
                 newphoto.note = note;
                 newphoto.weight = weight;
                 newphoto.users = u.Single(a=>a.name == user.name);

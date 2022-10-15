@@ -98,7 +98,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="photo" Type="String" Nullable="false" />
     <Property Name="weight" Type="Double" Nullable="false" />
-    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="date" Type="String" Nullable="false" />
     <NavigationProperty Name="users" Relationship="db_model.usersbody_gallery" FromRole="body_gallery" ToRole="users" />
     <Property Name="note" Type="String" Nullable="true" />
   </EntityType>

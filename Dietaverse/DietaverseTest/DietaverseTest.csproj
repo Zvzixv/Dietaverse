@@ -5,7 +5,13 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+
+    <StartupObject></StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Dietaverse\App.config" Link="App.config" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Autofac.Extras.Moq" Version="6.1.0" />

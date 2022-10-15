@@ -29,7 +29,7 @@ namespace Dietaverse.View
 
             foreach (body_gallery p in bgs)
             {
-                gallery.Add(new SmallPhoto(p) { TopLevel = false, TopMost = true });
+                gallery.Add(new SmallPhoto(p, this) { TopLevel = false, TopMost = true });
             }
 
             foreach (var i in gallery)
@@ -45,6 +45,18 @@ namespace Dietaverse.View
             start.PnlFormLoader.Controls.Clear();
             AddNewBodyPhoto addnewbodyphotoform = new AddNewBodyPhoto(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(addnewbodyphotoform);
+        }
+
+        public void showDescription(string notes, double weight)
+        {
+            richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Regular);
+            richTextBox1.Text = "Contemporary weight: "+weight+" \n"+notes;
+        }
+
+        public void hideDescription()
+        {
+            richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
+            richTextBox1.Text = "Your notes will appear here...";
         }
     }
 }

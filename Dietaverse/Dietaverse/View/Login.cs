@@ -26,12 +26,20 @@ namespace Dietaverse.View
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            users user = u.Login(logintextBox.Text, passtextBox.Text);
-            if (user!=null )
+            try
             {
-                Form1 startform = new Form1(mainform, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-                mainform.changeForm(startform);
+                users user = u.Login(logintextBox.Text, passtextBox.Text);
+                if (user != null)
+                {
+                    Form1 startform = new Form1(mainform, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+                    mainform.changeForm(startform);
+                }
             }
+            catch (LoginFailException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)

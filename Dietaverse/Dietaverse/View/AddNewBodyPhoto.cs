@@ -17,8 +17,6 @@ namespace Dietaverse.View
     {
         string path;
         string note;
-        double date;
-        double weight;
         Image i;
         GUI g = new GUI();
         Body_gallery bg;
@@ -45,6 +43,7 @@ namespace Dietaverse.View
 
         private void adNewPhotoButton_Click(object sender, EventArgs e)
         {
+            note = notetextBox.Text;
             DirectoryInfo filepathtemp = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
             string savepath = filepathtemp.ToString() + @"\Resources\";
             try
@@ -56,7 +55,7 @@ namespace Dietaverse.View
 
             }
             bg = new Body_gallery();
-            bg.addPhoto(Path.GetFileName(path), note, DateTime.Today.ToString(), Dashboard.weight, user);
+            bg.addPhoto(Path.GetFileName(path), note, DateTime.Today.Day.ToString()+"."+ DateTime.Today.Month.ToString()+"." +DateTime.Today.Year.ToString(), Dashboard.weight, user);
             MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
             BodyGallery bodygalleryform = new BodyGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(bodygalleryform);

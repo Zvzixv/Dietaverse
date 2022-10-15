@@ -77,7 +77,7 @@
             this.notetextBox.Location = new System.Drawing.Point(35, 54);
             this.notetextBox.Multiline = true;
             this.notetextBox.Name = "notetextBox";
-            this.notetextBox.Size = new System.Drawing.Size(100, 83);
+            this.notetextBox.Size = new System.Drawing.Size(262, 83);
             this.notetextBox.TabIndex = 65;
             // 
             // choosephotobutton

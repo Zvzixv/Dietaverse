@@ -42,47 +42,22 @@ namespace Dietaverse.Model
             weight = w;
         }
 
-        public void ChangeDB(db_modelContainer db)
-        {
-            this.db = db;
-        }
 
-        public List<users> LoadUsers()
-        {
-            usersFromDB = new List<users>();
-            var x = db.usersSet;
-
-            foreach(var i in x)
-            {
-                usersFromDB.Add(i);
-            }
-
-            return usersFromDB;
-
-        }
-
-        public bool CleanUpUsers()
-        {
-            usersFromDB.Clear();
-            return true;
-        }
 
         public users CreateAccount(string _username, double _weight, string _password)
         {
-            //using (var db = new db_modelContainer())
-            //{
+            using (var db = new db_modelContainer())
+            {
                 Daily_summary summary = new Daily_summary { weight = _weight};
                 Users_dishes_gallery user_dishes = new Users_dishes_gallery { };
 
-            //var x = db.usersSet;
-                LoadUsers();
-                foreach (var i in usersFromDB)
+                var x = db.usersSet;
+                foreach (var i in x)
                 {
                     if (_username == i.name)
                     {
-                        
+
                         throw new CreateAccountFailException("Username is already occupied!");
-                        return null;
                     }
                 }
 
@@ -91,9 +66,8 @@ namespace Dietaverse.Model
                 
                 db.usersSet.Add(newuser);
                 db.SaveChanges();
-                CleanUpUsers();
                 return newuser;
-            //}
+            }
         }
 
         public users Login(string _name, string _password)
