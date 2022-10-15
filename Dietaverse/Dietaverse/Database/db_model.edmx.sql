@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/15/2022 15:45:18
+-- Date Created: 10/15/2022 23:12:40
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\Database\db_model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [Dietaverse_database];
+USE [Dietaverse];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -75,9 +75,9 @@ GO
 -- Creating table 'dishes_gallerySet'
 CREATE TABLE [dbo].[dishes_gallerySet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [name] nvarchar(max)  NULL,
-    [recipe] nvarchar(max)  NULL,
-    [kcal] int  NULL,
+    [name] nvarchar(max)  NOT NULL,
+    [recipe] nvarchar(max)  NOT NULL,
+    [kcal] int  NOT NULL,
     [photo] nvarchar(max)  NOT NULL,
     [users_Id] int  NOT NULL
 );

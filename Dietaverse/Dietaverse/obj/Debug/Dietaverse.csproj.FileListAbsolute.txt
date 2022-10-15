@@ -26,7 +26,6 @@ C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFra
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFramework.xml
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.SuggestedBindingRedirects.cache
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.Properties.Resources.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.AddNewBodyPhoto.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.AddNewFoodPhoto.resources
@@ -49,3 +48,4 @@ C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietavers
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.exe
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.pdb
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.AssemblyReference.cache
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.SuggestedBindingRedirects.cache

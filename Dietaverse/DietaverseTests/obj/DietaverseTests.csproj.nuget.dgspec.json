@@ -1,0 +1,96 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\DietaverseTests\\DietaverseTests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\DietaverseTests\\DietaverseTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\DietaverseTests\\DietaverseTests.csproj",
+        "projectName": "DietaverseTests",
+        "projectPath": "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\DietaverseTests\\DietaverseTests.csproj",
+        "packagesPath": "C:\\Users\\zuzia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\DietaverseTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\zuzia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\Dietaverse\\Dietaverse.csproj": {
+                "projectPath": "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\Dietaverse\\Dietaverse.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.2.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\Dietaverse\\Dietaverse.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\Dietaverse\\Dietaverse.csproj",
+        "projectName": "Dietaverse",
+        "projectPath": "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\Dietaverse\\Dietaverse.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

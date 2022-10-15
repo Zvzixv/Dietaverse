@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
@@ -55,7 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Model\Body_gallery.cs" />
     <Compile Include="Model\Daily_summary.cs" />
     <Compile Include="Model\Dishes_gallery.cs" />
@@ -269,13 +269,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\db_model.edmx.sql" />
     <Content Include="Resources\przeksztalcenia.png" />
     <Content Include="Database\db_model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>db_model.Context.cs</LastGenOutput>
       <DependentUpon>db_model.edmx</DependentUpon>
     </Content>
-    <Content Include="Database\db_model.edmx.sql" />
     <Content Include="Database\db_model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>db_model.cs</LastGenOutput>

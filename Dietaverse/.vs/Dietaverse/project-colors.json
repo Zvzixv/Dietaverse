@@ -20,7 +20,17 @@
       "ProjectGuid": "858bd838-d731-47e0-981f-9234ac17749f",
       "DisplayName": "DietaverseTest",
       "ColorIndex": 2
+    },
+    "533fe9d9-64fc-4918-b084-2339ef503c96": {
+      "ProjectGuid": "533fe9d9-64fc-4918-b084-2339ef503c96",
+      "DisplayName": "DietaverseTests",
+      "ColorIndex": 3
+    },
+    "749fbe4c-a7d5-4c16-8980-0372af58383a": {
+      "ProjectGuid": "749fbe4c-a7d5-4c16-8980-0372af58383a",
+      "DisplayName": "DietaverseTests",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }
