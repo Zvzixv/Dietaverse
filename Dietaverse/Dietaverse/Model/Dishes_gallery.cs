@@ -37,7 +37,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public void addPhoto(string _path, string _name,string _recipe, double _kcal_amount, users _u)
+        public void addPhoto(string _path, string _name,string _recipe, int _kcal_amount, users _u)
         {
             using (var db = new db_modelContainer())
             {

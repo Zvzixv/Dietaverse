@@ -52,7 +52,7 @@
             this.description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.description.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.description.ForeColor = System.Drawing.Color.Coral;
-            this.description.Location = new System.Drawing.Point(45, 153);
+            this.description.Location = new System.Drawing.Point(46, 160);
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(47, 17);
             this.description.TabIndex = 1;

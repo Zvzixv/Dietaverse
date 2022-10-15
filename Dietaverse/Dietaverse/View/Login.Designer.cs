@@ -43,7 +43,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(344, 189);
+            this.label1.Location = new System.Drawing.Point(344, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(227, 38);
             this.label1.TabIndex = 2;
@@ -51,7 +51,7 @@
             // 
             // passtextBox
             // 
-            this.passtextBox.Location = new System.Drawing.Point(471, 283);
+            this.passtextBox.Location = new System.Drawing.Point(471, 258);
             this.passtextBox.Name = "passtextBox";
             this.passtextBox.Size = new System.Drawing.Size(100, 20);
             this.passtextBox.TabIndex = 6;
@@ -59,7 +59,7 @@
             // 
             // logintextBox
             // 
-            this.logintextBox.Location = new System.Drawing.Point(471, 253);
+            this.logintextBox.Location = new System.Drawing.Point(471, 228);
             this.logintextBox.Name = "logintextBox";
             this.logintextBox.Size = new System.Drawing.Size(100, 20);
             this.logintextBox.TabIndex = 7;
@@ -69,7 +69,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(336, 273);
+            this.label5.Location = new System.Drawing.Point(336, 248);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 30);
             this.label5.TabIndex = 4;
@@ -80,7 +80,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Coral;
-            this.label4.Location = new System.Drawing.Point(336, 243);
+            this.label4.Location = new System.Drawing.Point(336, 218);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 30);
             this.label4.TabIndex = 5;
@@ -91,7 +91,7 @@
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.Coral;
-            this.loginButton.Location = new System.Drawing.Point(404, 318);
+            this.loginButton.Location = new System.Drawing.Point(404, 293);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(109, 37);
             this.loginButton.TabIndex = 8;
@@ -117,7 +117,7 @@
             this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.backbutton.ForeColor = System.Drawing.Color.Coral;
-            this.backbutton.Location = new System.Drawing.Point(404, 372);
+            this.backbutton.Location = new System.Drawing.Point(404, 347);
             this.backbutton.Name = "backbutton";
             this.backbutton.Size = new System.Drawing.Size(109, 38);
             this.backbutton.TabIndex = 10;

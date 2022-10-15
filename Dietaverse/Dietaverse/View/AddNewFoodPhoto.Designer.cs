@@ -28,28 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.notetextBox = new System.Windows.Forms.TextBox();
+            this.recipetextBox = new System.Windows.Forms.TextBox();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.choosephotobutton = new System.Windows.Forms.Button();
             this.adNewPhotoButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.nameTextBox = new System.Windows.Forms.RichTextBox();
+            this.kcaltextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // notetextBox
+            // recipetextBox
             // 
-            this.notetextBox.Location = new System.Drawing.Point(51, 48);
-            this.notetextBox.Multiline = true;
-            this.notetextBox.Name = "notetextBox";
-            this.notetextBox.Size = new System.Drawing.Size(100, 83);
-            this.notetextBox.TabIndex = 66;
+            this.recipetextBox.Location = new System.Drawing.Point(40, 89);
+            this.recipetextBox.Multiline = true;
+            this.recipetextBox.Name = "recipetextBox";
+            this.recipetextBox.Size = new System.Drawing.Size(260, 114);
+            this.recipetextBox.TabIndex = 66;
             // 
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.InitialImage = null;
-            this.pictureBox.Location = new System.Drawing.Point(40, 244);
+            this.pictureBox.Location = new System.Drawing.Point(40, 295);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(271, 148);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -61,7 +63,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(122, 308);
+            this.label7.Location = new System.Drawing.Point(108, 359);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(128, 16);
             this.label7.TabIndex = 68;
@@ -72,7 +74,7 @@
             this.choosephotobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.choosephotobutton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.choosephotobutton.ForeColor = System.Drawing.Color.Coral;
-            this.choosephotobutton.Location = new System.Drawing.Point(343, 303);
+            this.choosephotobutton.Location = new System.Drawing.Point(352, 346);
             this.choosephotobutton.Name = "choosephotobutton";
             this.choosephotobutton.Size = new System.Drawing.Size(102, 29);
             this.choosephotobutton.TabIndex = 69;
@@ -97,17 +99,34 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(40, 30);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(260, 44);
+            this.nameTextBox.TabIndex = 71;
+            this.nameTextBox.Text = "";
+            // 
+            // kcaltextBox
+            // 
+            this.kcaltextBox.Location = new System.Drawing.Point(40, 225);
+            this.kcaltextBox.Name = "kcaltextBox";
+            this.kcaltextBox.Size = new System.Drawing.Size(260, 20);
+            this.kcaltextBox.TabIndex = 72;
+            // 
             // AddNewFoodPhoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(733, 477);
+            this.Controls.Add(this.kcaltextBox);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.adNewPhotoButton);
             this.Controls.Add(this.choosephotobutton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.notetextBox);
+            this.Controls.Add(this.recipetextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewFoodPhoto";
             this.Text = "AddNewFoodPhoto";
@@ -119,11 +138,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox notetextBox;
+        private System.Windows.Forms.TextBox recipetextBox;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button choosephotobutton;
         private System.Windows.Forms.Button adNewPhotoButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.RichTextBox nameTextBox;
+        private System.Windows.Forms.TextBox kcaltextBox;
     }
 }

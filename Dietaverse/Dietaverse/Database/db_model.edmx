@@ -50,7 +50,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar(max)" Nullable="true" />
     <Property Name="recipe" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="kcal" Type="float" Nullable="true" />
+    <Property Name="kcal" Type="int" Nullable="true" />
     <Property Name="photo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="users_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -218,9 +218,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-          <Property Name="name" Nullable="true" Type="String" />
-          <Property Name="recipe" Nullable="true" Type="String" />
-          <Property Name="kcal" Nullable="true" Type="Double" />
+          <Property Name="name" Nullable="false" Type="String" />
+          <Property Name="recipe" Nullable="false" Type="String" />
+          <Property Name="kcal" Nullable="false" Type="Int32" />
           <Property Name="photo" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
           <NavigationProperty Name="users" Relationship="db_model.dishes_galleryusers" FromRole="dishes_gallery" ToRole="users" />
         </EntityType>

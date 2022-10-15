@@ -35,6 +35,9 @@
             this.datelabelOut = new System.Windows.Forms.Label();
             this.weightlabelOut = new System.Windows.Forms.Label();
             this.callabelOut = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -52,7 +55,7 @@
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateLabel.ForeColor = System.Drawing.Color.Coral;
-            this.dateLabel.Location = new System.Drawing.Point(170, 287);
+            this.dateLabel.Location = new System.Drawing.Point(17, 18);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(78, 30);
             this.dateLabel.TabIndex = 6;
@@ -63,7 +66,7 @@
             this.weightLabel.AutoSize = true;
             this.weightLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weightLabel.ForeColor = System.Drawing.Color.Coral;
-            this.weightLabel.Location = new System.Drawing.Point(170, 317);
+            this.weightLabel.Location = new System.Drawing.Point(17, 48);
             this.weightLabel.Name = "weightLabel";
             this.weightLabel.Size = new System.Drawing.Size(104, 30);
             this.weightLabel.TabIndex = 6;
@@ -74,7 +77,7 @@
             this.kcalLabel.AutoSize = true;
             this.kcalLabel.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kcalLabel.ForeColor = System.Drawing.Color.Coral;
-            this.kcalLabel.Location = new System.Drawing.Point(170, 347);
+            this.kcalLabel.Location = new System.Drawing.Point(17, 78);
             this.kcalLabel.Name = "kcalLabel";
             this.kcalLabel.Size = new System.Drawing.Size(117, 30);
             this.kcalLabel.TabIndex = 6;
@@ -85,7 +88,7 @@
             this.datelabelOut.AutoSize = true;
             this.datelabelOut.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datelabelOut.ForeColor = System.Drawing.Color.Coral;
-            this.datelabelOut.Location = new System.Drawing.Point(254, 287);
+            this.datelabelOut.Location = new System.Drawing.Point(101, 18);
             this.datelabelOut.Name = "datelabelOut";
             this.datelabelOut.Size = new System.Drawing.Size(26, 30);
             this.datelabelOut.TabIndex = 6;
@@ -96,7 +99,7 @@
             this.weightlabelOut.AutoSize = true;
             this.weightlabelOut.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weightlabelOut.ForeColor = System.Drawing.Color.Coral;
-            this.weightlabelOut.Location = new System.Drawing.Point(280, 317);
+            this.weightlabelOut.Location = new System.Drawing.Point(127, 48);
             this.weightlabelOut.Name = "weightlabelOut";
             this.weightlabelOut.Size = new System.Drawing.Size(26, 30);
             this.weightlabelOut.TabIndex = 6;
@@ -107,11 +110,34 @@
             this.callabelOut.AutoSize = true;
             this.callabelOut.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.callabelOut.ForeColor = System.Drawing.Color.Coral;
-            this.callabelOut.Location = new System.Drawing.Point(293, 347);
+            this.callabelOut.Location = new System.Drawing.Point(140, 78);
             this.callabelOut.Name = "callabelOut";
             this.callabelOut.Size = new System.Drawing.Size(26, 30);
             this.callabelOut.TabIndex = 6;
             this.callabelOut.Text = "0";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.richTextBox1.Location = new System.Drawing.Point(410, 287);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(228, 125);
+            this.richTextBox1.TabIndex = 7;
+            this.richTextBox1.Text = "";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.dateLabel);
+            this.panel1.Controls.Add(this.datelabelOut);
+            this.panel1.Controls.Add(this.kcalLabel);
+            this.panel1.Controls.Add(this.weightlabelOut);
+            this.panel1.Controls.Add(this.weightLabel);
+            this.panel1.Controls.Add(this.callabelOut);
+            this.panel1.Location = new System.Drawing.Point(96, 287);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(279, 125);
+            this.panel1.TabIndex = 8;
             // 
             // MonthSummary
             // 
@@ -119,18 +145,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(733, 477);
-            this.Controls.Add(this.kcalLabel);
-            this.Controls.Add(this.weightLabel);
-            this.Controls.Add(this.callabelOut);
-            this.Controls.Add(this.weightlabelOut);
-            this.Controls.Add(this.datelabelOut);
-            this.Controls.Add(this.dateLabel);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.monthCalendar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MonthSummary";
             this.Text = "MonthSummary";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -143,5 +166,7 @@
         private System.Windows.Forms.Label datelabelOut;
         private System.Windows.Forms.Label weightlabelOut;
         private System.Windows.Forms.Label callabelOut;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

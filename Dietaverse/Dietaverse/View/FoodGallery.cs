@@ -28,7 +28,7 @@ namespace Dietaverse.View
 
             foreach (dishes_gallery p in dgs)
             {
-                gallery.Add(new SmallPhoto(p) { TopLevel = false, TopMost = true });
+                gallery.Add(new SmallPhoto(p, this) { TopLevel = false, TopMost = true });
             }
 
             foreach (var i in gallery)
@@ -43,6 +43,18 @@ namespace Dietaverse.View
             start.PnlFormLoader.Controls.Clear();
             AddNewFoodPhoto addnewfoodphotoform = new AddNewFoodPhoto(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(addnewfoodphotoform);
+        }
+
+        public void showDescription(string recipe, string name)
+        {
+            richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Regular);
+            richTextBox1.Text = "Name: " + name + "\n\nRecipe: " + recipe;
+        }
+
+        public void hideDescription()
+        {
+            richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
+            richTextBox1.Text = "Recipes will apear here...";
         }
     }
 }

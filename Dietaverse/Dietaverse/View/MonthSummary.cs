@@ -22,6 +22,8 @@ namespace Dietaverse.View
             _user = user;
             datelabelOut.Text = DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
             monthCalendar1.MaxDate = DateTime.Today;
+            richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
+            richTextBox1.Text = "Notes will apear here...";
         }
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
@@ -32,6 +34,8 @@ namespace Dietaverse.View
             weightlabelOut.Text = _daily_summary.downloadWeightFromDatabase(_user, e.Start)==-1 ? "Not inserted": _daily_summary.downloadWeightFromDatabase(_user, e.Start).ToString();
 
             callabelOut.Text = _daily_summary.downloadKcalFromDatabase(_user, e.Start).ToString();
+
+            richTextBox1.Text = _daily_summary.downloadNoteFromDatabase(_user, e.Start);
 
         }
     }

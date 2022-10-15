@@ -17,7 +17,7 @@ namespace Dietaverse.Database
         public int Id { get; set; }
         public string name { get; set; }
         public string recipe { get; set; }
-        public Nullable<double> kcal { get; set; }
+        public int kcal { get; set; }
         public string photo { get; set; }
     
         public virtual users users { get; set; }
