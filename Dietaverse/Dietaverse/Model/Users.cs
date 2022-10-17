@@ -19,6 +19,12 @@ namespace Dietaverse.Model
         public LoginFailException() { }
         public LoginFailException(string message) : base(message) { }
     }
+
+    public class UserNotFoundException : Exception
+    {
+        public UserNotFoundException() { }
+        public UserNotFoundException(string message) : base(message) { }
+    }
     public class Users
     {
         public int Id { get; set; }
@@ -91,7 +97,15 @@ namespace Dietaverse.Model
         {
             using (var db = new db_modelContainer())
             {
-                users u = db.usersSet.Single(a => a.name == login);
+                users u = new users();
+                try
+                {
+                    u = db.usersSet.Single(a => a.name == login);
+                }
+                catch (Exception ex)
+                {
+                    throw new UserNotFoundException("I cannot find that user.");
+                }
                 u.password = newpassword;
                 db.SaveChanges();
                 return true;
@@ -102,7 +116,15 @@ namespace Dietaverse.Model
         {
             using (var db = new db_modelContainer())
             {
-                users u = db.usersSet.Single(a => a.name == user.name);
+                users u = new users();
+                try
+                {
+                    u = db.usersSet.Single(a => a.name == user.name);
+                }
+                catch (Exception ex)
+                {
+                    throw new UserNotFoundException("I cannot find that user.");
+                }
                 u.weight = weight;
                 db.SaveChanges();
                 return true;
