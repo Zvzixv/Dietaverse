@@ -115,15 +115,19 @@
             // 
             this.passwordtextBox.Location = new System.Drawing.Point(502, 258);
             this.passwordtextBox.Name = "passwordtextBox";
+            this.passwordtextBox.PasswordChar = '*';
             this.passwordtextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordtextBox.TabIndex = 3;
+            this.passwordtextBox.UseSystemPasswordChar = true;
             // 
             // password2textBox
             // 
             this.password2textBox.Location = new System.Drawing.Point(502, 284);
             this.password2textBox.Name = "password2textBox";
+            this.password2textBox.PasswordChar = '*';
             this.password2textBox.Size = new System.Drawing.Size(100, 20);
             this.password2textBox.TabIndex = 3;
+            this.password2textBox.UseSystemPasswordChar = true;
             // 
             // registerButton
             // 

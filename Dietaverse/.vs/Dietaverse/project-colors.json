@@ -30,7 +30,12 @@
       "ProjectGuid": "749fbe4c-a7d5-4c16-8980-0372af58383a",
       "DisplayName": "DietaverseTests",
       "ColorIndex": 4
+    },
+    "479918e6-3010-46df-b1ad-90bc821ace25": {
+      "ProjectGuid": "479918e6-3010-46df-b1ad-90bc821ace25",
+      "DisplayName": "DietaverseTests",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }
