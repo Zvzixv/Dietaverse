@@ -7,13 +7,13 @@ using Xunit;
 
 namespace DietaverseTests
 {
-    public class UnitTest1
+    public class UsersTests
     {
         [Fact]
         [AutoRollback]
         public void CreateAccount_GivenNotOccupiedUsername_CreateSucceed()
         {
-            string expectedLogin = "testdupa";
+            string expectedLogin = "UsersTest";
             string expectedPassword = "test";
             double expectedWeight = 30;
 

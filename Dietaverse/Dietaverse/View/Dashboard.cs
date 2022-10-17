@@ -50,7 +50,7 @@ namespace Dietaverse.View
         {
             if(hasBeenClicked&&richTextBox1.TextLength == 0)
             {
-                richTextBox1.Text = "You can left some notes here...";
+                richTextBox1.Text = "You can leave some notes here...";
                 hasBeenClicked=false;
                 richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
             }
