@@ -42,6 +42,7 @@
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="weight" Type="float" Nullable="false" />
+    <Property Name="joindate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="dishes_gallerySet">
     <Key>
@@ -212,6 +213,7 @@
           <Property Name="weight" Type="Double" Nullable="false" />
           <NavigationProperty Name="body_gallery" Relationship="db_model.usersbody_gallery" FromRole="users" ToRole="body_gallery" />
           <NavigationProperty Name="dishes_gallery" Relationship="db_model.dishes_galleryusers" FromRole="users" ToRole="dishes_gallery" />
+          <Property Name="joindate" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="dishes_gallery">
           <Key>
@@ -314,6 +316,7 @@
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="joindate" ColumnName="joindate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

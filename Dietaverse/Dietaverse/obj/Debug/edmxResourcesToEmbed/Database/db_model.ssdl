@@ -37,6 +37,7 @@
     <Property Name="name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="weight" Type="float" Nullable="false" />
+    <Property Name="joindate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="dishes_gallerySet">
     <Key>

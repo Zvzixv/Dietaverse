@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/17/2022 09:54:22
+-- Date Created: 10/22/2022 19:29:10
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\Database\db_model.edmx
 -- --------------------------------------------------
 
@@ -68,7 +68,8 @@ CREATE TABLE [dbo].[usersSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [name] nvarchar(max)  NOT NULL,
     [password] nvarchar(max)  NOT NULL,
-    [weight] float  NOT NULL
+    [weight] float  NOT NULL,
+    [joindate] datetime  NOT NULL
 );
 GO
 

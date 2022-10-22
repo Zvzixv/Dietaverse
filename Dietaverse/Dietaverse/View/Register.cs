@@ -1,4 +1,5 @@
-﻿using Dietaverse.Model;
+﻿using Dietaverse.Database;
+using Dietaverse.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace Dietaverse.View
         string pass1;
         string pass2;
         Users newuser = new Users();
+        Daily_summary summary = new Daily_summary();
         public Register(mainForm mf)
         {
             InitializeComponent();
@@ -49,7 +51,9 @@ namespace Dietaverse.View
 
                 try
                 {
-                    newuser.CreateAccount(un, weight, pass1);
+                    users u = newuser.CreateAccount(un, weight, pass1);
+                    summary.update(weight, 0, u, "");
+
                 }
                 catch (CreateAccountFailException ex)
                 {

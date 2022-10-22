@@ -40,6 +40,7 @@
     <Property Name="weight" Type="Double" Nullable="false" />
     <NavigationProperty Name="body_gallery" Relationship="db_model.usersbody_gallery" FromRole="users" ToRole="body_gallery" />
     <NavigationProperty Name="dishes_gallery" Relationship="db_model.dishes_galleryusers" FromRole="users" ToRole="dishes_gallery" />
+    <Property Name="joindate" Type="DateTime" Nullable="false" />
   </EntityType>
   <EntityType Name="dishes_gallery">
     <Key>

@@ -32,6 +32,8 @@ namespace Dietaverse.Model
         public string password { get; set; }
         public double weight { get; set; }
 
+        public DateTime joindate { get; set; }
+
         public db_modelContainer db { get; set; }
 
         public List<users> usersFromDB { get; set; }
@@ -41,11 +43,12 @@ namespace Dietaverse.Model
             db = new db_modelContainer();
         }
 
-        public Users(string n, string p, double w)
+        public Users(string n, string p, double w, DateTime j)
         {
             name = n;
             password = p;
             weight = w;
+            joindate = j;
         }
 
 
@@ -67,11 +70,11 @@ namespace Dietaverse.Model
                     }
                 }
 
-                users newuser = new users { name = _username, weight = _weight, password = _password};
+                users newuser = new users { name = _username, weight = _weight, password = _password, joindate = DateTime.Now};
 
-                
                 db.usersSet.Add(newuser);
                 db.SaveChanges();
+                ChangeWeight(newuser, _weight);
                 return newuser;
             }
         }
@@ -85,7 +88,7 @@ namespace Dietaverse.Model
                 {
                     if (s.name == _name && s.password == _password)
                     {
-                        Users user = new Users(s.name, s.password, s.weight);
+                        Users user = new Users(s.name, s.password, s.weight, s.joindate);
                         return s;
                     }
                 }

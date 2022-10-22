@@ -26,6 +26,7 @@ namespace Dietaverse.Database
         public string name { get; set; }
         public string password { get; set; }
         public double weight { get; set; }
+        public System.DateTime joindate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<daily_summary> daily_summary { get; set; }

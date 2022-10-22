@@ -30,13 +30,25 @@ namespace Dietaverse.View
         {
             datelabelOut.Text = e.Start.Day.ToString() +"."+e.Start.Month.ToString()+ "." + e.Start.Year.ToString();
 
-            //TO DO: to tylko workaround --- trzeba zrobic funkcje ktora sprawdza ostatnia podana wage i tu wpisac
-            weightlabelOut.Text = _daily_summary.downloadWeightFromDatabase(_user, e.Start)==-1 ? "Not inserted": _daily_summary.downloadWeightFromDatabase(_user, e.Start).ToString();
+            weightlabelOut.Text = _daily_summary.downloadWeightFromDatabase(_user, e.Start)==-1 ? (findLastWeight(e.Start)!=-1? findLastWeight(e.Start).ToString(): "Not inserted") : _daily_summary.downloadWeightFromDatabase(_user, e.Start).ToString();
 
             callabelOut.Text = _daily_summary.downloadKcalFromDatabase(_user, e.Start).ToString();
 
             richTextBox1.Text = _daily_summary.downloadNoteFromDatabase(_user, e.Start);
 
+        }
+
+        private double findLastWeight(DateTime day)
+        {
+            DateTime tempday = day;
+            double weight;
+            
+            while (_daily_summary.downloadWeightFromDatabase(_user, tempday)==-1 && tempday>=_user.joindate)
+            {
+                tempday = tempday.AddDays(-1);
+            }
+
+            return _daily_summary.downloadWeightFromDatabase(_user, tempday);
         }
     }
 }
