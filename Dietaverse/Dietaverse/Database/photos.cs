@@ -12,14 +12,14 @@ namespace Dietaverse.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class dishes_gallery
+    public partial class photos
     {
         public int Id { get; set; }
-        public string name { get; set; }
-        public string recipe { get; set; }
-        public int kcal { get; set; }
+        public string filename { get; set; }
+        public string data { get; set; }
     
-        public virtual users users { get; set; }
-        public virtual photos photos { get; set; }
+        public virtual body_gallery body_gallery { get; set; }
+        public virtual dishes_gallery dishes_gallery { get; set; }
+        public virtual smoothies_recipes smoothies_recipes { get; set; }
     }
 }

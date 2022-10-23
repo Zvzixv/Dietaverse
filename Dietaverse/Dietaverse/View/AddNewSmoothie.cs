@@ -86,21 +86,10 @@ namespace Dietaverse.View
         private void AddNewSmoothiebutton_Click(object sender, EventArgs e)
         {
 
-            DirectoryInfo filepathtemp = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
-            string savepath = filepathtemp.ToString() + @"\Resources\";
-            try
-            {
-                i.Save(savepath + Path.GetFileName(path));
-            }
-            catch (System.Runtime.InteropServices.ExternalException err)
-            {
-
-            }
-
 
             smName = nametextBox.Text;
             smKcal = kcaltextBox.Text;
-            smPhoto = Path.GetFileName(path);
+            smPhoto = path;
             smIsFruity = fruitycheckBox.Checked;
             smIsSour = sourcheckBox.Checked;
             smIsSweet = sweetcheckBox.Checked;

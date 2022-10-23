@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/22/2022 19:29:10
+-- Date Created: 10/23/2022 18:21:45
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\Database\db_model.edmx
 -- --------------------------------------------------
 
@@ -32,6 +32,15 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_smoothies_recipesrecipes_ingredient]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[recipes_ingredientSet] DROP CONSTRAINT [FK_smoothies_recipesrecipes_ingredient];
 GO
+IF OBJECT_ID(N'[dbo].[FK_body_galleryphotos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_body_galleryphotos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dishes_galleryphotos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[dishes_gallerySet] DROP CONSTRAINT [FK_dishes_galleryphotos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_smoothies_recipesphotos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[smoothies_recipesSet] DROP CONSTRAINT [FK_smoothies_recipesphotos];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -58,6 +67,9 @@ GO
 IF OBJECT_ID(N'[dbo].[recipes_ingredientSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[recipes_ingredientSet];
 GO
+IF OBJECT_ID(N'[dbo].[photosSet1]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[photosSet1];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -79,8 +91,8 @@ CREATE TABLE [dbo].[dishes_gallerySet] (
     [name] nvarchar(max)  NOT NULL,
     [recipe] nvarchar(max)  NOT NULL,
     [kcal] int  NOT NULL,
-    [photo] nvarchar(max)  NOT NULL,
-    [users_Id] int  NOT NULL
+    [users_Id] int  NOT NULL,
+    [photos_Id] int  NOT NULL
 );
 GO
 
@@ -99,11 +111,11 @@ GO
 CREATE TABLE [dbo].[smoothies_recipesSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [name] nvarchar(max)  NULL,
-    [photo] nvarchar(max)  NOT NULL,
     [fruity] bit  NOT NULL,
     [vegetable] bit  NOT NULL,
     [sweet] bit  NOT NULL,
-    [sour] bit  NOT NULL
+    [sour] bit  NOT NULL,
+    [photos_Id] int  NOT NULL
 );
 GO
 
@@ -118,11 +130,11 @@ GO
 -- Creating table 'body_gallerySet'
 CREATE TABLE [dbo].[body_gallerySet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [photo] nvarchar(max)  NOT NULL,
     [weight] float  NOT NULL,
     [date] nvarchar(max)  NOT NULL,
     [note] nvarchar(max)  NULL,
-    [users_Id] int  NOT NULL
+    [users_Id] int  NOT NULL,
+    [photos_Id] int  NOT NULL
 );
 GO
 
@@ -131,6 +143,14 @@ CREATE TABLE [dbo].[recipes_ingredientSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [smoothies_ingr_Id] int  NOT NULL,
     [smoothies_recipes_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'photosSet'
+CREATE TABLE [dbo].[photosSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [filename] nvarchar(max)  NOT NULL,
+    [data] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -177,6 +197,12 @@ GO
 -- Creating primary key on [Id] in table 'recipes_ingredientSet'
 ALTER TABLE [dbo].[recipes_ingredientSet]
 ADD CONSTRAINT [PK_recipes_ingredientSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'photosSet'
+ALTER TABLE [dbo].[photosSet]
+ADD CONSTRAINT [PK_photosSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -257,6 +283,51 @@ GO
 CREATE INDEX [IX_FK_smoothies_recipesrecipes_ingredient]
 ON [dbo].[recipes_ingredientSet]
     ([smoothies_recipes_Id]);
+GO
+
+-- Creating foreign key on [photos_Id] in table 'body_gallerySet'
+ALTER TABLE [dbo].[body_gallerySet]
+ADD CONSTRAINT [FK_body_galleryphotos]
+    FOREIGN KEY ([photos_Id])
+    REFERENCES [dbo].[photosSet]
+        ([Id])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_body_galleryphotos'
+CREATE INDEX [IX_FK_body_galleryphotos]
+ON [dbo].[body_gallerySet]
+    ([photos_Id]);
+GO
+
+-- Creating foreign key on [photos_Id] in table 'dishes_gallerySet'
+ALTER TABLE [dbo].[dishes_gallerySet]
+ADD CONSTRAINT [FK_dishes_galleryphotos]
+    FOREIGN KEY ([photos_Id])
+    REFERENCES [dbo].[photosSet]
+        ([Id])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_dishes_galleryphotos'
+CREATE INDEX [IX_FK_dishes_galleryphotos]
+ON [dbo].[dishes_gallerySet]
+    ([photos_Id]);
+GO
+
+-- Creating foreign key on [photos_Id] in table 'smoothies_recipesSet'
+ALTER TABLE [dbo].[smoothies_recipesSet]
+ADD CONSTRAINT [FK_smoothies_recipesphotos]
+    FOREIGN KEY ([photos_Id])
+    REFERENCES [dbo].[photosSet]
+        ([Id])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_smoothies_recipesphotos'
+CREATE INDEX [IX_FK_smoothies_recipesphotos]
+ON [dbo].[smoothies_recipesSet]
+    ([photos_Id]);
 GO
 
 -- --------------------------------------------------

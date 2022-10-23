@@ -19,7 +19,6 @@
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="recipe" ColumnName="recipe" />
           <ScalarProperty Name="kcal" ColumnName="kcal" />
-          <ScalarProperty Name="photo" ColumnName="photo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -39,7 +38,6 @@
         <MappingFragment StoreEntitySet="smoothies_recipesSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="photo" ColumnName="photo" />
           <ScalarProperty Name="fruity" ColumnName="fruity" />
           <ScalarProperty Name="vegetable" ColumnName="vegetable" />
           <ScalarProperty Name="sweet" ColumnName="sweet" />
@@ -60,7 +58,6 @@
       <EntityTypeMapping TypeName="IsTypeOf(db_model.body_gallery)">
         <MappingFragment StoreEntitySet="body_gallerySet">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="photo" ColumnName="photo" />
           <ScalarProperty Name="weight" ColumnName="weight" />
           <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="note" ColumnName="note" />
@@ -71,6 +68,15 @@
       <EntityTypeMapping TypeName="IsTypeOf(db_model.recipes_ingredient)">
         <MappingFragment StoreEntitySet="recipes_ingredientSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="photosSet">
+      <EntityTypeMapping TypeName="IsTypeOf(db_model.photos)">
+        <MappingFragment StoreEntitySet="photosSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="data" ColumnName="data" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -111,6 +117,30 @@
         <ScalarProperty Name="Id" ColumnName="smoothies_recipes_Id" />
       </EndProperty>
       <EndProperty Name="recipes_ingredient">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="body_galleryphotos" TypeName="db_model.body_galleryphotos" StoreEntitySet="body_gallerySet">
+      <EndProperty Name="photos">
+        <ScalarProperty Name="Id" ColumnName="photos_Id" />
+      </EndProperty>
+      <EndProperty Name="body_gallery">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="dishes_galleryphotos" TypeName="db_model.dishes_galleryphotos" StoreEntitySet="dishes_gallerySet">
+      <EndProperty Name="photos">
+        <ScalarProperty Name="Id" ColumnName="photos_Id" />
+      </EndProperty>
+      <EndProperty Name="dishes_gallery">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="smoothies_recipesphotos" TypeName="db_model.smoothies_recipesphotos" StoreEntitySet="smoothies_recipesSet">
+      <EndProperty Name="photos">
+        <ScalarProperty Name="Id" ColumnName="photos_Id" />
+      </EndProperty>
+      <EndProperty Name="smoothies_recipes">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

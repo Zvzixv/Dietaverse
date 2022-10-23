@@ -56,19 +56,8 @@ namespace Dietaverse.View
                 MessageBox.Show(this, "Insert proper value.","Correct", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
-
-            DirectoryInfo filepathtemp = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
-            string savepath = filepathtemp.ToString() + @"\Resources\";
-            try
-            {
-                i.Save(savepath + Path.GetFileName(path));
-            }
-            catch (System.Runtime.InteropServices.ExternalException err)
-            {
-
-            }
             dg = new Dishes_gallery();
-            dg.addPhoto(Path.GetFileName(path), name, recipe, kcal, user);
+            dg.addPhoto(path, name, recipe, kcal, user);
             MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
             FoodGallery foodgalleryform = new FoodGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(foodgalleryform);

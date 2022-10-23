@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,9 +42,11 @@ namespace Dietaverse.View
             description.Visible = false;
             upperform = form;
 
-            System.IO.DirectoryInfo filepathtemp = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
-            string filepath = filepathtemp.ToString() + @"\Resources\";
-            Image photoImage = Image.FromFile(filepath + bg.photo);
+            photos photo = bg.photos;
+
+            byte [] tempBytes = Convert.FromBase64String(photo.data);
+            MemoryStream memStr = new MemoryStream(tempBytes);
+            Image photoImage = Image.FromStream(memStr);
 
             pictureBox1.Image = g.ResizeImage(photoImage, pictureBox1.Width, pictureBox1.Height);
             description.Text =  bg.date;
@@ -58,9 +61,11 @@ namespace Dietaverse.View
             description.Visible = false;
             upperformFood = form;
 
-            System.IO.DirectoryInfo filepathtemp = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
-            string filepath = filepathtemp.ToString() + @"\Resources\";
-            Image photoImage = Image.FromFile(filepath + dg.photo);
+            photos photo = dg.photos;
+
+            byte[] tempBytes = Convert.FromBase64String(photo.data);
+            MemoryStream memStr = new MemoryStream(tempBytes);
+            Image photoImage = Image.FromStream(memStr);
 
             pictureBox1.Image = g.ResizeImage(photoImage, pictureBox1.Width, pictureBox1.Height);
 

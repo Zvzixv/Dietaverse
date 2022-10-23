@@ -32,5 +32,6 @@ namespace Dietaverse.Database
         public virtual DbSet<smoothies_ingr> smoothies_ingrSet { get; set; }
         public virtual DbSet<body_gallery> body_gallerySet { get; set; }
         public virtual DbSet<recipes_ingredient> recipes_ingredientSet { get; set; }
+        public virtual DbSet<photos> photosSet { get; set; }
     }
 }

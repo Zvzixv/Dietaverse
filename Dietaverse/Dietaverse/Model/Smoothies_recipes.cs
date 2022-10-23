@@ -2,6 +2,7 @@
 using Dietaverse.View;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,27 @@ namespace Dietaverse.Model
 
         public List<smoothies_ingr> ingredients = new List<smoothies_ingr>();
 
+        public virtual photos photos { get; set; }
 
-        public void addNewSmoothie(string name, string photo, List<Smoothies_ingr> smoothies_ingr, string kcal, bool fruity, bool vegtable, bool sweet, bool sour)
+
+        public void addNewSmoothie(string name, string _path, List<Smoothies_ingr> smoothies_ingr, string kcal, bool fruity, bool vegtable, bool sweet, bool sour)
         {
             using (var db = new db_modelContainer())
             {
                 var ing = db.smoothies_ingrSet;
 
+                String FileName = Path.GetFileName(_path);
+                byte[] AsBytes = File.ReadAllBytes(_path);
+                String DataAsBase64String = Convert.ToBase64String(AsBytes);
+
+                photos photo = new photos();
+                photo.filename = FileName;
+                photo.data = DataAsBase64String;
+                db.photosSet.Add(photo);
+
                 smoothies_recipes sr = new smoothies_recipes();
                 sr.name = name;
-                sr.photo = photo;
+                sr.photos = photo;
                 sr.fruity = fruity;
                 sr.vegetable = vegtable;
                 sr.sweet = sweet;
@@ -62,7 +74,7 @@ namespace Dietaverse.Model
                     {
                         Smoothies_recipes smoothie = new Smoothies_recipes();
                         smoothie.name = i.name;
-                        smoothie.photo = i.photo;
+                        smoothie.photos = i.photos;
                         smoothie.sour = i.sour;
                         smoothie.fruity = i.fruity;
                         smoothie.vegetable = i.vegetable;

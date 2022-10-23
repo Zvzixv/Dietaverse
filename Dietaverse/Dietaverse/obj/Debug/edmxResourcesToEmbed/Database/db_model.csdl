@@ -28,30 +28,43 @@
       <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
       <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
     </AssociationSet>
+    <EntitySet Name="photosSet" EntityType="db_model.photos" />
+    <AssociationSet Name="body_galleryphotos" Association="db_model.body_galleryphotos">
+      <End Role="body_gallery" EntitySet="body_gallerySet" />
+      <End Role="photos" EntitySet="photosSet" />
+    </AssociationSet>
+    <AssociationSet Name="dishes_galleryphotos" Association="db_model.dishes_galleryphotos">
+      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+      <End Role="photos" EntitySet="photosSet" />
+    </AssociationSet>
+    <AssociationSet Name="smoothies_recipesphotos" Association="db_model.smoothies_recipesphotos">
+      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
+      <End Role="photos" EntitySet="photosSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="users">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="daily_summary" Relationship="db_model.daily_summaryusers" FromRole="users" ToRole="daily_summary" />
-    <Property Name="password" Type="String" Nullable="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="weight" Type="Double" Nullable="false" />
     <NavigationProperty Name="body_gallery" Relationship="db_model.usersbody_gallery" FromRole="users" ToRole="body_gallery" />
     <NavigationProperty Name="dishes_gallery" Relationship="db_model.dishes_galleryusers" FromRole="users" ToRole="dishes_gallery" />
-    <Property Name="joindate" Type="DateTime" Nullable="false" />
+    <Property Name="joindate" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="dishes_gallery">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-    <Property Name="name" Nullable="false" Type="String" />
-    <Property Name="recipe" Nullable="false" Type="String" />
+    <Property Name="name" Nullable="false" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="recipe" Nullable="false" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="kcal" Nullable="false" Type="Int32" />
-    <Property Name="photo" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
     <NavigationProperty Name="users" Relationship="db_model.dishes_galleryusers" FromRole="dishes_gallery" ToRole="users" />
+    <NavigationProperty Name="photos" Relationship="db_model.dishes_galleryphotos" FromRole="dishes_gallery" ToRole="photos" />
   </EntityType>
   <EntityType Name="daily_summary">
     <Key>
@@ -60,29 +73,29 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="kcal_amount" Type="Int32" Nullable="true" />
     <Property Name="weight" Type="Double" Nullable="true" />
-    <Property Name="notes" Type="String" Nullable="true" />
+    <Property Name="notes" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="users" Relationship="db_model.daily_summaryusers" FromRole="daily_summary" ToRole="users" />
-    <Property Name="date" Type="DateTime" Nullable="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="smoothies_recipes">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" Nullable="true" />
-    <Property Name="photo" Type="String" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="fruity" Type="Boolean" Nullable="false" />
     <Property Name="vegetable" Type="Boolean" Nullable="false" />
     <Property Name="sweet" Type="Boolean" Nullable="false" />
     <Property Name="sour" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="recipes_ingredient" Relationship="db_model.smoothies_recipesrecipes_ingredient" FromRole="smoothies_recipes" ToRole="recipes_ingredient" />
+    <NavigationProperty Name="photos" Relationship="db_model.smoothies_recipesphotos" FromRole="smoothies_recipes" ToRole="photos" />
   </EntityType>
   <EntityType Name="smoothies_ingr">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="String" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="kcal" Type="Double" Nullable="false" />
     <NavigationProperty Name="recipes_ingredient" Relationship="db_model.smoothies_ingrrecipes_ingredient" FromRole="smoothies_ingr" ToRole="recipes_ingredient" />
   </EntityType>
@@ -97,11 +110,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="photo" Type="String" Nullable="false" />
     <Property Name="weight" Type="Double" Nullable="false" />
-    <Property Name="date" Type="String" Nullable="false" />
+    <Property Name="date" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="users" Relationship="db_model.usersbody_gallery" FromRole="body_gallery" ToRole="users" />
-    <Property Name="note" Type="String" Nullable="true" />
+    <Property Name="note" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="photos" Relationship="db_model.body_galleryphotos" FromRole="body_gallery" ToRole="photos" />
   </EntityType>
   <Association Name="usersbody_gallery">
     <End Type="db_model.users" Role="users" Multiplicity="1">
@@ -128,5 +141,34 @@
   <Association Name="smoothies_recipesrecipes_ingredient">
     <End Type="db_model.smoothies_recipes" Role="smoothies_recipes" Multiplicity="1" />
     <End Type="db_model.recipes_ingredient" Role="recipes_ingredient" Multiplicity="*" />
+  </Association>
+  <EntityType Name="photos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="filename" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="data" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="body_gallery" Relationship="db_model.body_galleryphotos" FromRole="photos" ToRole="body_gallery" />
+    <NavigationProperty Name="dishes_gallery" Relationship="db_model.dishes_galleryphotos" FromRole="photos" ToRole="dishes_gallery" />
+    <NavigationProperty Name="smoothies_recipes" Relationship="db_model.smoothies_recipesphotos" FromRole="photos" ToRole="smoothies_recipes" />
+  </EntityType>
+  <Association Name="body_galleryphotos">
+    <End Type="db_model.body_gallery" Role="body_gallery" Multiplicity="0..1" />
+    <End Type="db_model.photos" Role="photos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+  </Association>
+  <Association Name="dishes_galleryphotos">
+    <End Type="db_model.dishes_gallery" Role="dishes_gallery" Multiplicity="0..1" />
+    <End Type="db_model.photos" Role="photos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+  </Association>
+  <Association Name="smoothies_recipesphotos">
+    <End Type="db_model.smoothies_recipes" Role="smoothies_recipes" Multiplicity="0..1" />
+    <End Type="db_model.photos" Role="photos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
   </Association>
 </Schema>

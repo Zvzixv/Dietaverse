@@ -17,6 +17,10 @@
         <AssociationConnector Association="db_model.dishes_galleryusers" />
         <AssociationConnector Association="db_model.smoothies_ingrrecipes_ingredient" />
         <AssociationConnector Association="db_model.smoothies_recipesrecipes_ingredient" />
+        <EntityTypeShape EntityType="db_model.photos" Width="1.5" PointX="5.875" PointY="7.375" />
+        <AssociationConnector Association="db_model.body_galleryphotos" />
+        <AssociationConnector Association="db_model.dishes_galleryphotos" />
+        <AssociationConnector Association="db_model.smoothies_recipesphotos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -57,10 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\photos.cs">
+      <DependentUpon>db_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Body_gallery.cs" />
     <Compile Include="Model\Daily_summary.cs" />
     <Compile Include="Model\Dishes_gallery.cs" />
     <Compile Include="Model\GUI.cs" />
+    <Compile Include="Model\Photos.cs" />
     <Compile Include="Model\Recipes_ingredient.cs" />
     <Compile Include="Model\Smoothies_ingr.cs" />
     <Compile Include="Model\Smoothies_recipes.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -177,9 +178,11 @@ namespace Dietaverse.View
                 smoothiepictureBox.Visible = true;
                 namelabel.Text = result.name;
 
-                System.IO.DirectoryInfo filepathtemp = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
-                string filepath = filepathtemp.ToString() + @"\Resources\";
-                Image photoImage = Image.FromFile(filepath + result.photo);
+                photos photo = result.photos;
+
+                byte[] tempBytes = Convert.FromBase64String(photo.data);
+                MemoryStream memStr = new MemoryStream(tempBytes);
+                Image photoImage = Image.FromStream(memStr);
 
                 smoothiepictureBox.Image = g.ResizeImage(photoImage, smoothiepictureBox.Width, smoothiepictureBox.Height);
             }

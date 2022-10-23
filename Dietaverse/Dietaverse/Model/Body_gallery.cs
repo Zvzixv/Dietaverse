@@ -2,6 +2,7 @@
 using Dietaverse.View;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Dietaverse.Model
         public System.DateTime date { get; set; }
 
         public virtual users users { get; set; }
+        public virtual photos photos { get; set; }
 
         public List<body_gallery> listOfPhotos(users presentuser)
         {
@@ -25,7 +27,7 @@ namespace Dietaverse.Model
                 var list = new List<body_gallery>();
                 foreach(var i in photos)
                 {
-                    if(i.users.Id==presentuser.Id)
+                    if(i.users.Id==presentuser.Id && i.photos.Id>-1)
                         list.Add(i);
                 }
                 return list;
@@ -38,14 +40,24 @@ namespace Dietaverse.Model
             {
                 var u = db.usersSet;
 
-                body_gallery newphoto = new body_gallery();
-                newphoto.photo = path;
-                newphoto.date = date;
-                newphoto.note = note;
-                newphoto.weight = weight;
-                newphoto.users = u.Single(a=>a.name == user.name);
+                String FileName = Path.GetFileName(path);
+                byte[] AsBytes = File.ReadAllBytes(path);
+                String DataAsBase64String = Convert.ToBase64String(AsBytes);
 
-                db.body_gallerySet.Add(newphoto);
+                photos photo = new photos();
+                photo.filename = FileName;
+                photo.data = DataAsBase64String;
+                db.photosSet.Add(photo);
+                
+
+                body_gallery newEntry = new body_gallery();
+                newEntry.date = date;
+                newEntry.note = note;
+                newEntry.weight = weight;
+                newEntry.users = u.Single(a=>a.name == user.name);
+                newEntry.photos = photo;
+
+                db.body_gallerySet.Add(newEntry);
                 db.SaveChanges();
             }
         }
@@ -54,12 +66,14 @@ namespace Dietaverse.Model
         {
             using (var db = new db_modelContainer())
             {
-                var p = db.body_gallerySet.Single(x => x.photo == path);
+                var p = db.body_gallerySet.Single(x => "tutajzdj" == path);
                 p.note = note;
                 db.SaveChanges();
                 return true;
             }
         }
+
+        
 
     }
 }
