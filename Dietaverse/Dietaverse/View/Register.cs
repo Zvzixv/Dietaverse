@@ -86,5 +86,7 @@ namespace Dietaverse.View
             Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             mainform.changeForm(launchform);
         }
+
+
     }
 }

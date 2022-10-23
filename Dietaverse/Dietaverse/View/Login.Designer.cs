@@ -51,20 +51,22 @@
             // 
             // passtextBox
             // 
+            this.passtextBox.AcceptsTab = true;
             this.passtextBox.Location = new System.Drawing.Point(471, 258);
             this.passtextBox.Name = "passtextBox";
             this.passtextBox.PasswordChar = '*';
             this.passtextBox.Size = new System.Drawing.Size(100, 20);
-            this.passtextBox.TabIndex = 6;
+            this.passtextBox.TabIndex = 1;
             this.passtextBox.UseSystemPasswordChar = true;
             this.passtextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // logintextBox
             // 
+            this.logintextBox.AcceptsTab = true;
             this.logintextBox.Location = new System.Drawing.Point(471, 228);
             this.logintextBox.Name = "logintextBox";
             this.logintextBox.Size = new System.Drawing.Size(100, 20);
-            this.logintextBox.TabIndex = 7;
+            this.logintextBox.TabIndex = 0;
             // 
             // label5
             // 
@@ -96,7 +98,7 @@
             this.loginButton.Location = new System.Drawing.Point(404, 293);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(109, 37);
-            this.loginButton.TabIndex = 8;
+            this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -109,7 +111,7 @@
             this.closeButton.Location = new System.Drawing.Point(898, 12);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(25, 25);
-            this.closeButton.TabIndex = 9;
+            this.closeButton.TabIndex = 4;
             this.closeButton.Text = "X";
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
@@ -122,7 +124,7 @@
             this.backbutton.Location = new System.Drawing.Point(404, 347);
             this.backbutton.Name = "backbutton";
             this.backbutton.Size = new System.Drawing.Size(109, 38);
-            this.backbutton.TabIndex = 10;
+            this.backbutton.TabIndex = 3;
             this.backbutton.Text = "Back";
             this.backbutton.UseVisualStyleBackColor = true;
             this.backbutton.Click += new System.EventHandler(this.backbutton_Click);
