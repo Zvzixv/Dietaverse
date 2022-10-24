@@ -4,235 +4,235 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="db_model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="body_gallerySet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="weight" Type="float" Nullable="false" />
-          <Property Name="date" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="note" Type="nvarchar(max)" />
-          <Property Name="users_Id" Type="int" Nullable="false" />
-          <Property Name="photos_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="daily_summarySet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="kcal_amount" Type="int" />
-          <Property Name="weight" Type="float" />
-          <Property Name="notes" Type="nvarchar(max)" />
-          <Property Name="date" Type="datetime" Nullable="false" />
-          <Property Name="users_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="dishes_gallerySet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="recipe" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="kcal" Type="int" Nullable="false" />
-          <Property Name="users_Id" Type="int" Nullable="false" />
-          <Property Name="photos_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="photosSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="filename" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="data" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
-        <EntityType Name="recipes_ingredientSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="smoothies_ingr_Id" Type="int" Nullable="false" />
-          <Property Name="smoothies_recipes_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="smoothies_ingrSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="kcal" Type="float" Nullable="false" />
-        </EntityType>
-        <EntityType Name="smoothies_recipesSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" />
-          <Property Name="fruity" Type="bit" Nullable="false" />
-          <Property Name="vegetable" Type="bit" Nullable="false" />
-          <Property Name="sweet" Type="bit" Nullable="false" />
-          <Property Name="sour" Type="bit" Nullable="false" />
-          <Property Name="photos_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="usersSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="password" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="weight" Type="float" Nullable="false" />
-          <Property Name="joindate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_body_galleryphotos">
-          <End Role="photosSet" Type="Self.photosSet" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="body_gallerySet" Type="Self.body_gallerySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="photosSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="body_gallerySet">
-              <PropertyRef Name="photos_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_daily_summaryusers">
-          <End Role="usersSet" Type="Self.usersSet" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="daily_summarySet" Type="Self.daily_summarySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usersSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="daily_summarySet">
-              <PropertyRef Name="users_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dishes_galleryphotos">
-          <End Role="photosSet" Type="Self.photosSet" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="dishes_gallerySet" Type="Self.dishes_gallerySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="photosSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="dishes_gallerySet">
-              <PropertyRef Name="photos_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dishes_galleryusers">
-          <End Role="usersSet" Type="Self.usersSet" Multiplicity="1" />
-          <End Role="dishes_gallerySet" Type="Self.dishes_gallerySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usersSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="dishes_gallerySet">
-              <PropertyRef Name="users_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_smoothies_ingrrecipes_ingredient">
-          <End Role="smoothies_ingrSet" Type="Self.smoothies_ingrSet" Multiplicity="1" />
-          <End Role="recipes_ingredientSet" Type="Self.recipes_ingredientSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="smoothies_ingrSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="recipes_ingredientSet">
-              <PropertyRef Name="smoothies_ingr_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_smoothies_recipesphotos">
-          <End Role="photosSet" Type="Self.photosSet" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="smoothies_recipesSet" Type="Self.smoothies_recipesSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="photosSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="smoothies_recipesSet">
-              <PropertyRef Name="photos_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_smoothies_recipesrecipes_ingredient">
-          <End Role="smoothies_recipesSet" Type="Self.smoothies_recipesSet" Multiplicity="1" />
-          <End Role="recipes_ingredientSet" Type="Self.recipes_ingredientSet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="smoothies_recipesSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="recipes_ingredientSet">
-              <PropertyRef Name="smoothies_recipes_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_usersbody_gallery">
-          <End Role="usersSet" Type="Self.usersSet" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="body_gallerySet" Type="Self.body_gallerySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usersSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="body_gallerySet">
-              <PropertyRef Name="users_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="db_modelStoreContainer">
-          <EntitySet Name="body_gallerySet" EntityType="Self.body_gallerySet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="daily_summarySet" EntityType="Self.daily_summarySet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="dishes_gallerySet" EntityType="Self.dishes_gallerySet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="photosSet" EntityType="Self.photosSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="recipes_ingredientSet" EntityType="Self.recipes_ingredientSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="smoothies_ingrSet" EntityType="Self.smoothies_ingrSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="smoothies_recipesSet" EntityType="Self.smoothies_recipesSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="usersSet" EntityType="Self.usersSet" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_body_galleryphotos" Association="Self.FK_body_galleryphotos">
-            <End Role="photosSet" EntitySet="photosSet" />
-            <End Role="body_gallerySet" EntitySet="body_gallerySet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_daily_summaryusers" Association="Self.FK_daily_summaryusers">
-            <End Role="usersSet" EntitySet="usersSet" />
-            <End Role="daily_summarySet" EntitySet="daily_summarySet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dishes_galleryphotos" Association="Self.FK_dishes_galleryphotos">
-            <End Role="photosSet" EntitySet="photosSet" />
-            <End Role="dishes_gallerySet" EntitySet="dishes_gallerySet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dishes_galleryusers" Association="Self.FK_dishes_galleryusers">
-            <End Role="usersSet" EntitySet="usersSet" />
-            <End Role="dishes_gallerySet" EntitySet="dishes_gallerySet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_smoothies_ingrrecipes_ingredient" Association="Self.FK_smoothies_ingrrecipes_ingredient">
-            <End Role="smoothies_ingrSet" EntitySet="smoothies_ingrSet" />
-            <End Role="recipes_ingredientSet" EntitySet="recipes_ingredientSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_smoothies_recipesphotos" Association="Self.FK_smoothies_recipesphotos">
-            <End Role="photosSet" EntitySet="photosSet" />
-            <End Role="smoothies_recipesSet" EntitySet="smoothies_recipesSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_smoothies_recipesrecipes_ingredient" Association="Self.FK_smoothies_recipesrecipes_ingredient">
-            <End Role="smoothies_recipesSet" EntitySet="smoothies_recipesSet" />
-            <End Role="recipes_ingredientSet" EntitySet="recipes_ingredientSet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_usersbody_gallery" Association="Self.FK_usersbody_gallery">
-            <End Role="usersSet" EntitySet="usersSet" />
-            <End Role="body_gallerySet" EntitySet="body_gallerySet" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="db_model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="db_modelStoreContainer">
+    <EntitySet Name="usersSet" EntityType="db_model.Store.usersSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="dishes_gallerySet" EntityType="db_model.Store.dishes_gallerySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="daily_summarySet" EntityType="db_model.Store.daily_summarySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="smoothies_recipesSet" EntityType="db_model.Store.smoothies_recipesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="smoothies_ingrSet" EntityType="db_model.Store.smoothies_ingrSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="body_gallerySet" EntityType="db_model.Store.body_gallerySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="recipes_ingredientSet" EntityType="db_model.Store.recipes_ingredientSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="photosSet" EntityType="db_model.Store.photosSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="daily_summaryusers" Association="db_model.Store.daily_summaryusers">
+      <End Role="daily_summary" EntitySet="daily_summarySet" />
+      <End Role="users" EntitySet="usersSet" />
+    </AssociationSet>
+    <AssociationSet Name="usersbody_gallery" Association="db_model.Store.usersbody_gallery">
+      <End Role="users" EntitySet="usersSet" />
+      <End Role="body_gallery" EntitySet="body_gallerySet" />
+    </AssociationSet>
+    <AssociationSet Name="dishes_galleryusers" Association="db_model.Store.dishes_galleryusers">
+      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+      <End Role="users" EntitySet="usersSet" />
+    </AssociationSet>
+    <AssociationSet Name="smoothies_ingrrecipes_ingredient" Association="db_model.Store.smoothies_ingrrecipes_ingredient">
+      <End Role="smoothies_ingr" EntitySet="smoothies_ingrSet" />
+      <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
+    </AssociationSet>
+    <AssociationSet Name="smoothies_recipesrecipes_ingredient" Association="db_model.Store.smoothies_recipesrecipes_ingredient">
+      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
+      <End Role="recipes_ingredient" EntitySet="recipes_ingredientSet" />
+    </AssociationSet>
+    <AssociationSet Name="body_galleryphotos" Association="db_model.Store.body_galleryphotos">
+      <End Role="body_gallery" EntitySet="body_gallerySet" />
+      <End Role="photos" EntitySet="photosSet" />
+    </AssociationSet>
+    <AssociationSet Name="dishes_galleryphotos" Association="db_model.Store.dishes_galleryphotos">
+      <End Role="dishes_gallery" EntitySet="dishes_gallerySet" />
+      <End Role="photos" EntitySet="photosSet" />
+    </AssociationSet>
+    <AssociationSet Name="smoothies_recipesphotos" Association="db_model.Store.smoothies_recipesphotos">
+      <End Role="smoothies_recipes" EntitySet="smoothies_recipesSet" />
+      <End Role="photos" EntitySet="photosSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="usersSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="weight" Type="float" Nullable="false" />
+    <Property Name="joindate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dishes_gallerySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="recipe" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kcal" Type="int" Nullable="false" />
+    <Property Name="users_Id" Type="int" Nullable="false" />
+    <Property Name="photos_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="daily_summarySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kcal_amount" Type="int" Nullable="true" />
+    <Property Name="weight" Type="float" Nullable="true" />
+    <Property Name="notes" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="users_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="smoothies_recipesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="fruity" Type="bit" Nullable="false" />
+    <Property Name="vegetable" Type="bit" Nullable="false" />
+    <Property Name="sweet" Type="bit" Nullable="false" />
+    <Property Name="sour" Type="bit" Nullable="false" />
+    <Property Name="photos_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="smoothies_ingrSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kcal" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="body_gallerySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="weight" Type="float" Nullable="false" />
+    <Property Name="date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="note" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="users_Id" Type="int" Nullable="false" />
+    <Property Name="photos_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="recipes_ingredientSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="smoothies_ingr_Id" Type="int" Nullable="false" />
+    <Property Name="smoothies_recipes_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="photosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="filename" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="data" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="daily_summaryusers">
+    <End Role="daily_summary" Type="db_model.Store.daily_summarySet" Multiplicity="*" />
+    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="daily_summary">
+        <PropertyRef Name="users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="usersbody_gallery">
+    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="body_gallery" Type="db_model.Store.body_gallerySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="body_gallery">
+        <PropertyRef Name="users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="dishes_galleryusers">
+    <End Role="dishes_gallery" Type="db_model.Store.dishes_gallerySet" Multiplicity="*" />
+    <End Role="users" Type="db_model.Store.usersSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="dishes_gallery">
+        <PropertyRef Name="users_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="smoothies_ingrrecipes_ingredient">
+    <End Role="smoothies_ingr" Type="db_model.Store.smoothies_ingrSet" Multiplicity="1" />
+    <End Role="recipes_ingredient" Type="db_model.Store.recipes_ingredientSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smoothies_ingr">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="recipes_ingredient">
+        <PropertyRef Name="smoothies_ingr_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="smoothies_recipesrecipes_ingredient">
+    <End Role="smoothies_recipes" Type="db_model.Store.smoothies_recipesSet" Multiplicity="1" />
+    <End Role="recipes_ingredient" Type="db_model.Store.recipes_ingredientSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smoothies_recipes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="recipes_ingredient">
+        <PropertyRef Name="smoothies_recipes_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="body_galleryphotos">
+    <End Role="body_gallery" Type="db_model.Store.body_gallerySet" Multiplicity="*" />
+    <End Role="photos" Type="db_model.Store.photosSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <ReferentialConstraint>
+      <Principal Role="photos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="body_gallery">
+        <PropertyRef Name="photos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="dishes_galleryphotos">
+    <End Role="dishes_gallery" Type="db_model.Store.dishes_gallerySet" Multiplicity="*" />
+    <End Role="photos" Type="db_model.Store.photosSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <ReferentialConstraint>
+      <Principal Role="photos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="dishes_gallery">
+        <PropertyRef Name="photos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="smoothies_recipesphotos">
+    <End Role="smoothies_recipes" Type="db_model.Store.smoothies_recipesSet" Multiplicity="*" />
+    <End Role="photos" Type="db_model.Store.photosSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <ReferentialConstraint>
+      <Principal Role="photos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="smoothies_recipes">
+        <PropertyRef Name="photos_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="db_model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">

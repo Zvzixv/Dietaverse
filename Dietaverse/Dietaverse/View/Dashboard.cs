@@ -24,7 +24,7 @@ namespace Dietaverse.View
         public Dashboard(users _user)
         {
             user = _user;
-            weight = user.weight;
+            weight = summary.downloadWeightFromDatabase(user, DateTime.Now);
             calories = summary.downloadKcalFromDatabase(user, DateTime.Now);
             if(summary.downloadNoteFromDatabase(user, DateTime.Now)!="")
             {
