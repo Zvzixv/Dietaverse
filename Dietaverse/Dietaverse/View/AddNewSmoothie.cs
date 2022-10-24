@@ -97,6 +97,7 @@ namespace Dietaverse.View
 
             Smoothies_recipes sr = new Smoothies_recipes();
             sr.addNewSmoothie(smName, smPhoto, smIngrChecked, smKcal, smIsFruity, smIsVegetable, smIsSweet, smIsSour);
+            MessageBox.Show("Added successfully");
 
         }
 
