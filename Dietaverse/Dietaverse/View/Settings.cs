@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dietaverse.Database;
+using Dietaverse.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +17,12 @@ namespace Dietaverse.View
         mainForm mainform;
         bool pass1wasclicked = false;
         bool pass2wasclicked = false;
-        public Settings(mainForm mf)
+        users user;
+        public Settings(mainForm mf, users u)
         {
             InitializeComponent();
             mainform = mf;
+            user = u;
         }
 
         private void logoutbutton_Click(object sender, EventArgs e)
@@ -29,13 +33,13 @@ namespace Dietaverse.View
 
         private void pass1textBox_Validated(object sender, EventArgs e)
         {
-            if(!pass1wasclicked)
+            if (!pass1wasclicked)
             {
                 pass1textBox.Text = "";
+                pass1wasclicked = true;
+                pass1textBox.Font = new Font(pass1textBox.Font, FontStyle.Regular);
                 pass1textBox.PasswordChar = '*';
                 pass1textBox.UseSystemPasswordChar = true;
-                pass1wasclicked = true;
-
             }
         }
 
@@ -45,6 +49,10 @@ namespace Dietaverse.View
             {
                 pass1textBox.Text = "Insert new password";
                 pass1wasclicked = false;
+                pass1textBox.UseSystemPasswordChar = false;
+                pass1textBox.PasswordChar = '\0';
+
+
             }
 
         }
@@ -54,12 +62,11 @@ namespace Dietaverse.View
             if (!pass2wasclicked)
             {
                 pass2textBox.Text = "";
+                pass2wasclicked = true;
+                pass2textBox.Font = new Font(pass2textBox.Font, FontStyle.Regular);
                 pass2textBox.PasswordChar = '*';
                 pass2textBox.UseSystemPasswordChar = true;
-                pass2wasclicked = true;
-
             }
-
         }
 
         private void pass2textBox_Leave(object sender, EventArgs e)
@@ -68,8 +75,32 @@ namespace Dietaverse.View
             {
                 pass2textBox.Text = "Insert new password";
                 pass2wasclicked = false;
+                pass2textBox.UseSystemPasswordChar = false;
+                pass2textBox.PasswordChar = '\0';
             }
 
+        }
+
+        private void changePasswordbutton_Click(object sender, EventArgs e)
+        {
+            if (pass1textBox.Text == "" || pass2textBox.Text =="")
+            {
+                string message = "Records are empty";
+                MessageBox.Show(this, message, "Value is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (pass1textBox.Text != pass2textBox.Text)
+            {
+                string message = "Passwords are different";
+                MessageBox.Show(this, message, "Value is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Users use = new Users();
+            use.ChangePassword(user.name, pass1textBox.Text);
+
+            MessageBox.Show("Added successfully");
         }
     }
 }

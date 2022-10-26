@@ -67,8 +67,8 @@
             this.pass1textBox.Size = new System.Drawing.Size(146, 21);
             this.pass1textBox.TabIndex = 13;
             this.pass1textBox.Text = "Insert new password";
+            this.pass1textBox.Enter += new System.EventHandler(this.pass1textBox_Validated);
             this.pass1textBox.Leave += new System.EventHandler(this.pass1textBox_Leave);
-            this.pass1textBox.Validated += new System.EventHandler(this.pass1textBox_Validated);
             // 
             // pass2textBox
             // 
@@ -78,8 +78,8 @@
             this.pass2textBox.Size = new System.Drawing.Size(146, 21);
             this.pass2textBox.TabIndex = 13;
             this.pass2textBox.Text = "Repeat new password";
+            this.pass2textBox.Enter += new System.EventHandler(this.pass2textBox_Validated);
             this.pass2textBox.Leave += new System.EventHandler(this.pass2textBox_Leave);
-            this.pass2textBox.Validated += new System.EventHandler(this.pass2textBox_Validated);
             // 
             // changePasswordbutton
             // 
@@ -92,7 +92,7 @@
             this.changePasswordbutton.TabIndex = 11;
             this.changePasswordbutton.Text = "Apply ";
             this.changePasswordbutton.UseVisualStyleBackColor = true;
-            this.changePasswordbutton.Click += new System.EventHandler(this.logoutbutton_Click);
+            this.changePasswordbutton.Click += new System.EventHandler(this.changePasswordbutton_Click);
             // 
             // Settings
             // 

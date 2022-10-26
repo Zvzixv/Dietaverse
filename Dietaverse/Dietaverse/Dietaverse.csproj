@@ -60,9 +60,6 @@
     <Reference Include="Syncfusion.Licensing, Version=20.3460.0.50, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Licensing.20.3.0.50\lib\net46\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfCalendar.XForms, Version=20.3451.0.50, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Xamarin.SfCalendar.20.3.0.50\lib\netstandard2.0\Syncfusion.SfCalendar.XForms.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />

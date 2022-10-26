@@ -54,7 +54,6 @@ C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\LiveChart
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\LiveCharts.Wpf.dll
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Syncfusion.Core.XForms.dll
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Syncfusion.Licensing.dll
-C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Syncfusion.SfCalendar.XForms.dll
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Xamarin.Forms.Core.dll
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Xamarin.Forms.Platform.dll
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Xamarin.Forms.Xaml.dll
@@ -65,7 +64,6 @@ C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\LiveChart
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\LiveCharts.Wpf.xml
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Syncfusion.Core.XForms.xml
-C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Syncfusion.SfCalendar.XForms.xml
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Xamarin.Forms.Core.pdb
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Xamarin.Forms.Core.xml
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\bin\Debug\Xamarin.Forms.Xaml.pdb

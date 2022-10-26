@@ -127,7 +127,7 @@ namespace Dietaverse
 
             lblTitle.Text = "Settings";
             this.PnlFormLoader.Controls.Clear();
-            Settings settingsform = new Settings(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            Settings settingsform = new Settings(mainform, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.changeForm(settingsform);
         }
 
