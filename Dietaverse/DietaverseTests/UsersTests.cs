@@ -102,37 +102,115 @@ namespace DietaverseTests
 
         }
 
-        //todo: changepassword
+
+        [Fact]
+        [AutoRollback]
         public void ChangePassword_GivenPresentUsername_ChangeSucceed()
         {
-            string expectedLogin = "UsersTest";
-            string expectedPassword = "test";
+            string username = "UsersTest";
+            string password = "pass";
+            double weight = 10;
 
+            //users testuser = new users(); //{ name = username, password = password, weight = weight };
+            Users t = new Users();
+            users testuser = t.CreateAccount(username, 10, password);
 
+            string newpassword = "newpass";
+
+            try
+            {
+                t.ChangePassword(username, newpassword);
+            }
+            catch
+            {
+                Assert.True(false);
+                return;
+            }
+
+            Assert.Equal(newpassword, testuser.password);
         }
 
+        [Fact]
+        [AutoRollback]
         public void ChangePassword_GivenAbsentUsername_ChangeFailure()
         {
-            string expectedLogin = "UsersTest";
-            string expectedPassword = "test";
+            string username = "UsersTest";
+            string password = "pass";
+            double weight = 10;
 
+            users testuser = new users();
+            Users t = new Users();
+            //t.CreateAccount("UsersTest", 10, "passwprd");
+
+            string newpassword = "newpass";
+
+            try
+            {
+                t.ChangePassword(username, newpassword);
+            }
+            catch
+            {
+                Assert.True(true);
+                return;
+            }
+
+            Assert.True(false);
 
         }
 
-        //todo: changeweight
-
+        [Fact]
+        [AutoRollback]
         public void ChangeWeight_GivenPresentUser_ChangeSucceed()
         {
-            string expectedLogin = "UsersTest";
-            string expectedPassword = "test";
+            string username = "UsersTest";
+            string password = "pass";
+            double weight = 10;
+
+
+            Users t = new Users();
+            users testuser = t.CreateAccount("UsersTest", 10, "passwprd");
+
+            double newweight = 30;
+
+            try
+            {
+                t.ChangeWeight(testuser, newweight);
+            }
+            catch
+            {
+                Assert.True(false);
+                return;
+            }
+
+            Assert.Equal(newweight, testuser.weight);
 
 
         }
-
+        [Fact]
+        [AutoRollback]
         public void ChangeWeight_GivenAbsentUser_ChangeFailure()
         {
             string expectedLogin = "UsersTest";
             string expectedPassword = "test";
+
+            Users t = new Users();
+            users testuser = new users();
+            //users testuser = t.CreateAccount("UsersTest", 10, "passwprd");
+
+            double newweight = 30;
+
+            try
+            {
+                t.ChangeWeight(testuser, newweight);
+            }
+            catch
+            {
+                Assert.True(true);
+                return;
+            }
+
+            Assert.True(false);
+
 
 
         }

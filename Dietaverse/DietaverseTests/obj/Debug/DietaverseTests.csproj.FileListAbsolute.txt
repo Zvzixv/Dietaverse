@@ -20,3 +20,12 @@ C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\obj\Debug\Diet
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\obj\Debug\DietaverseTests.csproj.SuggestedBindingRedirects.cache
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\DietaverseTests.dll.config
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.dll
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.pdb
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.xml
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\DietaverseTests\bin\Debug\LiveCharts.Wpf.xml
