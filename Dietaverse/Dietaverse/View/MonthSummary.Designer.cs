@@ -42,6 +42,7 @@
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.BackColor = System.Drawing.SystemColors.MenuText;
             this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
             this.monthCalendar1.Location = new System.Drawing.Point(96, 82);
             this.monthCalendar1.MaxDate = new System.DateTime(2030, 1, 1, 0, 0, 0, 0);

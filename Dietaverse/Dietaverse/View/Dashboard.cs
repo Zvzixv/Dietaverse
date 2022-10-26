@@ -1,5 +1,8 @@
 ﻿using Dietaverse.Database;
 using Dietaverse.Model;
+using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +37,57 @@ namespace Dietaverse.View
             kcalLabel.Text =calories.ToString()+" kcal";
             weightLabel.Text =weight.ToString()+" kg";
 
+            chartManage();
+
+        }
+
+        private void chartManage()
+        {
+
+
+
+            //cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
+            //{
+            //    Title = "Days",
+            //    Labels = new[] { "5 days ago", "4 days ago", "3 days ago", "2 days ago", "yesterday", "today" }
+            //});
+
+            //cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
+            //{
+            //    Title = "Kcal",
+            //    Labels = new[] {summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-5)).ToString(),
+            //    summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-4)).ToString(),
+            //    summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-3)).ToString(),
+            //    summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-2)).ToString(),
+            //    summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-1)).ToString(),
+            //    summary.downloadKcalFromDatabase(user, DateTime.Now).ToString()}
+
+            //});
+            List<ObservablePoint> points = new List<ObservablePoint>();
+
+            points.Add(new ObservablePoint(5, summary.downloadKcalFromDatabase(user, DateTime.Now)));
+            if (user.joindate < DateTime.Now.AddDays(-1)) points.Add(new ObservablePoint(4, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-1))));
+            if (user.joindate < DateTime.Now.AddDays(-2)) new ObservablePoint(3, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-2)));
+            if (user.joindate < DateTime.Now.AddDays(-3)) new ObservablePoint(2, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-3)));
+            if (user.joindate < DateTime.Now.AddDays(-4)) new ObservablePoint(1, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-4)));
+
+            cartesianChart1.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Values = new ChartValues<ObservablePoint>(points)
+                    {
+
+                    }
+                }
+            };
+
+            //cartesianChart1.AxisX.ShowLabels = false;
+
+        }
+
+        private static void Noop()
+        {
         }
 
         private void richTextBox1_Validated(object sender, EventArgs e)
@@ -77,7 +131,8 @@ namespace Dietaverse.View
 
             caloriesTB.Text = "";
             summary.update(weight, calories, user, notes);
-           
+            chartManage();
+
         }
 
         private void changeweightButton_Click(object sender, EventArgs e)
