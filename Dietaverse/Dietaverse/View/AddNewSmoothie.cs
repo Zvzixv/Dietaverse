@@ -87,7 +87,7 @@ namespace Dietaverse.View
         {
 
 
-            smName = nametextBox.Text;
+            smName = smnametextBox.Text;
             smKcal = kcaltextBox.Text;
             smPhoto = path;
             smIsFruity = fruitycheckBox.Checked;

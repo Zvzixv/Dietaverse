@@ -65,6 +65,22 @@ namespace Dietaverse.Model
             }
         }
 
+        public double calculateKcal(Smoothies_recipes result)
+        {
+            using (var db = new db_modelContainer())
+            {
+                List <smoothies_ingr> ingrs = new List<smoothies_ingr>();
+                ingrs = result.ingredients;
+                double sum = 0;
+
+                foreach(var i in ingrs)
+                {
+                    sum+= i.kcal;
+                }
+
+                return sum;
+            }
+        }
         public List<Smoothies_recipes> makeAList ()
         {
             using (var db = new db_modelContainer())

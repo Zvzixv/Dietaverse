@@ -17,16 +17,21 @@ namespace Dietaverse.View
     {
         string path;
         string note;
+
         Image i;
         GUI g = new GUI();
         Body_gallery bg;
         Form1 start;
         users user;
+
+        bool notetextboxclicked = false;
         public AddNewBodyPhoto(Form1 upper, users user)
         {
             InitializeComponent();
             start = upper;
             this.user = user;
+            notetextBox.Text = "Insert note here";
+
         }
 
         private void choosephotobutton_Click(object sender, EventArgs e)
@@ -35,8 +40,8 @@ namespace Dietaverse.View
             {
                 path = openFileDialog1.FileName;
                 i = Image.FromFile(path);
-                label7.Visible = false;
-                pictureBox.Image = g.ResizeImage(i, pictureBox.Width, pictureBox.Height);
+                label1.Visible = false;
+                pictureBox.Image = i;//g.ResizeImage(i, pictureBox.Width, pictureBox.Height);
             }
             
         }
@@ -65,6 +70,33 @@ namespace Dietaverse.View
                 MessageBox.Show(ex.Message);
             }
             MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
+            BodyGallery bodygalleryform = new BodyGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            start.changeForm(bodygalleryform);
+        }
+
+        private void notetextBox_Enter(object sender, EventArgs e)
+        {
+            if (!notetextboxclicked)
+            {
+                notetextBox.Text = "";
+                notetextboxclicked = true;
+                notetextBox.Font = new Font(notetextBox.Font, FontStyle.Regular);
+            }
+        }
+
+        private void notetextBox_Leave(object sender, EventArgs e)
+        {
+            if (notetextboxclicked && notetextBox.TextLength == 0)
+            {
+                notetextBox.Text = "Insert note here";
+                notetextboxclicked = false;
+                notetextBox.Font = new Font(notetextBox.Font, FontStyle.Italic);
+
+            }
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
             BodyGallery bodygalleryform = new BodyGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(bodygalleryform);
         }

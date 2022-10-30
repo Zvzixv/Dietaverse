@@ -20,10 +20,19 @@ namespace Dietaverse.View
         {
             InitializeComponent();
             _user = user;
+            monthCalendar1.SelectionStart = DateTime.Now;
+            monthCalendar1.SelectionEnd = DateTime.Now;
             datelabelOut.Text = DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
+            richTextBox1.Text = _daily_summary.downloadNoteFromDatabase(_user, DateTime.Now);
+            weightlabelOut.Text = _daily_summary.downloadWeightFromDatabase(_user, DateTime.Now).ToString();
+            callabelOut.Text = _daily_summary.downloadKcalFromDatabase(_user, DateTime.Now).ToString();
             monthCalendar1.MaxDate = DateTime.Today;
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
-            richTextBox1.Text = "Notes will apear here...";
+
+            if (richTextBox1.TextLength == 0)
+            {
+                richTextBox1.Text = "Notes will apear here...";
+            }
         }
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
@@ -36,6 +45,10 @@ namespace Dietaverse.View
 
             richTextBox1.Text = _daily_summary.downloadNoteFromDatabase(_user, e.Start);
 
+            if (richTextBox1.TextLength == 0)
+            {
+                richTextBox1.Text = "Notes will apear here...";
+            }
         }
 
         private double findLastWeight(DateTime day)

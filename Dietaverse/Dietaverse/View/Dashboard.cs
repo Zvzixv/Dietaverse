@@ -34,6 +34,7 @@ namespace Dietaverse.View
                 notes = summary.downloadNoteFromDatabase(user,DateTime.Now);
             }
             InitializeComponent();
+            richTextBox1.Text = notes;
             kcalLabel.Text =calories.ToString()+" kcal";
             weightLabel.Text =weight.ToString()+" kg";
 
@@ -99,9 +100,6 @@ namespace Dietaverse.View
 
         }
 
-        private static void Noop()
-        {
-        }
 
         private void richTextBox1_Validated(object sender, EventArgs e)
         {
@@ -121,6 +119,8 @@ namespace Dietaverse.View
                 hasBeenClicked=false;
                 richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
             }
+
+            summary.update(weight, calories, user, notes);
         }
 
         private void addcalButton_Click(object sender, EventArgs e)

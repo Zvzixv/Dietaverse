@@ -36,27 +36,32 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.kcaltextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.backbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // recipetextBox
             // 
             this.recipetextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.recipetextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.recipetextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.recipetextBox.Location = new System.Drawing.Point(40, 95);
+            this.recipetextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.recipetextBox.ForeColor = System.Drawing.Color.Coral;
+            this.recipetextBox.Location = new System.Drawing.Point(32, 71);
             this.recipetextBox.Multiline = true;
             this.recipetextBox.Name = "recipetextBox";
             this.recipetextBox.Size = new System.Drawing.Size(260, 102);
             this.recipetextBox.TabIndex = 66;
+            this.recipetextBox.Enter += new System.EventHandler(this.recipetextBox_Enter);
+            this.recipetextBox.Leave += new System.EventHandler(this.recipetextBox_Leave);
             // 
             // pictureBox
             // 
-            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.InitialImage = null;
-            this.pictureBox.Location = new System.Drawing.Point(40, 295);
+            this.pictureBox.Location = new System.Drawing.Point(32, 239);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(260, 148);
+            this.pictureBox.Size = new System.Drawing.Size(214, 167);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 67;
             this.pictureBox.TabStop = false;
@@ -67,7 +72,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.ForeColor = System.Drawing.Color.Coral;
-            this.label7.Location = new System.Drawing.Point(108, 359);
+            this.label7.Location = new System.Drawing.Point(83, 316);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 16);
             this.label7.TabIndex = 68;
@@ -78,7 +83,7 @@
             this.choosephotobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.choosephotobutton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.choosephotobutton.ForeColor = System.Drawing.Color.Coral;
-            this.choosephotobutton.Location = new System.Drawing.Point(338, 354);
+            this.choosephotobutton.Location = new System.Drawing.Point(289, 316);
             this.choosephotobutton.Name = "choosephotobutton";
             this.choosephotobutton.Size = new System.Drawing.Size(102, 29);
             this.choosephotobutton.TabIndex = 69;
@@ -107,21 +112,54 @@
             // 
             this.kcaltextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.kcaltextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.kcaltextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kcaltextBox.Location = new System.Drawing.Point(40, 213);
+            this.kcaltextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kcaltextBox.ForeColor = System.Drawing.Color.Coral;
+            this.kcaltextBox.Location = new System.Drawing.Point(32, 197);
             this.kcaltextBox.Name = "kcaltextBox";
-            this.kcaltextBox.Size = new System.Drawing.Size(260, 27);
+            this.kcaltextBox.Size = new System.Drawing.Size(260, 23);
             this.kcaltextBox.TabIndex = 72;
+            this.kcaltextBox.Enter += new System.EventHandler(this.kcaltextBox_Enter);
+            this.kcaltextBox.Leave += new System.EventHandler(this.kcaltextBox_Leave);
             // 
             // nameTextBox
             // 
             this.nameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nameTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.nameTextBox.Location = new System.Drawing.Point(40, 49);
+            this.nameTextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.nameTextBox.ForeColor = System.Drawing.Color.Coral;
+            this.nameTextBox.Location = new System.Drawing.Point(32, 23);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(260, 27);
+            this.nameTextBox.Size = new System.Drawing.Size(260, 23);
             this.nameTextBox.TabIndex = 73;
+            this.nameTextBox.Enter += new System.EventHandler(this.nameTextBox_Enter);
+            this.nameTextBox.Leave += new System.EventHandler(this.nameTextBox_Leave);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.nameTextBox);
+            this.panel1.Controls.Add(this.kcaltextBox);
+            this.panel1.Controls.Add(this.choosephotobutton);
+            this.panel1.Controls.Add(this.recipetextBox);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.pictureBox);
+            this.panel1.Location = new System.Drawing.Point(28, 22);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(444, 430);
+            this.panel1.TabIndex = 74;
+            // 
+            // backbutton
+            // 
+            this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backbutton.ForeColor = System.Drawing.Color.Coral;
+            this.backbutton.Location = new System.Drawing.Point(571, 338);
+            this.backbutton.Name = "backbutton";
+            this.backbutton.Size = new System.Drawing.Size(109, 37);
+            this.backbutton.TabIndex = 70;
+            this.backbutton.Text = "Back";
+            this.backbutton.UseVisualStyleBackColor = true;
+            this.backbutton.Click += new System.EventHandler(this.backButton_Click_1);
             // 
             // AddNewFoodPhoto
             // 
@@ -129,19 +167,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(733, 477);
-            this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.kcaltextBox);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.backbutton);
             this.Controls.Add(this.adNewPhotoButton);
-            this.Controls.Add(this.choosephotobutton);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.recipetextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewFoodPhoto";
             this.Text = "AddNewFoodPhoto";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -155,5 +190,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox kcaltextBox;
         private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button backbutton;
     }
 }

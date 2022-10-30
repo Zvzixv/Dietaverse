@@ -163,20 +163,24 @@ namespace Dietaverse.View
         private void Smoothiebutton1_Click(object sender, EventArgs e)
         {
             Smoothies_recipes result = algorithm();
-            namelabel.Visible = true;
+            label.Visible = true;
+            kcallabel.Visible = true;
             if (result == null)
             {
                 smoothiepictureBox.Visible = false;
-                namelabel.Visible = false;
+                label.Visible = false;
                 cannotchooselabel.Visible = true;
+                kcallabel.Visible=false;
                 
             }
             else
             {
-                namelabel.Visible = true;
+                label.Visible = true;
                 cannotchooselabel.Visible = false;
                 smoothiepictureBox.Visible = true;
-                namelabel.Text = result.name;
+                label.Text = result.name;
+                kcallabel.Visible = true;
+                kcallabel.Text = srecipes.calculateKcal(result).ToString();
 
                 photos photo = result.photos;
 
@@ -188,6 +192,8 @@ namespace Dietaverse.View
             }
 
         }
+
+
 
         private void Smoothies_Load(object sender, EventArgs e)
         {

@@ -49,6 +49,8 @@
             this.photolabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.smnametextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -118,7 +120,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 44);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 35);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 94);
             this.flowLayoutPanel1.TabIndex = 75;
@@ -128,54 +130,54 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Coral;
-            this.label3.Location = new System.Drawing.Point(14, 154);
+            this.label3.Location = new System.Drawing.Point(14, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 21);
+            this.label3.Size = new System.Drawing.Size(121, 21);
             this.label3.TabIndex = 76;
-            this.label3.Text = "My smoothie is:";
+            this.label3.Text = "My smoothie is";
             // 
             // sourcheckBox
             // 
             this.sourcheckBox.AutoSize = true;
             this.sourcheckBox.ForeColor = System.Drawing.Color.Coral;
-            this.sourcheckBox.Location = new System.Drawing.Point(140, 192);
+            this.sourcheckBox.Location = new System.Drawing.Point(140, 170);
             this.sourcheckBox.Name = "sourcheckBox";
-            this.sourcheckBox.Size = new System.Drawing.Size(49, 17);
+            this.sourcheckBox.Size = new System.Drawing.Size(46, 17);
             this.sourcheckBox.TabIndex = 78;
-            this.sourcheckBox.Text = "sour.";
+            this.sourcheckBox.Text = "sour";
             this.sourcheckBox.UseVisualStyleBackColor = true;
             // 
             // sweetcheckBox
             // 
             this.sweetcheckBox.AutoSize = true;
             this.sweetcheckBox.ForeColor = System.Drawing.Color.Coral;
-            this.sweetcheckBox.Location = new System.Drawing.Point(20, 192);
+            this.sweetcheckBox.Location = new System.Drawing.Point(20, 170);
             this.sweetcheckBox.Name = "sweetcheckBox";
-            this.sweetcheckBox.Size = new System.Drawing.Size(57, 17);
+            this.sweetcheckBox.Size = new System.Drawing.Size(54, 17);
             this.sweetcheckBox.TabIndex = 77;
-            this.sweetcheckBox.Text = "sweet.";
+            this.sweetcheckBox.Text = "sweet";
             this.sweetcheckBox.UseVisualStyleBackColor = true;
             // 
             // vegetablecheckBox
             // 
             this.vegetablecheckBox.AutoSize = true;
             this.vegetablecheckBox.ForeColor = System.Drawing.Color.Coral;
-            this.vegetablecheckBox.Location = new System.Drawing.Point(201, 192);
+            this.vegetablecheckBox.Location = new System.Drawing.Point(201, 170);
             this.vegetablecheckBox.Name = "vegetablecheckBox";
-            this.vegetablecheckBox.Size = new System.Drawing.Size(76, 17);
+            this.vegetablecheckBox.Size = new System.Drawing.Size(73, 17);
             this.vegetablecheckBox.TabIndex = 81;
-            this.vegetablecheckBox.Text = "vegetable.";
+            this.vegetablecheckBox.Text = "vegetable";
             this.vegetablecheckBox.UseVisualStyleBackColor = true;
             // 
             // fruitycheckBox
             // 
             this.fruitycheckBox.AutoSize = true;
             this.fruitycheckBox.ForeColor = System.Drawing.Color.Coral;
-            this.fruitycheckBox.Location = new System.Drawing.Point(83, 192);
+            this.fruitycheckBox.Location = new System.Drawing.Point(83, 170);
             this.fruitycheckBox.Name = "fruitycheckBox";
-            this.fruitycheckBox.Size = new System.Drawing.Size(51, 17);
+            this.fruitycheckBox.Size = new System.Drawing.Size(48, 17);
             this.fruitycheckBox.TabIndex = 80;
-            this.fruitycheckBox.Text = "fruity.";
+            this.fruitycheckBox.Text = "fruity";
             this.fruitycheckBox.UseVisualStyleBackColor = true;
             // 
             // AddNewSmoothiebutton
@@ -183,7 +185,7 @@
             this.AddNewSmoothiebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewSmoothiebutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.AddNewSmoothiebutton.ForeColor = System.Drawing.Color.Coral;
-            this.AddNewSmoothiebutton.Location = new System.Drawing.Point(217, 321);
+            this.AddNewSmoothiebutton.Location = new System.Drawing.Point(225, 378);
             this.AddNewSmoothiebutton.Name = "AddNewSmoothiebutton";
             this.AddNewSmoothiebutton.Size = new System.Drawing.Size(138, 34);
             this.AddNewSmoothiebutton.TabIndex = 82;
@@ -193,9 +195,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(18, 223);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 272);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 189);
+            this.pictureBox1.Size = new System.Drawing.Size(143, 167);
             this.pictureBox1.TabIndex = 83;
             this.pictureBox1.TabStop = false;
             // 
@@ -204,7 +206,7 @@
             this.choosePhotobutton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.choosePhotobutton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.choosePhotobutton1.ForeColor = System.Drawing.Color.Coral;
-            this.choosePhotobutton1.Location = new System.Drawing.Point(217, 264);
+            this.choosePhotobutton1.Location = new System.Drawing.Point(225, 321);
             this.choosePhotobutton1.Name = "choosePhotobutton1";
             this.choosePhotobutton1.Size = new System.Drawing.Size(138, 37);
             this.choosePhotobutton1.TabIndex = 84;
@@ -242,7 +244,7 @@
             // 
             this.photolabel.AutoSize = true;
             this.photolabel.ForeColor = System.Drawing.Color.Coral;
-            this.photolabel.Location = new System.Drawing.Point(45, 310);
+            this.photolabel.Location = new System.Drawing.Point(44, 345);
             this.photolabel.Name = "photolabel";
             this.photolabel.Size = new System.Drawing.Size(90, 13);
             this.photolabel.TabIndex = 85;
@@ -251,6 +253,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.smnametextBox);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.photolabel);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
@@ -280,6 +284,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(290, 175);
             this.panel2.TabIndex = 87;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Coral;
+            this.label6.Location = new System.Drawing.Point(16, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 21);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "Name";
+            // 
+            // smnametextBox
+            // 
+            this.smnametextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.smnametextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.smnametextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.smnametextBox.ForeColor = System.Drawing.Color.Coral;
+            this.smnametextBox.Location = new System.Drawing.Point(20, 225);
+            this.smnametextBox.Name = "smnametextBox";
+            this.smnametextBox.Size = new System.Drawing.Size(141, 23);
+            this.smnametextBox.TabIndex = 87;
             // 
             // AddNewSmoothie
             // 
@@ -325,5 +350,7 @@
         private System.Windows.Forms.Label photolabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox smnametextBox;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -45,6 +45,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.kcallabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.smoothiepictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -223,18 +227,61 @@
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Location = new System.Drawing.Point(276, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 345);
+            this.panel2.Size = new System.Drawing.Size(180, 365);
             this.panel2.TabIndex = 23;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.kcallabel);
+            this.panel3.Controls.Add(this.label);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.smoothiepictureBox);
+            this.panel3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.panel3.Location = new System.Drawing.Point(491, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(191, 345);
+            this.panel3.Size = new System.Drawing.Size(191, 365);
             this.panel3.TabIndex = 24;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Coral;
+            this.label5.Location = new System.Drawing.Point(13, 328);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Kcal:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Coral;
+            this.label6.Location = new System.Drawing.Point(13, 311);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Name:";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.ForeColor = System.Drawing.Color.Coral;
+            this.label.Location = new System.Drawing.Point(72, 311);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(0, 17);
+            this.label.TabIndex = 22;
+            // 
+            // kcallabel
+            // 
+            this.kcallabel.AutoSize = true;
+            this.kcallabel.ForeColor = System.Drawing.Color.Coral;
+            this.kcallabel.Location = new System.Drawing.Point(59, 328);
+            this.kcallabel.Name = "kcallabel";
+            this.kcallabel.Size = new System.Drawing.Size(0, 17);
+            this.kcallabel.TabIndex = 23;
             // 
             // Smoothies
             // 
@@ -283,5 +330,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label kcallabel;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
