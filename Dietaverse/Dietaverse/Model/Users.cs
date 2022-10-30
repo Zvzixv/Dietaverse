@@ -134,5 +134,23 @@ namespace Dietaverse.Model
             }
         }
 
+        public users getUser(string username)
+        {
+            using (var db = new db_modelContainer())
+            {
+                users u = new users();
+                try
+                {
+                    u = db.usersSet.Single(a => a.name == username);
+                    return u;
+                }
+                catch (Exception ex)
+                {
+                    throw new UserNotFoundException("I cannot find that user.");
+                }
+                
+            }
+        }
+
     }
 }

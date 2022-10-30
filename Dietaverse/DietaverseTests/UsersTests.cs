@@ -111,15 +111,14 @@ namespace DietaverseTests
             string password = "pass";
             double weight = 10;
 
-            //users testuser = new users(); //{ name = username, password = password, weight = weight };
             Users t = new Users();
-            users testuser = t.CreateAccount(username, 10, password);
+            t.CreateAccount(username, 10, password);
 
             string newpassword = "newpass";
 
             try
             {
-                t.ChangePassword(username, newpassword);
+                Assert.True(t.ChangePassword(username, newpassword));
             }
             catch
             {
@@ -127,7 +126,7 @@ namespace DietaverseTests
                 return;
             }
 
-            Assert.Equal(newpassword, testuser.password);
+            Assert.Equal(newpassword, t.getUser(username).password);
         }
 
         [Fact]
@@ -174,7 +173,7 @@ namespace DietaverseTests
 
             try
             {
-                t.ChangeWeight(testuser, newweight);
+                Assert.True(t.ChangeWeight(testuser, newweight));
             }
             catch
             {
@@ -182,7 +181,7 @@ namespace DietaverseTests
                 return;
             }
 
-            Assert.Equal(newweight, testuser.weight);
+            Assert.Equal(newweight, t.getUser(username).weight);
 
 
         }
