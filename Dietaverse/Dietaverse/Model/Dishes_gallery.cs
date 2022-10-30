@@ -52,6 +52,11 @@ namespace Dietaverse.Model
                 byte[] AsBytes = File.ReadAllBytes(_path);
                 String DataAsBase64String = Convert.ToBase64String(AsBytes);
 
+                if (AsBytes.Length > 100000)
+                {
+                    throw new AddPhotoFailException("File is too big.");
+                }
+
                 photos photo = new photos();
                 photo.filename = FileName;
                 photo.data = DataAsBase64String;

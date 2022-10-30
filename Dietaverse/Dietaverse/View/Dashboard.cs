@@ -27,7 +27,7 @@ namespace Dietaverse.View
         public Dashboard(users _user)
         {
             user = _user;
-            weight = summary.downloadWeightFromDatabase(user, DateTime.Now);
+            weight = findLastWeight(DateTime.Now);
             calories = summary.downloadKcalFromDatabase(user, DateTime.Now);
             if(summary.downloadNoteFromDatabase(user, DateTime.Now)!="")
             {
@@ -39,6 +39,19 @@ namespace Dietaverse.View
 
             chartManage();
 
+        }
+
+        private double findLastWeight(DateTime day)
+        {
+            DateTime tempday = day;
+            double weight;
+
+            while (summary.downloadWeightFromDatabase(user, tempday) == -1 && tempday >= user.joindate)
+            {
+                tempday = tempday.AddDays(-1);
+            }
+
+            return summary.downloadWeightFromDatabase(user, tempday);
         }
 
         private void chartManage()

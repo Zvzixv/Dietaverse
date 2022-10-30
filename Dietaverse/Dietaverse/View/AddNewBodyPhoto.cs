@@ -43,6 +43,7 @@ namespace Dietaverse.View
 
         private void adNewPhotoButton_Click(object sender, EventArgs e)
         {
+            
             note = notetextBox.Text;
             //DirectoryInfo filepathtemp = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
             //string savepath = filepathtemp.ToString() + @"\Resources\";
@@ -55,7 +56,14 @@ namespace Dietaverse.View
 
             //}
             bg = new Body_gallery();
-            bg.addPhoto(path, note, DateTime.Today.Day.ToString()+"."+ DateTime.Today.Month.ToString()+"." +DateTime.Today.Year.ToString(), Dashboard.weight, user);
+            try
+            {
+                bg.addPhoto(path, note, DateTime.Today.Day.ToString() + "." + DateTime.Today.Month.ToString() + "." + DateTime.Today.Year.ToString(), Dashboard.weight, user);
+            }
+            catch(AddPhotoFailException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
             BodyGallery bodygalleryform = new BodyGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(bodygalleryform);

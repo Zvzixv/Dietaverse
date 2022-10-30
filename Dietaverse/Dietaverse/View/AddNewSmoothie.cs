@@ -96,7 +96,14 @@ namespace Dietaverse.View
             smIsVegetable = vegetablecheckBox.Checked;
 
             Smoothies_recipes sr = new Smoothies_recipes();
-            sr.addNewSmoothie(smName, smPhoto, smIngrChecked, smKcal, smIsFruity, smIsVegetable, smIsSweet, smIsSour);
+            try
+            {
+                sr.addNewSmoothie(smName, smPhoto, smIngrChecked, smKcal, smIsFruity, smIsVegetable, smIsSweet, smIsSour);
+            }
+            catch (AddPhotoFailException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             MessageBox.Show("Added successfully");
 
         }

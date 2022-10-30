@@ -57,7 +57,14 @@ namespace Dietaverse.View
                 return;
             }
             dg = new Dishes_gallery();
-            dg.addPhoto(path, name, recipe, kcal, user);
+            try
+            {
+                dg.addPhoto(path, name, recipe, kcal, user);
+            }
+            catch(AddPhotoFailException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
             FoodGallery foodgalleryform = new FoodGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(foodgalleryform);

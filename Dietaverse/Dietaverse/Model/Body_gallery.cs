@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace Dietaverse.Model
 {
+
+    public class AddPhotoFailException : Exception
+    {
+        public AddPhotoFailException() { }
+        public AddPhotoFailException(string message) : base(message) { }
+    }
     class Body_gallery
     {
         public int Id { get; set; }
@@ -43,6 +49,11 @@ namespace Dietaverse.Model
                 String FileName = Path.GetFileName(path);
                 byte[] AsBytes = File.ReadAllBytes(path);
                 String DataAsBase64String = Convert.ToBase64String(AsBytes);
+
+                if(AsBytes.Length>100000)
+                {
+                    throw new AddPhotoFailException("File is too big.");
+                }
 
                 photos photo = new photos();
                 photo.filename = FileName;
