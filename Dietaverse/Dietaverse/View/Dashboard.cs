@@ -77,13 +77,17 @@ namespace Dietaverse.View
             //    summary.downloadKcalFromDatabase(user, DateTime.Now).ToString()}
 
             //});
+
+            cartesianChart1.AxisX.Add(new Axis { MinValue = 1 });
+            cartesianChart1.AxisY.Add(new Axis { MinValue = 0 });
+
             List<ObservablePoint> points = new List<ObservablePoint>();
 
             points.Add(new ObservablePoint(5, summary.downloadKcalFromDatabase(user, DateTime.Now)));
             if (user.joindate < DateTime.Now.AddDays(-1)) points.Add(new ObservablePoint(4, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-1))));
-            if (user.joindate < DateTime.Now.AddDays(-2)) new ObservablePoint(3, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-2)));
-            if (user.joindate < DateTime.Now.AddDays(-3)) new ObservablePoint(2, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-3)));
-            if (user.joindate < DateTime.Now.AddDays(-4)) new ObservablePoint(1, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-4)));
+            if (user.joindate < DateTime.Now.AddDays(-2)) points.Add(new ObservablePoint(3, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-2))));
+            if (user.joindate < DateTime.Now.AddDays(-3)) points.Add(new ObservablePoint(2, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-3))));
+            if (user.joindate < DateTime.Now.AddDays(-4)) points.Add(new ObservablePoint(1, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-4))));
 
             cartesianChart1.Series = new SeriesCollection
             {
@@ -95,6 +99,8 @@ namespace Dietaverse.View
                     }
                 }
             };
+
+            
 
             //cartesianChart1.AxisX.ShowLabels = false;
 
