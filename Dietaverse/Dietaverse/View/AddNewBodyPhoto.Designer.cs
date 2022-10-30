@@ -42,7 +42,7 @@
             this.adNewPhotoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adNewPhotoButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adNewPhotoButton.ForeColor = System.Drawing.Color.Coral;
-            this.adNewPhotoButton.Location = new System.Drawing.Point(573, 290);
+            this.adNewPhotoButton.Location = new System.Drawing.Point(577, 333);
             this.adNewPhotoButton.Name = "adNewPhotoButton";
             this.adNewPhotoButton.Size = new System.Drawing.Size(109, 37);
             this.adNewPhotoButton.TabIndex = 10;
@@ -56,7 +56,7 @@
             this.pictureBox.InitialImage = null;
             this.pictureBox.Location = new System.Drawing.Point(26, 234);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(271, 148);
+            this.pictureBox.Size = new System.Drawing.Size(262, 148);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 62;
             this.pictureBox.TabStop = false;
@@ -66,15 +66,19 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.Color.Coral;
             this.label7.Location = new System.Drawing.Point(95, 302);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 16);
+            this.label7.Size = new System.Drawing.Size(117, 16);
             this.label7.TabIndex = 63;
-            this.label7.Text = "Nie wybrano zdjęcia";
+            this.label7.Text = "No photo selected";
             // 
             // notetextBox
             // 
-            this.notetextBox.Location = new System.Drawing.Point(35, 54);
+            this.notetextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.notetextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.notetextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.notetextBox.Location = new System.Drawing.Point(26, 69);
             this.notetextBox.Multiline = true;
             this.notetextBox.Name = "notetextBox";
             this.notetextBox.Size = new System.Drawing.Size(262, 83);
@@ -85,7 +89,7 @@
             this.choosephotobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.choosephotobutton.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.choosephotobutton.ForeColor = System.Drawing.Color.Coral;
-            this.choosephotobutton.Location = new System.Drawing.Point(327, 288);
+            this.choosephotobutton.Location = new System.Drawing.Point(315, 297);
             this.choosephotobutton.Name = "choosephotobutton";
             this.choosephotobutton.Size = new System.Drawing.Size(102, 29);
             this.choosephotobutton.TabIndex = 66;

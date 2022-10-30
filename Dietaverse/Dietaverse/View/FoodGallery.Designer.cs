@@ -50,9 +50,9 @@
             this.adNewPhotoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adNewPhotoButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adNewPhotoButton.ForeColor = System.Drawing.Color.Coral;
-            this.adNewPhotoButton.Location = new System.Drawing.Point(599, 12);
+            this.adNewPhotoButton.Location = new System.Drawing.Point(572, 12);
             this.adNewPhotoButton.Name = "adNewPhotoButton";
-            this.adNewPhotoButton.Size = new System.Drawing.Size(109, 37);
+            this.adNewPhotoButton.Size = new System.Drawing.Size(136, 37);
             this.adNewPhotoButton.TabIndex = 12;
             this.adNewPhotoButton.Text = "Add new";
             this.adNewPhotoButton.UseVisualStyleBackColor = true;

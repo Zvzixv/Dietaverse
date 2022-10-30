@@ -38,9 +38,9 @@
             this.adNewPhotoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.adNewPhotoButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adNewPhotoButton.ForeColor = System.Drawing.Color.Coral;
-            this.adNewPhotoButton.Location = new System.Drawing.Point(599, 12);
+            this.adNewPhotoButton.Location = new System.Drawing.Point(572, 12);
             this.adNewPhotoButton.Name = "adNewPhotoButton";
-            this.adNewPhotoButton.Size = new System.Drawing.Size(109, 37);
+            this.adNewPhotoButton.Size = new System.Drawing.Size(136, 37);
             this.adNewPhotoButton.TabIndex = 9;
             this.adNewPhotoButton.Text = "Add new";
             this.adNewPhotoButton.UseVisualStyleBackColor = true;
@@ -61,9 +61,9 @@
             // galleryPanel
             // 
             this.galleryPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.galleryPanel.Location = new System.Drawing.Point(12, 69);
+            this.galleryPanel.Location = new System.Drawing.Point(29, 69);
             this.galleryPanel.Name = "galleryPanel";
-            this.galleryPanel.Size = new System.Drawing.Size(539, 396);
+            this.galleryPanel.Size = new System.Drawing.Size(517, 396);
             this.galleryPanel.TabIndex = 11;
             // 
             // BodyGallery
