@@ -41,9 +41,30 @@ namespace DietaverseTests
             
         }
 
-        public void makeAList_GivenList_CreateSucceed()
+
+        public void calculateKcal_CalculatedSuccessfully()
         {
 
+        }
+
+        [Fact]
+        [AutoRollback]
+        public void makeAList_GivenList_CreateSucceed()
+        {
+            string name = "testSmoothie";
+            string path = "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\test.bmp";
+            bool fruity = true; bool vegetable = false; bool sweet = true; bool sour = true;
+            addTestIngredients();
+
+            Smoothies_recipes sr = new Smoothies_recipes();
+            sr.addNewSmoothie(name, path, testIngredients, fruity, vegetable, sweet, sour);
+
+            List <Smoothies_recipes> lists = sr.makeAList();
+
+            if(lists.Count >= 1)
+            {
+                Assert.True(true);
+            }
         }
 
         public void makeAList_GivenEmptyList_EmptyListReturned()
