@@ -33,12 +33,18 @@ namespace Dietaverse.View
             {
                 notes = summary.downloadNoteFromDatabase(user,DateTime.Now);
             }
+            else
+                richTextBox1.Text = "You can leave some notes here...";
+
             InitializeComponent();
             richTextBox1.Text = notes;
             kcalLabel.Text =calories.ToString()+" kcal";
             weightLabel.Text =weight.ToString()+" kg";
 
             chartManage();
+
+            cartesianChart1.AxisX.Add(new Axis { MinValue = 1 });
+            cartesianChart1.AxisY.Add(new Axis { MinValue = 0 });
 
         }
 
@@ -57,30 +63,6 @@ namespace Dietaverse.View
 
         private void chartManage()
         {
-
-
-
-            //cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
-            //{
-            //    Title = "Days",
-            //    Labels = new[] { "5 days ago", "4 days ago", "3 days ago", "2 days ago", "yesterday", "today" }
-            //});
-
-            //cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
-            //{
-            //    Title = "Kcal",
-            //    Labels = new[] {summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-5)).ToString(),
-            //    summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-4)).ToString(),
-            //    summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-3)).ToString(),
-            //    summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-2)).ToString(),
-            //    summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-1)).ToString(),
-            //    summary.downloadKcalFromDatabase(user, DateTime.Now).ToString()}
-
-            //});
-
-            cartesianChart1.AxisX.Add(new Axis { MinValue = 1 });
-            cartesianChart1.AxisY.Add(new Axis { MinValue = 0 });
-
             List<ObservablePoint> points = new List<ObservablePoint>();
 
             points.Add(new ObservablePoint(5, summary.downloadKcalFromDatabase(user, DateTime.Now)));
@@ -99,10 +81,6 @@ namespace Dietaverse.View
                     }
                 }
             };
-
-            
-
-            //cartesianChart1.AxisX.ShowLabels = false;
 
         }
 

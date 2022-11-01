@@ -88,7 +88,7 @@ namespace Dietaverse.View
 
 
             smName = smnametextBox.Text;
-            smKcal = kcaltextBox.Text;
+            //smKcal = kcaltextBox.Text;
             smPhoto = path;
             smIsFruity = fruitycheckBox.Checked;
             smIsSour = sourcheckBox.Checked;
@@ -98,7 +98,7 @@ namespace Dietaverse.View
             Smoothies_recipes sr = new Smoothies_recipes();
             try
             {
-                sr.addNewSmoothie(smName, smPhoto, smIngrChecked, smKcal, smIsFruity, smIsVegetable, smIsSweet, smIsSour);
+                sr.addNewSmoothie(smName, smPhoto, smIngrChecked, smIsFruity, smIsVegetable, smIsSweet, smIsSour);
             }
             catch (AddPhotoFailException ex)
             {

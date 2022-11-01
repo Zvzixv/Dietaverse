@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dietaverse.Model
 {
-    internal class Smoothies_recipes
+    public class Smoothies_recipes
     {
         public int Id { get; set; }
         public string name { get; set; }
@@ -24,7 +24,7 @@ namespace Dietaverse.Model
         public virtual photos photos { get; set; }
 
 
-        public void addNewSmoothie(string name, string _path, List<Smoothies_ingr> smoothies_ingr, string kcal, bool fruity, bool vegtable, bool sweet, bool sour)
+        public void addNewSmoothie(string name, string _path, List<Smoothies_ingr> smoothies_ingr,  bool fruity, bool vegtable, bool sweet, bool sour)
         {
             using (var db = new db_modelContainer())
             {
@@ -112,6 +112,15 @@ namespace Dietaverse.Model
                 }
 
                 return smoothies_Recipes;
+            }
+        }
+
+        public smoothies_recipes getSmoothie(string name)
+        {
+            using (var db = new db_modelContainer())
+            {
+                var sr = db.smoothies_recipesSet.Where(a => a.name == name);
+                return sr.FirstOrDefault();
             }
         }
     }

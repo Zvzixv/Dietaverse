@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dietaverse.Model
 {
-    class Smoothies_ingr
+    public class Smoothies_ingr
     {
         public int Id { get; set; }
         public string name { get; set; }
