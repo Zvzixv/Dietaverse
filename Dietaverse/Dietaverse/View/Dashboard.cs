@@ -29,14 +29,16 @@ namespace Dietaverse.View
             user = _user;
             weight = findLastWeight(DateTime.Now);
             calories = summary.downloadKcalFromDatabase(user, DateTime.Now);
-            if(summary.downloadNoteFromDatabase(user, DateTime.Now)!="")
+
+            InitializeComponent();
+
+            if(summary.downloadNoteFromDatabase(user, DateTime.Now)!=null)
             {
                 notes = summary.downloadNoteFromDatabase(user,DateTime.Now);
             }
             else
                 richTextBox1.Text = "You can leave some notes here...";
 
-            InitializeComponent();
             richTextBox1.Text = notes;
             kcalLabel.Text =calories.ToString()+" kcal";
             weightLabel.Text =weight.ToString()+" kg";

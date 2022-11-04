@@ -78,7 +78,14 @@ namespace Dietaverse.View
             ingrName = nametextBox.Text;
             ingrKcal = kcaltextBox.Text;
 
-            si.addNewIngr(ingrName, ingrKcal);
+            try
+            {
+                si.addNewIngr(ingrName, ingrKcal);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Wrong values!");
+            }
 
             dynamiccheck();
         }

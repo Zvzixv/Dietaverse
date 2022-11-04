@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoRollbackAttribute.cs" />
+    <Compile Include="Dishes_galleryTests.cs" />
+    <Compile Include="Smoothies_ingrTests.cs" />
     <Compile Include="Smoothies_recipesTests.cs" />
     <Compile Include="UsersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

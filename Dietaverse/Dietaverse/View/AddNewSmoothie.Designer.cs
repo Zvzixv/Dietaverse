@@ -48,9 +48,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.photolabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.smnametextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -185,7 +186,7 @@
             this.AddNewSmoothiebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewSmoothiebutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.AddNewSmoothiebutton.ForeColor = System.Drawing.Color.Coral;
-            this.AddNewSmoothiebutton.Location = new System.Drawing.Point(225, 378);
+            this.AddNewSmoothiebutton.Location = new System.Drawing.Point(212, 402);
             this.AddNewSmoothiebutton.Name = "AddNewSmoothiebutton";
             this.AddNewSmoothiebutton.Size = new System.Drawing.Size(138, 34);
             this.AddNewSmoothiebutton.TabIndex = 82;
@@ -206,7 +207,7 @@
             this.choosePhotobutton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.choosePhotobutton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.choosePhotobutton1.ForeColor = System.Drawing.Color.Coral;
-            this.choosePhotobutton1.Location = new System.Drawing.Point(225, 321);
+            this.choosePhotobutton1.Location = new System.Drawing.Point(212, 359);
             this.choosePhotobutton1.Name = "choosePhotobutton1";
             this.choosePhotobutton1.Size = new System.Drawing.Size(138, 37);
             this.choosePhotobutton1.TabIndex = 84;
@@ -253,6 +254,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.smnametextBox);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label2);
@@ -271,6 +273,27 @@
             this.panel1.Size = new System.Drawing.Size(405, 456);
             this.panel1.TabIndex = 86;
             // 
+            // smnametextBox
+            // 
+            this.smnametextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.smnametextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.smnametextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.smnametextBox.ForeColor = System.Drawing.Color.Coral;
+            this.smnametextBox.Location = new System.Drawing.Point(20, 225);
+            this.smnametextBox.Name = "smnametextBox";
+            this.smnametextBox.Size = new System.Drawing.Size(141, 23);
+            this.smnametextBox.TabIndex = 87;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Coral;
+            this.label6.Location = new System.Drawing.Point(16, 200);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 21);
+            this.label6.TabIndex = 86;
+            this.label6.Text = "Name";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
@@ -285,26 +308,17 @@
             this.panel2.Size = new System.Drawing.Size(290, 175);
             this.panel2.TabIndex = 87;
             // 
-            // label6
+            // label7
             // 
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Coral;
-            this.label6.Location = new System.Drawing.Point(16, 200);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 21);
-            this.label6.TabIndex = 86;
-            this.label6.Text = "Name";
-            // 
-            // smnametextBox
-            // 
-            this.smnametextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.smnametextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.smnametextBox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.smnametextBox.ForeColor = System.Drawing.Color.Coral;
-            this.smnametextBox.Location = new System.Drawing.Point(20, 225);
-            this.smnametextBox.Name = "smnametextBox";
-            this.smnametextBox.Size = new System.Drawing.Size(141, 23);
-            this.smnametextBox.TabIndex = 87;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.Color.Coral;
+            this.label7.Location = new System.Drawing.Point(198, 279);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(174, 79);
+            this.label7.TabIndex = 88;
+            this.label7.Text = "Strongly recommended is to add vertical 1795x2693 photo which is smaller than 50 " +
+    "kB.";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddNewSmoothie
             // 
@@ -352,5 +366,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox smnametextBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -77,7 +77,8 @@ namespace Dietaverse.Model
                 {
                     summary.weight = _weight;
                     summary.kcal_amount = _kcal;
-                    summary.notes = _note;
+                    if(_note!= "You can leave some notes here...")
+                        summary.notes = _note;
                 }
 
                 db.SaveChanges();

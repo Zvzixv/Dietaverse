@@ -38,6 +38,7 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.backbutton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +138,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.nameTextBox);
             this.panel1.Controls.Add(this.kcaltextBox);
             this.panel1.Controls.Add(this.choosephotobutton);
@@ -160,6 +162,18 @@
             this.backbutton.Text = "Back";
             this.backbutton.UseVisualStyleBackColor = true;
             this.backbutton.Click += new System.EventHandler(this.backButton_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.Coral;
+            this.label2.Location = new System.Drawing.Point(252, 348);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 79);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Strongly recommended is to add vertical 1500x2101 photo which is smaller than 50 " +
+    "kB.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddNewFoodPhoto
             // 
@@ -192,5 +206,6 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button backbutton;
+        private System.Windows.Forms.Label label2;
     }
 }
