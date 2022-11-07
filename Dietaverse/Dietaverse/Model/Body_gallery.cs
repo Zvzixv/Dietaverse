@@ -15,7 +15,7 @@ namespace Dietaverse.Model
         public AddPhotoFailException() { }
         public AddPhotoFailException(string message) : base(message) { }
     }
-    class Body_gallery
+    public class Body_gallery
     {
         public int Id { get; set; }
         public string photo { get; set; }
@@ -73,16 +73,6 @@ namespace Dietaverse.Model
             }
         }
         
-        public bool editPhoto(string path, string note)
-        {
-            using (var db = new db_modelContainer())
-            {
-                var p = db.body_gallerySet.Single(x => "tutajzdj" == path);
-                p.note = note;
-                db.SaveChanges();
-                return true;
-            }
-        }
 
         
 
