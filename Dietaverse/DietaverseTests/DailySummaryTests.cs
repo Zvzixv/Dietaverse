@@ -2,12 +2,11 @@
 using Dietaverse.Database;
 using Dietaverse.Model;
 using System;
-using System.Linq;
 using Xunit;
 
 namespace DietaverseTests
 {
-    public class Daily_SummaryTests
+    public class DailySummaryTests
     {
         [Fact]
         [AutoRollback]
@@ -19,17 +18,17 @@ namespace DietaverseTests
             double weight = 10;
             users testuser = u.CreateAccount(name, weight, password);
 
-            Daily_summary summary = new Daily_summary();
-            summary.create(10, 10, testuser, "");
-            if(summary.downloadKcalFromDatabase(testuser, DateTime.Now)==10)
+            DailySummary summary = new DailySummary();
+            summary.Create(10, 10, testuser, "");
+            if(summary.DownloadKcalFromDatabase(testuser, DateTime.Now)==10)
             {
                 Assert.True(true);
             }
-            if (summary.downloadWeightFromDatabase(testuser, DateTime.Now) == 10)
+            if (summary.DownloadWeightFromDatabase(testuser, DateTime.Now) == 10)
             {
                 Assert.True(true);
             }
-            if (summary.downloadNoteFromDatabase(testuser, DateTime.Now) == "")
+            if (summary.DownloadNoteFromDatabase(testuser, DateTime.Now) == "")
             {
                 Assert.True(true);
             }
@@ -44,18 +43,18 @@ namespace DietaverseTests
             double weight = 10;
             users testuser = u.CreateAccount(name, weight, password);
 
-            Daily_summary summary = new Daily_summary();
-            summary.create(10, 10, testuser, "");
-            summary.update(10, 10, testuser, "note");
-            if (summary.downloadKcalFromDatabase(testuser, DateTime.Now) == 10)
+            DailySummary summary = new DailySummary();
+            summary.Create(10, 10, testuser, "");
+            summary.Update(10, 10, testuser, "note");
+            if (summary.DownloadKcalFromDatabase(testuser, DateTime.Now) == 10)
             {
                 Assert.True(true);
             }
-            if (summary.downloadWeightFromDatabase(testuser, DateTime.Now) == 10)
+            if (summary.DownloadWeightFromDatabase(testuser, DateTime.Now) == 10)
             {
                 Assert.True(true);
             }
-            if (summary.downloadNoteFromDatabase(testuser, DateTime.Now) == "note")
+            if (summary.DownloadNoteFromDatabase(testuser, DateTime.Now) == "note")
             {
                 Assert.True(true);
             }
@@ -63,7 +62,7 @@ namespace DietaverseTests
 
         [Fact]
         [AutoRollback]
-        public void downloadKcalFromDatabase_DownloadSucceed()
+        public void DownloadKcalFromDatabase_DownloadSucceed()
         {
             Users u = new Users();
             string name = "testuser";
@@ -71,17 +70,17 @@ namespace DietaverseTests
             double weight = 10;
             users testuser = u.CreateAccount(name, weight, password);
 
-            Daily_summary summary = new Daily_summary();
-            summary.create(10, 10, testuser, "");
+            DailySummary summary = new DailySummary();
+            summary.Create(10, 10, testuser, "");
 
 
-            Assert.Equal(10, summary.downloadKcalFromDatabase(testuser, DateTime.Now));
+            Assert.Equal(10, summary.DownloadKcalFromDatabase(testuser, DateTime.Now));
         }
 
 
         [Fact]
         [AutoRollback]
-        public void downloadWeightFromDatabase_DownloadSucceed()
+        public void DownloadWeightFromDatabase_DownloadSucceed()
         {
             Users u = new Users();
             string name = "testuser";
@@ -89,16 +88,16 @@ namespace DietaverseTests
             double weight = 10;
             users testuser = u.CreateAccount(name, weight, password);
 
-            Daily_summary summary = new Daily_summary();
-            summary.create(10, 10, testuser, "");
+            DailySummary summary = new DailySummary();
+            summary.Create(10, 10, testuser, "");
 
 
-            Assert.Equal(10, summary.downloadWeightFromDatabase(testuser, DateTime.Now));
+            Assert.Equal(10, summary.DownloadWeightFromDatabase(testuser, DateTime.Now));
         }
 
         [Fact]
         [AutoRollback]
-        public void downloadNoteFromDatabase_DownloadSucceed()
+        public void DownloadNoteFromDatabase_DownloadSucceed()
         {
             Users u = new Users();
             string name = "testuser";
@@ -106,11 +105,11 @@ namespace DietaverseTests
             double weight = 10;
             users testuser = u.CreateAccount(name, weight, password);
 
-            Daily_summary summary = new Daily_summary();
-            summary.create(10, 10, testuser, "");
+            DailySummary summary = new DailySummary();
+            summary.Create(10, 10, testuser, "");
 
 
-            Assert.Equal("", summary.downloadNoteFromDatabase(testuser, DateTime.Now));
+            Assert.Equal("", summary.DownloadNoteFromDatabase(testuser, DateTime.Now));
         }
     }
 }

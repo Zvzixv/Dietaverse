@@ -1,17 +1,14 @@
 ﻿using Dietaverse.Database;
-using Dietaverse.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dietaverse.Model
 {
-    public class Dishes_gallery
+    public class DishesGallery
     {
-        public Dishes_gallery()
+        public DishesGallery()
         {
             this.users = new HashSet<users>();
         }
@@ -24,7 +21,7 @@ namespace Dietaverse.Model
 
         public virtual ICollection<users> users { get; set; }
 
-        public List<dishes_gallery> listOfPhotos(users presentuser)
+        public List<dishes_gallery> ListOfPhotos(users presentuser)
         {
             using (var db = new db_modelContainer())
             {
@@ -39,7 +36,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public void addPhoto(string _path, string _name,string _recipe, int _kcal_amount, users _u)
+        public void AddPhoto(string _path, string _name,string _recipe, int _kcal_amount, users _u)
         {
             using (var db = new db_modelContainer())
             {
@@ -68,7 +65,6 @@ namespace Dietaverse.Model
                 newEntry.users = u.Single(a => a.name == _u.name);
                 newEntry.photos = photo;
 
-                //db.users_dishes_gallerySet.Add(udg);
                 db.dishes_gallerySet.Add(newEntry);
                 db.SaveChanges();
             }

@@ -1,14 +1,11 @@
 ﻿using Dietaverse.Database;
-using Dietaverse.View;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Dietaverse.Model
 {
-    public class Daily_summary
+    public class DailySummary
     {
         public int Id { get; set; }
         public string kcal_amount { get; set; }
@@ -18,9 +15,9 @@ namespace Dietaverse.Model
         public virtual users users { get; set; }
 
 
-        public Daily_summary() { }
+        public DailySummary() { }
 
-        public void create(double _weight, int _kcal, users _u, string _note)
+        public void Create(double _weight, int _kcal, users _u, string _note)
         {
             using (var db = new db_modelContainer())
             {
@@ -36,7 +33,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public void update(double _weight, int _kcal, users _u, string _note)
+        public void Update(double _weight, int _kcal, users _u, string _note)
         {
             using (var db = new db_modelContainer())
             {
@@ -53,7 +50,7 @@ namespace Dietaverse.Model
 
                 if(summary == null)
                 {
-                    create(_weight, _kcal, _u, _note);
+                    Create(_weight, _kcal, _u, _note);
                     return;
                 }
 
@@ -68,7 +65,7 @@ namespace Dietaverse.Model
                 db.SaveChanges();
             }
         }
-         public int downloadKcalFromDatabase(users us, DateTime day)
+         public int DownloadKcalFromDatabase(users us, DateTime day)
          {
 
             using (var db = new db_modelContainer())
@@ -91,7 +88,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public double downloadWeightFromDatabase(users us, DateTime day)
+        public double DownloadWeightFromDatabase(users us, DateTime day)
         {
 
             using (var db = new db_modelContainer())
@@ -113,7 +110,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public string downloadNoteFromDatabase(users us, DateTime day)
+        public string DownloadNoteFromDatabase(users us, DateTime day)
         {
 
             using (var db = new db_modelContainer())
@@ -122,7 +119,6 @@ namespace Dietaverse.Model
                 var summaries = db.daily_summarySet;
 
                 daily_summary searchedsummary;
-                //users user = users.Single(a=>a.name == us.name);
                 try
                 {
                     searchedsummary = summaries.Single(a => a.users.name == us.name && a.date.Day == day.Day && a.date.Month == day.Month && a.date.Year == day.Year);

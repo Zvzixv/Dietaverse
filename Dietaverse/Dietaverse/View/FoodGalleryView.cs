@@ -12,19 +12,19 @@ using System.Windows.Forms;
 
 namespace Dietaverse.View
 {
-    public partial class FoodGallery : Form
+    public partial class FoodGalleryView : Form
     {
-        Dishes_gallery fg = new Dishes_gallery();
+        DishesGallery fg = new DishesGallery();
         List<SmallPhoto> gallery = new List<SmallPhoto>();
         Form1 start;
         users user;
-        public FoodGallery(Form1 _start, users _u)
+        public FoodGalleryView(Form1 _start, users _u)
         {
             InitializeComponent();
             start = _start;
             user = _u;
 
-            List<dishes_gallery> dgs = fg.listOfPhotos(user);
+            List<dishes_gallery> dgs = fg.ListOfPhotos(user);
 
             foreach (dishes_gallery p in dgs)
             {
@@ -45,13 +45,13 @@ namespace Dietaverse.View
             start.changeForm(addnewfoodphotoform);
         }
 
-        public void showDescription(string recipe, string name)
+        public void ShowDescription(string recipe, string name)
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Regular);
             richTextBox1.Text = "Name: " + name + "\n\nRecipe: " + recipe;
         }
 
-        public void hideDescription()
+        public void HideDescription()
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
             richTextBox1.Text = "Recipes will apear here...";

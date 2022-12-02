@@ -1,24 +1,18 @@
 ﻿using Dietaverse.Database;
 using Dietaverse.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
 {
     public partial class Settings : Form
     {
-        mainForm mainform;
+        MainForm mainform;
         bool pass1wasclicked = false;
         bool pass2wasclicked = false;
         users user;
-        public Settings(mainForm mf, users u)
+        public Settings(MainForm mf, users u)
         {
             InitializeComponent();
             mainform = mf;
@@ -28,7 +22,7 @@ namespace Dietaverse.View
         private void logoutbutton_Click(object sender, EventArgs e)
         {
             Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            mainform.changeForm(launchform);
+            mainform.ChangeForm(launchform);
         }
 
         private void pass1textBox_Validated(object sender, EventArgs e)
@@ -51,10 +45,7 @@ namespace Dietaverse.View
                 pass1wasclicked = false;
                 pass1textBox.UseSystemPasswordChar = false;
                 pass1textBox.PasswordChar = '\0';
-
-
             }
-
         }
 
         private void pass2textBox_Validated(object sender, EventArgs e)

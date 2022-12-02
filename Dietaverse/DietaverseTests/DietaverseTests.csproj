@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoRollbackAttribute.cs" />
-    <Compile Include="Body_galleryTests.cs" />
-    <Compile Include="Daily_SummaryTests.cs" />
-    <Compile Include="Dishes_galleryTests.cs" />
-    <Compile Include="Smoothies_ingrTests.cs" />
-    <Compile Include="Smoothies_recipesTests.cs" />
+    <Compile Include="BodyGalleryTests.cs" />
+    <Compile Include="DailySummaryTests.cs" />
+    <Compile Include="DishesGalleryTests.cs" />
+    <Compile Include="SmoothiesIngrTests.cs" />
+    <Compile Include="SmoothiesRecipesTests.cs" />
     <Compile Include="UsersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,24 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dietaverse.Database;
 using Dietaverse.Model;
-using Dietaverse.View;
 
 namespace Dietaverse.View
 {
     public partial class Login : Form
     {
-        mainForm mainform;
+        MainForm mainform;
         users ub = new users();
         Users u = new Users();
-        public Login(mainForm mf)
+        public Login(MainForm mf)
         {
             InitializeComponent();
             mainform = mf;
@@ -42,11 +34,6 @@ namespace Dietaverse.View
 
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void closeButton_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
@@ -56,7 +43,6 @@ namespace Dietaverse.View
         {
             Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             mainform.changeForm(launchform);
-
         }
     }
 }

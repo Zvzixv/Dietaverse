@@ -95,16 +95,14 @@
     <Compile Include="Database\photos.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Body_gallery.cs" />
-    <Compile Include="Model\Daily_summary.cs" />
-    <Compile Include="Model\Dishes_gallery.cs" />
+    <Compile Include="Model\BodyGallery.cs" />
+    <Compile Include="Model\DailySummary.cs" />
+    <Compile Include="Model\DishesGallery.cs" />
     <Compile Include="Model\GUI.cs" />
-    <Compile Include="Model\Photos.cs" />
-    <Compile Include="Model\Recipes_ingredient.cs" />
-    <Compile Include="Model\Smoothies_ingr.cs" />
-    <Compile Include="Model\Smoothies_recipes.cs" />
+    <Compile Include="Model\SmoothiesIngr.cs" />
+    <Compile Include="Model\SmoothiesRecipes.cs" />
     <Compile Include="Model\Users.cs" />
-    <Compile Include="Model\Users_dishes_gallery.cs" />
+    <Compile Include="Model\UsersDishesGallery.cs" />
     <Compile Include="View\AddNewBodyPhoto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +121,11 @@
     <Compile Include="View\AddNewSmoothie.Designer.cs">
       <DependentUpon>AddNewSmoothie.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\BodyGallery.cs">
+    <Compile Include="View\BodyGalleryView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\BodyGallery.Designer.cs">
-      <DependentUpon>BodyGallery.cs</DependentUpon>
+    <Compile Include="View\BodyGalleryView.Designer.cs">
+      <DependentUpon>BodyGalleryView.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\body_gallery.cs">
       <DependentUpon>db_model.tt</DependentUpon>
@@ -154,11 +152,11 @@
     <Compile Include="Database\dishes_gallery.cs">
       <DependentUpon>db_model.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\FoodGallery.cs">
+    <Compile Include="View\FoodGalleryView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FoodGallery.Designer.cs">
-      <DependentUpon>FoodGallery.cs</DependentUpon>
+    <Compile Include="View\FoodGalleryView.Designer.cs">
+      <DependentUpon>FoodGalleryView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Launch.cs">
       <SubType>Form</SubType>
@@ -172,11 +170,11 @@
     <Compile Include="View\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\mainForm.cs">
+    <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\mainForm.Designer.cs">
-      <DependentUpon>mainForm.cs</DependentUpon>
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\db_model.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -251,14 +249,14 @@
     <EmbeddedResource Include="View\AddNewSmoothie.resx">
       <DependentUpon>AddNewSmoothie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\BodyGallery.resx">
-      <DependentUpon>BodyGallery.cs</DependentUpon>
+    <EmbeddedResource Include="View\BodyGalleryView.resx">
+      <DependentUpon>BodyGalleryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FoodGallery.resx">
-      <DependentUpon>FoodGallery.cs</DependentUpon>
+    <EmbeddedResource Include="View\FoodGalleryView.resx">
+      <DependentUpon>FoodGalleryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Launch.resx">
       <DependentUpon>Launch.cs</DependentUpon>
@@ -266,8 +264,8 @@
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\mainForm.resx">
-      <DependentUpon>mainForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MonthSummary.resx">
       <DependentUpon>MonthSummary.cs</DependentUpon>

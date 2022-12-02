@@ -1,14 +1,7 @@
 ﻿using Dietaverse.Database;
 using Dietaverse.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
@@ -24,7 +17,7 @@ namespace Dietaverse.View
 
         Image i;
         GUI g = new GUI();
-        Dishes_gallery dg;
+        DishesGallery dg;
 
         bool nametextboxcliced = false;
         bool recipetextboxblicked = false;
@@ -38,7 +31,6 @@ namespace Dietaverse.View
             nameTextBox.Text = "Insert name here";
             recipetextBox.Text = "Insert recipe here";
             kcaltextBox.Text = "Insert kcal here";
-
         }
 
         private void choosephotobutton_Click_1(object sender, EventArgs e)
@@ -48,7 +40,7 @@ namespace Dietaverse.View
                 path = openFileDialog1.FileName;
                 i = Image.FromFile(path);
                 label7.Visible = false;
-                pictureBox.Image = i;//g.ResizeImage(i, pictureBox.Width, pictureBox.Height);
+                pictureBox.Image = i;
             }
         }
 
@@ -65,17 +57,17 @@ namespace Dietaverse.View
                 MessageBox.Show(this, "Insert proper value.","Correct", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
-            dg = new Dishes_gallery();
+            dg = new DishesGallery();
             try
             {
-                dg.addPhoto(path, name, recipe, kcal, user);
+                dg.AddPhoto(path, name, recipe, kcal, user);
             }
             catch(AddPhotoFailException ex)
             {
                 MessageBox.Show(ex.Message);
             }
             MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
-            FoodGallery foodgalleryform = new FoodGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            FoodGalleryView foodgalleryform = new FoodGalleryView(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(foodgalleryform);
         }
 
@@ -144,7 +136,7 @@ namespace Dietaverse.View
 
         private void backButton_Click_1(object sender, EventArgs e)
         {
-            FoodGallery foodgalleryform = new FoodGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            FoodGalleryView foodgalleryform = new FoodGalleryView(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(foodgalleryform);
         }
     }

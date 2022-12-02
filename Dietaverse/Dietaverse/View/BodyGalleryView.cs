@@ -1,31 +1,24 @@
 ﻿using Dietaverse.Database;
-using Dietaverse.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
 {
-    public partial class BodyGallery : Form
+    public partial class BodyGalleryView : Form
     {
-        Body_gallery bg = new Body_gallery();
+        Model.BodyGallery bg = new Model.BodyGallery();
         List<SmallPhoto> gallery = new List<SmallPhoto>();
         Form1 start;
         users user;
        
-        public BodyGallery(Form1 upper, users _user)
+        public BodyGalleryView(Form1 upper, users _user)
         {
             InitializeComponent();
             start = upper;
             user = _user;
-            List<body_gallery> bgs = bg.listOfPhotos(user);
+            List<body_gallery> bgs = bg.ListOfPhotos(user);
 
             foreach (body_gallery p in bgs)
             {
@@ -44,16 +37,16 @@ namespace Dietaverse.View
         {
             start.PnlFormLoader.Controls.Clear();
             AddNewBodyPhoto addnewbodyphotoform = new AddNewBodyPhoto(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            start.changeForm(addnewbodyphotoform);
+            start.ChangeForm(addnewbodyphotoform);
         }
 
-        public void showDescription(string notes, double weight)
+        public void ShowDescription(string notes, double weight)
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Regular);
             richTextBox1.Text = "Contemporary weight: "+weight+" \n"+notes;
         }
 
-        public void hideDescription()
+        public void HideDescription()
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
             richTextBox1.Text = "Your notes will appear here...";

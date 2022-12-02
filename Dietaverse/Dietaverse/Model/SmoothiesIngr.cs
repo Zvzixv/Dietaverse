@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Dietaverse.Model
 {
-    public class Smoothies_ingr
+    public class SmoothiesIngr
     {
         public int Id { get; set; }
         public string name { get; set; }
         public double kcal { get; set; }
 
-        public void addNewIngr(string name, string kcal)
+        public void AddNewIngr(string name, string kcal)
         {
             using(var db = new db_modelContainer())
             {
@@ -26,16 +26,16 @@ namespace Dietaverse.Model
             }
         }
 
-        public List<Smoothies_ingr> makeAList()
+        public List<SmoothiesIngr> MakeAList()
         {
             using(var db=new db_modelContainer())
             {
-                List<Smoothies_ingr> newlist = new List<Smoothies_ingr>();
+                List<SmoothiesIngr> newlist = new List<SmoothiesIngr>();
 
                 var x = db.smoothies_ingrSet;
                 foreach(var i in x)
                 {
-                    Smoothies_ingr n = new Smoothies_ingr();
+                    SmoothiesIngr n = new SmoothiesIngr();
                     n.name = i.name;
                     n.kcal = i.kcal;
                     newlist.Add(n);

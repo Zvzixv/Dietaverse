@@ -1,10 +1,6 @@
 ﻿using Dietaverse.View;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dietaverse.Model;
 
 namespace Dietaverse
 {
@@ -18,7 +14,7 @@ namespace Dietaverse
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainForm());
+            Application.Run(new MainForm());
         }
     }
 }

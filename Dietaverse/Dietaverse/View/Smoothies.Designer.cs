@@ -131,7 +131,6 @@
             this.label3.Size = new System.Drawing.Size(167, 21);
             this.label3.TabIndex = 14;
             this.label3.Text = "In my fridge I have...";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -299,7 +298,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Smoothies";
             this.Text = "Smoothies";
-            this.Load += new System.EventHandler(this.Smoothies_Load);
             ((System.ComponentModel.ISupportInitialize)(this.smoothiepictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

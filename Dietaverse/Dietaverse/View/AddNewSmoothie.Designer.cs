@@ -40,7 +40,7 @@
             this.sweetcheckBox = new System.Windows.Forms.CheckBox();
             this.vegetablecheckBox = new System.Windows.Forms.CheckBox();
             this.fruitycheckBox = new System.Windows.Forms.CheckBox();
-            this.AddNewSmoothiebutton = new System.Windows.Forms.Button();
+            this.addNewSmoothiebutton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.choosePhotobutton1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -48,10 +48,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.photolabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.smnametextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -181,18 +181,18 @@
             this.fruitycheckBox.Text = "fruity";
             this.fruitycheckBox.UseVisualStyleBackColor = true;
             // 
-            // AddNewSmoothiebutton
+            // addNewSmoothiebutton
             // 
-            this.AddNewSmoothiebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddNewSmoothiebutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.AddNewSmoothiebutton.ForeColor = System.Drawing.Color.Coral;
-            this.AddNewSmoothiebutton.Location = new System.Drawing.Point(212, 402);
-            this.AddNewSmoothiebutton.Name = "AddNewSmoothiebutton";
-            this.AddNewSmoothiebutton.Size = new System.Drawing.Size(138, 34);
-            this.AddNewSmoothiebutton.TabIndex = 82;
-            this.AddNewSmoothiebutton.Text = "Add new";
-            this.AddNewSmoothiebutton.UseVisualStyleBackColor = true;
-            this.AddNewSmoothiebutton.Click += new System.EventHandler(this.AddNewSmoothiebutton_Click);
+            this.addNewSmoothiebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNewSmoothiebutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.addNewSmoothiebutton.ForeColor = System.Drawing.Color.Coral;
+            this.addNewSmoothiebutton.Location = new System.Drawing.Point(212, 402);
+            this.addNewSmoothiebutton.Name = "addNewSmoothiebutton";
+            this.addNewSmoothiebutton.Size = new System.Drawing.Size(138, 34);
+            this.addNewSmoothiebutton.TabIndex = 82;
+            this.addNewSmoothiebutton.Text = "Add new";
+            this.addNewSmoothiebutton.UseVisualStyleBackColor = true;
+            this.addNewSmoothiebutton.Click += new System.EventHandler(this.AddNewSmoothiebutton_Click);
             // 
             // pictureBox1
             // 
@@ -263,7 +263,7 @@
             this.panel1.Controls.Add(this.choosePhotobutton1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.AddNewSmoothiebutton);
+            this.panel1.Controls.Add(this.addNewSmoothiebutton);
             this.panel1.Controls.Add(this.sweetcheckBox);
             this.panel1.Controls.Add(this.sourcheckBox);
             this.panel1.Controls.Add(this.vegetablecheckBox);
@@ -272,6 +272,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(405, 456);
             this.panel1.TabIndex = 86;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.Color.Coral;
+            this.label7.Location = new System.Drawing.Point(198, 279);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(174, 79);
+            this.label7.TabIndex = 88;
+            this.label7.Text = "Strongly recommended is to add vertical 1795x2693 photo which is smaller than 50 " +
+    "kB.";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // smnametextBox
             // 
@@ -308,18 +320,6 @@
             this.panel2.Size = new System.Drawing.Size(290, 175);
             this.panel2.TabIndex = 87;
             // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.ForeColor = System.Drawing.Color.Coral;
-            this.label7.Location = new System.Drawing.Point(198, 279);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(174, 79);
-            this.label7.TabIndex = 88;
-            this.label7.Text = "Strongly recommended is to add vertical 1795x2693 photo which is smaller than 50 " +
-    "kB.";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // AddNewSmoothie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,7 +355,7 @@
         private System.Windows.Forms.CheckBox sweetcheckBox;
         private System.Windows.Forms.CheckBox vegetablecheckBox;
         private System.Windows.Forms.CheckBox fruitycheckBox;
-        private System.Windows.Forms.Button AddNewSmoothiebutton;
+        private System.Windows.Forms.Button addNewSmoothiebutton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button choosePhotobutton1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

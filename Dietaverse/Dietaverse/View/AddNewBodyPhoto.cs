@@ -1,14 +1,7 @@
 ﻿using Dietaverse.Database;
 using Dietaverse.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
@@ -20,7 +13,7 @@ namespace Dietaverse.View
 
         Image i;
         GUI g = new GUI();
-        Body_gallery bg;
+        Model.BodyGallery bg;
         Form1 start;
         users user;
 
@@ -50,27 +43,17 @@ namespace Dietaverse.View
         {
             
             note = notetextBox.Text;
-            //DirectoryInfo filepathtemp = Directory.GetParent(Directory.GetParent(Environment.CurrentDirectory.ToString()).ToString());
-            //string savepath = filepathtemp.ToString() + @"\Resources\";
-            //try
-            //{
-            //    i.Save(savepath + Path.GetFileName(path));
-            //}
-            //catch (System.Runtime.InteropServices.ExternalException err)
-            //{
-
-            //}
-            bg = new Body_gallery();
+            bg = new Model.BodyGallery();
             try
             {
-                bg.addPhoto(path, note, DateTime.Today.Day.ToString() + "." + DateTime.Today.Month.ToString() + "." + DateTime.Today.Year.ToString(), Dashboard.weight, user);
+                bg.AddPhoto(path, note, DateTime.Today.Day.ToString() + "." + DateTime.Today.Month.ToString() + "." + DateTime.Today.Year.ToString(), Dashboard.weight, user);
             }
             catch(AddPhotoFailException ex)
             {
                 MessageBox.Show(ex.Message);
             }
             MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
-            BodyGallery bodygalleryform = new BodyGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            BodyGalleryView bodygalleryform = new BodyGalleryView(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(bodygalleryform);
         }
 
@@ -97,7 +80,7 @@ namespace Dietaverse.View
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            BodyGallery bodygalleryform = new BodyGallery(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
+            BodyGalleryView bodygalleryform = new BodyGalleryView(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.changeForm(bodygalleryform);
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Dietaverse.View
 {
-    partial class FoodGallery
+    partial class FoodGalleryView
     {
         /// <summary>
         /// Required designer variable.

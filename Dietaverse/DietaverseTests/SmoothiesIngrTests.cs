@@ -1,27 +1,25 @@
 ﻿using AutoRollbackExample;
-using Dietaverse.Database;
 using Dietaverse.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 
 namespace DietaverseTests
 {
-    public class Smoothies_ingrTests
+    public class SmoothiesIngrTests
     {
         [Fact]
         [AutoRollback]
-        public void addNewIngr_GivenGoodIngr_AddSucceed()
+        public void AddNewIngr_GivenGoodIngr_AddSucceed()
         {
             string name = "test";
             string kcal = "10";
-            Smoothies_ingr si = new Smoothies_ingr();
+            SmoothiesIngr si = new SmoothiesIngr();
 
             try
             {
-                si.addNewIngr(name, kcal);
+                si.AddNewIngr(name, kcal);
             }
             catch (Exception ex)
             {
@@ -32,15 +30,15 @@ namespace DietaverseTests
 
         [Fact]
         [AutoRollback]
-        public void addNewIngr_GivenWrongIngr_AddFailure()
+        public void AddNewIngr_GivenWrongIngr_AddFailure()
         {
             string name = "test";
             string kcal = "not_a_value";
 
-            Smoothies_ingr si = new Smoothies_ingr();
+            SmoothiesIngr si = new SmoothiesIngr();
             try
             {
-                si.addNewIngr(name, kcal);
+                si.AddNewIngr(name, kcal);
             }
             catch (Exception ex)
             {
@@ -51,16 +49,16 @@ namespace DietaverseTests
         }
         [Fact]
         [AutoRollback]
-        public void makeAList_Succeed()
+        public void MakeAList_Succeed()
         {
-            Smoothies_ingr si = new Smoothies_ingr();
+            SmoothiesIngr si = new SmoothiesIngr();
             string name = "test";
             string kcal = "10";
-            si.addNewIngr(name, kcal);
+            si.AddNewIngr(name, kcal);
 
-            List<Smoothies_ingr> ingred=si.makeAList();
+            List<SmoothiesIngr> ingred=si.MakeAList();
 
-            var i = new Smoothies_ingr();
+            var i = new SmoothiesIngr();
             foreach(var x in ingred)
             {
                 if (x.name == name)
@@ -69,10 +67,6 @@ namespace DietaverseTests
 
             Assert.Equal(name, i.name);
             Assert.Equal(Double.Parse(kcal), i.kcal);
-
-
         }
-
-
     }
 }

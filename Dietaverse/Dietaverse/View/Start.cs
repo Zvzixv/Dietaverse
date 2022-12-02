@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Dietaverse.View;
@@ -16,14 +10,14 @@ namespace Dietaverse
 {
     public partial class Form1 : Form
     {
-        mainForm mainform;
+        MainForm mainform;
         Form af;
         users user;
 
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidrhElipse, int nHeightEllipse);
-        public Form1(mainForm mf, users _user)
+        public Form1(MainForm mf, users _user)
         {
             user = _user;
             InitializeComponent();
@@ -37,15 +31,10 @@ namespace Dietaverse
             lblTitle.Text = "Dashboard";
             this.PnlFormLoader.Controls.Clear();
             Dashboard dashboardform = new Dashboard(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            this.changeForm(dashboardform);
+            this.ChangeForm(dashboardform);
 
             label1.TextAlign = ContentAlignment.MiddleCenter;
             label1.Text = user.name;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void dashboardButton_Click(object sender, EventArgs e)
@@ -58,7 +47,7 @@ namespace Dietaverse
             lblTitle.Text = "Dashboard";
             this.PnlFormLoader.Controls.Clear();
             Dashboard dashboardform = new Dashboard(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            this.changeForm(dashboardform);
+            this.ChangeForm(dashboardform);
         }
 
         private void bodyGalleryButton_Click(object sender, EventArgs e)
@@ -71,8 +60,8 @@ namespace Dietaverse
 
             lblTitle.Text = "Body gallery";
             this.PnlFormLoader.Controls.Clear();
-            BodyGallery bodygalleryform = new BodyGallery(this, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
-            this.changeForm(bodygalleryform);
+            BodyGalleryView bodygalleryform = new BodyGalleryView(this, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            this.ChangeForm(bodygalleryform);
         }
 
         private void foodGalleryButton_Click(object sender, EventArgs e)
@@ -85,8 +74,8 @@ namespace Dietaverse
 
             lblTitle.Text = "Food gallery";
             this.PnlFormLoader.Controls.Clear();
-            FoodGallery foodgalleryform = new FoodGallery(this, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
-            this.changeForm(foodgalleryform);
+            FoodGalleryView foodgalleryform = new FoodGalleryView(this, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
+            this.ChangeForm(foodgalleryform);
         }
 
         private void smoothiesButton_Click(object sender, EventArgs e)
@@ -100,7 +89,7 @@ namespace Dietaverse
             lblTitle.Text = "Smoothies";
             this.PnlFormLoader.Controls.Clear();
             Smoothies smoothiesform = new Smoothies(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
-            this.changeForm(smoothiesform);
+            this.ChangeForm(smoothiesform);
         }
 
         private void monthButton_Click(object sender, EventArgs e)
@@ -114,7 +103,7 @@ namespace Dietaverse
             lblTitle.Text = "Month summary";
             this.PnlFormLoader.Controls.Clear();
             MonthSummary monthsummaryform = new MonthSummary(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
-            this.changeForm(monthsummaryform);
+            this.ChangeForm(monthsummaryform);
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -128,7 +117,7 @@ namespace Dietaverse
             lblTitle.Text = "Settings";
             this.PnlFormLoader.Controls.Clear();
             Settings settingsform = new Settings(mainform, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
-            this.changeForm(settingsform);
+            this.ChangeForm(settingsform);
         }
 
         private void dashboardButton_Leave(object sender, EventArgs e)
@@ -165,7 +154,7 @@ namespace Dietaverse
         {
             System.Windows.Forms.Application.Exit();
         }
-        public void changeForm(Form x)
+        public void ChangeForm(Form x)
         {
             if (af != null)
                 af.Close();

@@ -1,10 +1,7 @@
 ﻿using Dietaverse.Database;
-using Dietaverse.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dietaverse.Model
 {
@@ -57,8 +54,8 @@ namespace Dietaverse.Model
         {
             using (var db = new db_modelContainer())
             {
-                Daily_summary summary = new Daily_summary { weight = _weight};
-                Users_dishes_gallery user_dishes = new Users_dishes_gallery { };
+                DailySummary summary = new DailySummary { weight = _weight};
+                UsersDishesGallery user_dishes = new UsersDishesGallery { };
 
                 var x = db.usersSet;
                 foreach (var i in x)
@@ -144,7 +141,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public users getUser(string username)
+        public users GetUser(string username)
         {
             using (var db = new db_modelContainer())
             {

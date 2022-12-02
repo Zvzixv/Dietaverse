@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dietaverse.Database;
 using Dietaverse.Model;
-using Dietaverse.View;
 
 namespace Dietaverse.View
 {
@@ -19,27 +13,26 @@ namespace Dietaverse.View
         Form1 start;
         private GUI g = new GUI();
 
-        List<Smoothies_ingr> smIngredients = new List<Smoothies_ingr>();
-        List<Smoothies_ingr> smIngrChecked = new List<Smoothies_ingr>();
-        List<Smoothies_recipes> smRecipes = new List<Smoothies_recipes> ();
+        List<SmoothiesIngr> smIngredients = new List<SmoothiesIngr>();
+        List<SmoothiesIngr> smIngrChecked = new List<SmoothiesIngr>();
+        List<SmoothiesRecipes> smRecipes = new List<SmoothiesRecipes> ();
 
-        Smoothies_ingr si = new Smoothies_ingr();
-        Smoothies_recipes srecipes = new Smoothies_recipes();
+        SmoothiesIngr si = new SmoothiesIngr();
+        SmoothiesRecipes srecipes = new SmoothiesRecipes();
         public Smoothies(Form1 _start)
         {
-            smRecipes = srecipes.makeAList();
+            smRecipes = srecipes.MakeAList();
             start = _start;
             InitializeComponent();
-            dynamiccheck();
+            dynamicCheck();
             namelabel.Visible = false;
             cannotchooselabel.Text = "It was too hard choice";
             cannotchooselabel.Visible = false;
         }
 
-        private void dynamiccheck()
+        private void dynamicCheck()
         {
             flowLayoutPanel1.Controls.Clear();
-            //smIngredients.Clear();
             smIngredients = si.makeAList();
             foreach (var item in smIngredients)
             {
@@ -47,12 +40,12 @@ namespace Dietaverse.View
                 chk.ForeColor = Color.Coral;
                 chk.Width = 80;
                 chk.Text = item.name.ToString();
-                chk.CheckedChanged += new EventHandler(changecheck);
+                chk.CheckedChanged += new EventHandler(changeCheck);
                 flowLayoutPanel1.Controls.Add(chk);
             }
         }
 
-        private void changecheck(object sender, EventArgs e)
+        private void changeCheck(object sender, EventArgs e)
         {
             CheckBox chk = sender as CheckBox;
 
@@ -78,9 +71,9 @@ namespace Dietaverse.View
                 }
             }
         }
-        private Smoothies_recipes algorithm()
+        private SmoothiesRecipes algorithm()
         {
-            Smoothies_recipes result = new Smoothies_recipes();
+            SmoothiesRecipes result = new SmoothiesRecipes();
             int maxconfidence = 0;
 
             foreach (var smoothie in smRecipes)
@@ -103,34 +96,18 @@ namespace Dietaverse.View
 
                 if (smoothie.sour == sourcheckBox.Checked)
                     confidence++;
-                //else
-                //    confidence = 0;           //jeżeli ktos ma ochotę na to i na to to niech się nie zeruje
+
 
                 if (smoothie.sweet == sweetcheckBox.Checked)
                     confidence++;
-                //else
-                //    confidence = 0;
+
 
                 if (smoothie.fruity == fruitycheckBox.Checked)
                     confidence++;
-                //else
-                //    confidence = 0;
+
 
                 if (smoothie.vegetable == vegetablecheckBox.Checked)
                     confidence++;
-                //else
-                //    confidence = 0;
-
-                //chyba, ze ktos nie ma ochoty, to niech się zeruje
-                //nie działa, bo jak ktos chce albo słodki albo kwaśny a smoothie jest tylko kwaśne to się zeruje
-                //if (smoothie.sour != sourcheckBox.Checked)
-                //    confidence = 0;
-                //if (smoothie.sweet != sweetcheckBox.Checked)
-                //    confidence = 0;
-                //if (smoothie.fruity != fruitycheckBox.Checked)
-                //    confidence=0;
-                //if (smoothie.vegetable != vegetablecheckBox.Checked)
-                //    confidence=0;
 
 
 
@@ -162,7 +139,7 @@ namespace Dietaverse.View
 
         private void Smoothiebutton1_Click(object sender, EventArgs e)
         {
-            Smoothies_recipes result = algorithm();
+            SmoothiesRecipes result = algorithm();
             label.Visible = true;
             kcallabel.Visible = true;
             if (result == null)
@@ -180,7 +157,7 @@ namespace Dietaverse.View
                 smoothiepictureBox.Visible = true;
                 label.Text = result.name;
                 kcallabel.Visible = true;
-                kcallabel.Text = srecipes.calculateKcal(result).ToString();
+                kcallabel.Text = srecipes.CalculateKcal(result).ToString();
 
                 photos photo = result.photos;
 
@@ -193,16 +170,5 @@ namespace Dietaverse.View
 
         }
 
-
-
-        private void Smoothies_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

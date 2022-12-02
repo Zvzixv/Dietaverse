@@ -1,11 +1,9 @@
 ﻿using Dietaverse.Database;
-using Dietaverse.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Dietaverse.Model
 {
@@ -15,7 +13,7 @@ namespace Dietaverse.Model
         public AddPhotoFailException() { }
         public AddPhotoFailException(string message) : base(message) { }
     }
-    public class Body_gallery
+    public class BodyGallery
     {
         public int Id { get; set; }
         public string photo { get; set; }
@@ -25,7 +23,7 @@ namespace Dietaverse.Model
         public virtual users users { get; set; }
         public virtual photos photos { get; set; }
 
-        public List<body_gallery> listOfPhotos(users presentuser)
+        public List<body_gallery> ListOfPhotos(users presentuser)
         {
             using (var db = new db_modelContainer())
             {
@@ -40,7 +38,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public void addPhoto(string path, string note, string date, double weight, users user)
+        public void AddPhoto(string path, string note, string date, double weight, users user)
         {
             using (var db = new db_modelContainer())
             {
@@ -72,9 +70,5 @@ namespace Dietaverse.Model
                 db.SaveChanges();
             }
         }
-        
-
-        
-
     }
 }

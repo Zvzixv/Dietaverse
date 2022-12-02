@@ -1,8 +1,6 @@
 ﻿using AutoRollbackExample;
 using Dietaverse.Database;
 using Dietaverse.Model;
-using System;
-using System.Linq;
 using Xunit;
 
 namespace DietaverseTests
@@ -126,7 +124,7 @@ namespace DietaverseTests
                 return;
             }
 
-            Assert.Equal(newpassword, t.getUser(username).password);
+            Assert.Equal(newpassword, t.GetUser(username).password);
         }
 
         [Fact]
@@ -139,7 +137,6 @@ namespace DietaverseTests
 
             users testuser = new users();
             Users t = new Users();
-            //t.CreateAccount("UsersTest", 10, "passwprd");
 
             string newpassword = "newpass";
 
@@ -181,7 +178,7 @@ namespace DietaverseTests
                 return;
             }
 
-            Assert.Equal(newweight, t.getUser(username).weight);
+            Assert.Equal(newweight, t.GetUser(username).weight);
 
 
         }
@@ -194,7 +191,6 @@ namespace DietaverseTests
 
             Users t = new Users();
             users testuser = new users();
-            //users testuser = t.CreateAccount("UsersTest", 10, "passwprd");
 
             double newweight = 30;
 
@@ -209,9 +205,6 @@ namespace DietaverseTests
             }
 
             Assert.True(false);
-
-
-
         }
 
     }

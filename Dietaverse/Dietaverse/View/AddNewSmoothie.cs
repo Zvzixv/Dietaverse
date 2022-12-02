@@ -1,13 +1,7 @@
 ﻿using Dietaverse.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
@@ -15,7 +9,7 @@ namespace Dietaverse.View
     public partial class AddNewSmoothie : Form
     {
         Form1 start;
-        Smoothies_ingr si = new Smoothies_ingr();
+        SmoothiesIngr si = new SmoothiesIngr();
 
         string path;
         Image i;
@@ -31,20 +25,19 @@ namespace Dietaverse.View
         bool smIsVegetable;
         bool smIsSweet;
         bool smIsSour;
-        List<Smoothies_ingr> smIngredients = new List<Smoothies_ingr>();
-        List<Smoothies_ingr> smIngrChecked = new List<Smoothies_ingr>();
+        List<SmoothiesIngr> smIngredients = new List<SmoothiesIngr>();
+        List<SmoothiesIngr> smIngrChecked = new List<SmoothiesIngr>();
         public AddNewSmoothie(Form1 _start)
         {
             start = _start;
 
             InitializeComponent();
-            dynamiccheck();
+            dynamicCheck();
         }
 
-        private void dynamiccheck()
+        private void dynamicCheck()
         {
             flowLayoutPanel1.Controls.Clear();
-            //smIngredients.Clear();
             smIngredients = si.makeAList();
             foreach (var item in smIngredients)
             {
@@ -52,12 +45,12 @@ namespace Dietaverse.View
                 chk.ForeColor = Color.Coral;
                 chk.Width = 80;
                 chk.Text = item.name.ToString();
-                chk.CheckedChanged += new EventHandler(changecheck);
+                chk.CheckedChanged += new EventHandler(changeCheck);
                 flowLayoutPanel1.Controls.Add(chk);
             }
         }
 
-        private void changecheck(object sender, EventArgs e)
+        private void changeCheck(object sender, EventArgs e)
         {
             CheckBox chk = sender as CheckBox;
 
@@ -87,7 +80,7 @@ namespace Dietaverse.View
                 MessageBox.Show("Wrong values!");
             }
 
-            dynamiccheck();
+            dynamicCheck();
         }
 
         private void AddNewSmoothiebutton_Click(object sender, EventArgs e)
@@ -95,17 +88,16 @@ namespace Dietaverse.View
 
 
             smName = smnametextBox.Text;
-            //smKcal = kcaltextBox.Text;
             smPhoto = path;
             smIsFruity = fruitycheckBox.Checked;
             smIsSour = sourcheckBox.Checked;
             smIsSweet = sweetcheckBox.Checked;
             smIsVegetable = vegetablecheckBox.Checked;
 
-            Smoothies_recipes sr = new Smoothies_recipes();
+            SmoothiesRecipes sr = new SmoothiesRecipes();
             try
             {
-                sr.addNewSmoothie(smName, smPhoto, smIngrChecked, smIsFruity, smIsVegetable, smIsSweet, smIsSour);
+                sr.AddNewSmoothie(smName, smPhoto, smIngrChecked, smIsFruity, smIsVegetable, smIsSweet, smIsSour);
             }
             catch (AddPhotoFailException ex)
             {

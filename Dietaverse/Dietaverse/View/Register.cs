@@ -1,27 +1,20 @@
 ﻿using Dietaverse.Database;
 using Dietaverse.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
 {
     public partial class Register : Form
     {
-        mainForm mainform;
+        MainForm mainform;
         string un;
         double weight;
         string pass1;
         string pass2;
         Users newuser = new Users();
-        Daily_summary summary = new Daily_summary();
-        public Register(mainForm mf)
+        DailySummary summary = new DailySummary();
+        public Register(MainForm mf)
         {
             InitializeComponent();
             mainform = mf;
@@ -52,7 +45,7 @@ namespace Dietaverse.View
                 try
                 {
                     users u = newuser.CreateAccount(un, weight, pass1);
-                    summary.update(weight, 0, u, "");
+                    summary.Update(weight, 0, u, "");
 
                 }
                 catch (CreateAccountFailException ex)
@@ -65,7 +58,7 @@ namespace Dietaverse.View
 
 
                 Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-                mainform.changeForm(launchform);
+                mainform.ChangeForm(launchform);
             }
             else
             {
@@ -84,7 +77,7 @@ namespace Dietaverse.View
         private void backbutton_Click(object sender, EventArgs e)
         {
             Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            mainform.changeForm(launchform);
+            mainform.ChangeForm(launchform);
         }
 
 

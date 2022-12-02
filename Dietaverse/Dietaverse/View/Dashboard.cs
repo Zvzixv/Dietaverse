@@ -5,12 +5,7 @@ using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
@@ -23,18 +18,18 @@ namespace Dietaverse.View
         users user;
         Users User = new Users();
         string notes;
-        Daily_summary summary = new Daily_summary();
+        DailySummary summary = new DailySummary();
         public Dashboard(users _user)
         {
             user = _user;
             weight = findLastWeight(DateTime.Now);
-            calories = summary.downloadKcalFromDatabase(user, DateTime.Now);
+            calories = summary.DownloadKcalFromDatabase(user, DateTime.Now);
 
             InitializeComponent();
 
-            if(summary.downloadNoteFromDatabase(user, DateTime.Now)!=""&& summary.downloadNoteFromDatabase(user, DateTime.Now) != null)
+            if(summary.DownloadNoteFromDatabase(user, DateTime.Now)!=""&& summary.DownloadNoteFromDatabase(user, DateTime.Now) != null)
             {
-                notes = summary.downloadNoteFromDatabase(user,DateTime.Now);
+                notes = summary.DownloadNoteFromDatabase(user,DateTime.Now);
                 richTextBox1.Text = notes;
             }
             else
@@ -56,23 +51,23 @@ namespace Dietaverse.View
             DateTime tempday = day;
             double weight;
 
-            while (summary.downloadWeightFromDatabase(user, tempday) == -1 && tempday >= user.joindate)
+            while (summary.DownloadWeightFromDatabase(user, tempday) == -1 && tempday >= user.joindate)
             {
                 tempday = tempday.AddDays(-1);
             }
 
-            return summary.downloadWeightFromDatabase(user, tempday);
+            return summary.DownloadWeightFromDatabase(user, tempday);
         }
 
         private void chartManage()
         {
             List<ObservablePoint> points = new List<ObservablePoint>();
 
-            points.Add(new ObservablePoint(5, summary.downloadKcalFromDatabase(user, DateTime.Now)));
-            if (user.joindate < DateTime.Now.AddDays(-1)) points.Add(new ObservablePoint(4, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-1))));
-            if (user.joindate < DateTime.Now.AddDays(-2)) points.Add(new ObservablePoint(3, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-2))));
-            if (user.joindate < DateTime.Now.AddDays(-3)) points.Add(new ObservablePoint(2, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-3))));
-            if (user.joindate < DateTime.Now.AddDays(-4)) points.Add(new ObservablePoint(1, summary.downloadKcalFromDatabase(user, DateTime.Now.AddDays(-4))));
+            points.Add(new ObservablePoint(5, summary.DownloadKcalFromDatabase(user, DateTime.Now)));
+            if (user.joindate < DateTime.Now.AddDays(-1)) points.Add(new ObservablePoint(4, summary.DownloadKcalFromDatabase(user, DateTime.Now.AddDays(-1))));
+            if (user.joindate < DateTime.Now.AddDays(-2)) points.Add(new ObservablePoint(3, summary.DownloadKcalFromDatabase(user, DateTime.Now.AddDays(-2))));
+            if (user.joindate < DateTime.Now.AddDays(-3)) points.Add(new ObservablePoint(2, summary.DownloadKcalFromDatabase(user, DateTime.Now.AddDays(-3))));
+            if (user.joindate < DateTime.Now.AddDays(-4)) points.Add(new ObservablePoint(1, summary.DownloadKcalFromDatabase(user, DateTime.Now.AddDays(-4))));
 
             cartesianChart1.Series = new SeriesCollection
             {
@@ -108,7 +103,7 @@ namespace Dietaverse.View
                 notes = "";
             }
 
-            summary.update(weight, calories, user, notes);
+            summary.Update(weight, calories, user, notes);
         }
 
         private void addcalButton_Click(object sender, EventArgs e)
@@ -131,7 +126,7 @@ namespace Dietaverse.View
             }
 
             caloriesTB.Text = "";
-            summary.update(weight, calories, user, notes);
+            summary.Update(weight, calories, user, notes);
             chartManage();
 
         }
@@ -144,7 +139,7 @@ namespace Dietaverse.View
             }
 
             weightTB.Text = "";
-            summary.update(weight, calories, user, notes);
+            summary.Update(weight, calories, user, notes);
             User.ChangeWeight(user, weight);
         }
 

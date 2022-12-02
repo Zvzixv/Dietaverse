@@ -1,14 +1,8 @@
 ﻿using Dietaverse.Database;
 using Dietaverse.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
@@ -27,8 +21,8 @@ namespace Dietaverse.View
         int kcal;
 
         private GUI g = new GUI();
-        BodyGallery upperform = null;
-        FoodGallery upperformFood = null;
+        BodyGalleryView upperform = null;
+        FoodGalleryView upperformFood = null;
 
         public SmallPhoto()
         {
@@ -36,7 +30,7 @@ namespace Dietaverse.View
             description.Visible = false;
         }
 
-        public SmallPhoto(body_gallery bg, BodyGallery form)
+        public SmallPhoto(body_gallery bg, BodyGalleryView form)
         {
             InitializeComponent();
             description.Visible = false;
@@ -55,7 +49,7 @@ namespace Dietaverse.View
             weight = bg.weight;
         }
 
-        public SmallPhoto(dishes_gallery dg, FoodGallery form)
+        public SmallPhoto(dishes_gallery dg, FoodGalleryView form)
         {
             InitializeComponent();
             description.Visible = false;
@@ -75,36 +69,36 @@ namespace Dietaverse.View
             description.Text = "Kcal: "+kcal.ToString();
         }
 
-        public void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (isPhotoClicked == false&&upperform==null)
             {
                 description.Visible = true;
                 isPhotoClicked = true;
-                upperformFood.showDescription(recipe, name);
+                upperformFood.ShowDescription(recipe, name);
             }
             else if(isPhotoClicked == true&&upperform==null)
             {
                 description.Visible=false;
                 isPhotoClicked=false;
-                upperformFood.hideDescription();
+                upperformFood.HideDescription();
             }
 
             if (isPhotoClicked == false && upperform != null)
             {
                 description.Visible = true;
                 isPhotoClicked = true;
-                upperform.showDescription(note, weight);
+                upperform.ShowDescription(note, weight);
             }
             else if (isPhotoClicked == true && upperform != null)
             {
                 description.Visible = false;
                 isPhotoClicked = false;
-                upperform.hideDescription();
+                upperform.HideDescription();
             }
         }
 
-        public void description_Click(object sender, EventArgs e)
+        private void description_Click(object sender, EventArgs e)
         {
             description.Visible = false;
         }

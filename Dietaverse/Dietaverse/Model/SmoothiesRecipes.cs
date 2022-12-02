@@ -1,15 +1,12 @@
 ﻿using Dietaverse.Database;
-using Dietaverse.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dietaverse.Model
 {
-    public class Smoothies_recipes
+    public class SmoothiesRecipes
     {
         public int Id { get; set; }
         public string name { get; set; }
@@ -24,7 +21,7 @@ namespace Dietaverse.Model
         public virtual photos photos { get; set; }
 
 
-        public void addNewSmoothie(string name, string _path, List<Smoothies_ingr> smoothies_ingr,  bool fruity, bool vegtable, bool sweet, bool sour)
+        public void AddNewSmoothie(string name, string _path, List<SmoothiesIngr> smoothies_ingr,  bool fruity, bool vegtable, bool sweet, bool sour)
         {
             using (var db = new db_modelContainer())
             {
@@ -65,7 +62,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public double calculateKcal(Smoothies_recipes result)
+        public double CalculateKcal(SmoothiesRecipes result)
         {
             using (var db = new db_modelContainer())
             {
@@ -81,11 +78,11 @@ namespace Dietaverse.Model
                 return sum;
             }
         }
-        public List<Smoothies_recipes> makeAList ()
+        public List<SmoothiesRecipes> MakeAList ()
         {
             using (var db = new db_modelContainer())
             {
-                List<Smoothies_recipes> smoothies_Recipes = new List<Smoothies_recipes>();
+                List<SmoothiesRecipes> smoothies_Recipes = new List<SmoothiesRecipes>();
                 var rec = db.smoothies_recipesSet;
 
                 if (rec != null)
@@ -93,7 +90,7 @@ namespace Dietaverse.Model
 
                     foreach (var i in rec)
                     {
-                        Smoothies_recipes smoothie = new Smoothies_recipes();
+                        SmoothiesRecipes smoothie = new SmoothiesRecipes();
                         smoothie.name = i.name;
                         smoothie.photos = i.photos;
                         smoothie.sour = i.sour;
@@ -115,7 +112,7 @@ namespace Dietaverse.Model
             }
         }
 
-        public smoothies_recipes getSmoothie(string name)
+        public smoothies_recipes GetSmoothie(string name)
         {
             using (var db = new db_modelContainer())
             {

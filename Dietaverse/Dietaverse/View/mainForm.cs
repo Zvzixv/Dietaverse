@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Dietaverse.View
 {
 
-    public partial class mainForm : Form
+    public partial class MainForm : Form
     {
         Form af;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidrhElipse, int nHeightEllipse);
-        public mainForm()
+        public MainForm()
         {
             InitializeComponent();
             Launch launchpanel = new Launch(this) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true/*, FormBorderStyle = FormBorderStyle.None*/ };
@@ -30,7 +23,7 @@ namespace Dietaverse.View
             af = launchpanel;
         }
 
-        public void changeForm(Form x)
+        public void ChangeForm(Form x)
         {
             if (af != null)
                 af.Close();
