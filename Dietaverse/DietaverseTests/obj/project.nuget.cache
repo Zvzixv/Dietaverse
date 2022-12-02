@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "MlOii4RUbe/GFEmWW6cqcOfq2/JVcyRoZrdeHnHVsfM+W3W0s5md2wjFmFI7K7O9vP5eViMPFEzkI7huX/emFQ==",
+  "dgSpecHash": "H/4qNFTPev4hM0JjJcgmQm7WBzvwoJ3X4OQhd9eMueotHFDybWhaYUsEnEXZ1OZLd6dcuj41A/WqzWZ8WWQfcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ZPudo\\source\\repos\\Dietaverse\\Dietaverse\\DietaverseTests\\DietaverseTests.csproj",
+  "projectFilePath": "C:\\Users\\zuzia\\source\\repos\\Dietaverse\\Dietaverse\\DietaverseTests\\DietaverseTests.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ZPudo\\.nuget\\packages\\coverlet.collector\\1.0.1\\coverlet.collector.1.0.1.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\microsoft.codecoverage\\16.2.0\\microsoft.codecoverage.16.2.0.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\microsoft.net.test.sdk\\16.2.0\\microsoft.net.test.sdk.16.2.0.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\xunit\\2.4.1\\xunit.2.4.1.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\xunit.analyzers\\0.10.0\\xunit.analyzers.0.10.0.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\xunit.assert\\2.4.1\\xunit.assert.2.4.1.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
-    "C:\\Users\\ZPudo\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.1\\xunit.runner.visualstudio.2.4.1.nupkg.sha512"
+    "C:\\Users\\zuzia\\.nuget\\packages\\coverlet.collector\\1.0.1\\coverlet.collector.1.0.1.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\microsoft.codecoverage\\16.2.0\\microsoft.codecoverage.16.2.0.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\microsoft.net.test.sdk\\16.2.0\\microsoft.net.test.sdk.16.2.0.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\xunit\\2.4.1\\xunit.2.4.1.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\xunit.analyzers\\0.10.0\\xunit.analyzers.0.10.0.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\xunit.assert\\2.4.1\\xunit.assert.2.4.1.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
+    "C:\\Users\\zuzia\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.1\\xunit.runner.visualstudio.2.4.1.nupkg.sha512"
   ],
   "logs": []
 }

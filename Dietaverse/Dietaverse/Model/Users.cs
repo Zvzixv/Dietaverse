@@ -70,7 +70,10 @@ namespace Dietaverse.Model
                     }
                 }
 
-                users newuser = new users { name = _username, weight = _weight, password = _password, joindate = DateTime.Now};
+                byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(_password);
+                string passwordAsBytes = System.Convert.ToBase64String(toEncodeAsBytes);
+
+                users newuser = new users { name = _username, weight = _weight, password = passwordAsBytes, joindate = DateTime.Now};
 
                 db.usersSet.Add(newuser);
                 db.SaveChanges();
@@ -83,10 +86,13 @@ namespace Dietaverse.Model
         {
             using (var db = new db_modelContainer())
             {
+                byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(_password);
+                string passwordAsBytes = System.Convert.ToBase64String(toEncodeAsBytes);
+
                 var x = db.usersSet;
                 foreach (var s in x)
                 {
-                    if (s.name == _name && s.password == _password)
+                    if (s.name == _name && s.password == passwordAsBytes)
                     {
                         Users user = new Users(s.name, s.password, s.weight, s.joindate);
                         return s;
@@ -109,7 +115,11 @@ namespace Dietaverse.Model
                 {
                     throw new UserNotFoundException("I cannot find that user.");
                 }
-                u.password = newpassword;
+
+                byte[] toEncodeAsBytes = System.Text.ASCIIEncoding.ASCII.GetBytes(newpassword);
+                string passwordAsBytes = System.Convert.ToBase64String(toEncodeAsBytes);
+
+                u.password = passwordAsBytes;
                 db.SaveChanges();
                 return true;
             }
