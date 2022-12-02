@@ -16,7 +16,6 @@ namespace Dietaverse
         [STAThread]
         static void Main()
         {
-            Users u = new Users();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new mainForm());
