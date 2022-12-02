@@ -32,14 +32,15 @@ namespace Dietaverse.View
 
             InitializeComponent();
 
-            if(summary.downloadNoteFromDatabase(user, DateTime.Now)!=null)
+            if(summary.downloadNoteFromDatabase(user, DateTime.Now)!=""&& summary.downloadNoteFromDatabase(user, DateTime.Now) != null)
             {
                 notes = summary.downloadNoteFromDatabase(user,DateTime.Now);
+                richTextBox1.Text = notes;
             }
             else
                 richTextBox1.Text = "You can leave some notes here...";
 
-            richTextBox1.Text = notes;
+
             kcalLabel.Text =calories.ToString()+" kcal";
             weightLabel.Text =weight.ToString()+" kg";
 
@@ -104,6 +105,7 @@ namespace Dietaverse.View
                 richTextBox1.Text = "You can leave some notes here...";
                 hasBeenClicked=false;
                 richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
+                notes = "";
             }
 
             summary.update(weight, calories, user, notes);

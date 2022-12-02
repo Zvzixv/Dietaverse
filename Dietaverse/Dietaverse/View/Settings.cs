@@ -100,7 +100,7 @@ namespace Dietaverse.View
             Users use = new Users();
             use.ChangePassword(user.name, pass1textBox.Text);
 
-            MessageBox.Show("Added successfully");
+            MessageBox.Show("Changed successfully");
         }
     }
 }
