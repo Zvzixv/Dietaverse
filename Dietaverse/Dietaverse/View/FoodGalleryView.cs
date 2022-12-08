@@ -42,7 +42,7 @@ namespace Dietaverse.View
         {
             start.PnlFormLoader.Controls.Clear();
             AddNewFoodPhoto addnewfoodphotoform = new AddNewFoodPhoto(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            start.changeForm(addnewfoodphotoform);
+            start.ChangeForm(addnewfoodphotoform);
         }
 
         public void ShowDescription(string recipe, string name)

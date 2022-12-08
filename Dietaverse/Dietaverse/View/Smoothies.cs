@@ -33,7 +33,7 @@ namespace Dietaverse.View
         private void dynamicCheck()
         {
             flowLayoutPanel1.Controls.Clear();
-            smIngredients = si.makeAList();
+            smIngredients = si.MakeAList();
             foreach (var item in smIngredients)
             {
                 CheckBox chk = new CheckBox();
@@ -84,7 +84,6 @@ namespace Dietaverse.View
                 {
                     ingrs.Add(x);
                 }
-
                 foreach(var _checked in smIngrChecked)
                 {
                     foreach(var contains in ingrs)
@@ -93,33 +92,22 @@ namespace Dietaverse.View
                             confidence++;
                     }
                 }
-
                 if (smoothie.sour == sourcheckBox.Checked)
                     confidence++;
-
-
                 if (smoothie.sweet == sweetcheckBox.Checked)
                     confidence++;
-
-
                 if (smoothie.fruity == fruitycheckBox.Checked)
                     confidence++;
-
-
                 if (smoothie.vegetable == vegetablecheckBox.Checked)
                     confidence++;
-
-
 
                 if (confidence > maxconfidence)
                 {
                     result = smoothie;
                     result.name = smoothie.name;
                     maxconfidence = confidence;
-                }
-                
+                } 
             }
-
             if (maxconfidence == 0)
             {
                 return null;
@@ -134,7 +122,7 @@ namespace Dietaverse.View
         {
             start.PnlFormLoader.Controls.Clear();
             AddNewSmoothie addnewsmoothieform = new AddNewSmoothie(start) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            start.changeForm(addnewsmoothieform);
+            start.ChangeForm(addnewsmoothieform);
         }
 
         private void Smoothiebutton1_Click(object sender, EventArgs e)

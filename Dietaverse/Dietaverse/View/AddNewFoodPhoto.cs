@@ -68,7 +68,7 @@ namespace Dietaverse.View
             }
             MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
             FoodGalleryView foodgalleryform = new FoodGalleryView(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            start.changeForm(foodgalleryform);
+            start.ChangeForm(foodgalleryform);
         }
 
         private void nameTextBox_Enter(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace Dietaverse.View
         private void backButton_Click_1(object sender, EventArgs e)
         {
             FoodGalleryView foodgalleryform = new FoodGalleryView(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            start.changeForm(foodgalleryform);
+            start.ChangeForm(foodgalleryform);
         }
     }
 }

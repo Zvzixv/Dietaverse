@@ -24,7 +24,7 @@ namespace Dietaverse.View
                 if (user != null)
                 {
                     Form1 startform = new Form1(mainform, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-                    mainform.changeForm(startform);
+                    mainform.ChangeForm(startform);
                 }
             }
             catch (LoginFailException ex)
@@ -42,7 +42,7 @@ namespace Dietaverse.View
         private void backbutton_Click(object sender, EventArgs e)
         {
             Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            mainform.changeForm(launchform);
+            mainform.ChangeForm(launchform);
         }
     }
 }

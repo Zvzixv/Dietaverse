@@ -93,5 +93,12 @@ namespace Dietaverse.View
 
             MessageBox.Show("Changed successfully");
         }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Users u = new Users();
+            u.DeleteAccount(user);
+            logoutbutton_Click(sender, e);
+        }
     }
 }

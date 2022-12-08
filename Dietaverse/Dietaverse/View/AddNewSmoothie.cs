@@ -38,7 +38,7 @@ namespace Dietaverse.View
         private void dynamicCheck()
         {
             flowLayoutPanel1.Controls.Clear();
-            smIngredients = si.makeAList();
+            smIngredients = si.MakeAList();
             foreach (var item in smIngredients)
             {
                 CheckBox chk = new CheckBox();
@@ -73,7 +73,7 @@ namespace Dietaverse.View
 
             try
             {
-                si.addNewIngr(ingrName, ingrKcal);
+                si.AddNewIngr(ingrName, ingrKcal);
             }
             catch(FormatException)
             {
@@ -122,7 +122,7 @@ namespace Dietaverse.View
         {
             start.PnlFormLoader.Controls.Clear();
             Smoothies smoothiesform = new Smoothies(start) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            start.changeForm(smoothiesform);
+            start.ChangeForm(smoothiesform);
         }
     }
 }

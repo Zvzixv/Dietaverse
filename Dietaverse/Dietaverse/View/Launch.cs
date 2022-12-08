@@ -26,13 +26,13 @@ namespace Dietaverse.View
         private void loginButton_Click(object sender, EventArgs e)
         {
             Login loginform = new Login(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
-            mainform.changeForm(loginform);
+            mainform.ChangeForm(loginform);
         }
 
         private void registerButton_Click(object sender, EventArgs e)
         {
             Register registerform = new Register(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
-            mainform.changeForm(registerform);
+            mainform.ChangeForm(registerform);
         }
     }
 }

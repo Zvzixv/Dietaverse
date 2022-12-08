@@ -24,6 +24,9 @@ namespace Dietaverse.View
         BodyGalleryView upperform = null;
         FoodGalleryView upperformFood = null;
 
+        body_gallery bg = null;
+        dishes_gallery dg = null;
+
         public SmallPhoto()
         {
             InitializeComponent();
@@ -37,7 +40,7 @@ namespace Dietaverse.View
             upperform = form;
 
             photos photo = bg.photos;
-
+            this.bg = bg;
             byte [] tempBytes = Convert.FromBase64String(photo.data);
             MemoryStream memStr = new MemoryStream(tempBytes);
             Image photoImage = Image.FromStream(memStr);
@@ -56,7 +59,7 @@ namespace Dietaverse.View
             upperformFood = form;
 
             photos photo = dg.photos;
-
+            this.dg = dg;
             byte[] tempBytes = Convert.FromBase64String(photo.data);
             MemoryStream memStr = new MemoryStream(tempBytes);
             Image photoImage = Image.FromStream(memStr);
@@ -101,6 +104,23 @@ namespace Dietaverse.View
         private void description_Click(object sender, EventArgs e)
         {
             description.Visible = false;
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if(dg!=null)
+            {
+                DishesGallery dishesGallery = new DishesGallery();
+                dishesGallery.DeletePhoto(dg);
+                this.Close();
+            }
+            if(bg!=null)
+            {
+                BodyGallery bodyGallery = new BodyGallery();
+                bodyGallery.DeletePhoto(bg);
+                upperform.Refresh();
+                this.Close();
+            }
         }
     }
 }

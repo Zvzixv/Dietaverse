@@ -34,6 +34,7 @@
             this.pass2textBox = new System.Windows.Forms.TextBox();
             this.changePasswordbutton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +100,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.deleteButton);
             this.panel1.Controls.Add(this.logoutbutton);
             this.panel1.Controls.Add(this.pass2textBox);
             this.panel1.Controls.Add(this.changePasswordbutton);
@@ -108,6 +110,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(274, 400);
             this.panel1.TabIndex = 14;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.deleteButton.ForeColor = System.Drawing.Color.Coral;
+            this.deleteButton.Location = new System.Drawing.Point(26, 319);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(109, 49);
+            this.deleteButton.TabIndex = 14;
+            this.deleteButton.Text = "Delete account";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // Settings
             // 
@@ -133,5 +148,6 @@
         private System.Windows.Forms.TextBox pass2textBox;
         private System.Windows.Forms.Button changePasswordbutton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

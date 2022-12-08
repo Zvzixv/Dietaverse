@@ -12,7 +12,7 @@ namespace Dietaverse.View
         List<SmallPhoto> gallery = new List<SmallPhoto>();
         Form1 start;
         users user;
-       
+
         public BodyGalleryView(Form1 upper, users _user)
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace Dietaverse.View
         public void ShowDescription(string notes, double weight)
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Regular);
-            richTextBox1.Text = "Contemporary weight: "+weight+" \n"+notes;
+            richTextBox1.Text = "Contemporary weight: " + weight + " \n" + notes;
         }
 
         public void HideDescription()
@@ -51,5 +51,6 @@ namespace Dietaverse.View
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
             richTextBox1.Text = "Your notes will appear here...";
         }
+
     }
 }

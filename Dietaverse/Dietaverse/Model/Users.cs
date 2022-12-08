@@ -33,8 +33,6 @@ namespace Dietaverse.Model
 
         public db_modelContainer db { get; set; }
 
-        public List<users> usersFromDB { get; set; }
-
         public Users()
         {
             db = new db_modelContainer();
@@ -42,6 +40,7 @@ namespace Dietaverse.Model
 
         public Users(string n, string p, double w, DateTime j)
         {
+            db = new db_modelContainer();
             name = n;
             password = p;
             weight = w;
@@ -156,6 +155,17 @@ namespace Dietaverse.Model
                     throw new UserNotFoundException("I cannot find that user.");
                 }
                 
+            }
+        }
+
+        public void DeleteAccount(users user)
+        {
+            using (var db = new db_modelContainer())
+            {
+                var u = db.usersSet;
+                users toDelete = u.Single(a => a.name == user.name);
+                db.usersSet.Remove(toDelete);
+                db.SaveChanges();
             }
         }
 

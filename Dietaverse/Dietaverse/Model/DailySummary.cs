@@ -40,20 +40,16 @@ namespace Dietaverse.Model
                 var u = db.usersSet;
                 var summaries = db.daily_summarySet;
                 daily_summary summary=null;
-
-
                 foreach(var x in summaries)
                 {
                     if (DateTime.Now.Day == x.date.Day && DateTime.Now.Month == x.date.Month && DateTime.Now.Year == x.date.Year&&x.users.Id==_u.Id)
                         summary = x;
                 }
-
                 if(summary == null)
                 {
                     Create(_weight, _kcal, _u, _note);
                     return;
                 }
-
                 else
                 {
                     summary.weight = _weight;
@@ -61,7 +57,6 @@ namespace Dietaverse.Model
                     if(_note!= "You can leave some notes here...")
                         summary.notes = _note;
                 }
-
                 db.SaveChanges();
             }
         }

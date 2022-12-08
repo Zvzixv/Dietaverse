@@ -30,9 +30,7 @@ C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietavers
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.AddNewBodyPhoto.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.AddNewFoodPhoto.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.AddNewSmoothie.resources
-C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.BodyGallery.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Dashboard.resources
-C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.FoodGallery.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Launch.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.Login.resources
 C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.mainForm.resources
@@ -84,3 +82,5 @@ C:\Users\ZPudo\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietavers
 C:\Users\ZPudo\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.AddNewSmoothie.resources
 C:\Users\ZPudo\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.mainForm.resources
 C:\Users\ZPudo\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.csproj.CopyComplete
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.BodyGalleryView.resources
+C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\obj\Debug\Dietaverse.View.FoodGalleryView.resources

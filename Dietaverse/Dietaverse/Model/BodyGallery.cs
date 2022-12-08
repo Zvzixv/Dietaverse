@@ -70,5 +70,17 @@ namespace Dietaverse.Model
                 db.SaveChanges();
             }
         }
+
+       public void DeletePhoto(body_gallery tr)
+       {
+            using (var db = new db_modelContainer())
+            {
+                var bg = db.body_gallerySet;
+                body_gallery toRemove = bg.Single((a => a.Id == tr.Id));
+                db.body_gallerySet.Remove(toRemove);
+                db.SaveChanges();
+            }
+
+       }
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SmallPhoto));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.description = new System.Windows.Forms.Label();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,12 +61,23 @@
             this.description.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.description.Click += new System.EventHandler(this.description_Click);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(122, 13);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(21, 23);
+            this.deleteButton.TabIndex = 2;
+            this.deleteButton.Text = "X";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // SmallPhoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(156, 205);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.description);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -81,5 +93,6 @@
 
         public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label description;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
