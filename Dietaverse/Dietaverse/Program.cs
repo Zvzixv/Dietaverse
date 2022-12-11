@@ -1,4 +1,5 @@
-﻿using Dietaverse.View;
+﻿using Dietaverse.Model;
+using Dietaverse.View;
 using System;
 using System.Windows.Forms;
 

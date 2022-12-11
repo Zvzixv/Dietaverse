@@ -135,11 +135,15 @@
     <End Type="db_model.users" Role="users" Multiplicity="1" />
   </Association>
   <Association Name="smoothies_ingrrecipes_ingredient">
-    <End Type="db_model.smoothies_ingr" Role="smoothies_ingr" Multiplicity="1" />
+    <End Type="db_model.smoothies_ingr" Role="smoothies_ingr" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="db_model.recipes_ingredient" Role="recipes_ingredient" Multiplicity="*" />
   </Association>
   <Association Name="smoothies_recipesrecipes_ingredient">
-    <End Type="db_model.smoothies_recipes" Role="smoothies_recipes" Multiplicity="1" />
+    <End Type="db_model.smoothies_recipes" Role="smoothies_recipes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="db_model.recipes_ingredient" Role="recipes_ingredient" Multiplicity="*" />
   </Association>
   <EntityType Name="photos">

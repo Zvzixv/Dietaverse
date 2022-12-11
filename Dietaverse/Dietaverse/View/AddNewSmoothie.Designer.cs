@@ -121,6 +121,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 35);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 94);
@@ -198,7 +199,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(18, 272);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(143, 167);
+            this.pictureBox1.Size = new System.Drawing.Size(123, 167);
             this.pictureBox1.TabIndex = 83;
             this.pictureBox1.TabStop = false;
             // 
@@ -245,7 +246,7 @@
             // 
             this.photolabel.AutoSize = true;
             this.photolabel.ForeColor = System.Drawing.Color.Coral;
-            this.photolabel.Location = new System.Drawing.Point(44, 345);
+            this.photolabel.Location = new System.Drawing.Point(32, 345);
             this.photolabel.Name = "photolabel";
             this.photolabel.Size = new System.Drawing.Size(90, 13);
             this.photolabel.TabIndex = 85;

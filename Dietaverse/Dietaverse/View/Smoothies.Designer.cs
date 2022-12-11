@@ -45,10 +45,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
             this.kcallabel = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Kclabel = new System.Windows.Forms.Label();
+            this.Nmlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.smoothiepictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -158,6 +160,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(7, 41);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(163, 263);
@@ -189,7 +192,7 @@
             // 
             // smoothiepictureBox
             // 
-            this.smoothiepictureBox.Location = new System.Drawing.Point(16, 46);
+            this.smoothiepictureBox.Location = new System.Drawing.Point(41, 46);
             this.smoothiepictureBox.Name = "smoothiepictureBox";
             this.smoothiepictureBox.Size = new System.Drawing.Size(159, 262);
             this.smoothiepictureBox.TabIndex = 20;
@@ -232,6 +235,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.Nmlabel);
+            this.panel3.Controls.Add(this.Kclabel);
             this.panel3.Controls.Add(this.kcallabel);
             this.panel3.Controls.Add(this.label);
             this.panel3.Controls.Add(this.label6);
@@ -241,18 +246,26 @@
             this.panel3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.panel3.Location = new System.Drawing.Point(491, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(191, 365);
+            this.panel3.Size = new System.Drawing.Size(230, 365);
             this.panel3.TabIndex = 24;
             // 
-            // label5
+            // kcallabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(13, 328);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 17);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Kcal:";
+            this.kcallabel.AutoSize = true;
+            this.kcallabel.ForeColor = System.Drawing.Color.Coral;
+            this.kcallabel.Location = new System.Drawing.Point(59, 328);
+            this.kcallabel.Name = "kcallabel";
+            this.kcallabel.Size = new System.Drawing.Size(0, 17);
+            this.kcallabel.TabIndex = 23;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.ForeColor = System.Drawing.Color.Coral;
+            this.label.Location = new System.Drawing.Point(72, 311);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(0, 17);
+            this.label.TabIndex = 22;
             // 
             // label6
             // 
@@ -264,23 +277,33 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Name:";
             // 
-            // label
+            // label5
             // 
-            this.label.AutoSize = true;
-            this.label.ForeColor = System.Drawing.Color.Coral;
-            this.label.Location = new System.Drawing.Point(72, 311);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(0, 17);
-            this.label.TabIndex = 22;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Coral;
+            this.label5.Location = new System.Drawing.Point(13, 328);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Kcal:";
             // 
-            // kcallabel
+            // Kclabel
             // 
-            this.kcallabel.AutoSize = true;
-            this.kcallabel.ForeColor = System.Drawing.Color.Coral;
-            this.kcallabel.Location = new System.Drawing.Point(59, 328);
-            this.kcallabel.Name = "kcallabel";
-            this.kcallabel.Size = new System.Drawing.Size(0, 17);
-            this.kcallabel.TabIndex = 23;
+            this.Kclabel.AutoSize = true;
+            this.Kclabel.ForeColor = System.Drawing.Color.Coral;
+            this.Kclabel.Location = new System.Drawing.Point(59, 328);
+            this.Kclabel.Name = "Kclabel";
+            this.Kclabel.Size = new System.Drawing.Size(0, 17);
+            this.Kclabel.TabIndex = 24;
+            // 
+            // Nmlabel
+            // 
+            this.Nmlabel.AutoSize = true;
+            this.Nmlabel.ForeColor = System.Drawing.Color.Coral;
+            this.Nmlabel.Location = new System.Drawing.Point(62, 311);
+            this.Nmlabel.Name = "Nmlabel";
+            this.Nmlabel.Size = new System.Drawing.Size(0, 17);
+            this.Nmlabel.TabIndex = 25;
             // 
             // Smoothies
             // 
@@ -332,5 +355,7 @@
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Nmlabel;
+        private System.Windows.Forms.Label Kclabel;
     }
 }

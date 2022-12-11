@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/24/2022 10:07:46
+-- Date Created: 12/11/2022 11:15:20
 -- Generated from EDMX file: C:\Users\zuzia\source\repos\Dietaverse\Dietaverse\Dietaverse\Database\db_model.edmx
 -- --------------------------------------------------
 
@@ -17,14 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_body_galleryphotos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_body_galleryphotos];
-GO
 IF OBJECT_ID(N'[dbo].[FK_daily_summaryusers]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[daily_summarySet] DROP CONSTRAINT [FK_daily_summaryusers];
 GO
-IF OBJECT_ID(N'[dbo].[FK_dishes_galleryphotos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[dishes_gallerySet] DROP CONSTRAINT [FK_dishes_galleryphotos];
+IF OBJECT_ID(N'[dbo].[FK_usersbody_gallery]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_usersbody_gallery];
 GO
 IF OBJECT_ID(N'[dbo].[FK_dishes_galleryusers]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[dishes_gallerySet] DROP CONSTRAINT [FK_dishes_galleryusers];
@@ -32,43 +29,46 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_smoothies_ingrrecipes_ingredient]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[recipes_ingredientSet] DROP CONSTRAINT [FK_smoothies_ingrrecipes_ingredient];
 GO
-IF OBJECT_ID(N'[dbo].[FK_smoothies_recipesphotos]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[smoothies_recipesSet] DROP CONSTRAINT [FK_smoothies_recipesphotos];
-GO
 IF OBJECT_ID(N'[dbo].[FK_smoothies_recipesrecipes_ingredient]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[recipes_ingredientSet] DROP CONSTRAINT [FK_smoothies_recipesrecipes_ingredient];
 GO
-IF OBJECT_ID(N'[dbo].[FK_usersbody_gallery]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_usersbody_gallery];
+IF OBJECT_ID(N'[dbo].[FK_body_galleryphotos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[body_gallerySet] DROP CONSTRAINT [FK_body_galleryphotos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_dishes_galleryphotos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[dishes_gallerySet] DROP CONSTRAINT [FK_dishes_galleryphotos];
+GO
+IF OBJECT_ID(N'[dbo].[FK_smoothies_recipesphotos]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[smoothies_recipesSet] DROP CONSTRAINT [FK_smoothies_recipesphotos];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[body_gallerySet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[body_gallerySet];
-GO
-IF OBJECT_ID(N'[dbo].[daily_summarySet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[daily_summarySet];
+IF OBJECT_ID(N'[dbo].[usersSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[usersSet];
 GO
 IF OBJECT_ID(N'[dbo].[dishes_gallerySet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[dishes_gallerySet];
 GO
-IF OBJECT_ID(N'[dbo].[photosSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[photosSet];
-GO
-IF OBJECT_ID(N'[dbo].[recipes_ingredientSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[recipes_ingredientSet];
-GO
-IF OBJECT_ID(N'[dbo].[smoothies_ingrSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[smoothies_ingrSet];
+IF OBJECT_ID(N'[dbo].[daily_summarySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[daily_summarySet];
 GO
 IF OBJECT_ID(N'[dbo].[smoothies_recipesSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[smoothies_recipesSet];
 GO
-IF OBJECT_ID(N'[dbo].[usersSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[usersSet];
+IF OBJECT_ID(N'[dbo].[smoothies_ingrSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[smoothies_ingrSet];
+GO
+IF OBJECT_ID(N'[dbo].[body_gallerySet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[body_gallerySet];
+GO
+IF OBJECT_ID(N'[dbo].[recipes_ingredientSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[recipes_ingredientSet];
+GO
+IF OBJECT_ID(N'[dbo].[photosSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[photosSet];
 GO
 
 -- --------------------------------------------------
@@ -261,7 +261,7 @@ ADD CONSTRAINT [FK_smoothies_ingrrecipes_ingredient]
     FOREIGN KEY ([smoothies_ingr_Id])
     REFERENCES [dbo].[smoothies_ingrSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_smoothies_ingrrecipes_ingredient'
@@ -276,7 +276,7 @@ ADD CONSTRAINT [FK_smoothies_recipesrecipes_ingredient]
     FOREIGN KEY ([smoothies_recipes_Id])
     REFERENCES [dbo].[smoothies_recipesSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_smoothies_recipesrecipes_ingredient'

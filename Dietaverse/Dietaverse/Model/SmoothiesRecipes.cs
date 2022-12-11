@@ -120,5 +120,19 @@ namespace Dietaverse.Model
                 return sr.FirstOrDefault();
             }
         }
+
+        public void deleteSmoothie(string name)
+        {
+            using (var db = new db_modelContainer())
+            {
+                var u = db.smoothies_recipesSet;
+                smoothies_recipes toDelete = u.Single(a => a.name == name);
+                db.smoothies_recipesSet.Remove(toDelete);
+                db.SaveChanges();
+            }
+        }
+
     }
+
+
 }

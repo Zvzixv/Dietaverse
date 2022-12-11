@@ -162,7 +162,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="smoothies_ingrrecipes_ingredient">
-    <End Role="smoothies_ingr" Type="db_model.Store.smoothies_ingrSet" Multiplicity="1" />
+    <End Role="smoothies_ingr" Type="db_model.Store.smoothies_ingrSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="recipes_ingredient" Type="db_model.Store.recipes_ingredientSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="smoothies_ingr">
@@ -174,7 +176,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="smoothies_recipesrecipes_ingredient">
-    <End Role="smoothies_recipes" Type="db_model.Store.smoothies_recipesSet" Multiplicity="1" />
+    <End Role="smoothies_recipes" Type="db_model.Store.smoothies_recipesSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="recipes_ingredient" Type="db_model.Store.recipes_ingredientSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="smoothies_recipes">
