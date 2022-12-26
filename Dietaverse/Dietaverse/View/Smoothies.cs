@@ -71,7 +71,7 @@ namespace Dietaverse.View
                 }
             }
         }
-        private SmoothiesRecipes algorithm()
+        private SmoothiesRecipes generateSmoothieRecipe()
         {
             SmoothiesRecipes result = new SmoothiesRecipes();
             int maxconfidence = 0;
@@ -127,7 +127,7 @@ namespace Dietaverse.View
 
         private void Smoothiebutton1_Click(object sender, EventArgs e)
         {
-            SmoothiesRecipes result = algorithm();
+            SmoothiesRecipes result = generateSmoothieRecipe();
             label.Visible = true;
             kcallabel.Visible = true;
             if (result == null)
