@@ -41,7 +41,7 @@ namespace Dietaverse.View
         {
             if(pass1wasclicked && pass1textBox.TextLength == 0 )
             {
-                pass1textBox.Text = "Insert new password";
+                pass1textBox.Text = "Wpisz nowe hasło";
                 pass1wasclicked = false;
                 pass1textBox.UseSystemPasswordChar = false;
                 pass1textBox.PasswordChar = '\0';
@@ -64,7 +64,7 @@ namespace Dietaverse.View
         {
             if (pass2wasclicked && pass2textBox.TextLength == 0)
             {
-                pass2textBox.Text = "Insert new password";
+                pass2textBox.Text = "Wpisz nowe hasło";
                 pass2wasclicked = false;
                 pass2textBox.UseSystemPasswordChar = false;
                 pass2textBox.PasswordChar = '\0';
@@ -76,22 +76,22 @@ namespace Dietaverse.View
         {
             if (pass1textBox.Text == "" || pass2textBox.Text =="")
             {
-                string message = "Records are empty";
-                MessageBox.Show(this, message, "Value is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string message = "Rekordy są puste";
+                MessageBox.Show(this, message, "Błędna wartość", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (pass1textBox.Text != pass2textBox.Text)
             {
-                string message = "Passwords are different";
-                MessageBox.Show(this, message, "Value is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string message = "Hasła się różnią";
+                MessageBox.Show(this, message, "Błędna wartość", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             Users use = new Users();
             use.ChangePassword(user.name, pass1textBox.Text);
 
-            MessageBox.Show("Changed successfully");
+            MessageBox.Show("Hasła zostały zmienione");
         }
 
         private void deleteButton_Click(object sender, EventArgs e)

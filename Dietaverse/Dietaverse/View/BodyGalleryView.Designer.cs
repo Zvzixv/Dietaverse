@@ -42,7 +42,7 @@
             this.adNewPhotoButton.Name = "adNewPhotoButton";
             this.adNewPhotoButton.Size = new System.Drawing.Size(136, 37);
             this.adNewPhotoButton.TabIndex = 9;
-            this.adNewPhotoButton.Text = "Add new";
+            this.adNewPhotoButton.Text = "Dodaj nowe";
             this.adNewPhotoButton.UseVisualStyleBackColor = true;
             this.adNewPhotoButton.Click += new System.EventHandler(this.adNewPhotoButton_Click);
             // 
@@ -56,7 +56,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(136, 396);
             this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "Your notes will appear here...";
+            this.richTextBox1.Text = "Tutaj pojawią się Twoje notatki...";
             // 
             // galleryPanel
             // 
@@ -66,7 +66,7 @@
             this.galleryPanel.Size = new System.Drawing.Size(517, 396);
             this.galleryPanel.TabIndex = 11;
             // 
-            // BodyGallery
+            // BodyGalleryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,7 +77,7 @@
             this.Controls.Add(this.adNewPhotoButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "BodyGallery";
+            this.Name = "BodyGalleryView";
             this.Text = "BodyGallery";
             this.ResumeLayout(false);
 

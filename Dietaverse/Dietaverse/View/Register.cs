@@ -27,8 +27,8 @@ namespace Dietaverse.View
                 un = userNametextBox.Text;
                 if(!double.TryParse(weighttextBox.Text, out weight))
                 {
-                    string message = "Weight is not a number";
-                    MessageBox.Show(this, message, "Value is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    string message = "Waga ma mieć wartość numeryczną";
+                    MessageBox.Show(this, message, "Błędna wartość", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -37,8 +37,8 @@ namespace Dietaverse.View
 
                 if(pass1!=pass2)
                 {
-                    string message = "Passwords are different";
-                    MessageBox.Show(this, message, "Value is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    string message = "Hasła się różnią";
+                    MessageBox.Show(this, message, "Błędna wartość", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -54,7 +54,7 @@ namespace Dietaverse.View
                     return;
                 }
 
-                MessageBox.Show(this, "Registered successfully", "Finish", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show(this, "Zarejestrowano", "Gotowe", MessageBoxButtons.OK, MessageBoxIcon.None);
 
 
                 Launch launchform = new Launch(mainform) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
@@ -62,8 +62,8 @@ namespace Dietaverse.View
             }
             else
             {
-                string message = "Records are empty";
-                MessageBox.Show(this, message, "Value is wrong", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string message = "Rekordu są puste";
+                MessageBox.Show(this, message, "Błędna wartość", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

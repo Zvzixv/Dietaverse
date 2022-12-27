@@ -23,7 +23,7 @@ namespace Dietaverse.View
             InitializeComponent();
             start = upper;
             this.user = user;
-            notetextBox.Text = "Insert note here";
+            notetextBox.Text = "Wpisz tutaj notatkę";
 
         }
 
@@ -34,7 +34,7 @@ namespace Dietaverse.View
                 path = openFileDialog1.FileName;
                 i = Image.FromFile(path);
                 label1.Visible = false;
-                pictureBox.Image = i;//g.ResizeImage(i, pictureBox.Width, pictureBox.Height);
+                pictureBox.Image = g.ResizeImage(i, pictureBox.Width, pictureBox.Height);
             }
             
         }
@@ -52,7 +52,7 @@ namespace Dietaverse.View
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
+            MessageBox.Show(this, "Zdjęcie dodane", "Gotowe", MessageBoxButtons.OK, MessageBoxIcon.None);
             BodyGalleryView bodygalleryform = new BodyGalleryView(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.ChangeForm(bodygalleryform);
         }
@@ -71,7 +71,7 @@ namespace Dietaverse.View
         {
             if (notetextboxclicked && notetextBox.TextLength == 0)
             {
-                notetextBox.Text = "Insert note here";
+                notetextBox.Text = "Wpisz tutaj notatkę";
                 notetextboxclicked = false;
                 notetextBox.Font = new Font(notetextBox.Font, FontStyle.Italic);
 

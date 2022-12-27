@@ -28,9 +28,9 @@ namespace Dietaverse.View
             user = _u;
             start = _start;
 
-            nameTextBox.Text = "Insert name here";
-            recipetextBox.Text = "Insert recipe here";
-            kcaltextBox.Text = "Insert kcal here";
+            nameTextBox.Text = "Wpisz tutaj nazwę";
+            recipetextBox.Text = "Wpisz tutaj przepis";
+            kcaltextBox.Text = "Wpisz tutaj kalorie";
         }
 
         private void choosephotobutton_Click_1(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Dietaverse.View
             }
             catch(Exception ex)
             {
-                MessageBox.Show(this, "Insert proper value.","Correct", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show(this, "Wpisz poprawną wartość","Niepoprawna wartość", MessageBoxButtons.OK, MessageBoxIcon.None);
                 return;
             }
             dg = new DishesGallery();
@@ -66,7 +66,7 @@ namespace Dietaverse.View
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show(this, "Photo added successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.None);
+            MessageBox.Show(this, "Zdjęcie dodane", "Gotowe", MessageBoxButtons.OK, MessageBoxIcon.None);
             FoodGalleryView foodgalleryform = new FoodGalleryView(start, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true, FormBorderStyle = FormBorderStyle.None };
             start.ChangeForm(foodgalleryform);
         }
@@ -85,7 +85,7 @@ namespace Dietaverse.View
         {
             if(nametextboxcliced && nameTextBox.TextLength==0)
             {
-                nameTextBox.Text = "Insert name here";
+                nameTextBox.Text = "Wpisz tutaj nazwę";
                 nametextboxcliced= false;
                 nameTextBox.Font = new Font(nameTextBox.Font, FontStyle.Italic);
 
@@ -106,7 +106,7 @@ namespace Dietaverse.View
         {
             if (recipetextboxblicked && recipetextBox.TextLength == 0)
             {
-                recipetextBox.Text = "Insert recipe here";
+                recipetextBox.Text = "Wpisz tutaj przepis";
                 recipetextboxblicked = false;
                 recipetextBox.Font = new Font(recipetextBox.Font, FontStyle.Italic);
 
@@ -127,7 +127,7 @@ namespace Dietaverse.View
         {
             if (kcaltextboxclicker && kcaltextBox.TextLength == 0)
             {
-                kcaltextBox.Text = "Insert kcal here";
+                kcaltextBox.Text = "Wpisz tutaj kalorie";
                 kcaltextboxclicker = false;
                 kcaltextBox.Font = new Font(kcaltextBox.Font, FontStyle.Italic);
 

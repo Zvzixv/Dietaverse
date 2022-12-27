@@ -43,13 +43,13 @@ namespace Dietaverse.View
         public void ShowDescription(string notes, double weight)
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Regular);
-            richTextBox1.Text = "Contemporary weight: " + weight + " \n" + notes;
+            richTextBox1.Text = "Waga: " + weight + " \n" + notes;
         }
 
         public void HideDescription()
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
-            richTextBox1.Text = "Your notes will appear here...";
+            richTextBox1.Text = "Twoje notatki pojawią się tutaj...";
         }
 
     }

@@ -77,7 +77,7 @@ namespace Dietaverse.View
             }
             catch(FormatException)
             {
-                MessageBox.Show("Wrong values!");
+                MessageBox.Show("Złe wartości");
             }
 
             dynamicCheck();
@@ -103,7 +103,7 @@ namespace Dietaverse.View
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show("Added successfully");
+            MessageBox.Show("Dodano przepis");
 
         }
 

@@ -45,12 +45,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Nmlabel = new System.Windows.Forms.Label();
+            this.Kclabel = new System.Windows.Forms.Label();
             this.kcallabel = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Kclabel = new System.Windows.Forms.Label();
-            this.Nmlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.smoothiepictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,9 +63,9 @@
             this.sweetcheckBox.ForeColor = System.Drawing.Color.Coral;
             this.sweetcheckBox.Location = new System.Drawing.Point(7, 46);
             this.sweetcheckBox.Name = "sweetcheckBox";
-            this.sweetcheckBox.Size = new System.Drawing.Size(54, 17);
+            this.sweetcheckBox.Size = new System.Drawing.Size(73, 17);
             this.sweetcheckBox.TabIndex = 9;
-            this.sweetcheckBox.Text = "sweet";
+            this.sweetcheckBox.Text = "słodkiego";
             this.sweetcheckBox.UseVisualStyleBackColor = true;
             // 
             // sourcheckBox
@@ -74,9 +74,9 @@
             this.sourcheckBox.ForeColor = System.Drawing.Color.Coral;
             this.sourcheckBox.Location = new System.Drawing.Point(7, 69);
             this.sourcheckBox.Name = "sourcheckBox";
-            this.sourcheckBox.Size = new System.Drawing.Size(46, 17);
+            this.sourcheckBox.Size = new System.Drawing.Size(75, 17);
             this.sourcheckBox.TabIndex = 10;
-            this.sourcheckBox.Text = "sour";
+            this.sourcheckBox.Text = "kwaśnego";
             this.sourcheckBox.UseVisualStyleBackColor = true;
             // 
             // fruitycheckBox
@@ -85,9 +85,9 @@
             this.fruitycheckBox.ForeColor = System.Drawing.Color.Coral;
             this.fruitycheckBox.Location = new System.Drawing.Point(7, 147);
             this.fruitycheckBox.Name = "fruitycheckBox";
-            this.fruitycheckBox.Size = new System.Drawing.Size(48, 17);
+            this.fruitycheckBox.Size = new System.Drawing.Size(72, 17);
             this.fruitycheckBox.TabIndex = 12;
-            this.fruitycheckBox.Text = "fruity";
+            this.fruitycheckBox.Text = "owocowe";
             this.fruitycheckBox.UseVisualStyleBackColor = true;
             // 
             // vegetablecheckBox
@@ -98,7 +98,7 @@
             this.vegetablecheckBox.Name = "vegetablecheckBox";
             this.vegetablecheckBox.Size = new System.Drawing.Size(73, 17);
             this.vegetablecheckBox.TabIndex = 13;
-            this.vegetablecheckBox.Text = "vegetable";
+            this.vegetablecheckBox.Text = "warzywne";
             this.vegetablecheckBox.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -108,9 +108,9 @@
             this.label2.ForeColor = System.Drawing.Color.Coral;
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 21);
+            this.label2.Size = new System.Drawing.Size(145, 21);
             this.label2.TabIndex = 14;
-            this.label2.Text = "I want to drink something..";
+            this.label2.Text = "Chcę wypić coś...";
             // 
             // label1
             // 
@@ -119,9 +119,9 @@
             this.label1.ForeColor = System.Drawing.Color.Coral;
             this.label1.Location = new System.Drawing.Point(3, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 21);
+            this.label1.Size = new System.Drawing.Size(169, 21);
             this.label1.TabIndex = 14;
-            this.label1.Text = "It has to be...";
+            this.label1.Text = "Chcę, żeby to było...";
             // 
             // label3
             // 
@@ -130,9 +130,9 @@
             this.label3.ForeColor = System.Drawing.Color.Coral;
             this.label3.Location = new System.Drawing.Point(3, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 21);
+            this.label3.Size = new System.Drawing.Size(182, 21);
             this.label3.TabIndex = 14;
-            this.label3.Text = "In my fridge I have...";
+            this.label3.Text = "W mojej kuchni mam...";
             // 
             // label4
             // 
@@ -141,9 +141,9 @@
             this.label4.ForeColor = System.Drawing.Color.Coral;
             this.label4.Location = new System.Drawing.Point(3, 10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(182, 21);
+            this.label4.Size = new System.Drawing.Size(105, 21);
             this.label4.TabIndex = 15;
-            this.label4.Text = "So I am going to drink:";
+            this.label4.Text = "Więc wypiję:";
             // 
             // addNewbutton1
             // 
@@ -154,7 +154,7 @@
             this.addNewbutton1.Name = "addNewbutton1";
             this.addNewbutton1.Size = new System.Drawing.Size(121, 43);
             this.addNewbutton1.TabIndex = 16;
-            this.addNewbutton1.Text = "Add new";
+            this.addNewbutton1.Text = "Dodaj nowy";
             this.addNewbutton1.UseVisualStyleBackColor = false;
             this.addNewbutton1.Click += new System.EventHandler(this.addNewbutton1_Click);
             // 
@@ -175,7 +175,7 @@
             this.Smoothiebutton1.Name = "Smoothiebutton1";
             this.Smoothiebutton1.Size = new System.Drawing.Size(123, 43);
             this.Smoothiebutton1.TabIndex = 18;
-            this.Smoothiebutton1.Text = "Tell me ";
+            this.Smoothiebutton1.Text = "Powiedz mi";
             this.Smoothiebutton1.UseVisualStyleBackColor = true;
             this.Smoothiebutton1.Click += new System.EventHandler(this.Smoothiebutton1_Click);
             // 
@@ -249,6 +249,24 @@
             this.panel3.Size = new System.Drawing.Size(230, 365);
             this.panel3.TabIndex = 24;
             // 
+            // Nmlabel
+            // 
+            this.Nmlabel.AutoSize = true;
+            this.Nmlabel.ForeColor = System.Drawing.Color.Coral;
+            this.Nmlabel.Location = new System.Drawing.Point(62, 311);
+            this.Nmlabel.Name = "Nmlabel";
+            this.Nmlabel.Size = new System.Drawing.Size(0, 17);
+            this.Nmlabel.TabIndex = 25;
+            // 
+            // Kclabel
+            // 
+            this.Kclabel.AutoSize = true;
+            this.Kclabel.ForeColor = System.Drawing.Color.Coral;
+            this.Kclabel.Location = new System.Drawing.Point(59, 328);
+            this.Kclabel.Name = "Kclabel";
+            this.Kclabel.Size = new System.Drawing.Size(0, 17);
+            this.Kclabel.TabIndex = 24;
+            // 
             // kcallabel
             // 
             this.kcallabel.AutoSize = true;
@@ -273,9 +291,9 @@
             this.label6.ForeColor = System.Drawing.Color.Coral;
             this.label6.Location = new System.Drawing.Point(13, 311);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.Size = new System.Drawing.Size(58, 17);
             this.label6.TabIndex = 21;
-            this.label6.Text = "Name:";
+            this.label6.Text = "Nazwa:";
             // 
             // label5
             // 
@@ -286,24 +304,6 @@
             this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 21;
             this.label5.Text = "Kcal:";
-            // 
-            // Kclabel
-            // 
-            this.Kclabel.AutoSize = true;
-            this.Kclabel.ForeColor = System.Drawing.Color.Coral;
-            this.Kclabel.Location = new System.Drawing.Point(59, 328);
-            this.Kclabel.Name = "Kclabel";
-            this.Kclabel.Size = new System.Drawing.Size(0, 17);
-            this.Kclabel.TabIndex = 24;
-            // 
-            // Nmlabel
-            // 
-            this.Nmlabel.AutoSize = true;
-            this.Nmlabel.ForeColor = System.Drawing.Color.Coral;
-            this.Nmlabel.Location = new System.Drawing.Point(62, 311);
-            this.Nmlabel.Name = "Nmlabel";
-            this.Nmlabel.Size = new System.Drawing.Size(0, 17);
-            this.Nmlabel.TabIndex = 25;
             // 
             // Smoothies
             // 

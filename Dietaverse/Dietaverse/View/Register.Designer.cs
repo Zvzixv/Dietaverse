@@ -47,60 +47,60 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(335, 145);
+            this.label1.Location = new System.Drawing.Point(358, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 38);
+            this.label1.Size = new System.Drawing.Size(224, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Register yourself";
+            this.label1.Text = "Zarejestruj się";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(337, 196);
+            this.label2.Location = new System.Drawing.Point(337, 202);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 30);
+            this.label2.Size = new System.Drawing.Size(84, 30);
             this.label2.TabIndex = 2;
-            this.label2.Text = "User name:";
+            this.label2.Text = "Login:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Coral;
-            this.label3.Location = new System.Drawing.Point(337, 222);
+            this.label3.Location = new System.Drawing.Point(337, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 30);
+            this.label3.Size = new System.Drawing.Size(91, 30);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Weight:";
+            this.label3.Text = "Waga:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Coral;
-            this.label4.Location = new System.Drawing.Point(337, 247);
+            this.label4.Location = new System.Drawing.Point(337, 264);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 30);
+            this.label4.Size = new System.Drawing.Size(85, 30);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Password:";
+            this.label4.Text = "Hasło:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(337, 277);
+            this.label5.Location = new System.Drawing.Point(336, 294);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 30);
+            this.label5.Size = new System.Drawing.Size(85, 30);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Password:";
+            this.label5.Text = "Hasło:";
             // 
             // userNametextBox
             // 
             this.userNametextBox.AcceptsTab = true;
-            this.userNametextBox.Location = new System.Drawing.Point(502, 206);
+            this.userNametextBox.Location = new System.Drawing.Point(502, 212);
             this.userNametextBox.Name = "userNametextBox";
             this.userNametextBox.Size = new System.Drawing.Size(100, 20);
             this.userNametextBox.TabIndex = 0;
@@ -108,7 +108,7 @@
             // weighttextBox
             // 
             this.weighttextBox.AcceptsTab = true;
-            this.weighttextBox.Location = new System.Drawing.Point(502, 232);
+            this.weighttextBox.Location = new System.Drawing.Point(502, 243);
             this.weighttextBox.Name = "weighttextBox";
             this.weighttextBox.Size = new System.Drawing.Size(100, 20);
             this.weighttextBox.TabIndex = 1;
@@ -116,7 +116,7 @@
             // passwordtextBox
             // 
             this.passwordtextBox.AcceptsTab = true;
-            this.passwordtextBox.Location = new System.Drawing.Point(502, 258);
+            this.passwordtextBox.Location = new System.Drawing.Point(502, 274);
             this.passwordtextBox.Name = "passwordtextBox";
             this.passwordtextBox.PasswordChar = '*';
             this.passwordtextBox.Size = new System.Drawing.Size(100, 20);
@@ -126,7 +126,7 @@
             // password2textBox
             // 
             this.password2textBox.AcceptsTab = true;
-            this.password2textBox.Location = new System.Drawing.Point(502, 284);
+            this.password2textBox.Location = new System.Drawing.Point(502, 304);
             this.password2textBox.Name = "password2textBox";
             this.password2textBox.PasswordChar = '*';
             this.password2textBox.Size = new System.Drawing.Size(100, 20);
@@ -138,7 +138,7 @@
             this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerButton.ForeColor = System.Drawing.Color.Coral;
-            this.registerButton.Location = new System.Drawing.Point(417, 322);
+            this.registerButton.Location = new System.Drawing.Point(417, 337);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(109, 37);
             this.registerButton.TabIndex = 4;
@@ -164,7 +164,7 @@
             this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.backbutton.ForeColor = System.Drawing.Color.Coral;
-            this.backbutton.Location = new System.Drawing.Point(417, 365);
+            this.backbutton.Location = new System.Drawing.Point(417, 380);
             this.backbutton.Name = "backbutton";
             this.backbutton.Size = new System.Drawing.Size(109, 38);
             this.backbutton.TabIndex = 5;

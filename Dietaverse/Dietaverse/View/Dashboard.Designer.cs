@@ -64,7 +64,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(245, 199);
             this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "You can left some notes here...";
+            this.richTextBox1.Text = "Tutaj możesz wpisać swoje notatki...";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             this.richTextBox1.Enter += new System.EventHandler(this.richTextBox1_Validated);
             this.richTextBox1.Leave += new System.EventHandler(this.richTextBox1_Leave);
@@ -132,7 +132,7 @@
             this.changeweightButton.Name = "changeweightButton";
             this.changeweightButton.Size = new System.Drawing.Size(75, 32);
             this.changeweightButton.TabIndex = 3;
-            this.changeweightButton.Text = "Change";
+            this.changeweightButton.Text = "Zmień";
             this.changeweightButton.UseVisualStyleBackColor = true;
             this.changeweightButton.Click += new System.EventHandler(this.changeweightButton_Click);
             // 
@@ -164,9 +164,9 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(4, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 25);
+            this.label7.Size = new System.Drawing.Size(60, 25);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Weight";
+            this.label7.Text = "Waga";
             // 
             // label8
             // 
@@ -175,9 +175,9 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
             this.label8.Location = new System.Drawing.Point(6, 74);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 17);
+            this.label8.Size = new System.Drawing.Size(44, 17);
             this.label8.TabIndex = 0;
-            this.label8.Text = "today";
+            this.label8.Text = "dzisiaj";
             // 
             // panel3
             // 
@@ -213,7 +213,7 @@
             this.addcalButton.Name = "addcalButton";
             this.addcalButton.Size = new System.Drawing.Size(75, 33);
             this.addcalButton.TabIndex = 3;
-            this.addcalButton.Text = "Add";
+            this.addcalButton.Text = "Dodaj";
             this.addcalButton.UseVisualStyleBackColor = true;
             this.addcalButton.Click += new System.EventHandler(this.addcalButton_Click);
             // 
@@ -244,9 +244,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(4, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 25);
+            this.label5.Size = new System.Drawing.Size(71, 25);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Calories";
+            this.label5.Text = "Kalorie";
             // 
             // label3
             // 
@@ -255,9 +255,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(151)))), ((int)(((byte)(176)))));
             this.label3.Location = new System.Drawing.Point(6, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.Size = new System.Drawing.Size(44, 17);
             this.label3.TabIndex = 0;
-            this.label3.Text = "today";
+            this.label3.Text = "dzisiaj";
             // 
             // Dashboard
             // 

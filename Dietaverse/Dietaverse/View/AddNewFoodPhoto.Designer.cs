@@ -37,8 +37,8 @@
             this.kcaltextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.backbutton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.backbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -75,9 +75,9 @@
             this.label7.ForeColor = System.Drawing.Color.Coral;
             this.label7.Location = new System.Drawing.Point(83, 316);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 16);
+            this.label7.Size = new System.Drawing.Size(128, 16);
             this.label7.TabIndex = 68;
-            this.label7.Text = "No photo selected";
+            this.label7.Text = "Nie wybrano zdjęcia";
             // 
             // choosephotobutton
             // 
@@ -88,7 +88,7 @@
             this.choosephotobutton.Name = "choosephotobutton";
             this.choosephotobutton.Size = new System.Drawing.Size(102, 29);
             this.choosephotobutton.TabIndex = 69;
-            this.choosephotobutton.Text = "Add photo";
+            this.choosephotobutton.Text = "Dodaj zdjęcie";
             this.choosephotobutton.UseVisualStyleBackColor = true;
             this.choosephotobutton.Click += new System.EventHandler(this.choosephotobutton_Click_1);
             // 
@@ -101,7 +101,7 @@
             this.adNewPhotoButton.Name = "adNewPhotoButton";
             this.adNewPhotoButton.Size = new System.Drawing.Size(109, 37);
             this.adNewPhotoButton.TabIndex = 70;
-            this.adNewPhotoButton.Text = "Add new";
+            this.adNewPhotoButton.Text = "Dodaj";
             this.adNewPhotoButton.UseVisualStyleBackColor = true;
             this.adNewPhotoButton.Click += new System.EventHandler(this.adNewPhotoButton_Click_1);
             // 
@@ -150,6 +150,18 @@
             this.panel1.Size = new System.Drawing.Size(444, 430);
             this.panel1.TabIndex = 74;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.Coral;
+            this.label2.Location = new System.Drawing.Point(252, 348);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 79);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Zdecydowanie zalecane jest dodanie pionowego zdjęcia 1500x2101, które jest mniejs" +
+    "ze niż 50 kB.";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // backbutton
             // 
             this.backbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -159,21 +171,9 @@
             this.backbutton.Name = "backbutton";
             this.backbutton.Size = new System.Drawing.Size(109, 37);
             this.backbutton.TabIndex = 70;
-            this.backbutton.Text = "Back";
+            this.backbutton.Text = "Powrót";
             this.backbutton.UseVisualStyleBackColor = true;
             this.backbutton.Click += new System.EventHandler(this.backButton_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.Coral;
-            this.label2.Location = new System.Drawing.Point(252, 348);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 79);
-            this.label2.TabIndex = 74;
-            this.label2.Text = "Strongly recommended is to add vertical 1500x2101 photo which is smaller than 50 " +
-    "kB.";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AddNewFoodPhoto
             // 

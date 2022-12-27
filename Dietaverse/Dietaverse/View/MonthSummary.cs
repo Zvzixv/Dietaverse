@@ -25,7 +25,7 @@ namespace Dietaverse.View
 
             if (richTextBox1.TextLength == 0)
             {
-                richTextBox1.Text = "Notes will apear here...";
+                richTextBox1.Text = "Notatki wyświetlą się tutaj...";
             }
         }
 
@@ -41,7 +41,7 @@ namespace Dietaverse.View
 
             if (richTextBox1.TextLength == 0)
             {
-                richTextBox1.Text = "Notes will apear here...";
+                richTextBox1.Text = "Notatki wyświetlą się tutaj...";
             }
         }
 

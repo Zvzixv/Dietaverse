@@ -58,7 +58,7 @@ namespace Dietaverse
             PnlNav.Left = bodyGalleryButton.Left;
             bodyGalleryButton.BackColor = Color.FromArgb(46, 51, 73);
 
-            lblTitle.Text = "Body gallery";
+            lblTitle.Text = "Galeria sylwetki";
             this.PnlFormLoader.Controls.Clear();
             BodyGalleryView bodygalleryform = new BodyGalleryView(this, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.ChangeForm(bodygalleryform);
@@ -72,7 +72,7 @@ namespace Dietaverse
             PnlNav.Left = foodGalleryButton.Left;
             foodGalleryButton.BackColor = Color.FromArgb(46, 51, 73);
 
-            lblTitle.Text = "Food gallery";
+            lblTitle.Text = "Galeria przepisów";
             this.PnlFormLoader.Controls.Clear();
             FoodGalleryView foodgalleryform = new FoodGalleryView(this, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.ChangeForm(foodgalleryform);
@@ -100,7 +100,7 @@ namespace Dietaverse
             PnlNav.Left = monthButton.Left;
             monthButton.BackColor = Color.FromArgb(46, 51, 73);
 
-            lblTitle.Text = "Month summary";
+            lblTitle.Text = "Miesięczne podsumowanie";
             this.PnlFormLoader.Controls.Clear();
             MonthSummary monthsummaryform = new MonthSummary(user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.ChangeForm(monthsummaryform);
@@ -114,7 +114,7 @@ namespace Dietaverse
             PnlNav.Left = settingsButton.Left;
             settingsButton.BackColor = Color.FromArgb(46, 51, 73);
 
-            lblTitle.Text = "Settings";
+            lblTitle.Text = "Ustawienia";
             this.PnlFormLoader.Controls.Clear();
             Settings settingsform = new Settings(mainform, user) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true , FormBorderStyle = FormBorderStyle.None };
             this.ChangeForm(settingsform);

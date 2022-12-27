@@ -60,7 +60,7 @@
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(78, 30);
             this.dateLabel.TabIndex = 6;
-            this.dateLabel.Text = "Date:";
+            this.dateLabel.Text = "Data:";
             // 
             // weightLabel
             // 
@@ -69,9 +69,9 @@
             this.weightLabel.ForeColor = System.Drawing.Color.Coral;
             this.weightLabel.Location = new System.Drawing.Point(17, 48);
             this.weightLabel.Name = "weightLabel";
-            this.weightLabel.Size = new System.Drawing.Size(104, 30);
+            this.weightLabel.Size = new System.Drawing.Size(91, 30);
             this.weightLabel.TabIndex = 6;
-            this.weightLabel.Text = "Weight:";
+            this.weightLabel.Text = "Waga:";
             // 
             // kcalLabel
             // 
@@ -80,9 +80,9 @@
             this.kcalLabel.ForeColor = System.Drawing.Color.Coral;
             this.kcalLabel.Location = new System.Drawing.Point(17, 78);
             this.kcalLabel.Name = "kcalLabel";
-            this.kcalLabel.Size = new System.Drawing.Size(117, 30);
+            this.kcalLabel.Size = new System.Drawing.Size(101, 30);
             this.kcalLabel.TabIndex = 6;
-            this.kcalLabel.Text = "Calories:";
+            this.kcalLabel.Text = "Kalorie:";
             // 
             // datelabelOut
             // 
@@ -100,7 +100,7 @@
             this.weightlabelOut.AutoSize = true;
             this.weightlabelOut.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.weightlabelOut.ForeColor = System.Drawing.Color.Coral;
-            this.weightlabelOut.Location = new System.Drawing.Point(127, 48);
+            this.weightlabelOut.Location = new System.Drawing.Point(114, 48);
             this.weightlabelOut.Name = "weightlabelOut";
             this.weightlabelOut.Size = new System.Drawing.Size(26, 30);
             this.weightlabelOut.TabIndex = 6;
@@ -111,7 +111,7 @@
             this.callabelOut.AutoSize = true;
             this.callabelOut.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.callabelOut.ForeColor = System.Drawing.Color.Coral;
-            this.callabelOut.Location = new System.Drawing.Point(140, 78);
+            this.callabelOut.Location = new System.Drawing.Point(127, 78);
             this.callabelOut.Name = "callabelOut";
             this.callabelOut.Size = new System.Drawing.Size(26, 30);
             this.callabelOut.TabIndex = 6;

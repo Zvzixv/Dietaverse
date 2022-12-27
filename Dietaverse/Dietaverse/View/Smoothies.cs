@@ -26,7 +26,7 @@ namespace Dietaverse.View
             InitializeComponent();
             dynamicCheck();
             namelabel.Visible = false;
-            cannotchooselabel.Text = "It was too hard choice";
+            cannotchooselabel.Text = "Wybór był zbyt trudny.";
             cannotchooselabel.Visible = false;
         }
 

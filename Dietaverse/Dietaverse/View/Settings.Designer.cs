@@ -47,7 +47,7 @@
             this.logoutbutton.Name = "logoutbutton";
             this.logoutbutton.Size = new System.Drawing.Size(109, 38);
             this.logoutbutton.TabIndex = 11;
-            this.logoutbutton.Text = "Logout";
+            this.logoutbutton.Text = "Wyoguj";
             this.logoutbutton.UseVisualStyleBackColor = true;
             this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
             // 
@@ -58,9 +58,9 @@
             this.label1.ForeColor = System.Drawing.Color.Coral;
             this.label1.Location = new System.Drawing.Point(22, 133);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 19);
+            this.label1.Size = new System.Drawing.Size(103, 19);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Change password";
+            this.label1.Text = "Zmień hasło";
             // 
             // pass1textBox
             // 
@@ -69,7 +69,7 @@
             this.pass1textBox.Name = "pass1textBox";
             this.pass1textBox.Size = new System.Drawing.Size(146, 21);
             this.pass1textBox.TabIndex = 13;
-            this.pass1textBox.Text = "Insert new password";
+            this.pass1textBox.Text = "Wpisz nowe hasło";
             this.pass1textBox.Enter += new System.EventHandler(this.pass1textBox_Validated);
             this.pass1textBox.Leave += new System.EventHandler(this.pass1textBox_Leave);
             // 
@@ -80,7 +80,7 @@
             this.pass2textBox.Name = "pass2textBox";
             this.pass2textBox.Size = new System.Drawing.Size(146, 21);
             this.pass2textBox.TabIndex = 13;
-            this.pass2textBox.Text = "Repeat new password";
+            this.pass2textBox.Text = "Powtórz nowe hasło";
             this.pass2textBox.Enter += new System.EventHandler(this.pass2textBox_Validated);
             this.pass2textBox.Leave += new System.EventHandler(this.pass2textBox_Leave);
             // 
@@ -93,7 +93,7 @@
             this.changePasswordbutton.Name = "changePasswordbutton";
             this.changePasswordbutton.Size = new System.Drawing.Size(109, 38);
             this.changePasswordbutton.TabIndex = 11;
-            this.changePasswordbutton.Text = "Apply ";
+            this.changePasswordbutton.Text = "Zastosuj";
             this.changePasswordbutton.UseVisualStyleBackColor = true;
             this.changePasswordbutton.Click += new System.EventHandler(this.changePasswordbutton_Click);
             // 
@@ -120,7 +120,7 @@
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(109, 49);
             this.deleteButton.TabIndex = 14;
-            this.deleteButton.Text = "Delete account";
+            this.deleteButton.Text = "Usuń konto";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 

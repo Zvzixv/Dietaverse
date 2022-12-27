@@ -84,7 +84,7 @@
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(186, 56);
             this.settingsButton.TabIndex = 1;
-            this.settingsButton.Text = "Settings";
+            this.settingsButton.Text = "Ustawienia";
             this.settingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
@@ -102,7 +102,7 @@
             this.monthButton.Name = "monthButton";
             this.monthButton.Size = new System.Drawing.Size(186, 51);
             this.monthButton.TabIndex = 1;
-            this.monthButton.Text = "Month summary";
+            this.monthButton.Text = "Miesięczne podsumowanie";
             this.monthButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.monthButton.UseVisualStyleBackColor = true;
             this.monthButton.Click += new System.EventHandler(this.monthButton_Click);
@@ -138,7 +138,7 @@
             this.foodGalleryButton.Name = "foodGalleryButton";
             this.foodGalleryButton.Size = new System.Drawing.Size(186, 51);
             this.foodGalleryButton.TabIndex = 1;
-            this.foodGalleryButton.Text = "Food gallery";
+            this.foodGalleryButton.Text = "Galeria przepisów";
             this.foodGalleryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.foodGalleryButton.UseVisualStyleBackColor = true;
             this.foodGalleryButton.Click += new System.EventHandler(this.foodGalleryButton_Click);
@@ -156,7 +156,7 @@
             this.bodyGalleryButton.Name = "bodyGalleryButton";
             this.bodyGalleryButton.Size = new System.Drawing.Size(186, 51);
             this.bodyGalleryButton.TabIndex = 1;
-            this.bodyGalleryButton.Text = "Body gallery";
+            this.bodyGalleryButton.Text = "Galeria sylwetki";
             this.bodyGalleryButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.bodyGalleryButton.UseVisualStyleBackColor = true;
             this.bodyGalleryButton.Click += new System.EventHandler(this.bodyGalleryButton_Click);

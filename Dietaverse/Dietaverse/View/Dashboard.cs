@@ -33,7 +33,7 @@ namespace Dietaverse.View
                 richTextBox1.Text = notes;
             }
             else
-                richTextBox1.Text = "You can leave some notes here...";
+                richTextBox1.Text = "Możesz tutaj wpisać swoje notatki...";
 
 
             kcalLabel.Text =calories.ToString()+" kcal";
@@ -97,7 +97,7 @@ namespace Dietaverse.View
         {
             if(hasBeenClicked&&richTextBox1.TextLength == 0)
             {
-                richTextBox1.Text = "You can leave some notes here...";
+                richTextBox1.Text = "Możesz tutaj wpisać swoje notatki...";
                 hasBeenClicked=false;
                 richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
                 notes = "";
@@ -116,8 +116,8 @@ namespace Dietaverse.View
             }
             else
             {
-                string message = "It is not a proper amount of calories.";
-                MessageBox.Show(this, message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string message = "To nie jest poprawna wartość kalorii.";
+                MessageBox.Show(this, message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             if(calories > 4000)

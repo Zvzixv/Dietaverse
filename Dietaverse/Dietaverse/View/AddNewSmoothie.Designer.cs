@@ -64,20 +64,20 @@
             this.label2.ForeColor = System.Drawing.Color.Coral;
             this.label2.Location = new System.Drawing.Point(14, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(179, 21);
+            this.label2.Size = new System.Drawing.Size(188, 21);
             this.label2.TabIndex = 15;
-            this.label2.Text = "My smoothie contains";
+            this.label2.Text = "Moje smoothie zawiera";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(46, 11);
+            this.label1.Location = new System.Drawing.Point(30, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 21);
+            this.label1.Size = new System.Drawing.Size(217, 21);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Add here new ingrediens";
+            this.label1.Text = "Tutaj dodaj nowe składniki";
             // 
             // backButton
             // 
@@ -88,7 +88,7 @@
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(109, 37);
             this.backButton.TabIndex = 71;
-            this.backButton.Text = "Back";
+            this.backButton.Text = "Powrót";
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
@@ -101,7 +101,7 @@
             this.addNewIngrbutton1.Name = "addNewIngrbutton1";
             this.addNewIngrbutton1.Size = new System.Drawing.Size(109, 37);
             this.addNewIngrbutton1.TabIndex = 71;
-            this.addNewIngrbutton1.Text = "Add new";
+            this.addNewIngrbutton1.Text = "Dodaj";
             this.addNewIngrbutton1.UseVisualStyleBackColor = true;
             this.addNewIngrbutton1.Click += new System.EventHandler(this.addNewIngrbutton1_Click);
             // 
@@ -134,19 +134,19 @@
             this.label3.ForeColor = System.Drawing.Color.Coral;
             this.label3.Location = new System.Drawing.Point(14, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 21);
+            this.label3.Size = new System.Drawing.Size(153, 21);
             this.label3.TabIndex = 76;
-            this.label3.Text = "My smoothie is";
+            this.label3.Text = "Moje smoothie jest";
             // 
             // sourcheckBox
             // 
             this.sourcheckBox.AutoSize = true;
             this.sourcheckBox.ForeColor = System.Drawing.Color.Coral;
-            this.sourcheckBox.Location = new System.Drawing.Point(140, 170);
+            this.sourcheckBox.Location = new System.Drawing.Point(156, 170);
             this.sourcheckBox.Name = "sourcheckBox";
-            this.sourcheckBox.Size = new System.Drawing.Size(46, 17);
+            this.sourcheckBox.Size = new System.Drawing.Size(63, 17);
             this.sourcheckBox.TabIndex = 78;
-            this.sourcheckBox.Text = "sour";
+            this.sourcheckBox.Text = "kwaśne";
             this.sourcheckBox.UseVisualStyleBackColor = true;
             // 
             // sweetcheckBox
@@ -155,20 +155,20 @@
             this.sweetcheckBox.ForeColor = System.Drawing.Color.Coral;
             this.sweetcheckBox.Location = new System.Drawing.Point(20, 170);
             this.sweetcheckBox.Name = "sweetcheckBox";
-            this.sweetcheckBox.Size = new System.Drawing.Size(54, 17);
+            this.sweetcheckBox.Size = new System.Drawing.Size(61, 17);
             this.sweetcheckBox.TabIndex = 77;
-            this.sweetcheckBox.Text = "sweet";
+            this.sweetcheckBox.Text = "słodkie";
             this.sweetcheckBox.UseVisualStyleBackColor = true;
             // 
             // vegetablecheckBox
             // 
             this.vegetablecheckBox.AutoSize = true;
             this.vegetablecheckBox.ForeColor = System.Drawing.Color.Coral;
-            this.vegetablecheckBox.Location = new System.Drawing.Point(201, 170);
+            this.vegetablecheckBox.Location = new System.Drawing.Point(226, 170);
             this.vegetablecheckBox.Name = "vegetablecheckBox";
             this.vegetablecheckBox.Size = new System.Drawing.Size(73, 17);
             this.vegetablecheckBox.TabIndex = 81;
-            this.vegetablecheckBox.Text = "vegetable";
+            this.vegetablecheckBox.Text = "warzywne";
             this.vegetablecheckBox.UseVisualStyleBackColor = true;
             // 
             // fruitycheckBox
@@ -177,9 +177,9 @@
             this.fruitycheckBox.ForeColor = System.Drawing.Color.Coral;
             this.fruitycheckBox.Location = new System.Drawing.Point(83, 170);
             this.fruitycheckBox.Name = "fruitycheckBox";
-            this.fruitycheckBox.Size = new System.Drawing.Size(48, 17);
+            this.fruitycheckBox.Size = new System.Drawing.Size(72, 17);
             this.fruitycheckBox.TabIndex = 80;
-            this.fruitycheckBox.Text = "fruity";
+            this.fruitycheckBox.Text = "owocowe";
             this.fruitycheckBox.UseVisualStyleBackColor = true;
             // 
             // addNewSmoothiebutton
@@ -189,9 +189,9 @@
             this.addNewSmoothiebutton.ForeColor = System.Drawing.Color.Coral;
             this.addNewSmoothiebutton.Location = new System.Drawing.Point(212, 402);
             this.addNewSmoothiebutton.Name = "addNewSmoothiebutton";
-            this.addNewSmoothiebutton.Size = new System.Drawing.Size(138, 34);
+            this.addNewSmoothiebutton.Size = new System.Drawing.Size(150, 34);
             this.addNewSmoothiebutton.TabIndex = 82;
-            this.addNewSmoothiebutton.Text = "Add new";
+            this.addNewSmoothiebutton.Text = "Dodaj";
             this.addNewSmoothiebutton.UseVisualStyleBackColor = true;
             this.addNewSmoothiebutton.Click += new System.EventHandler(this.AddNewSmoothiebutton_Click);
             // 
@@ -210,9 +210,9 @@
             this.choosePhotobutton1.ForeColor = System.Drawing.Color.Coral;
             this.choosePhotobutton1.Location = new System.Drawing.Point(212, 359);
             this.choosePhotobutton1.Name = "choosePhotobutton1";
-            this.choosePhotobutton1.Size = new System.Drawing.Size(138, 37);
+            this.choosePhotobutton1.Size = new System.Drawing.Size(150, 37);
             this.choosePhotobutton1.TabIndex = 84;
-            this.choosePhotobutton1.Text = "Choose photo";
+            this.choosePhotobutton1.Text = "Wybierz zdjęcie";
             this.choosePhotobutton1.UseVisualStyleBackColor = true;
             this.choosePhotobutton1.Click += new System.EventHandler(this.choosePhotobutton1_Click);
             // 
@@ -227,9 +227,9 @@
             this.label4.ForeColor = System.Drawing.Color.Coral;
             this.label4.Location = new System.Drawing.Point(31, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 17);
+            this.label4.Size = new System.Drawing.Size(58, 17);
             this.label4.TabIndex = 76;
-            this.label4.Text = "Name:";
+            this.label4.Text = "Nazwa:";
             // 
             // label5
             // 
@@ -248,9 +248,9 @@
             this.photolabel.ForeColor = System.Drawing.Color.Coral;
             this.photolabel.Location = new System.Drawing.Point(32, 345);
             this.photolabel.Name = "photolabel";
-            this.photolabel.Size = new System.Drawing.Size(90, 13);
+            this.photolabel.Size = new System.Drawing.Size(102, 13);
             this.photolabel.TabIndex = 85;
-            this.photolabel.Text = "photo not chosen";
+            this.photolabel.Text = "Nie wybrano zdjęcia";
             // 
             // panel1
             // 
@@ -282,8 +282,8 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(174, 79);
             this.label7.TabIndex = 88;
-            this.label7.Text = "Strongly recommended is to add vertical 1795x2693 photo which is smaller than 50 " +
-    "kB.";
+            this.label7.Text = "Zdecydowanie zalecane jest dodanie pionowego zdjęcia 1795x2693, które jest mniejs" +
+    "ze niż 50 kB.";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // smnametextBox
@@ -305,7 +305,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 21);
             this.label6.TabIndex = 86;
-            this.label6.Text = "Name";
+            this.label6.Text = "Nazwa";
             // 
             // panel2
             // 

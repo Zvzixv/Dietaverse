@@ -43,11 +43,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(344, 164);
+            this.label1.Location = new System.Drawing.Point(366, 180);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 38);
+            this.label1.Size = new System.Drawing.Size(181, 38);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Login yourself";
+            this.label1.Text = "Zaloguj się";
             // 
             // passtextBox
             // 
@@ -74,9 +74,9 @@
             this.label5.ForeColor = System.Drawing.Color.Coral;
             this.label5.Location = new System.Drawing.Point(336, 248);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 30);
+            this.label5.Size = new System.Drawing.Size(85, 30);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Password:";
+            this.label5.Text = "Hasło:";
             // 
             // label4
             // 
@@ -98,7 +98,7 @@
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(109, 37);
             this.loginButton.TabIndex = 2;
-            this.loginButton.Text = "Login";
+            this.loginButton.Text = "Zaloguj";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
@@ -124,7 +124,7 @@
             this.backbutton.Name = "backbutton";
             this.backbutton.Size = new System.Drawing.Size(109, 38);
             this.backbutton.TabIndex = 3;
-            this.backbutton.Text = "Back";
+            this.backbutton.Text = "Powrót";
             this.backbutton.UseVisualStyleBackColor = true;
             this.backbutton.Click += new System.EventHandler(this.backbutton_Click);
             // 

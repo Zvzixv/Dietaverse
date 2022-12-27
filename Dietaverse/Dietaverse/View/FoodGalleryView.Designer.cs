@@ -43,7 +43,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(136, 396);
             this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "Recipes will apear here...";
+            this.richTextBox1.Text = "Przepisy pojawią się tutaj...";
             // 
             // adNewPhotoButton
             // 
@@ -54,7 +54,7 @@
             this.adNewPhotoButton.Name = "adNewPhotoButton";
             this.adNewPhotoButton.Size = new System.Drawing.Size(136, 37);
             this.adNewPhotoButton.TabIndex = 12;
-            this.adNewPhotoButton.Text = "Add new";
+            this.adNewPhotoButton.Text = "Dodaj nowy";
             this.adNewPhotoButton.UseVisualStyleBackColor = true;
             this.adNewPhotoButton.Click += new System.EventHandler(this.adNewPhotoButton_Click);
             // 
@@ -66,7 +66,7 @@
             this.galleryPanel.Size = new System.Drawing.Size(517, 396);
             this.galleryPanel.TabIndex = 14;
             // 
-            // FoodGallery
+            // FoodGalleryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -76,7 +76,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.adNewPhotoButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FoodGallery";
+            this.Name = "FoodGalleryView";
             this.Text = "FoodGallery";
             this.ResumeLayout(false);
 

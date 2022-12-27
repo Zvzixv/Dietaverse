@@ -48,13 +48,13 @@ namespace Dietaverse.View
         public void ShowDescription(string recipe, string name)
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Regular);
-            richTextBox1.Text = "Name: " + name + "\n\nRecipe: " + recipe;
+            richTextBox1.Text = "Nazwa: " + name + "\n\nPrzepis: " + recipe;
         }
 
         public void HideDescription()
         {
             richTextBox1.Font = new Font(richTextBox1.Font, FontStyle.Italic);
-            richTextBox1.Text = "Recipes will apear here...";
+            richTextBox1.Text = "Przepisy pojawią się tutaj...";
         }
     }
 }
