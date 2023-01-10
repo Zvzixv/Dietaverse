@@ -59,7 +59,7 @@
             this.pictureBox.InitialImage = null;
             this.pictureBox.Location = new System.Drawing.Point(20, 194);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(179, 207);
+            this.pictureBox.Size = new System.Drawing.Size(154, 207);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 62;
             this.pictureBox.TabStop = false;
@@ -125,7 +125,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Coral;
-            this.label1.Location = new System.Drawing.Point(54, 287);
+            this.label1.Location = new System.Drawing.Point(34, 294);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 16);
             this.label1.TabIndex = 66;

@@ -51,6 +51,7 @@
             this.label = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.ingrlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.smoothiepictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,7 +151,7 @@
             this.addNewbutton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNewbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.addNewbutton1.ForeColor = System.Drawing.Color.Coral;
-            this.addNewbutton1.Location = new System.Drawing.Point(16, 403);
+            this.addNewbutton1.Location = new System.Drawing.Point(12, 422);
             this.addNewbutton1.Name = "addNewbutton1";
             this.addNewbutton1.Size = new System.Drawing.Size(121, 43);
             this.addNewbutton1.TabIndex = 16;
@@ -163,7 +164,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(7, 41);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(163, 263);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(178, 304);
             this.flowLayoutPanel1.TabIndex = 17;
             // 
             // Smoothiebutton1
@@ -171,7 +172,7 @@
             this.Smoothiebutton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Smoothiebutton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Smoothiebutton1.ForeColor = System.Drawing.Color.Coral;
-            this.Smoothiebutton1.Location = new System.Drawing.Point(598, 403);
+            this.Smoothiebutton1.Location = new System.Drawing.Point(598, 422);
             this.Smoothiebutton1.Name = "Smoothiebutton1";
             this.Smoothiebutton1.Size = new System.Drawing.Size(123, 43);
             this.Smoothiebutton1.TabIndex = 18;
@@ -192,7 +193,7 @@
             // 
             // smoothiepictureBox
             // 
-            this.smoothiepictureBox.Location = new System.Drawing.Point(41, 46);
+            this.smoothiepictureBox.Location = new System.Drawing.Point(41, 34);
             this.smoothiepictureBox.Name = "smoothiepictureBox";
             this.smoothiepictureBox.Size = new System.Drawing.Size(159, 262);
             this.smoothiepictureBox.TabIndex = 20;
@@ -229,12 +230,13 @@
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Location = new System.Drawing.Point(276, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 365);
+            this.panel2.Size = new System.Drawing.Size(196, 394);
             this.panel2.TabIndex = 23;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.ingrlabel);
             this.panel3.Controls.Add(this.Nmlabel);
             this.panel3.Controls.Add(this.Kclabel);
             this.panel3.Controls.Add(this.kcallabel);
@@ -246,8 +248,9 @@
             this.panel3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.panel3.Location = new System.Drawing.Point(491, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(230, 365);
+            this.panel3.Size = new System.Drawing.Size(230, 394);
             this.panel3.TabIndex = 24;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // Nmlabel
             // 
@@ -262,7 +265,7 @@
             // 
             this.Kclabel.AutoSize = true;
             this.Kclabel.ForeColor = System.Drawing.Color.Coral;
-            this.Kclabel.Location = new System.Drawing.Point(59, 328);
+            this.Kclabel.Location = new System.Drawing.Point(62, 316);
             this.Kclabel.Name = "Kclabel";
             this.Kclabel.Size = new System.Drawing.Size(0, 17);
             this.Kclabel.TabIndex = 24;
@@ -271,7 +274,7 @@
             // 
             this.kcallabel.AutoSize = true;
             this.kcallabel.ForeColor = System.Drawing.Color.Coral;
-            this.kcallabel.Location = new System.Drawing.Point(59, 328);
+            this.kcallabel.Location = new System.Drawing.Point(62, 316);
             this.kcallabel.Name = "kcallabel";
             this.kcallabel.Size = new System.Drawing.Size(0, 17);
             this.kcallabel.TabIndex = 23;
@@ -280,7 +283,7 @@
             // 
             this.label.AutoSize = true;
             this.label.ForeColor = System.Drawing.Color.Coral;
-            this.label.Location = new System.Drawing.Point(72, 311);
+            this.label.Location = new System.Drawing.Point(77, 299);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(0, 17);
             this.label.TabIndex = 22;
@@ -289,7 +292,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Coral;
-            this.label6.Location = new System.Drawing.Point(13, 311);
+            this.label6.Location = new System.Drawing.Point(13, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 17);
             this.label6.TabIndex = 21;
@@ -299,11 +302,21 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Coral;
-            this.label5.Location = new System.Drawing.Point(13, 328);
+            this.label5.Location = new System.Drawing.Point(13, 316);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 21;
             this.label5.Text = "Kcal:";
+            // 
+            // ingrlabel
+            // 
+            this.ingrlabel.AutoSize = true;
+            this.ingrlabel.ForeColor = System.Drawing.Color.Coral;
+            this.ingrlabel.Location = new System.Drawing.Point(13, 333);
+            this.ingrlabel.Name = "ingrlabel";
+            this.ingrlabel.Size = new System.Drawing.Size(68, 17);
+            this.ingrlabel.TabIndex = 26;
+            this.ingrlabel.Text = "Składniki:";
             // 
             // Smoothies
             // 
@@ -357,5 +370,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Nmlabel;
         private System.Windows.Forms.Label Kclabel;
+        private System.Windows.Forms.Label ingrlabel;
     }
 }

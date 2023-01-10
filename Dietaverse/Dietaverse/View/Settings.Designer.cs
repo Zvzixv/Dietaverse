@@ -47,7 +47,7 @@
             this.logoutbutton.Name = "logoutbutton";
             this.logoutbutton.Size = new System.Drawing.Size(109, 38);
             this.logoutbutton.TabIndex = 11;
-            this.logoutbutton.Text = "Wyoguj";
+            this.logoutbutton.Text = "Wyloguj";
             this.logoutbutton.UseVisualStyleBackColor = true;
             this.logoutbutton.Click += new System.EventHandler(this.logoutbutton_Click);
             // 

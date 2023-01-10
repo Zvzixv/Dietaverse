@@ -154,9 +154,28 @@ namespace Dietaverse.View
                 Image photoImage = Image.FromStream(memStr);
 
                 smoothiepictureBox.Image = g.ResizeImage(photoImage, smoothiepictureBox.Width, smoothiepictureBox.Height);
+                ingrlabel.Text = ingredients(result);
+
             }
 
         }
 
+        private String ingredients(SmoothiesRecipes smoothie)
+        {
+            String ingredients = "Składniki: ";
+
+            foreach(var x in smoothie.ingredients)
+            {
+                ingredients += x.name + ", ";
+            }
+
+            ingredients = ingredients.Substring(0, ingredients.Length - 2);
+            return ingredients;
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
